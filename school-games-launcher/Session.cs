@@ -8,11 +8,11 @@ namespace school_games_launcher
 {
     public class Session
     {
-        public Game game;
-        public User user;
-        public int startTimestamp;
-        public int endTimestamp;
-        public void Main()
+        private Game game;
+        private User user;
+        private int startTimestamp;
+        private int endTimestamp;
+        public Session()
         {
             
         }

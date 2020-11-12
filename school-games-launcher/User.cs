@@ -25,7 +25,7 @@ namespace school_games_launcher
             }
         }
 
-        public void Main(string name, int birthTimestamp, string passwordHash, bool admin)
+        public User(string name, int birthTimestamp, string passwordHash, bool admin)
         {
             this.name = name;
             this.birthTimestamp = birthTimestamp;

@@ -6,14 +6,7 @@ using System.Threading.Tasks;
 
 namespace school_games_launcher
 {
-    public class Game
+    class GameExecutable
     {
-        private string name;
-        private int age;
-
-        public Game()
-        {
-
-        }
     }
 }

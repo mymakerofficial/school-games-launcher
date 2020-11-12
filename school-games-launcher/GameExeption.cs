@@ -10,9 +10,10 @@ namespace school_games_launcher
     {
         public Game game;
         public bool allowed;
-        public void Main()
+        public GameExeption(Game game, bool allowed)
         {
-
+            this.game = game;
+            this.allowed = allowed;
         }
     }
 }
