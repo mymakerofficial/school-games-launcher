@@ -17,13 +17,11 @@ namespace school_games_launcher
         private List<PlayPeriod> playPeriods = new List<PlayPeriod>();
         private List<GameExeption> gameExeptions = new List<GameExeption>();
 
-        public string Name
-        {
-            get
-            {
-                return name;
-            }
-        }
+        public string Name => name;
+        public int BirthTimestamp => birthTimestamp;
+        public bool Admin => admin;
+        public List<PlayPeriod> PlayPeriods => playPeriods;
+        public List<GameExeption> GameExeptions => gameExeptions;
 
         public User(string name, int birthTimestamp, string passwordHash, bool admin)
         {
@@ -33,13 +31,29 @@ namespace school_games_launcher
             this.admin = admin;
 
         }
-        public static bool AllowedToPlay(Game game)
+        private void LoadData()
+        {
+
+        }
+        /// <summary>
+        /// Checks if this user is allowed to play the given game.
+        /// </summary>
+        public bool AllowedToPlay(Game game)
         {
             bool allowed = true;
 
 
 
             return allowed;
+        }
+        /// <summary>
+        /// Checks if given password is correct
+        /// </summary>
+        public bool VerifyPassword(string password)
+        {
+            bool valid = true;
+
+            return valid;
         }
     }
 }

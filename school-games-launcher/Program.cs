@@ -7,13 +7,14 @@ using System.Windows.Forms;
 
 namespace school_games_launcher
 {
+
     static class Program
     {
 
         static App app;
 
         /// <summary>
-        /// Der Haupteinstiegspunkt für die Anwendung.
+        /// The main entrace point of this program. This is where shid beginns.
         /// </summary>
         [STAThread]
         static void Main()
