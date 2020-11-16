@@ -31,19 +31,15 @@ namespace school_games_launcher
             this.admin = admin;
 
         }
-        private void LoadData()
-        {
-
-        }
         /// <summary>
         /// Checks if this user is allowed to play the given game.
         /// </summary>
         public bool AllowedToPlay(Game game)
         {
-            bool allowed = true;
+            bool allowed = false;
 
 
-
+            if (this.admin == true) { allowed = true; }
             return allowed;
         }
         /// <summary>

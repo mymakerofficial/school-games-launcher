@@ -8,10 +8,10 @@ namespace school_games_launcher
 {
     public class PlayPeriod
     {
-        public Game game;
-        public int startTime;
-        public int endTime;
-        public int weekDay;
+        private Game game;
+        private int startTime;
+        private int endTime;
+        private int weekDay;
         public PlayPeriod(Game game, int startTime, int endTime, int weekDay)
         {
             this.game = game;
@@ -19,10 +19,9 @@ namespace school_games_launcher
             this.endTime = endTime;
             this.weekDay = weekDay;
         }
-        public bool IsActive(Game game)
+        public bool IsActive
         {
-
-            return true;
+            get { return true; }
         }
     }
 }

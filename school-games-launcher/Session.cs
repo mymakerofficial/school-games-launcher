@@ -12,9 +12,10 @@ namespace school_games_launcher
         private User user;
         private int startTimestamp;
         private int endTimestamp;
-        public Session()
+        public Session(Game game, User user)
         {
-            
+            this.game = game;
+            this.user = user;
         }
     }
 }
