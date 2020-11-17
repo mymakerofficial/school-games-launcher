@@ -13,10 +13,30 @@ namespace school_games_launcher
         private static User activeUser;
         private static List<Session> sessions = new List<Session>();
         private static Session activeSession;
+
+        /// <summary>
+        /// The path to the folder of the config files
+        /// </summary>
+        private string configPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "/MyMakerGameLauncher/";
+        /// <summary>
+        /// List of all existing users
+        /// </summary>
         public List<User> Users => users;
+        /// <summary>
+        /// List of all existing games
+        /// </summary>
         public List<Game> Games => games;
+        /// <summary>
+        /// Currently logged in user
+        /// </summary>
         public User ActiveUser => activeUser;
+        /// <summary>
+        /// All gaming sessions ever
+        /// </summary>
         public List<Session> Sessions => sessions;
+        /// <summary>
+        /// Currently active gaming session
+        /// </summary>
         public Session ActiveSession => activeSession;
 
         public App()
@@ -29,23 +49,28 @@ namespace school_games_launcher
         }
         private void LoadData()
         {
-            Loader loadedUsers = new Loader("C:/Users/mohem/AppData/Roaming/MyMakerGameLauncher/users.csv");
+            // loads users
+            Loader loadedUsers = new Loader(this.configPath + "users.csv");
             foreach(List<string> userData in loadedUsers.Data)
             {
                 User user = new User(userData[0], Int32.Parse(userData[1]), userData[2], Convert.ToBoolean(userData[3]));
-                this.Users.Add(user);
+                this.Users.Add(user);// puts user in list
             }
-            Loader loadedGames = new Loader("C:/Users/mohem/AppData/Roaming/MyMakerGameLauncher/games.csv");
+            // loads games
+            Loader loadedGames = new Loader(this.configPath + "games.csv");
             foreach (List<string> gameData in loadedGames.Data)
             {
                 Game game = new Game(gameData[0], gameData[1], Int32.Parse(gameData[2]));
-                this.Games.Add(game);
+                this.Games.Add(game);// puts game in list
             }
 
             this.LoginUser("admin", "");
 
             this.Launch("Witch It");
         }
+        /// <summary>
+        /// Launches given game as active user.
+        /// </summary>
         public void Launch(Game game)
         {
             if(game != null)
@@ -76,7 +101,7 @@ namespace school_games_launcher
         /// </summary>
         public bool LoginUser(string username, string password) => this.LoginUser(this.GetUserByName(username), password);
         /// <summary>
-        /// Gets a user by name... duh....
+        /// Gets a user by name... what did you expect?
         /// </summary>
         public User GetUserByName(string username)
         {

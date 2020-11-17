@@ -25,12 +25,8 @@ namespace school_games_launcher
             while (!this.sr.EndOfStream)
             {
                 lineString = this.sr.ReadLine();
-
                 List<string> line = new List<string>();
-                foreach(string cell in lineString.Split(','))
-                {
-                    line.Add(cell);
-                }
+                foreach(string cell in lineString.Split(',')) line.Add(cell);
                 this.data.Add(line);
             }
             this.sr.Close();

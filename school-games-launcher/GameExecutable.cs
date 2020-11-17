@@ -17,7 +17,7 @@ namespace school_games_launcher
             this.game = game;
         }
         /// <summary>
-        /// Launches GameExecutable (if given user is allowed to play).
+        /// Launches GameExecutable (if given user is allowed to play) and returns a Session.
         /// </summary>
         public Session Launch(User user)
         {
