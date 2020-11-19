@@ -20,11 +20,11 @@ namespace school_games_launcher
         /// <summary>
         /// Whats the name of the game?
         /// </summary>
-        public string Name => name;
+        public string Name { get { return name; } }
         /// <summary>
         /// The age a user needs to be to play this game.
         /// </summary>
-        public int Age => age;
+        public int Age { get { return age; } }
 
         public Game(string name, string path, int age)
         {

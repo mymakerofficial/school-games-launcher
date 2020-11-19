@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,31 +14,27 @@ namespace school_games_launcher
         private static User activeUser;
         private static List<Session> sessions = new List<Session>();
         private static Session activeSession;
-
-        /// <summary>
-        /// The path to the folder of the config files
-        /// </summary>
-        private string configPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "/MyMakerGameLauncher/";
+        private string configPath { get; } = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "/MyMakerGameLauncher/";
         /// <summary>
         /// List of all existing users
         /// </summary>
-        public List<User> Users => users;
+        public List<User> Users { get { return users; } }
         /// <summary>
         /// List of all existing games
         /// </summary>
-        public List<Game> Games => games;
+        public List<Game> Games { get { return games; } }
         /// <summary>
         /// Currently logged in user
         /// </summary>
-        public User ActiveUser => activeUser;
+        public User ActiveUser { get { return activeUser; } }
         /// <summary>
         /// All gaming sessions ever
         /// </summary>
-        public List<Session> Sessions => sessions;
+        public List<Session> Sessions { get { return sessions; } }
         /// <summary>
         /// Currently active gaming session
         /// </summary>
-        public Session ActiveSession => activeSession;
+        public Session ActiveSession { get { return activeSession; } }
 
         public App()
         {
@@ -66,7 +63,9 @@ namespace school_games_launcher
 
             this.LoginUser("admin", "");
 
-            this.Launch("Witch It");
+            this.Launch("tank trouble");
+
+            Process[] processes = Process.GetProcesses();
         }
         /// <summary>
         /// Launches given game as active user.

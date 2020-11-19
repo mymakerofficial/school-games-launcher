@@ -20,29 +20,33 @@ namespace school_games_launcher
         /// <summary>
         /// The name of the user
         /// </summary>
-        public string Name => name;
+        public string Name { get { return name; } }
         /// <summary>
         /// The birthday of the user
         /// </summary>
-        public DateTime BirthDate => birthDate;
+        public DateTime BirthDate { get { return birthDate; } }
         /// <summary>
         /// Is admin?
         /// </summary>
-        public bool Admin => admin;
+        public bool Admin { get { return admin; } }
         /// <summary>
         /// List of the users play periods (when the user is allowed to play)
         /// </summary>
-        public List<PlayPeriod> PlayPeriods => playPeriods;
+        public List<PlayPeriod> PlayPeriods { get { return playPeriods; } }
         /// <summary>
         /// List of the users game exeptions (overrides if user is allowed to play a game)
         /// </summary>
-        public List<GameExeption> GameExeptions => gameExeptions;
+        public List<GameExeption> GameExeptions { get { return gameExeptions; } }
         /// <summary>
         /// Calculated age of this user.
         /// </summary>
         public int Age
         {
-            get { return (int)((DateTime.Now - this.BirthDate).TotalDays / 365.242199); } // calculates age accurate to the day (appropreated from stackoverflow)
+            get {
+                TimeSpan difference = DateTime.Now - this.BirthDate;
+                int years = (new DateTime(0) + difference).Year - 1;
+                return years;
+            }
         }
         /// <summary>
         /// A user is a humon being 

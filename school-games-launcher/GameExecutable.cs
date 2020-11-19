@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Net;
+using System.Diagnostics;
 
 namespace school_games_launcher
 {
@@ -24,7 +25,7 @@ namespace school_games_launcher
             if (user.AllowedToPlay(this.game))
             {
                 Session session = new Session(this.game, user);
-                // launch game
+                System.Diagnostics.Process.Start(this.path);
                 return session;
             }else
             {
