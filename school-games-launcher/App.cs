@@ -61,9 +61,11 @@ namespace school_games_launcher
                 this.Games.Add(game);// puts game in list
             }
 
-            this.LoginUser("admin", "");
+            this.LoginUser("admin", "admin");
 
-            this.Launch("tank trouble");
+            //this.Launch("Witch It");
+
+            //var hash = this.ActiveUser.HashPassword("admin");
 
             Process[] processes = Process.GetProcesses();
         }
