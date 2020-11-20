@@ -35,6 +35,23 @@ namespace school_games_launcher
         /// Currently active gaming session
         /// </summary>
         public Session ActiveSession { get { return activeSession; } }
+        /// <summary>
+        /// List of games the active user is allowed to play
+        /// </summary>
+        public List<Game> VisibleGames {
+            get {
+                List<Game> games = new List<Game>();
+                if(this.ActiveUser != null)
+                {
+                    foreach (Game game in this.Games)
+                    {
+                        if (this.ActiveUser.AllowedToPlay(game)) games.Add(game);
+                    }
+                }
+                return games;
+            }
+        }
+
 
         public App()
         {
@@ -63,7 +80,7 @@ namespace school_games_launcher
 
             this.LoginUser("admin", "admin");
 
-            //this.Launch("Witch It");
+            this.Launch("Witch It");
 
             //var hash = this.ActiveUser.HashPassword("admin");
 
