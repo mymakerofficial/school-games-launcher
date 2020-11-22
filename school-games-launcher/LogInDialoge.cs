@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace school_games_launcher
 {
-    public partial class Form1 : Form
+    public partial class LogInDialoge : Form
     {
-        public Form1()
+        public LogInDialoge()
         {
             InitializeComponent();
+        }
+
+        private void LogInDialoge_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
