@@ -78,9 +78,9 @@ namespace school_games_launcher
                 this.Games.Add(game);// puts game in list
             }
 
-            this.LoginUser("admin", "admin");
+            this.LoginUser("admin", "");
 
-            this.Launch("Witch It");
+            //this.Launch("Portal");
 
             //var hash = this.ActiveUser.HashPassword("admin");
 
