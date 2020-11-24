@@ -62,17 +62,8 @@
     <Compile Include="MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="LogInDialoge.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="LogInDialoge.Designer.cs">
-      <DependentUpon>LogInDialoge.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="LogInDialoge.resx">
-      <DependentUpon>LogInDialoge.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -107,6 +98,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\game_thumbnail_shadow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grain_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grain_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play_button_no_shadow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grain_light.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

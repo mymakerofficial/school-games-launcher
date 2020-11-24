@@ -21,5 +21,25 @@ namespace school_games_launcher
         {
 
         }
+
+        private void PictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MainWindow_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Games_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
