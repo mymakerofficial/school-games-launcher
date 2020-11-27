@@ -36,6 +36,7 @@
     <Reference Include="Microsoft.VisualStudio.DebuggerVisualizers, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -113,6 +114,39 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\grain_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\age_18.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\age_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\age_6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\age_12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\age_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\age_18_selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\age_0_selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\age_6_selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\age_12_selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\age_16_selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_game_button.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -41,5 +41,40 @@ namespace school_games_launcher
         {
 
         }
+
+        private void Label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TextBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PictureBox7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label22_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
