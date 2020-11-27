@@ -26,6 +26,7 @@ namespace school_games_launcher
             {
                 Session session = new Session(this.game, user);
                 var game = Process.Start(this.path);
+                session.Start();
                 return session;
             }else
             {

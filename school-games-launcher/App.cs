@@ -14,6 +14,7 @@ namespace school_games_launcher
         private static User activeUser;
         private static List<Session> sessions = new List<Session>();
         private static Session activeSession;
+        private static GUI gui;
         private string configPath { get; } = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "/MyMakerGameLauncher/";
         /// <summary>
         /// List of all existing users
@@ -36,6 +37,10 @@ namespace school_games_launcher
         /// </summary>
         public Session ActiveSession { get { return activeSession; } }
         /// <summary>
+        /// The GUI Object of the app.
+        /// </summary>
+        public GUI Gui { get { return gui; } }
+        /// <summary>
         /// List of games the active user is allowed to play
         /// </summary>
         public List<Game> VisibleGames {
@@ -52,14 +57,26 @@ namespace school_games_launcher
             }
         }
 
-
         public App()
         {
-            this.LoadData();
+            gui = new GUI();
         }
-        private void CheckData()
+        public void Run()
         {
-
+            this.Gui.Run();
+            this.Gui.form.Load += new System.EventHandler(this.Load);
+        }
+        private void Load(object sender, System.EventArgs e)
+        {
+            if (this.CheckData())
+            {
+                this.LoadData();
+                this.CheckUser();
+            }
+        }
+        private bool CheckData()
+        {
+            return true;
         }
         private void LoadData()
         {
@@ -74,17 +91,11 @@ namespace school_games_launcher
             Loader loadedGames = new Loader(this.configPath + "games.csv");
             foreach (List<string> gameData in loadedGames.Data)
             {
-                Game game = new Game(gameData[0], gameData[1], Int32.Parse(gameData[2]));
+                Game game = new Game(gameData[0], gameData[1], Int32.Parse(gameData[2]), gameData[4]);
                 this.Games.Add(game);// puts game in list
             }
 
-            this.LoginUser("admin", "");
-
-            //this.Launch("Portal");
-
             //var hash = this.ActiveUser.HashPassword("admin");
-
-            Process[] processes = Process.GetProcesses();
         }
         /// <summary>
         /// Launches given game as active user.
@@ -93,9 +104,10 @@ namespace school_games_launcher
         {
             if(game != null)
             {
-                if(this.ActiveUser != null)
+                if(this.CheckUser())
                 {
                     activeSession = game.Launch(this.ActiveUser);
+                    this.Gui.playing.Update();
                 }
             }
         }
@@ -105,11 +117,15 @@ namespace school_games_launcher
         /// </summary>
         public bool LoginUser(User user, string password)
         {
-            bool valid = user.VerifyPassword(password);
-
-            if (valid)
+            bool valid = false;
+            if (user != null)
             {
-                activeUser = user;
+                valid = user.VerifyPassword(password);
+
+                if (valid)
+                {
+                    activeUser = user;
+                }
             }
 
             return valid;
@@ -118,6 +134,22 @@ namespace school_games_launcher
         /// Sets active user.
         /// </summary>
         public bool LoginUser(string username, string password) => this.LoginUser(this.GetUserByName(username), password);
+        /// <summary>
+        /// Logsout the active user
+        /// </summary>
+        public void Logout()
+        {
+            activeUser = null;
+            this.CheckUser();
+        }
+        public bool CheckUser()
+        {
+            if(this.ActiveUser == null)
+            {
+                this.Gui.login.Activate();
+            }
+            return this.ActiveUser != null;
+        }
         /// <summary>
         /// Gets a user by name... what did you expect?
         /// </summary>

@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="GUI.cs" />
     <Compile Include="Loader.cs" />
     <Compile Include="GameExecutable.cs" />
     <Compile Include="Image.cs" />
@@ -147,6 +148,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\add_game_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maker_fox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

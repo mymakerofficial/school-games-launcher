@@ -17,64 +17,63 @@ namespace school_games_launcher
             InitializeComponent();
         }
 
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void PictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PictureBox3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void MainWindow_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void Games_Enter(object sender, EventArgs e)
+        private void llblAddGameCancel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            Program.app.Gui.library.Activate();
         }
 
-        private void Label11_Click(object sender, EventArgs e)
+        private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            Program.app.Gui.library.Activate();
         }
 
-        private void TextBox2_TextChanged(object sender, EventArgs e)
+        private void llblLoginRegister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            Program.app.Gui.register.Activate();
         }
 
-        private void Label13_Click(object sender, EventArgs e)
+        private void llblRegisterLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            Program.app.Gui.login.Activate();
         }
 
-        private void PictureBox7_Click(object sender, EventArgs e)
+        private void pbxLibraryUserAvatar_Click(object sender, EventArgs e)
         {
-
+            Program.app.Gui.profile.Activate();
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void btnPlayingStop_Click(object sender, EventArgs e)
         {
-
+            Program.app.ActiveSession.End();
         }
 
-        private void Label22_Click(object sender, EventArgs e)
+        private void btnLoginConfirm_Click(object sender, EventArgs e)
         {
-
+            bool valid = Program.app.LoginUser(this.tbxLoginUsername.Text, this.tbxLoginPassword.Text);
+            if (valid)
+            {
+                Program.app.Gui.library.Activate();
+            }
         }
 
-        private void Button5_Click(object sender, EventArgs e)
+        private void btnProfileLogout_Click(object sender, EventArgs e)
         {
+            Program.app.Logout();
+        }
 
+        private void pbxLibraryOptions_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.options.Activate();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.addGame.Activate();
         }
     }
 }

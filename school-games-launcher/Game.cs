@@ -10,10 +10,7 @@ namespace school_games_launcher
     {
         private string name;
         private int age;
-        private Image libaryIcon;
-        private Image libaryCabsule;
-        private Image libaryHero;
-        private Image libaryLogo;
+        private string coverart;
         private GameExecutable executable;
         private DateTime lastPlayed;
 
@@ -25,11 +22,16 @@ namespace school_games_launcher
         /// The age a user needs to be to play this game.
         /// </summary>
         public int Age { get { return age; } }
+        /// <summary>
+        /// The url to the coverart
+        /// </summary>
+        public string Coverart { get { return coverart; } }
 
-        public Game(string name, string path, int age)
+        public Game(string name, string path, int age, string coverart)
         {
             this.name = name;
             this.age = age;
+            this.coverart = coverart;
             this.executable = new GameExecutable(path, this);
         }
         /// <summary>
