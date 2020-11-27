@@ -452,7 +452,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::school_games_launcher.Properties.Resources.play_button_no_shadow;
+            this.pictureBox1.Image = global::school_games_launcher.Properties.Resources.play_button;
             this.pictureBox1.Location = new System.Drawing.Point(36, 285);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(132, 41);
@@ -950,7 +950,7 @@
             // 
             // pictureBox6
             // 
-            this.pictureBox6.Image = global::school_games_launcher.Properties.Resources.play_button_no_shadow;
+            this.pictureBox6.Image = global::school_games_launcher.Properties.Resources.play_button;
             this.pictureBox6.Location = new System.Drawing.Point(36, 285);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(132, 41);
@@ -997,7 +997,7 @@
             // 
             // pictureBox8
             // 
-            this.pictureBox8.Image = global::school_games_launcher.Properties.Resources.play_button_no_shadow;
+            this.pictureBox8.Image = global::school_games_launcher.Properties.Resources.play_button;
             this.pictureBox8.Location = new System.Drawing.Point(36, 285);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(132, 41);
@@ -1044,7 +1044,7 @@
             // 
             // pictureBox10
             // 
-            this.pictureBox10.Image = global::school_games_launcher.Properties.Resources.play_button_no_shadow;
+            this.pictureBox10.Image = global::school_games_launcher.Properties.Resources.play_button;
             this.pictureBox10.Location = new System.Drawing.Point(36, 285);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(132, 41);
@@ -1091,7 +1091,7 @@
             // 
             // pictureBox12
             // 
-            this.pictureBox12.Image = global::school_games_launcher.Properties.Resources.play_button_no_shadow;
+            this.pictureBox12.Image = global::school_games_launcher.Properties.Resources.play_button;
             this.pictureBox12.Location = new System.Drawing.Point(36, 285);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(132, 41);
@@ -1138,7 +1138,7 @@
             // 
             // pictureBox14
             // 
-            this.pictureBox14.Image = global::school_games_launcher.Properties.Resources.play_button_no_shadow;
+            this.pictureBox14.Image = global::school_games_launcher.Properties.Resources.play_button;
             this.pictureBox14.Location = new System.Drawing.Point(36, 285);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(132, 41);
