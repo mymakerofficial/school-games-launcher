@@ -8,12 +8,17 @@ namespace school_games_launcher
 {
     public class Game
     {
+        private int id;
         private string name;
         private int age;
         private string coverart;
         private GameExecutable executable;
         private DateTime lastPlayed;
 
+        /// <summary>
+        /// Id of the game
+        /// </summary>
+        public int Id { get { return id; } }
         /// <summary>
         /// Whats the name of the game?
         /// </summary>
@@ -27,8 +32,9 @@ namespace school_games_launcher
         /// </summary>
         public string Coverart { get { return coverart; } }
 
-        public Game(string name, string path, int age, string coverart)
+        public Game(int id, string name, string path, int age, string coverart)
         {
+            this.id = id;
             this.name = name;
             this.age = age;
             this.coverart = coverart;

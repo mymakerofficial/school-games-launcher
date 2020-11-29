@@ -85,7 +85,12 @@ namespace school_games_launcher
 
         public override void Update()
         {
-            this.UpdateList(Program.app.VisibleGames);
+            if (Program.app.ActiveUser != null)
+            {
+                this.TabPage.Controls["lblLibraryNotAllowedToPlay"].Visible = !Program.app.ActiveUser.InPlayPeriod;
+                this.TabPage.Controls["lblLibrarySearchGame"].Visible = this.TabPage.Controls["tbxLibrarySearchGame"].Visible = Program.app.VisibleGames.Count > 0;
+                this.UpdateList(Program.app.VisibleGames);
+            }  
         }
         public void UpdateList(List<Game> games)
         {

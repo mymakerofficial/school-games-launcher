@@ -84,15 +84,29 @@ namespace school_games_launcher
             Loader loadedUsers = new Loader(this.configPath + "users.csv");
             foreach(List<string> userData in loadedUsers.Data)
             {
-                User user = new User(userData[0], Int32.Parse(userData[1]), userData[2], Convert.ToBoolean(userData[3]));
+                User user = new User(Int32.Parse(userData[0]), userData[1], Int32.Parse(userData[2]), userData[3], Convert.ToBoolean(userData[4]));
                 this.Users.Add(user);// puts user in list
             }
             // loads games
             Loader loadedGames = new Loader(this.configPath + "games.csv");
             foreach (List<string> gameData in loadedGames.Data)
             {
-                Game game = new Game(gameData[0], gameData[1], Int32.Parse(gameData[2]), gameData[4]);
+                Game game = new Game(Int32.Parse(gameData[0]), gameData[1], gameData[2], Int32.Parse(gameData[3]), gameData[5]);
                 this.Games.Add(game);// puts game in list
+            }
+            // loads allowed play times
+            Loader loadedTimes = new Loader(this.configPath + "allowed_playtime.csv");
+            foreach (List<string> timeData in loadedTimes.Data)
+            {
+                PlayPeriod period = new PlayPeriod(Int32.Parse(timeData[1]), Int32.Parse(timeData[2]), Int32.Parse(timeData[3]));
+                this.GetUserById(Int32.Parse(timeData[0])).PlayPeriods.Add(period);// adds play period to correct player
+            }
+            // loads game exeptions
+            Loader loadedExeptions = new Loader(this.configPath + "play_exeptions.csv");
+            foreach (List<string> exeptionData in loadedExeptions.Data)
+            {
+                GameExeption exeption = new GameExeption(this.GetGameById(Int32.Parse(exeptionData[1])), Convert.ToBoolean(exeptionData[2]));
+                this.GetUserById(Int32.Parse(exeptionData[0])).GameExeptions.Add(exeption);// adds game exeption to correct player
             }
 
             //var hash = this.ActiveUser.HashPassword("admin");
@@ -163,6 +177,20 @@ namespace school_games_launcher
         public Game GetGameByName(string name)
         {
             return games.Find(x => x.Name.ToLower() == name.ToLower());
+        }
+        /// <summary>
+        /// Gets a user by id
+        /// </summary>
+        public User GetUserById(int id)
+        {
+            return users.Find(x => x.Id == id);
+        }
+        /// <summary>
+        /// Gets a game by id
+        /// </summary>
+        public Game GetGameById(int id)
+        {
+            return games.Find(x => x.Id == id);
         }
     }
 }

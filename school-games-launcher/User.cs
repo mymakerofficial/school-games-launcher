@@ -10,6 +10,7 @@ namespace school_games_launcher
 {
     public class User
     {
+        private int id;
         private string name;
         private DateTime birthDate;
         private string passwordHash;
@@ -17,6 +18,10 @@ namespace school_games_launcher
         private List<PlayPeriod> playPeriods = new List<PlayPeriod>();
         private List<GameExeption> gameExeptions = new List<GameExeption>();
 
+        /// <summary>
+        /// Id of the user
+        /// </summary>
+        public int Id { get { return id; } }
         /// <summary>
         /// The name of the user
         /// </summary>
@@ -49,10 +54,25 @@ namespace school_games_launcher
             }
         }
         /// <summary>
+        /// Is this user currently allowed to play.
+        /// </summary>
+        public bool InPlayPeriod
+        {
+            get
+            {
+                foreach (PlayPeriod period in this.PlayPeriods)
+                {
+                    if(period.IsActive) return true;
+                }
+                return this.Admin;
+            }
+        }
+        /// <summary>
         /// A user is a humon being 
         /// </summary>
-        public User(string name, int birthTimestamp, string passwordHash, bool admin)
+        public User(int id, string name, int birthTimestamp, string passwordHash, bool admin)
         {
+            this.id = id;
             this.name = name;
             this.birthDate = new DateTime(1970, 1, 1, 0, 0, 0, 0).ToLocalTime().AddSeconds(birthTimestamp);
             this.passwordHash = passwordHash;
@@ -63,10 +83,25 @@ namespace school_games_launcher
         /// </summary>
         public bool AllowedToPlay(Game game)
         {
-            bool allowed = false; // nobody is allowed to play games... untill they are.
-            if (this.Age >= game.Age) allowed = true; // is user old enough?
-            if (this.Admin == true) allowed = true; // admins are allowed to play every game!!!!
+            if (this.Admin == true) return true; // admins are allowed to play every game!!!!
+
+            bool allowed = true; // nobody is allowed to play games... untill they are.
+
+            if (this.Age < game.Age) allowed = false; // is user old enough?
+
+            GameExeption exeption = this.GetGameExeption(game);
+            if (exeption != null) allowed = exeption.Allowed; // a game exeption overrides every condition exept admin and playperiod
+
+            if (!this.InPlayPeriod) allowed = false; // players are only allowed to play if a play period is active
             return allowed;
+        }
+        public GameExeption GetGameExeption(Game game)
+        {
+            foreach(GameExeption exeption in this.gameExeptions)
+            {
+                if (exeption.Game == game) return exeption;
+            }
+            return null;
         }
         /// <summary>
         /// Checks if given password is correct

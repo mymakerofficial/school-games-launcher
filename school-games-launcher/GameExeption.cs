@@ -10,6 +10,8 @@ namespace school_games_launcher
     {
         private Game game;
         private bool allowed;
+        public Game Game { get { return game; } }
+        public bool Allowed { get { return allowed; } }
         public GameExeption(Game game, bool allowed)
         {
             this.game = game;
