@@ -121,6 +121,7 @@ namespace school_games_launcher
                 if(this.CheckUser())
                 {
                     activeSession = game.Launch(this.ActiveUser);
+                    this.Sessions.Add(this.ActiveSession);
                     this.Gui.playing.Update();
                 }
             }

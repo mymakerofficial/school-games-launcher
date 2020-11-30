@@ -10,8 +10,10 @@ namespace school_games_launcher
     {
         private Game game;
         private User user;
-        private int startTimestamp;
-        private int endTimestamp;
+        private DateTime startTime;
+        private DateTime endTime;
+        public DateTime StartTime { get { return startTime; } }
+        public DateTime EndTime { get { return endTime; } }
         public Game Game { get { return game; } }
         public User User { get { return user; } }
 
@@ -22,10 +24,12 @@ namespace school_games_launcher
         }
         public void Start()
         {
+            this.startTime = DateTime.Now;
             Program.app.Gui.playing.Activate();
         }
         public void End()
         {
+            this.endTime = DateTime.Now;
             Program.app.Gui.library.Activate();
         }
     }
