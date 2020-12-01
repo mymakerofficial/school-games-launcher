@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.flpLibraryGameList = new System.Windows.Forms.FlowLayoutPanel();
             this.tbxLibrarySearchGame = new System.Windows.Forms.TextBox();
             this.lblLibrarySearchGame = new System.Windows.Forms.Label();
             this.TabControl = new System.Windows.Forms.TabControl();
             this.tabLibrary = new System.Windows.Forms.TabPage();
+            this.lblLibraryNotAllowedToPlay = new System.Windows.Forms.Label();
             this.pbxLibraryOptions = new System.Windows.Forms.PictureBox();
             this.lblLibraryTitle = new System.Windows.Forms.Label();
             this.pbxLibraryUserAvatar = new System.Windows.Forms.PictureBox();
@@ -108,7 +110,6 @@
             this.lblPlayingTitle = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.lblLibraryNotAllowedToPlay = new System.Windows.Forms.Label();
             this.TabControl.SuspendLayout();
             this.tabLibrary.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLibraryOptions)).BeginInit();
@@ -156,7 +157,7 @@
             this.tbxLibrarySearchGame.Location = new System.Drawing.Point(79, 84);
             this.tbxLibrarySearchGame.Name = "tbxLibrarySearchGame";
             this.tbxLibrarySearchGame.Size = new System.Drawing.Size(212, 20);
-            this.tbxLibrarySearchGame.TabIndex = 2;
+            this.tbxLibrarySearchGame.TabIndex = 0;
             // 
             // lblLibrarySearchGame
             // 
@@ -181,7 +182,7 @@
             this.TabControl.Name = "TabControl";
             this.TabControl.SelectedIndex = 0;
             this.TabControl.Size = new System.Drawing.Size(1145, 738);
-            this.TabControl.TabIndex = 5;
+            this.TabControl.TabIndex = 0;
             // 
             // tabLibrary
             // 
@@ -199,6 +200,16 @@
             this.tabLibrary.TabIndex = 0;
             this.tabLibrary.Text = "Library";
             this.tabLibrary.UseVisualStyleBackColor = true;
+            // 
+            // lblLibraryNotAllowedToPlay
+            // 
+            this.lblLibraryNotAllowedToPlay.AutoSize = true;
+            this.lblLibraryNotAllowedToPlay.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLibraryNotAllowedToPlay.Location = new System.Drawing.Point(25, 200);
+            this.lblLibraryNotAllowedToPlay.Name = "lblLibraryNotAllowedToPlay";
+            this.lblLibraryNotAllowedToPlay.Size = new System.Drawing.Size(476, 25);
+            this.lblLibraryNotAllowedToPlay.TabIndex = 8;
+            this.lblLibraryNotAllowedToPlay.Text = "Sorry but you are currently not allowed to play. :(";
             // 
             // pbxLibraryOptions
             // 
@@ -239,7 +250,7 @@
             this.tabOptions.Location = new System.Drawing.Point(4, 22);
             this.tabOptions.Name = "tabOptions";
             this.tabOptions.Padding = new System.Windows.Forms.Padding(3);
-            this.tabOptions.Size = new System.Drawing.Size(799, 481);
+            this.tabOptions.Size = new System.Drawing.Size(1137, 712);
             this.tabOptions.TabIndex = 1;
             this.tabOptions.Text = "Options ";
             this.tabOptions.UseVisualStyleBackColor = true;
@@ -249,7 +260,7 @@
             this.button1.Location = new System.Drawing.Point(40, 84);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(173, 32);
-            this.button1.TabIndex = 8;
+            this.button1.TabIndex = 0;
             this.button1.Text = "Add Game";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -284,7 +295,7 @@
             this.tabAddGame.Controls.Add(this.pbxAddGameAge0);
             this.tabAddGame.Location = new System.Drawing.Point(4, 22);
             this.tabAddGame.Name = "tabAddGame";
-            this.tabAddGame.Size = new System.Drawing.Size(799, 481);
+            this.tabAddGame.Size = new System.Drawing.Size(1137, 712);
             this.tabAddGame.TabIndex = 4;
             this.tabAddGame.Text = "Add Game";
             this.tabAddGame.UseVisualStyleBackColor = true;
@@ -304,7 +315,7 @@
             this.tbxAddGameCoverart.Location = new System.Drawing.Point(451, 115);
             this.tbxAddGameCoverart.Name = "tbxAddGameCoverart";
             this.tbxAddGameCoverart.Size = new System.Drawing.Size(187, 20);
-            this.tbxAddGameCoverart.TabIndex = 15;
+            this.tbxAddGameCoverart.TabIndex = 2;
             // 
             // lblAddGameCoverart
             // 
@@ -321,7 +332,7 @@
             this.llblAddGameCancel.Location = new System.Drawing.Point(161, 393);
             this.llblAddGameCancel.Name = "llblAddGameCancel";
             this.llblAddGameCancel.Size = new System.Drawing.Size(40, 13);
-            this.llblAddGameCancel.TabIndex = 12;
+            this.llblAddGameCancel.TabIndex = 4;
             this.llblAddGameCancel.TabStop = true;
             this.llblAddGameCancel.Text = "Cancel";
             this.llblAddGameCancel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblAddGameCancel_LinkClicked);
@@ -331,7 +342,7 @@
             this.btnAddGameConfirm.Location = new System.Drawing.Point(31, 385);
             this.btnAddGameConfirm.Name = "btnAddGameConfirm";
             this.btnAddGameConfirm.Size = new System.Drawing.Size(124, 29);
-            this.btnAddGameConfirm.TabIndex = 11;
+            this.btnAddGameConfirm.TabIndex = 3;
             this.btnAddGameConfirm.Text = "Add game";
             this.btnAddGameConfirm.UseVisualStyleBackColor = true;
             // 
@@ -367,7 +378,7 @@
             this.tbxAddGamePath.Location = new System.Drawing.Point(28, 192);
             this.tbxAddGamePath.Name = "tbxAddGamePath";
             this.tbxAddGamePath.Size = new System.Drawing.Size(320, 20);
-            this.tbxAddGamePath.TabIndex = 2;
+            this.tbxAddGamePath.TabIndex = 1;
             // 
             // lblAddGameTitle
             // 
@@ -456,7 +467,7 @@
             this.tabEditGame.Controls.Add(this.pbxEditGameAge0);
             this.tabEditGame.Location = new System.Drawing.Point(4, 22);
             this.tabEditGame.Name = "tabEditGame";
-            this.tabEditGame.Size = new System.Drawing.Size(799, 481);
+            this.tabEditGame.Size = new System.Drawing.Size(1137, 712);
             this.tabEditGame.TabIndex = 6;
             this.tabEditGame.Text = "Edit Game";
             this.tabEditGame.UseVisualStyleBackColor = true;
@@ -476,7 +487,7 @@
             this.tbxEditGameCoverart.Location = new System.Drawing.Point(462, 112);
             this.tbxEditGameCoverart.Name = "tbxEditGameCoverart";
             this.tbxEditGameCoverart.Size = new System.Drawing.Size(187, 20);
-            this.tbxEditGameCoverart.TabIndex = 31;
+            this.tbxEditGameCoverart.TabIndex = 2;
             // 
             // lblEditGameCoverart
             // 
@@ -493,7 +504,7 @@
             this.linkLabel4.Location = new System.Drawing.Point(172, 390);
             this.linkLabel4.Name = "linkLabel4";
             this.linkLabel4.Size = new System.Drawing.Size(40, 13);
-            this.linkLabel4.TabIndex = 29;
+            this.linkLabel4.TabIndex = 4;
             this.linkLabel4.TabStop = true;
             this.linkLabel4.Text = "Cancel";
             this.linkLabel4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel4_LinkClicked);
@@ -503,7 +514,7 @@
             this.button5.Location = new System.Drawing.Point(42, 382);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(124, 29);
-            this.button5.TabIndex = 28;
+            this.button5.TabIndex = 3;
             this.button5.Text = "Save Changes";
             this.button5.UseVisualStyleBackColor = true;
             // 
@@ -539,7 +550,7 @@
             this.tbxEditGamePath.Location = new System.Drawing.Point(39, 189);
             this.tbxEditGamePath.Name = "tbxEditGamePath";
             this.tbxEditGamePath.Size = new System.Drawing.Size(320, 20);
-            this.tbxEditGamePath.TabIndex = 19;
+            this.tbxEditGamePath.TabIndex = 1;
             // 
             // lblEditGameTitle
             // 
@@ -556,7 +567,7 @@
             this.tbxEditGameName.Location = new System.Drawing.Point(39, 115);
             this.tbxEditGameName.Name = "tbxEditGameName";
             this.tbxEditGameName.Size = new System.Drawing.Size(320, 20);
-            this.tbxEditGameName.TabIndex = 17;
+            this.tbxEditGameName.TabIndex = 0;
             // 
             // pbxEditGameAge18
             // 
@@ -615,7 +626,7 @@
             this.tabProfile.Controls.Add(this.groupBox7);
             this.tabProfile.Location = new System.Drawing.Point(4, 22);
             this.tabProfile.Name = "tabProfile";
-            this.tabProfile.Size = new System.Drawing.Size(799, 481);
+            this.tabProfile.Size = new System.Drawing.Size(1137, 712);
             this.tabProfile.TabIndex = 7;
             this.tabProfile.Text = "Profile";
             this.tabProfile.UseVisualStyleBackColor = true;
@@ -717,7 +728,7 @@
             this.tabLogin.Controls.Add(this.btnLoginConfirm);
             this.tabLogin.Location = new System.Drawing.Point(4, 22);
             this.tabLogin.Name = "tabLogin";
-            this.tabLogin.Size = new System.Drawing.Size(799, 481);
+            this.tabLogin.Size = new System.Drawing.Size(1137, 712);
             this.tabLogin.TabIndex = 2;
             this.tabLogin.Text = "Login";
             this.tabLogin.UseVisualStyleBackColor = true;
@@ -728,7 +739,7 @@
             this.llblLoginRegister.Location = new System.Drawing.Point(44, 285);
             this.llblLoginRegister.Name = "llblLoginRegister";
             this.llblLoginRegister.Size = new System.Drawing.Size(46, 13);
-            this.llblLoginRegister.TabIndex = 6;
+            this.llblLoginRegister.TabIndex = 3;
             this.llblLoginRegister.TabStop = true;
             this.llblLoginRegister.Text = "Register";
             this.llblLoginRegister.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblLoginRegister_LinkClicked);
@@ -737,15 +748,16 @@
             // 
             this.tbxLoginPassword.Location = new System.Drawing.Point(35, 181);
             this.tbxLoginPassword.Name = "tbxLoginPassword";
+            this.tbxLoginPassword.PasswordChar = '●';
             this.tbxLoginPassword.Size = new System.Drawing.Size(173, 20);
-            this.tbxLoginPassword.TabIndex = 5;
+            this.tbxLoginPassword.TabIndex = 1;
             // 
             // tbxLoginUsername
             // 
             this.tbxLoginUsername.Location = new System.Drawing.Point(35, 117);
             this.tbxLoginUsername.Name = "tbxLoginUsername";
             this.tbxLoginUsername.Size = new System.Drawing.Size(173, 20);
-            this.tbxLoginUsername.TabIndex = 4;
+            this.tbxLoginUsername.TabIndex = 0;
             // 
             // lblLoginTitle
             // 
@@ -780,7 +792,7 @@
             this.btnLoginConfirm.Location = new System.Drawing.Point(35, 241);
             this.btnLoginConfirm.Name = "btnLoginConfirm";
             this.btnLoginConfirm.Size = new System.Drawing.Size(173, 32);
-            this.btnLoginConfirm.TabIndex = 0;
+            this.btnLoginConfirm.TabIndex = 2;
             this.btnLoginConfirm.Text = "Login";
             this.btnLoginConfirm.UseVisualStyleBackColor = true;
             this.btnLoginConfirm.Click += new System.EventHandler(this.btnLoginConfirm_Click);
@@ -800,7 +812,7 @@
             this.tabRegister.Controls.Add(this.lblRegisterTitle);
             this.tabRegister.Location = new System.Drawing.Point(4, 22);
             this.tabRegister.Name = "tabRegister";
-            this.tabRegister.Size = new System.Drawing.Size(799, 481);
+            this.tabRegister.Size = new System.Drawing.Size(1137, 712);
             this.tabRegister.TabIndex = 3;
             this.tabRegister.Text = "Register";
             this.tabRegister.UseVisualStyleBackColor = true;
@@ -811,7 +823,7 @@
             this.llblRegisterLogin.Location = new System.Drawing.Point(49, 420);
             this.llblRegisterLogin.Name = "llblRegisterLogin";
             this.llblRegisterLogin.Size = new System.Drawing.Size(33, 13);
-            this.llblRegisterLogin.TabIndex = 10;
+            this.llblRegisterLogin.TabIndex = 6;
             this.llblRegisterLogin.TabStop = true;
             this.llblRegisterLogin.Text = "Login";
             this.llblRegisterLogin.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblRegisterLogin_LinkClicked);
@@ -821,7 +833,7 @@
             this.btnRegisterConfirm.Location = new System.Drawing.Point(36, 384);
             this.btnRegisterConfirm.Name = "btnRegisterConfirm";
             this.btnRegisterConfirm.Size = new System.Drawing.Size(212, 33);
-            this.btnRegisterConfirm.TabIndex = 9;
+            this.btnRegisterConfirm.TabIndex = 4;
             this.btnRegisterConfirm.Text = "Register";
             this.btnRegisterConfirm.UseVisualStyleBackColor = true;
             // 
@@ -830,28 +842,30 @@
             this.dtpRegisterBirthday.Location = new System.Drawing.Point(39, 336);
             this.dtpRegisterBirthday.Name = "dtpRegisterBirthday";
             this.dtpRegisterBirthday.Size = new System.Drawing.Size(209, 20);
-            this.dtpRegisterBirthday.TabIndex = 8;
+            this.dtpRegisterBirthday.TabIndex = 3;
             // 
             // tbxRegisterPasswordConfirm
             // 
             this.tbxRegisterPasswordConfirm.Location = new System.Drawing.Point(39, 261);
             this.tbxRegisterPasswordConfirm.Name = "tbxRegisterPasswordConfirm";
+            this.tbxRegisterPasswordConfirm.PasswordChar = '●';
             this.tbxRegisterPasswordConfirm.Size = new System.Drawing.Size(209, 20);
-            this.tbxRegisterPasswordConfirm.TabIndex = 7;
+            this.tbxRegisterPasswordConfirm.TabIndex = 2;
             // 
             // tbxRegisterPassword
             // 
             this.tbxRegisterPassword.Location = new System.Drawing.Point(39, 187);
             this.tbxRegisterPassword.Name = "tbxRegisterPassword";
+            this.tbxRegisterPassword.PasswordChar = '●';
             this.tbxRegisterPassword.Size = new System.Drawing.Size(209, 20);
-            this.tbxRegisterPassword.TabIndex = 6;
+            this.tbxRegisterPassword.TabIndex = 1;
             // 
             // tbxRegisterUsername
             // 
             this.tbxRegisterUsername.Location = new System.Drawing.Point(39, 124);
             this.tbxRegisterUsername.Name = "tbxRegisterUsername";
             this.tbxRegisterUsername.Size = new System.Drawing.Size(209, 20);
-            this.tbxRegisterUsername.TabIndex = 5;
+            this.tbxRegisterUsername.TabIndex = 0;
             // 
             // lblRegisterBirthday
             // 
@@ -907,7 +921,7 @@
             this.tabPlaying.Controls.Add(this.pictureBox5);
             this.tabPlaying.Location = new System.Drawing.Point(4, 22);
             this.tabPlaying.Name = "tabPlaying";
-            this.tabPlaying.Size = new System.Drawing.Size(799, 481);
+            this.tabPlaying.Size = new System.Drawing.Size(1137, 712);
             this.tabPlaying.TabIndex = 5;
             this.tabPlaying.Text = "Currently playing";
             this.tabPlaying.UseVisualStyleBackColor = true;
@@ -959,16 +973,6 @@
             this.pictureBox3.TabIndex = 1;
             this.pictureBox3.TabStop = false;
             // 
-            // lblLibraryNotAllowedToPlay
-            // 
-            this.lblLibraryNotAllowedToPlay.AutoSize = true;
-            this.lblLibraryNotAllowedToPlay.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLibraryNotAllowedToPlay.Location = new System.Drawing.Point(25, 200);
-            this.lblLibraryNotAllowedToPlay.Name = "lblLibraryNotAllowedToPlay";
-            this.lblLibraryNotAllowedToPlay.Size = new System.Drawing.Size(476, 25);
-            this.lblLibraryNotAllowedToPlay.TabIndex = 8;
-            this.lblLibraryNotAllowedToPlay.Text = "Sorry but you are currently not allowed to play. :(";
-            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -976,6 +980,7 @@
             this.ClientSize = new System.Drawing.Size(1140, 733);
             this.Controls.Add(this.TabControl);
             this.Controls.Add(this.pictureBox3);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainWindow";
             this.Text = "Game Launcher";
             this.Load += new System.EventHandler(this.MainWindow_Load);
