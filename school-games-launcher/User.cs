@@ -149,6 +149,12 @@ namespace school_games_launcher
                 return "";
             }
         }
+        /// <summary>
+        /// Sets a new password. Requires old password.
+        /// </summary>
+        /// <param name="oldPwd">Old Password</param>
+        /// <param name="newPwd">New Password</param>
+        /// <returns></returns>
         public bool SetPassword(string oldPwd, string newPwd)
         {
             if (this.VerifyPassword(oldPwd))

@@ -216,6 +216,10 @@ namespace school_games_launcher
             activeUser = null;
             this.CheckUser();
         }
+        /// <summary>
+        /// Checks if a user is logged in. If not it showes the login page.
+        /// </summary>
+        /// <returns>Returns true if a user is logged in</returns>
         public bool CheckUser()
         {
             if(this.ActiveUser == null)
@@ -224,11 +228,14 @@ namespace school_games_launcher
             }
             return this.ActiveUser != null;
         }
+        /// <summary>
+        /// Creates a new User and adds it to User list.
+        /// </summary>
         public void CreateUser(string name, DateTime birthDate, string password)
         {
             User user = new User(this.Users.Count, name, (int)new DateTimeOffset(birthDate).ToUnixTimeSeconds(), "", false);
-            user.SetPassword("", password);
-            for(int i = 0; i <= 6; i++)
+            user.SetPassword("", password);// set user password
+            for(int i = 0; i <= 6; i++)// create default PlayPeriods
             {
                 user.PlayPeriods.Add(new PlayPeriod(i, 0, 86400));
             }
