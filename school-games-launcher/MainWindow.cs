@@ -153,5 +153,10 @@ namespace school_games_launcher
         {
             Program.app.Gui.library.Activate();
         }
+
+        private void btnAddGameFindSteamGame_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.addGame.AutoFillSteamGame();
+        }
     }
 }

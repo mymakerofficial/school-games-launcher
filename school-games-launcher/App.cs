@@ -7,6 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Net;
+using System.Net.Http;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace school_games_launcher
 {
@@ -18,6 +21,8 @@ namespace school_games_launcher
         private static List<Session> sessions = new List<Session>();
         private static Session activeSession;
         private static GUI gui;
+        private static readonly HttpClient HttpClient = new HttpClient();
+        public List<SteamApiGame> SteamApiGames { get; set; }
         private string configPath { get; } = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "/MyMakerGameLauncher/";
         /// <summary>
         /// List of all existing users
@@ -75,6 +80,19 @@ namespace school_games_launcher
             {
                 this.LoadData();
                 this.CheckUser();
+            }
+
+            this.LoadSteamGameList();
+        }
+        private async void LoadSteamGameList()
+        {
+            var response = await HttpClient.GetAsync($"http://api.steampowered.com/ISteamApps/GetAppList/v0002/?key=STEAMKEY&format=json");
+
+            if (response.IsSuccessStatusCode)
+            {
+                var jsonString = await response.Content.ReadAsStringAsync();
+                JObject json = JObject.Parse(jsonString);
+                SteamApiGames = json["applist"]["apps"].ToObject<List<SteamApiGame>>();
             }
         }
         private bool CheckData()
@@ -283,5 +301,31 @@ namespace school_games_launcher
         {
             return games.Find(x => x.Id == id);
         }
+        public SteamApiGame FindSteamGameByName(string name)
+        {
+            SteamApiGame game = SteamApiGames.Find(x => x.Name.ToLower() == name.ToLower());
+            if(game != null) { return game;  }
+            return null;
+        }
+        public SteamApiGame FindSteamGameById(int id)
+        {
+            SteamApiGame game = SteamApiGames.Find(x => x.AppId == id);
+            if (game != null) { return game; }
+            return null;
+        }
+        // this is not working yet
+        /*
+        public async SteamApiGameDetail LoadSteamGameDetails(int id)
+        {
+            var response = await HttpClient.GetAsync($" http://store.steampowered.com/api/appdetails?appids="+id);
+
+            if (response.IsSuccessStatusCode)
+            {
+                var jsonString = await response.Content.ReadAsStringAsync();
+                JObject json = JObject.Parse(jsonString);
+                SteamApiGames = json[id]["data"].ToObject<SteamApiGameDetail>();
+            }
+        }
+        */
     }
 }

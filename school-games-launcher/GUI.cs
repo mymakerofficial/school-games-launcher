@@ -174,6 +174,7 @@ namespace school_games_launcher
         private string path = "";
         private int selectedAge = 0;
         private string coverart = "";
+        private int? steamId = null;
         public string Name
         {
             get { return name; }
@@ -199,6 +200,15 @@ namespace school_games_launcher
             {
                 selectedAge = value;
                 this.UpdateAgeDisplay();
+            }
+        }
+        public int? SteamId
+        {
+            get { return steamId; }
+            set
+            {
+                steamId = value;
+                ((Label)this.TabPage.Controls["lblAddGameSteamId"]).Text = steamId == null ? "No game Found" : "SteamID: " + Convert.ToString(steamId);
             }
         }
         public string Coverart
@@ -235,6 +245,37 @@ namespace school_games_launcher
             ((PictureBox)this.TabPage.Controls["pbxAddGameAge12"]).Image = selectedAge == 12 ? global::school_games_launcher.Properties.Resources.age_12_selected : global::school_games_launcher.Properties.Resources.age_12;
             ((PictureBox)this.TabPage.Controls["pbxAddGameAge16"]).Image = selectedAge == 16 ? global::school_games_launcher.Properties.Resources.age_16_selected : global::school_games_launcher.Properties.Resources.age_16;
             ((PictureBox)this.TabPage.Controls["pbxAddGameAge18"]).Image = selectedAge == 18 ? global::school_games_launcher.Properties.Resources.age_18_selected : global::school_games_launcher.Properties.Resources.age_18;
+        }
+        public void AutoFillSteamGame(SteamApiGame game)
+        {
+            if (game != null)
+            {
+                SteamId = game.AppId;
+                Name = game.Name;
+                Path = "steam://rungameid/" + Convert.ToString(game.AppId);
+            }
+            else
+            {
+                SteamId = null;
+            }
+        }
+        public void AutoFillSteamGame()
+        {
+            if (Name != "")
+            {
+                SteamApiGame game = null;
+                try
+                {
+                    game = Program.app.FindSteamGameById(Convert.ToInt32(Name));
+                }
+                catch { }
+                if(game == null) game = Program.app.FindSteamGameByName(Name);
+                this.AutoFillSteamGame(game);
+            }
+            else
+            {
+                SteamId = null;
+            }
         }
         public void Save()
         {
