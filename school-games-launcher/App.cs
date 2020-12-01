@@ -5,6 +5,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
+using System.Net;
 
 namespace school_games_launcher
 {
@@ -231,8 +233,9 @@ namespace school_games_launcher
         /// <summary>
         /// Creates a new User and adds it to User list.
         /// </summary>
-        public void CreateUser(string name, DateTime birthDate, string password)
+        public bool CreateUser(string name, DateTime birthDate, string password)
         {
+            if (!this.CheckUser() || !this.ActiveUser.Admin) return false;
             User user = new User(this.Users.Count, name, (int)new DateTimeOffset(birthDate).ToUnixTimeSeconds(), "", false);
             user.SetPassword("", password);// set user password
             for(int i = 0; i <= 6; i++)// create default PlayPeriods
@@ -240,6 +243,17 @@ namespace school_games_launcher
                 user.PlayPeriods.Add(new PlayPeriod(i, 0, 86400));
             }
             this.Users.Add(user);
+            return true;
+        }
+        /// <summary>
+        /// Creates a new Game and adds it to game list.
+        /// </summary>
+        public bool CreateGame(string name, string path, int age, string coverart)
+        {
+            if (!this.CheckUser() || !this.ActiveUser.Admin) return false;
+            Game game = new Game(this.Games.Count, name, path, age, coverart);
+            this.Games.Add(game);
+            return true;
         }
         /// <summary>
         /// Gets a user by name... what did you expect?

@@ -10,14 +10,14 @@ namespace school_games_launcher
 {
     public class GUI
     {
-        public GUITab library;
+        public GUILibrary library;
         public GUITab options;
-        public GUITab addGame;
+        public GUIAddGame addGame;
         public GUITab editGame;
         public GUITab profile;
         public GUITab login;
         public GUITab register;
-        public GUITab playing;
+        public GUIPlaying playing;
         public MainWindow form;
         public TabControl tabControl;
         public GUI()
@@ -40,7 +40,7 @@ namespace school_games_launcher
             library = new GUILibrary(this.tabControl, (TabPage)this.tabControl.TabPages["tabLibrary"]);
             library.updateOnActive = true;
             options = new GUITab(this.tabControl, (TabPage)this.tabControl.TabPages["tabOptions"]);
-            addGame = new GUITab(this.tabControl, (TabPage)this.tabControl.TabPages["tabAddGame"]);
+            addGame = new GUIAddGame(this.tabControl, (TabPage)this.tabControl.TabPages["tabAddGame"]);
             editGame = new GUITab(this.tabControl, (TabPage)this.tabControl.TabPages["tabEditGame"]);
             profile = new GUITab(this.tabControl, (TabPage)this.tabControl.TabPages["tabProfile"]);
             login = new GUITab(this.tabControl, (TabPage)this.tabControl.TabPages["tabLogin"]);
@@ -108,7 +108,14 @@ namespace school_games_launcher
                 group.Size = new System.Drawing.Size(200, 300);
 
                 PictureBox coverart = new System.Windows.Forms.PictureBox();
-                coverart.Load(game.Coverart);
+                try
+                {
+                    coverart.Load(game.Coverart);
+                }
+                catch
+                {
+                    coverart.Image = global::school_games_launcher.Properties.Resources.game_thumbnail_placeholder;
+                }
                 coverart.Location = new System.Drawing.Point(20, 20);
                 coverart.Size = new System.Drawing.Size(160, 200);
                 coverart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -149,8 +156,91 @@ namespace school_games_launcher
             if(Program.app.ActiveSession != null)
             {
                 PictureBox coverartBox = (PictureBox)this.TabPage.Controls["pbxPlayingCoverart"];
-                coverartBox.Load(Program.app.ActiveSession.Game.Coverart);
+
+                try
+                {
+                    coverartBox.Load(Program.app.ActiveSession.Game.Coverart);
+                }
+                catch
+                {
+                    coverartBox.Image = global::school_games_launcher.Properties.Resources.game_thumbnail_placeholder;
+                }
             }
+        }
+    }
+    public class GUIAddGame : GUITab
+    {
+        private string name = "";
+        private string path = "";
+        private int selectedAge = 0;
+        private string coverart = "";
+        public string Name
+        {
+            get { return name; }
+            set
+            {
+                name = value;
+                ((TextBox)this.TabPage.Controls["tbxAddGameName"]).Text = Convert.ToString(name);
+            }
+        }
+        public string Path
+        {
+            get { return path; }
+            set
+            {
+                path = value;
+                ((TextBox)this.TabPage.Controls["tbxAddGamePath"]).Text = Convert.ToString(path);
+            }
+        }
+        public int SelectedAge
+        {
+            get { return selectedAge; }
+            set
+            {
+                selectedAge = value;
+                this.UpdateAgeDisplay();
+            }
+        }
+        public string Coverart
+        {
+            get { return path; }
+            set
+            {
+                coverart = value;
+                ((TextBox)this.TabPage.Controls["tbxAddGameCoverart"]).Text = Convert.ToString(coverart);
+                try
+                {
+                    ((PictureBox)this.TabPage.Controls["pbxAddGameCoverart"]).Load(coverart);
+                }
+                catch
+                {
+                    ((PictureBox)this.TabPage.Controls["pbxAddGameCoverart"]).Image = global::school_games_launcher.Properties.Resources.game_thumbnail_placeholder;
+                }
+            }
+        }
+        public GUIAddGame(TabControl tabControl, TabPage tabPage) : base(tabControl, tabPage)
+        {
+
+        }
+
+        public override void Update()
+        {
+            
+        }
+        private void UpdateAgeDisplay()
+        {
+            ((TextBox)this.TabPage.Controls["tbxAddGameAge"]).Text = Convert.ToString(selectedAge);
+            ((PictureBox)this.TabPage.Controls["pbxAddGameAge0"]).Image = selectedAge == 0 ? global::school_games_launcher.Properties.Resources.age_0_selected : global::school_games_launcher.Properties.Resources.age_0;
+            ((PictureBox)this.TabPage.Controls["pbxAddGameAge6"]).Image = selectedAge == 6 ? global::school_games_launcher.Properties.Resources.age_6_selected : global::school_games_launcher.Properties.Resources.age_6;
+            ((PictureBox)this.TabPage.Controls["pbxAddGameAge12"]).Image = selectedAge == 12 ? global::school_games_launcher.Properties.Resources.age_12_selected : global::school_games_launcher.Properties.Resources.age_12;
+            ((PictureBox)this.TabPage.Controls["pbxAddGameAge16"]).Image = selectedAge == 16 ? global::school_games_launcher.Properties.Resources.age_16_selected : global::school_games_launcher.Properties.Resources.age_16;
+            ((PictureBox)this.TabPage.Controls["pbxAddGameAge18"]).Image = selectedAge == 18 ? global::school_games_launcher.Properties.Resources.age_18_selected : global::school_games_launcher.Properties.Resources.age_18;
+        }
+        public void Save()
+        {
+            // TODO Check if input is valid!!!
+            Program.app.CreateGame(this.Name, this.Path, this.selectedAge, this.Coverart);
+            Program.app.Gui.library.Activate();
         }
     }
 }
