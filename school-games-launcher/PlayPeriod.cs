@@ -14,6 +14,20 @@ namespace school_games_launcher
         public DateTime StartTime { get { return startTime; } }
         public DateTime EndTime { get { return endTime; } }
         public int WeekDay { get { return weekDay; } }
+        public int StartTimestamp
+        {
+            get
+            {
+                return (int)new DateTimeOffset(this.StartTime).ToUnixTimeSeconds();
+            }
+        }
+        public int EndTimestamp
+        {
+            get
+            {
+                return (int)new DateTimeOffset(this.EndTime).ToUnixTimeSeconds();
+            }
+        }
         public PlayPeriod(int weekDay, int startTime, int endTime)
         {
             this.startTime = new DateTime(1970, 1, 1, 0, 0, 0, 0).ToLocalTime().AddSeconds(startTime);

@@ -12,6 +12,8 @@ namespace school_games_launcher
     {
         private string path;
         private Game game;
+        public string Path { get { return path; } }
+        public Game Game { get { return game; } }
         public GameExecutable(string path, Game game)
         {
             this.path = path;

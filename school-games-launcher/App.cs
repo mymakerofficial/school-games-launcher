@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -78,7 +79,7 @@ namespace school_games_launcher
         {
             return true;
         }
-        private void LoadData()
+        public void LoadData()
         {
             // loads users
             Loader loadedUsers = new Loader(this.configPath + "users.csv");
@@ -108,8 +109,66 @@ namespace school_games_launcher
                 GameExeption exeption = new GameExeption(this.GetGameById(Int32.Parse(exeptionData[1])), Convert.ToBoolean(exeptionData[2]));
                 this.GetUserById(Int32.Parse(exeptionData[0])).GameExeptions.Add(exeption);// adds game exeption to correct player
             }
+            // loads sessions
+            Loader loadedSessions = new Loader(this.configPath + "sessions.csv");
+            foreach (List<string> sessionData in loadedSessions.Data)
+            {
+                Session session = new Session(this.GetGameById(Int32.Parse(sessionData[0])), this.GetUserById(Int32.Parse(sessionData[1])));
+                session.Set(Int32.Parse(sessionData[2]), Int32.Parse(sessionData[3]));
+                this.Sessions.Add(session);
+            }
 
             //var hash = this.ActiveUser.HashPassword("admin");
+            this.SaveData();
+        }
+        public void SaveData()
+        {
+            // save users
+            var usersCsv = new StringBuilder();
+            foreach(User user in this.Users)
+            {
+                var newLine = string.Format("{0},{1},{2},{3},{4}", Convert.ToString(user.Id), user.Name, Convert.ToString(user.BirthTimestamp), user.PasswordHash, Convert.ToString(user.Admin));
+                usersCsv.AppendLine(newLine);
+            }
+            File.WriteAllText(this.configPath + "users.csv", usersCsv.ToString());
+            // save games
+            var gamesCsv = new StringBuilder();
+            foreach (Game game in this.Games)
+            {
+                var newLine = string.Format("{0},{1},{2},{3},{4},{5}", Convert.ToString(game.Id), game.Name, game.Executable.Path, Convert.ToString(game.Age), "0", game.Coverart);
+                gamesCsv.AppendLine(newLine);
+            }
+            File.WriteAllText(this.configPath + "games.csv", gamesCsv.ToString());
+            // save PlayPeriods
+            var timesCsv = new StringBuilder();
+            foreach (User user in this.Users)
+            {
+                foreach (PlayPeriod period in user.PlayPeriods)
+                {
+                    var newLine = string.Format("{0},{1},{2},{3}", Convert.ToString(user.Id), Convert.ToString(period.WeekDay), Convert.ToString(period.StartTimestamp), Convert.ToString(period.EndTimestamp));
+                    timesCsv.AppendLine(newLine);
+                }
+            }
+            File.WriteAllText(this.configPath + "allowed_playtime.csv", timesCsv.ToString());
+            // save GameExeptions
+            var exeptionsCsv = new StringBuilder();
+            foreach (User user in this.Users)
+            {
+                foreach (GameExeption exeption in user.GameExeptions)
+                {
+                    var newLine = string.Format("{0},{1},{2}", Convert.ToString(user.Id), Convert.ToString(exeption.Game.Id), Convert.ToString(exeption.Allowed));
+                    exeptionsCsv.AppendLine(newLine);
+                }
+            }
+            File.WriteAllText(this.configPath + "play_exeptions.csv", exeptionsCsv.ToString());
+            // save Sessions
+            var sessionsCsv = new StringBuilder();
+            foreach (Session session in this.Sessions)
+            {
+                var newLine = string.Format("{0},{1},{2},{3}", Convert.ToString(session.Game.Id), Convert.ToString(session.User.Id), Convert.ToString(session.StartTimestamp), Convert.ToString(session.EndTimestamp));
+                sessionsCsv.AppendLine(newLine);
+            }
+            File.WriteAllText(this.configPath + "sessions.csv", sessionsCsv.ToString());
         }
         /// <summary>
         /// Launches given game as active user.
@@ -164,6 +223,16 @@ namespace school_games_launcher
                 this.Gui.login.Activate();
             }
             return this.ActiveUser != null;
+        }
+        public void CreateUser(string name, DateTime birthDate, string password)
+        {
+            User user = new User(this.Users.Count, name, (int)new DateTimeOffset(birthDate).ToUnixTimeSeconds(), "", false);
+            user.SetPassword("", password);
+            for(int i = 0; i <= 6; i++)
+            {
+                user.PlayPeriods.Add(new PlayPeriod(i, 0, 86400));
+            }
+            this.Users.Add(user);
         }
         /// <summary>
         /// Gets a user by name... what did you expect?

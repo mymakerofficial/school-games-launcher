@@ -75,5 +75,19 @@ namespace school_games_launcher
         {
             Program.app.Gui.addGame.Activate();
         }
+
+        private void BtnLibrarySaveData_Click(object sender, EventArgs e)
+        {
+            Program.app.SaveData();
+        }
+
+        private void BtnRegisterConfirm_Click(object sender, EventArgs e)
+        {
+            if(this.tbxRegisterPassword.Text == this.tbxRegisterPasswordConfirm.Text)
+            {
+                Program.app.CreateUser(this.tbxRegisterUsername.Text, this.dtpRegisterBirthday.Value, this.tbxRegisterPassword.Text);
+                Program.app.Gui.login.Activate();
+            }
+        }
     }
 }

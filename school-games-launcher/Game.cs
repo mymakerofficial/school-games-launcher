@@ -28,6 +28,10 @@ namespace school_games_launcher
         /// </summary>
         public int Age { get { return age; } }
         /// <summary>
+        /// The game executable
+        /// </summary>
+        public GameExecutable Executable { get { return executable; } }
+        /// <summary>
         /// The url to the coverart
         /// </summary>
         public string Coverart { get { return coverart; } }

@@ -110,6 +110,7 @@
             this.lblPlayingTitle = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.btnLibrarySaveData = new System.Windows.Forms.Button();
             this.TabControl.SuspendLayout();
             this.tabLibrary.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLibraryOptions)).BeginInit();
@@ -186,6 +187,7 @@
             // 
             // tabLibrary
             // 
+            this.tabLibrary.Controls.Add(this.btnLibrarySaveData);
             this.tabLibrary.Controls.Add(this.lblLibraryNotAllowedToPlay);
             this.tabLibrary.Controls.Add(this.pbxLibraryOptions);
             this.tabLibrary.Controls.Add(this.lblLibraryTitle);
@@ -836,6 +838,7 @@
             this.btnRegisterConfirm.TabIndex = 4;
             this.btnRegisterConfirm.Text = "Register";
             this.btnRegisterConfirm.UseVisualStyleBackColor = true;
+            this.btnRegisterConfirm.Click += new System.EventHandler(this.BtnRegisterConfirm_Click);
             // 
             // dtpRegisterBirthday
             // 
@@ -973,6 +976,16 @@
             this.pictureBox3.TabIndex = 1;
             this.pictureBox3.TabStop = false;
             // 
+            // btnLibrarySaveData
+            // 
+            this.btnLibrarySaveData.Location = new System.Drawing.Point(979, 37);
+            this.btnLibrarySaveData.Name = "btnLibrarySaveData";
+            this.btnLibrarySaveData.Size = new System.Drawing.Size(75, 23);
+            this.btnLibrarySaveData.TabIndex = 9;
+            this.btnLibrarySaveData.Text = "SaveData";
+            this.btnLibrarySaveData.UseVisualStyleBackColor = true;
+            this.btnLibrarySaveData.Click += new System.EventHandler(this.BtnLibrarySaveData_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1107,6 +1120,7 @@
         private System.Windows.Forms.PictureBox pbxLibraryOptions;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lblLibraryNotAllowedToPlay;
+        private System.Windows.Forms.Button btnLibrarySaveData;
     }
 }
 

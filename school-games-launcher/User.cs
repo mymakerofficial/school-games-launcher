@@ -31,6 +31,10 @@ namespace school_games_launcher
         /// </summary>
         public DateTime BirthDate { get { return birthDate; } }
         /// <summary>
+        /// The users hashed password.
+        /// </summary>
+        public string PasswordHash { get { return passwordHash; } }
+        /// <summary>
         /// Is admin?
         /// </summary>
         public bool Admin { get { return admin; } }
@@ -51,6 +55,16 @@ namespace school_games_launcher
                 TimeSpan difference = DateTime.Now - this.BirthDate;
                 int years = (new DateTime(0) + difference).Year - 1;
                 return years;
+            }
+        }
+        /// <summary>
+        /// The users birth unixtimestamp as int.
+        /// </summary>
+        public int BirthTimestamp
+        {
+            get
+            {
+                return (int)new DateTimeOffset(this.BirthDate).ToUnixTimeSeconds();
             }
         }
         /// <summary>
@@ -134,6 +148,15 @@ namespace school_games_launcher
                 // return empty string if given password is empty
                 return "";
             }
+        }
+        public bool SetPassword(string oldPwd, string newPwd)
+        {
+            if (this.VerifyPassword(oldPwd))
+            {
+                this.passwordHash = this.HashPassword(newPwd);
+                return true;
+            }
+            return false;
         }
     }
 }
