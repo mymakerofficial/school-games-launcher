@@ -158,5 +158,10 @@ namespace school_games_launcher
         {
             Program.app.Gui.addGame.AutoFillSteamGame();
         }
+
+        private void llblGameDetailsBack_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Program.app.Gui.library.Activate();
+        }
     }
 }

@@ -18,6 +18,7 @@ namespace school_games_launcher
         public GUITab login;
         public GUITab register;
         public GUIPlaying playing;
+        public GUIGameDetails gameDetails;
         public MainWindow form;
         public TabControl tabControl;
         public GUI()
@@ -46,6 +47,8 @@ namespace school_games_launcher
             login = new GUITab(this.tabControl, (TabPage)this.tabControl.TabPages["tabLogin"]);
             register = new GUITab(this.tabControl, (TabPage)this.tabControl.TabPages["tabRegister"]);
             playing = new GUIPlaying(this.tabControl, (TabPage)this.tabControl.TabPages["tabPlaying"]);
+            gameDetails = new GUIGameDetails(this.tabControl, (TabPage)this.tabControl.TabPages["tapGameDetails"]);
+            gameDetails.Setup();
 
             this.tabControl.Appearance = TabAppearance.FlatButtons;
             this.tabControl.ItemSize = new System.Drawing.Size(0, 1);
@@ -69,6 +72,9 @@ namespace school_games_launcher
         {
             this.tabControl.SelectedTab = this.tabPage;
             if(this.updateOnActive) this.Update();
+        }
+        public virtual void Setup()
+        {
         }
         public virtual void Update()
         {
@@ -105,7 +111,7 @@ namespace school_games_launcher
             {
                 GroupBox group = new System.Windows.Forms.GroupBox();
                 group.Name = "gbxLibraryGame_" + game.Name;
-                group.Size = new System.Drawing.Size(200, 300);
+                group.Size = new System.Drawing.Size(306, 143);
 
                 PictureBox coverart = new System.Windows.Forms.PictureBox();
                 try
@@ -114,25 +120,21 @@ namespace school_games_launcher
                 }
                 catch
                 {
-                    coverart.Image = global::school_games_launcher.Properties.Resources.game_thumbnail_placeholder;
+                    coverart.Image = global::school_games_launcher.Properties.Resources.game_coverart_placeholder;
                 }
-                coverart.Location = new System.Drawing.Point(20, 20);
-                coverart.Size = new System.Drawing.Size(160, 200);
+                coverart.Location = new System.Drawing.Point(0, 0);
+                coverart.Size = new System.Drawing.Size(306, 143);
                 coverart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-
-                PictureBox playButton = new System.Windows.Forms.PictureBox();
-                playButton.Image = global::school_games_launcher.Properties.Resources.play_button;
-                playButton.Location = new System.Drawing.Point(50, 240);
-                playButton.Size = new System.Drawing.Size(100, 50);
-                playButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+                coverart.BackColor = System.Drawing.Color.Black;
                 void LaunchGame(object sender, EventArgs e)
                 {
-                    Program.app.Launch(game);
+                    Program.app.Gui.gameDetails.SetGame(game);
+                    Program.app.Gui.gameDetails.Activate();
+                    //Program.app.Launch(game);
                 }
-                playButton.Click += new System.EventHandler(LaunchGame);
+                coverart.Click += new System.EventHandler(LaunchGame);
 
                 group.Controls.Add(coverart);
-                group.Controls.Add(playButton);
 
                 groups.Add(group);
             }
@@ -163,7 +165,7 @@ namespace school_games_launcher
                 }
                 catch
                 {
-                    coverartBox.Image = global::school_games_launcher.Properties.Resources.game_thumbnail_placeholder;
+                    coverartBox.Image = global::school_games_launcher.Properties.Resources.game_coverart_placeholder;
                 }
             }
         }
@@ -175,6 +177,7 @@ namespace school_games_launcher
         private int selectedAge = 0;
         private string coverart = "";
         private int? steamId = null;
+        private SteamApiGameDetail GameDetails;
         public string Name
         {
             get { return name; }
@@ -213,7 +216,7 @@ namespace school_games_launcher
         }
         public string Coverart
         {
-            get { return path; }
+            get { return coverart; }
             set
             {
                 coverart = value;
@@ -224,7 +227,7 @@ namespace school_games_launcher
                 }
                 catch
                 {
-                    ((PictureBox)this.TabPage.Controls["pbxAddGameCoverart"]).Image = global::school_games_launcher.Properties.Resources.game_thumbnail_placeholder;
+                    ((PictureBox)this.TabPage.Controls["pbxAddGameCoverart"]).Image = global::school_games_launcher.Properties.Resources.game_coverart_placeholder;
                 }
             }
         }
@@ -246,13 +249,19 @@ namespace school_games_launcher
             ((PictureBox)this.TabPage.Controls["pbxAddGameAge16"]).Image = selectedAge == 16 ? global::school_games_launcher.Properties.Resources.age_16_selected : global::school_games_launcher.Properties.Resources.age_16;
             ((PictureBox)this.TabPage.Controls["pbxAddGameAge18"]).Image = selectedAge == 18 ? global::school_games_launcher.Properties.Resources.age_18_selected : global::school_games_launcher.Properties.Resources.age_18;
         }
-        public void AutoFillSteamGame(SteamApiGame game)
+        public async void AutoFillSteamGame(SteamApiGame game)
         {
             if (game != null)
             {
+                GameDetails = await Program.app.LoadSteamGameDetails(game.AppId);
                 SteamId = game.AppId;
                 Name = game.Name;
                 Path = "steam://rungameid/" + Convert.ToString(game.AppId);
+                if(GameDetails != null)
+                {
+                    SelectedAge = GameDetails.RequiredAge;
+                    Coverart = GameDetails.HeaderImage;
+                }
             }
             else
             {
@@ -280,8 +289,56 @@ namespace school_games_launcher
         public void Save()
         {
             // TODO Check if input is valid!!!
-            Program.app.CreateGame(this.Name, this.Path, this.selectedAge, this.Coverart);
+            Program.app.CreateGame(this.Name, this.Path, this.selectedAge, this.Coverart, this.SteamId);
             Program.app.Gui.library.Activate();
+        }
+    }
+    public class GUIGameDetails : GUITab
+    {
+        private Game game;
+        public Game Game { get { return game; } }
+        public GUIGameDetails(TabControl tabControl, TabPage tabPage) : base(tabControl, tabPage)
+        {
+            
+        }
+        public override void Setup()
+        {
+            ((PictureBox)this.TabPage.Controls["pbxGameDetailsPlayButton"]).Click += this.LaunchGame;
+        }
+        public override void Update()
+        {
+            
+        }
+        public void LaunchGame(object sender, EventArgs e)
+        {
+            Program.app.Launch(Game);
+        }
+        public async void SetGame(Game game)
+        {
+            this.game = game;
+            ((Label)this.TabPage.Controls["lblGameDetailsName"]).Text = game.Name;
+            ((Label)this.TabPage.Controls["lblGameDetailsAge"]).Text = "Age: " + Convert.ToString(game.Age);
+
+            PictureBox coverart = ((PictureBox)this.TabPage.Controls["pbxGameDetailsCoverart"]); 
+            try
+            {
+                coverart.Load(game.Coverart);
+            }
+            catch
+            {
+                coverart.Image = global::school_games_launcher.Properties.Resources.game_coverart_placeholder;
+            }
+            ((Label)this.TabPage.Controls["lblGameDetailsDeveloper"]).Text = "";
+            ((Label)this.TabPage.Controls["lblGameDetailsPublisher"]).Text = "";
+            ((TextBox)this.TabPage.Controls["tbxGameDetailsDescription"]).Text = "";
+            if (game.SteamId.HasValue)
+            {
+                var gameDetails = await Program.app.LoadSteamGameDetails(game.SteamId.Value);
+
+                ((Label)this.TabPage.Controls["lblGameDetailsDeveloper"]).Text = "Developer: " + gameDetails.Developer;
+                ((Label)this.TabPage.Controls["lblGameDetailsPublisher"]).Text = "Publisher: " + gameDetails.Publisher;
+                ((TextBox)this.TabPage.Controls["tbxGameDetailsDescription"]).Text = gameDetails.ShortDescription;
+            }
         }
     }
 }

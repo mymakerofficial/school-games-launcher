@@ -103,25 +103,10 @@
     <None Include="Resources\play_button.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\game_thumbnail_placeholder.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\game_thumbnail_shadow.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\grain.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\grain_blue.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\grain_dark.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\play_button_no_shadow.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\grain_light.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\age_18.png" />
@@ -164,6 +149,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\512px-Steam_icon_logo.svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grain_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\game_coverart_placeholder.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

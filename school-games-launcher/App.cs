@@ -113,6 +113,7 @@ namespace school_games_launcher
             foreach (List<string> gameData in loadedGames.Data)
             {
                 Game game = new Game(Int32.Parse(gameData[0]), gameData[1], gameData[2], Int32.Parse(gameData[3]), gameData[5]);
+                if(gameData[4] != "") game.SteamId = Int32.Parse(gameData[4]);
                 this.Games.Add(game);// puts game in list
             }
             // loads allowed play times
@@ -155,7 +156,7 @@ namespace school_games_launcher
             var gamesCsv = new StringBuilder();
             foreach (Game game in this.Games)
             {
-                var newLine = string.Format("{0},{1},{2},{3},{4},{5}", Convert.ToString(game.Id), game.Name, game.Executable.Path, Convert.ToString(game.Age), "0", game.Coverart);
+                var newLine = string.Format("{0},{1},{2},{3},{4},{5}", Convert.ToString(game.Id), game.Name, game.Executable.Path, Convert.ToString(game.Age), game.SteamId, game.Coverart);
                 gamesCsv.AppendLine(newLine);
             }
             File.WriteAllText(this.configPath + "games.csv", gamesCsv.ToString());
@@ -266,10 +267,11 @@ namespace school_games_launcher
         /// <summary>
         /// Creates a new Game and adds it to game list.
         /// </summary>
-        public bool CreateGame(string name, string path, int age, string coverart)
+        public bool CreateGame(string name, string path, int age, string coverart, int? steamId = null)
         {
             if (!this.CheckUser() || !this.ActiveUser.Admin) return false;
             Game game = new Game(this.Games.Count, name, path, age, coverart);
+            game.SteamId = steamId;
             this.Games.Add(game);
             return true;
         }
@@ -313,9 +315,7 @@ namespace school_games_launcher
             if (game != null) { return game; }
             return null;
         }
-        // this is not working yet
-        /*
-        public async SteamApiGameDetail LoadSteamGameDetails(int id)
+        public async Task<SteamApiGameDetail> LoadSteamGameDetails(int id)
         {
             var response = await HttpClient.GetAsync($" http://store.steampowered.com/api/appdetails?appids="+id);
 
@@ -323,9 +323,19 @@ namespace school_games_launcher
             {
                 var jsonString = await response.Content.ReadAsStringAsync();
                 JObject json = JObject.Parse(jsonString);
-                SteamApiGames = json[id]["data"].ToObject<SteamApiGameDetail>();
+                var game = new SteamApiGameDetail()
+                {
+                    Name = json[Convert.ToString(id)]["data"]["name"].Value<string>(),
+                    SteamAppid = json[Convert.ToString(id)]["data"]["steam_appid"].Value<int>(),
+                    RequiredAge = json[Convert.ToString(id)]["data"]["required_age"].Value<int>(),
+                    HeaderImage = json[Convert.ToString(id)]["data"]["header_image"].Value<string>(),
+                    ShortDescription = json[Convert.ToString(id)]["data"]["short_description"].Value<string>(),
+                    Developer = json[Convert.ToString(id)]["data"]["developers"][0].Value<string>(),
+                    Publisher = json[Convert.ToString(id)]["data"]["publishers"][0].Value<string>(),
+                };
+                return game;
             }
+            return null;
         }
-        */
     }
 }

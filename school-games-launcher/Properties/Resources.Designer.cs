@@ -163,9 +163,19 @@ namespace school_games_launcher.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap game_thumbnail_placeholder {
+        internal static System.Drawing.Bitmap game_coverart_placeholder {
             get {
-                object obj = ResourceManager.GetObject("game_thumbnail_placeholder", resourceCulture);
+                object obj = ResourceManager.GetObject("game_coverart_placeholder", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap grain_dark {
+            get {
+                object obj = ResourceManager.GetObject("grain_dark", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
