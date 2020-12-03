@@ -86,13 +86,20 @@ namespace school_games_launcher
         }
         private async void LoadSteamGameList()
         {
-            var response = await HttpClient.GetAsync($"http://api.steampowered.com/ISteamApps/GetAppList/v0002/?key=STEAMKEY&format=json");
-
-            if (response.IsSuccessStatusCode)
+            try
             {
-                var jsonString = await response.Content.ReadAsStringAsync();
-                JObject json = JObject.Parse(jsonString);
-                SteamApiGames = json["applist"]["apps"].ToObject<List<SteamApiGame>>();
+                var response = await HttpClient.GetAsync($"http://api.steampowered.com/ISteamApps/GetAppList/v0002/?key=STEAMKEY&format=json");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var jsonString = await response.Content.ReadAsStringAsync();
+                    JObject json = JObject.Parse(jsonString);
+                    SteamApiGames = json["applist"]["apps"].ToObject<List<SteamApiGame>>();
+                }
+            }
+            catch
+            {
+                SteamApiGames = new List<SteamApiGame>();
             }
         }
         private bool CheckData()
@@ -317,32 +324,39 @@ namespace school_games_launcher
         }
         public async Task<SteamApiGameDetail> LoadSteamGameDetails(int id)
         {
-            var response = await HttpClient.GetAsync($" http://store.steampowered.com/api/appdetails?appids="+id);
-
-            if (response.IsSuccessStatusCode)
+            try
             {
-                var jsonString = await response.Content.ReadAsStringAsync();
-                JObject json = JObject.Parse(jsonString);
+                var response = await HttpClient.GetAsync($" http://store.steampowered.com/api/appdetails?appids=" + id);
 
-                List<string> screenshotList = new List<string>();
-                for (int i = 0; i < json[Convert.ToString(id)]["data"]["screenshots"].Value<dynamic>().Count; i++)
+                if (response.IsSuccessStatusCode)
                 {
-                    screenshotList.Add(json[Convert.ToString(id)]["data"]["screenshots"][i].Value<dynamic>()["path_thumbnail"].Value);
+                    var jsonString = await response.Content.ReadAsStringAsync();
+                    JObject json = JObject.Parse(jsonString);
+
+                    List<string> screenshotList = new List<string>();
+                    for (int i = 0; i < json[Convert.ToString(id)]["data"]["screenshots"].Value<dynamic>().Count; i++)
+                    {
+                        screenshotList.Add(json[Convert.ToString(id)]["data"]["screenshots"][i].Value<dynamic>()["path_thumbnail"].Value);
+                    }
+                    var game = new SteamApiGameDetail()
+                    {
+                        Name = json[Convert.ToString(id)]["data"]["name"].Value<string>(),
+                        SteamAppid = json[Convert.ToString(id)]["data"]["steam_appid"].Value<int>(),
+                        RequiredAge = json[Convert.ToString(id)]["data"]["required_age"].Value<int>(),
+                        HeaderImage = json[Convert.ToString(id)]["data"]["header_image"].Value<string>(),
+                        ShortDescription = json[Convert.ToString(id)]["data"]["short_description"].Value<string>(),
+                        Developer = json[Convert.ToString(id)]["data"]["developers"][0].Value<string>(),
+                        Publisher = json[Convert.ToString(id)]["data"]["publishers"][0].Value<string>(),
+                        Screenshots = screenshotList
+                    };
+                    return game;
                 }
-                var game = new SteamApiGameDetail()
-                {
-                    Name = json[Convert.ToString(id)]["data"]["name"].Value<string>(),
-                    SteamAppid = json[Convert.ToString(id)]["data"]["steam_appid"].Value<int>(),
-                    RequiredAge = json[Convert.ToString(id)]["data"]["required_age"].Value<int>(),
-                    HeaderImage = json[Convert.ToString(id)]["data"]["header_image"].Value<string>(),
-                    ShortDescription = json[Convert.ToString(id)]["data"]["short_description"].Value<string>(),
-                    Developer = json[Convert.ToString(id)]["data"]["developers"][0].Value<string>(),
-                    Publisher = json[Convert.ToString(id)]["data"]["publishers"][0].Value<string>(),
-                    Screenshots = screenshotList
-                };
-                return game;
+                return null;
             }
-            return null;
+            catch
+            {
+                return null;
+            }
         }
     }
 }
