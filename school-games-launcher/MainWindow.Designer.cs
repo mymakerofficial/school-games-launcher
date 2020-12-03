@@ -98,11 +98,11 @@
             this.pbxEditGameAge6 = new System.Windows.Forms.PictureBox();
             this.pbxEditGameAge0 = new System.Windows.Forms.PictureBox();
             this.tabProfile = new System.Windows.Forms.TabPage();
+            this.btnProfileEdit = new System.Windows.Forms.Button();
+            this.btnProfileLogout = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.llblProfileLogout = new System.Windows.Forms.LinkLabel();
             this.lblProfileName = new System.Windows.Forms.Label();
             this.lblProfileBirth = new System.Windows.Forms.Label();
             this.lblProfileLastPlayed = new System.Windows.Forms.Label();
@@ -1012,11 +1012,11 @@
             // tabProfile
             // 
             this.tabProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
+            this.tabProfile.Controls.Add(this.btnProfileEdit);
+            this.tabProfile.Controls.Add(this.btnProfileLogout);
             this.tabProfile.Controls.Add(this.label3);
             this.tabProfile.Controls.Add(this.label2);
             this.tabProfile.Controls.Add(this.label1);
-            this.tabProfile.Controls.Add(this.linkLabel2);
-            this.tabProfile.Controls.Add(this.llblProfileLogout);
             this.tabProfile.Controls.Add(this.lblProfileName);
             this.tabProfile.Controls.Add(this.lblProfileBirth);
             this.tabProfile.Controls.Add(this.lblProfileLastPlayed);
@@ -1033,6 +1033,27 @@
             this.tabProfile.Size = new System.Drawing.Size(1144, 723);
             this.tabProfile.TabIndex = 7;
             this.tabProfile.Text = "Profile";
+            // 
+            // btnProfileEdit
+            // 
+            this.btnProfileEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProfileEdit.Location = new System.Drawing.Point(1015, 95);
+            this.btnProfileEdit.Name = "btnProfileEdit";
+            this.btnProfileEdit.Size = new System.Drawing.Size(106, 23);
+            this.btnProfileEdit.TabIndex = 26;
+            this.btnProfileEdit.Text = "Edit Profile";
+            this.btnProfileEdit.UseVisualStyleBackColor = true;
+            // 
+            // btnProfileLogout
+            // 
+            this.btnProfileLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProfileLogout.Location = new System.Drawing.Point(1015, 57);
+            this.btnProfileLogout.Name = "btnProfileLogout";
+            this.btnProfileLogout.Size = new System.Drawing.Size(106, 23);
+            this.btnProfileLogout.TabIndex = 25;
+            this.btnProfileLogout.Text = "Logout";
+            this.btnProfileLogout.UseVisualStyleBackColor = true;
+            this.btnProfileLogout.Click += new System.EventHandler(this.btnProfileLogout_Click);
             // 
             // label3
             // 
@@ -1066,31 +1087,6 @@
             this.label1.Size = new System.Drawing.Size(106, 20);
             this.label1.TabIndex = 20;
             this.label1.Text = "Hours played:";
-            // 
-            // linkLabel2
-            // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel2.LinkColor = System.Drawing.Color.White;
-            this.linkLabel2.Location = new System.Drawing.Point(1043, 78);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(84, 20);
-            this.linkLabel2.TabIndex = 15;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "Edit profile";
-            // 
-            // llblProfileLogout
-            // 
-            this.llblProfileLogout.AutoSize = true;
-            this.llblProfileLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.llblProfileLogout.LinkColor = System.Drawing.Color.White;
-            this.llblProfileLogout.Location = new System.Drawing.Point(1068, 45);
-            this.llblProfileLogout.Name = "llblProfileLogout";
-            this.llblProfileLogout.Size = new System.Drawing.Size(59, 20);
-            this.llblProfileLogout.TabIndex = 14;
-            this.llblProfileLogout.TabStop = true;
-            this.llblProfileLogout.Text = "Logout";
-            this.llblProfileLogout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblProfileLogout_LinkClicked);
             // 
             // lblProfileName
             // 
@@ -1949,8 +1945,6 @@
         private System.Windows.Forms.PictureBox pbxGameDetailsClose;
         private System.Windows.Forms.LinkLabel llblGameDetailsEdit;
         private System.Windows.Forms.PictureBox pbxPlayingMinimize;
-        private System.Windows.Forms.LinkLabel linkLabel2;
-        private System.Windows.Forms.LinkLabel llblProfileLogout;
         private System.Windows.Forms.Button btnAddGameCancel;
         private System.Windows.Forms.PictureBox pbxOptionsHome;
         private System.Windows.Forms.PictureBox pbxAddGameHome;
@@ -1979,6 +1973,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblGameDetailsId;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnProfileEdit;
+        private System.Windows.Forms.Button btnProfileLogout;
     }
 }
 

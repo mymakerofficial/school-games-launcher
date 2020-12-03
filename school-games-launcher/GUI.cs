@@ -15,7 +15,7 @@ namespace school_games_launcher
         public GUITab options;
         public GUIAddGame addGame;
         public GUITab editGame;
-        public GUITab profile;
+        public GUIProfile profile;
         public GUITab login;
         public GUITab register;
         public GUIPlaying playing;
@@ -44,7 +44,7 @@ namespace school_games_launcher
             options = new GUITab(this.tabControl, (TabPage)this.tabControl.TabPages["tabOptions"]);
             addGame = new GUIAddGame(this.tabControl, (TabPage)this.tabControl.TabPages["tabAddGame"]);
             editGame = new GUITab(this.tabControl, (TabPage)this.tabControl.TabPages["tabEditGame"]);
-            profile = new GUITab(this.tabControl, (TabPage)this.tabControl.TabPages["tabProfile"]);
+            profile = new GUIProfile(this.tabControl, (TabPage)this.tabControl.TabPages["tabProfile"]);
             login = new GUITab(this.tabControl, (TabPage)this.tabControl.TabPages["tabLogin"]);
             register = new GUITab(this.tabControl, (TabPage)this.tabControl.TabPages["tabRegister"]);
             playing = new GUIPlaying(this.tabControl, (TabPage)this.tabControl.TabPages["tabPlaying"]);
@@ -173,6 +173,24 @@ namespace school_games_launcher
                     coverartBox.Image = global::school_games_launcher.Properties.Resources.game_coverart_placeholder;
                 }
             }
+        }
+    }
+    public class GUIProfile : GUITab
+    {
+        public GUIProfile(TabControl tabControl, TabPage tabPage) : base(tabControl, tabPage)
+        {
+
+        }
+
+        public override void Update()
+        {
+            this.SetUser(Program.app.ActiveUser);
+        }
+
+        public void SetUser(User user)
+        {
+            ((Label)this.TabPage.Controls["lblProfileName"]).Text = user.Name;
+            ((Label)this.TabPage.Controls["lblProfileBirth"]).Text = "Age: " + Convert.ToString(user.Age);
         }
     }
     public class GUIAddGame : GUITab

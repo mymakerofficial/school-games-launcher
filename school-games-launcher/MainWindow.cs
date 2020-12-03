@@ -353,5 +353,10 @@ namespace school_games_launcher
         {
 
         }
+
+        private void btnProfileLogout_Click(object sender, EventArgs e)
+        {
+            Program.app.Logout();
+        }
     }
 }
