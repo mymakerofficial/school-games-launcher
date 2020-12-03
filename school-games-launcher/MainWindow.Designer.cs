@@ -114,6 +114,7 @@
             this.btnPlayingStop = new System.Windows.Forms.Button();
             this.lblPlayingTitle = new System.Windows.Forms.Label();
             this.tapGameDetails = new System.Windows.Forms.TabPage();
+            this.flpGameDetailsImages = new System.Windows.Forms.FlowLayoutPanel();
             this.tbxGameDetailsDescription = new System.Windows.Forms.TextBox();
             this.lblGameDetailsPublisher = new System.Windows.Forms.Label();
             this.lblGameDetailsDeveloper = new System.Windows.Forms.Label();
@@ -123,7 +124,7 @@
             this.lblGameDetailsAge = new System.Windows.Forms.Label();
             this.lblGameDetailsName = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.flpGameDetailsImages = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblGameDetailsSteamId = new System.Windows.Forms.Label();
             this.TabControl.SuspendLayout();
             this.tabLibrary.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLibraryOptions)).BeginInit();
@@ -244,9 +245,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flpLibraryGameList.AutoScroll = true;
             this.flpLibraryGameList.BackColor = System.Drawing.Color.Transparent;
-            this.flpLibraryGameList.Location = new System.Drawing.Point(32, 122);
+            this.flpLibraryGameList.Location = new System.Drawing.Point(91, 122);
             this.flpLibraryGameList.Name = "flpLibraryGameList";
-            this.flpLibraryGameList.Size = new System.Drawing.Size(1101, 594);
+            this.flpLibraryGameList.Size = new System.Drawing.Size(1049, 594);
             this.flpLibraryGameList.TabIndex = 0;
             // 
             // pbxLibraryUserAvatar
@@ -264,7 +265,7 @@
             // 
             this.lblLibrarySearchGame.AutoSize = true;
             this.lblLibrarySearchGame.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblLibrarySearchGame.Location = new System.Drawing.Point(29, 87);
+            this.lblLibrarySearchGame.Location = new System.Drawing.Point(103, 90);
             this.lblLibrarySearchGame.Name = "lblLibrarySearchGame";
             this.lblLibrarySearchGame.Size = new System.Drawing.Size(44, 13);
             this.lblLibrarySearchGame.TabIndex = 3;
@@ -272,7 +273,7 @@
             // 
             // tbxLibrarySearchGame
             // 
-            this.tbxLibrarySearchGame.Location = new System.Drawing.Point(79, 84);
+            this.tbxLibrarySearchGame.Location = new System.Drawing.Point(153, 87);
             this.tbxLibrarySearchGame.Name = "tbxLibrarySearchGame";
             this.tbxLibrarySearchGame.Size = new System.Drawing.Size(212, 20);
             this.tbxLibrarySearchGame.TabIndex = 0;
@@ -1055,6 +1056,7 @@
             // tapGameDetails
             // 
             this.tapGameDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
+            this.tapGameDetails.Controls.Add(this.lblGameDetailsSteamId);
             this.tapGameDetails.Controls.Add(this.flpGameDetailsImages);
             this.tapGameDetails.Controls.Add(this.tbxGameDetailsDescription);
             this.tapGameDetails.Controls.Add(this.lblGameDetailsPublisher);
@@ -1072,24 +1074,32 @@
             this.tapGameDetails.TabIndex = 8;
             this.tapGameDetails.Text = "Game Details";
             // 
+            // flpGameDetailsImages
+            // 
+            this.flpGameDetailsImages.AutoScroll = true;
+            this.flpGameDetailsImages.Location = new System.Drawing.Point(537, 45);
+            this.flpGameDetailsImages.Name = "flpGameDetailsImages";
+            this.flpGameDetailsImages.Size = new System.Drawing.Size(584, 655);
+            this.flpGameDetailsImages.TabIndex = 16;
+            // 
             // tbxGameDetailsDescription
             // 
             this.tbxGameDetailsDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
             this.tbxGameDetailsDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbxGameDetailsDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.tbxGameDetailsDescription.ForeColor = System.Drawing.Color.Gray;
-            this.tbxGameDetailsDescription.Location = new System.Drawing.Point(28, 449);
+            this.tbxGameDetailsDescription.ForeColor = System.Drawing.Color.LightGray;
+            this.tbxGameDetailsDescription.Location = new System.Drawing.Point(28, 467);
             this.tbxGameDetailsDescription.Multiline = true;
             this.tbxGameDetailsDescription.Name = "tbxGameDetailsDescription";
             this.tbxGameDetailsDescription.ReadOnly = true;
-            this.tbxGameDetailsDescription.Size = new System.Drawing.Size(457, 154);
+            this.tbxGameDetailsDescription.Size = new System.Drawing.Size(457, 233);
             this.tbxGameDetailsDescription.TabIndex = 15;
             // 
             // lblGameDetailsPublisher
             // 
             this.lblGameDetailsPublisher.AutoSize = true;
             this.lblGameDetailsPublisher.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGameDetailsPublisher.ForeColor = System.Drawing.Color.Gray;
+            this.lblGameDetailsPublisher.ForeColor = System.Drawing.Color.LightGray;
             this.lblGameDetailsPublisher.Location = new System.Drawing.Point(24, 413);
             this.lblGameDetailsPublisher.Name = "lblGameDetailsPublisher";
             this.lblGameDetailsPublisher.Size = new System.Drawing.Size(146, 20);
@@ -1100,7 +1110,7 @@
             // 
             this.lblGameDetailsDeveloper.AutoSize = true;
             this.lblGameDetailsDeveloper.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGameDetailsDeveloper.ForeColor = System.Drawing.Color.Gray;
+            this.lblGameDetailsDeveloper.ForeColor = System.Drawing.Color.LightGray;
             this.lblGameDetailsDeveloper.Location = new System.Drawing.Point(24, 388);
             this.lblGameDetailsDeveloper.Name = "lblGameDetailsDeveloper";
             this.lblGameDetailsDeveloper.Size = new System.Drawing.Size(153, 20);
@@ -1121,10 +1131,11 @@
             // 
             // pbxGameDetailsCoverart
             // 
-            this.pbxGameDetailsCoverart.BackgroundImage = global::school_games_launcher.Properties.Resources.game_coverart_placeholder;
+            this.pbxGameDetailsCoverart.BackColor = System.Drawing.Color.Black;
             this.pbxGameDetailsCoverart.Location = new System.Drawing.Point(25, 45);
             this.pbxGameDetailsCoverart.Name = "pbxGameDetailsCoverart";
             this.pbxGameDetailsCoverart.Size = new System.Drawing.Size(460, 215);
+            this.pbxGameDetailsCoverart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxGameDetailsCoverart.TabIndex = 11;
             this.pbxGameDetailsCoverart.TabStop = false;
             // 
@@ -1142,7 +1153,7 @@
             // 
             this.lblGameDetailsAge.AutoSize = true;
             this.lblGameDetailsAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGameDetailsAge.ForeColor = System.Drawing.Color.Gray;
+            this.lblGameDetailsAge.ForeColor = System.Drawing.Color.LightGray;
             this.lblGameDetailsAge.Location = new System.Drawing.Point(24, 363);
             this.lblGameDetailsAge.Name = "lblGameDetailsAge";
             this.lblGameDetailsAge.Size = new System.Drawing.Size(55, 20);
@@ -1168,22 +1179,26 @@
             this.pictureBox3.TabIndex = 1;
             this.pictureBox3.TabStop = false;
             // 
-            // flpGameDetailsImages
+            // lblGameDetailsSteamId
             // 
-            this.flpGameDetailsImages.AutoScroll = true;
-            this.flpGameDetailsImages.Location = new System.Drawing.Point(537, 45);
-            this.flpGameDetailsImages.Name = "flpGameDetailsImages";
-            this.flpGameDetailsImages.Size = new System.Drawing.Size(584, 655);
-            this.flpGameDetailsImages.TabIndex = 16;
+            this.lblGameDetailsSteamId.AutoSize = true;
+            this.lblGameDetailsSteamId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGameDetailsSteamId.ForeColor = System.Drawing.Color.Gray;
+            this.lblGameDetailsSteamId.Location = new System.Drawing.Point(25, 437);
+            this.lblGameDetailsSteamId.Name = "lblGameDetailsSteamId";
+            this.lblGameDetailsSteamId.Size = new System.Drawing.Size(73, 16);
+            this.lblGameDetailsSteamId.TabIndex = 17;
+            this.lblGameDetailsSteamId.Text = "SteamID: 0";
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
-            this.ClientSize = new System.Drawing.Size(1136, 733);
+            this.ClientSize = new System.Drawing.Size(1142, 736);
             this.Controls.Add(this.TabControl);
             this.Controls.Add(this.pictureBox3);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1330,6 +1345,7 @@
         private System.Windows.Forms.Label lblGameDetailsPublisher;
         private System.Windows.Forms.Label lblGameDetailsDeveloper;
         private System.Windows.Forms.FlowLayoutPanel flpGameDetailsImages;
+        private System.Windows.Forms.Label lblGameDetailsSteamId;
     }
 }
 

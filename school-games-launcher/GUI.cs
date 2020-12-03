@@ -333,8 +333,14 @@ namespace school_games_launcher
             ((Label)this.TabPage.Controls["lblGameDetailsDeveloper"]).Text = "";
             ((Label)this.TabPage.Controls["lblGameDetailsPublisher"]).Text = "";
             ((TextBox)this.TabPage.Controls["tbxGameDetailsDescription"]).Text = "";
+            ((Label)this.TabPage.Controls["lblGameDetailsSteamId"]).Text = "";
+
             if (game.SteamId.HasValue)
             {
+                ((Label)this.TabPage.Controls["lblGameDetailsDeveloper"]).Text = "Developer: [loading]";
+                ((Label)this.TabPage.Controls["lblGameDetailsPublisher"]).Text = "Publisher: [loading]";
+                ((Label)this.TabPage.Controls["lblGameDetailsSteamId"]).Text = "SteamID: " + game.SteamId;
+
                 var gameDetails = await Program.app.LoadSteamGameDetails(game.SteamId.Value);
 
                 if(gameDetails != null)
@@ -343,8 +349,10 @@ namespace school_games_launcher
                     ((Label)this.TabPage.Controls["lblGameDetailsPublisher"]).Text = "Publisher: " + gameDetails.Publisher;
                     ((TextBox)this.TabPage.Controls["tbxGameDetailsDescription"]).Text = gameDetails.ShortDescription;
 
-                    foreach (string screenshot in gameDetails.Screenshots)
+                    for(int i = 0; i < gameDetails.Screenshots.Count && i < 8; i++)
                     {
+                        string screenshot = gameDetails.Screenshots[i];
+
                         PictureBox coverartPictureBox = new System.Windows.Forms.PictureBox();
                         try
                         {
