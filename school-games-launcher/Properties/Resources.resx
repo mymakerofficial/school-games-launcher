@@ -148,22 +148,31 @@
   <data name="age_6_selected" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\age_6_selected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="avatar_placeholder" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\avatar_placeholder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="close_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close_button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="game_coverart_placeholder" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\game_coverart_placeholder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="grain_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\grain_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="home_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\home_button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="maker_fox" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\maker_fox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="minimize_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minimize_button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="options_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\options_button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="play_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\play_button_no_shadow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\settings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="profile_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\profile_button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="steam_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\512px-Steam_icon_logo.svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="steam_button_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\steam_button_background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

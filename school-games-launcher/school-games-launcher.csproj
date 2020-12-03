@@ -124,21 +124,6 @@
     <None Include="Resources\age_16.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\age_18_selected.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\age_0_selected.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\age_6_selected.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\age_12_selected.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\age_16_selected.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\add_game_button.png" />
   </ItemGroup>
   <ItemGroup>
@@ -154,7 +139,43 @@
     <None Include="Resources\grain_dark.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\close_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\options_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profile_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\age_16_selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\age_18_selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\age_0_selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\age_6_selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\age_12_selected.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\game_coverart_placeholder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avatar_placeholder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\steam_button_background.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

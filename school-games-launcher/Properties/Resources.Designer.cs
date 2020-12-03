@@ -163,6 +163,26 @@ namespace school_games_launcher.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap avatar_placeholder {
+            get {
+                object obj = ResourceManager.GetObject("avatar_placeholder", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap close_button {
+            get {
+                object obj = ResourceManager.GetObject("close_button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap game_coverart_placeholder {
             get {
                 object obj = ResourceManager.GetObject("game_coverart_placeholder", resourceCulture);
@@ -173,9 +193,9 @@ namespace school_games_launcher.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap grain_dark {
+        internal static System.Drawing.Bitmap home_button {
             get {
-                object obj = ResourceManager.GetObject("grain_dark", resourceCulture);
+                object obj = ResourceManager.GetObject("home_button", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,9 +203,19 @@ namespace school_games_launcher.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap maker_fox {
+        internal static System.Drawing.Bitmap minimize_button {
             get {
-                object obj = ResourceManager.GetObject("maker_fox", resourceCulture);
+                object obj = ResourceManager.GetObject("minimize_button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap options_button {
+            get {
+                object obj = ResourceManager.GetObject("options_button", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,9 +233,9 @@ namespace school_games_launcher.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap settings {
+        internal static System.Drawing.Bitmap profile_button {
             get {
-                object obj = ResourceManager.GetObject("settings", resourceCulture);
+                object obj = ResourceManager.GetObject("profile_button", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -213,9 +243,9 @@ namespace school_games_launcher.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap steam_icon {
+        internal static System.Drawing.Bitmap steam_button_background {
             get {
-                object obj = ResourceManager.GetObject("steam_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("steam_button_background", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

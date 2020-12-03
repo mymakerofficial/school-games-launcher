@@ -22,11 +22,6 @@ namespace school_games_launcher
 
         }
 
-        private void llblAddGameCancel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Program.app.Gui.library.Activate();
-        }
-
         private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Program.app.Gui.library.Activate();
@@ -49,11 +44,6 @@ namespace school_games_launcher
             {
                 Program.app.Gui.library.Activate();
             }
-        }
-
-        private void btnProfileLogout_Click(object sender, EventArgs e)
-        {
-            Program.app.Logout();
         }
 
         private void pbxLibraryOptions_Click(object sender, EventArgs e)
@@ -162,6 +152,206 @@ namespace school_games_launcher
         private void llblGameDetailsBack_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Program.app.Gui.library.Activate();
+        }
+
+        private void pbxLibraryClose_Click(object sender, EventArgs e)
+        {
+            Program.app.Exit();
+        }
+
+        private void pbxOptionsClose_Click(object sender, EventArgs e)
+        {
+            Program.app.Exit();
+        }
+
+        private void pbxAddGameClose_Click(object sender, EventArgs e)
+        {
+            Program.app.Exit();
+        }
+
+        private void pbxEditGameClose_Click(object sender, EventArgs e)
+        {
+            Program.app.Exit();
+        }
+
+        private void pbxProfileClose_Click(object sender, EventArgs e)
+        {
+            Program.app.Exit();
+        }
+
+        private void pbxLoginClose_Click(object sender, EventArgs e)
+        {
+            Program.app.Exit();
+        }
+
+        private void pictureBox14_Click(object sender, EventArgs e)
+        {
+            Program.app.Exit();
+        }
+
+        private void pbxGameDetailsClose_Click(object sender, EventArgs e)
+        {
+            Program.app.Exit();
+        }
+
+        private void llblProfileLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Program.app.Logout();
+        }
+
+        private void btnAddGameCancel_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.library.Activate();
+        }
+
+        private void pbxLibraryMinimize_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.Minimize();
+        }
+
+        private void pbxOptionsMinimize_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.Minimize();
+        }
+
+        private void pbxAddGameMinimize_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.Minimize();
+        }
+
+        private void pbxEditGameMinimize_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.Minimize();
+        }
+
+        private void pbxProfileMinimize_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.Minimize();
+        }
+
+        private void pictureBox11_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.Minimize();
+        }
+
+        private void pbxRegisterMinimize_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.Minimize();
+        }
+
+        private void pbxPlayingMinimize_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.Minimize();
+        }
+
+        private void pbxGameDetailsMinimize_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.Minimize();
+        }
+
+        private void pbxOptionsHome_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.library.Activate();
+        }
+
+        private void pbxAddGameHome_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.library.Activate();
+        }
+
+        private void pbxEditGameHome_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.library.Activate();
+        }
+
+        private void pbxProfileHome_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.library.Activate();
+        }
+
+        private void pbxRegisterHome_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.library.Activate();
+        }
+
+        private void pbxGameDetailsHome_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.library.Activate();
+        }
+
+        private void pbxLibraryProfile_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.profile.Activate();
+        }
+
+        private void pbxOptionsProfile_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.profile.Activate();
+        }
+
+        private void pbxAddGameProfile_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.profile.Activate();
+        }
+
+        private void pbxEditGameProfile_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.profile.Activate();
+        }
+
+        private void pbxProfileProfile_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.profile.Activate();
+        }
+
+        private void pbxRegisterProfile_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.profile.Activate();
+        }
+
+        private void pbxGameDetailProfile_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.profile.Activate();
+        }
+
+        private void pbxLibraryOptions_Click_1(object sender, EventArgs e)
+        {
+            Program.app.Gui.options.Activate();
+        }
+
+        private void pbxOptionsOptions_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.options.Activate();
+        }
+
+        private void pbxAddGameOptions_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.options.Activate();
+        }
+
+        private void pbxEditGameOptions_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.options.Activate();
+        }
+
+        private void pbxProfileOptions_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.options.Activate();
+        }
+
+        private void pbxRegisterOptions_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.options.Activate();
+        }
+
+        private void pbxGameDetailsOptions_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.options.Activate();
+        }
+
+        private void tabLibrary_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

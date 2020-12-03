@@ -358,5 +358,9 @@ namespace school_games_launcher
                 return null;
             }
         }
+        public void Exit()
+        {
+            System.Windows.Forms.Application.Exit();
+        }
     }
 }

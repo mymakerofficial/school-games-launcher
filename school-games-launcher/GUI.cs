@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using System.Drawing;
 
 namespace school_games_launcher
 {
@@ -53,6 +54,10 @@ namespace school_games_launcher
             this.tabControl.Appearance = TabAppearance.FlatButtons;
             this.tabControl.ItemSize = new System.Drawing.Size(0, 1);
             this.tabControl.SizeMode = TabSizeMode.Fixed;
+        }
+        public void Minimize()
+        {
+            form.WindowState = FormWindowState.Minimized;
         }
     }
     public class GUITab
@@ -316,11 +321,16 @@ namespace school_games_launcher
         public async void SetGame(Game game)
         {
             this.game = game;
+
+            // set basic information
             ((Label)this.TabPage.Controls["lblGameDetailsName"]).Text = game.Name;
             ((Label)this.TabPage.Controls["lblGameDetailsAge"]).Text = "Age: " + Convert.ToString(game.Age);
-
+            ((Label)this.TabPage.Controls["lblGameDetailsId"]).Text = "ID: " + Convert.ToString(game.Id);
+            
+            // clear screenshots
             this.TabPage.Controls["flpGameDetailsImages"].Controls.Clear();
 
+            // set coverart
             PictureBox coverart = ((PictureBox)this.TabPage.Controls["pbxGameDetailsCoverart"]); 
             try
             {
@@ -330,25 +340,57 @@ namespace school_games_launcher
             {
                 coverart.Image = global::school_games_launcher.Properties.Resources.game_coverart_placeholder;
             }
+
+            // set age image
+            ((PictureBox)this.TabPage.Controls["pbxGameDetailsAge"]).Visible = true;
+            switch (game.Age)
+            {
+                case 0:
+                    ((PictureBox)this.TabPage.Controls["pbxGameDetailsAge"]).Image = global::school_games_launcher.Properties.Resources.age_0;
+                    break;
+                case 6:
+                    ((PictureBox)this.TabPage.Controls["pbxGameDetailsAge"]).Image = global::school_games_launcher.Properties.Resources.age_6;
+                    break;
+                case 12:
+                    ((PictureBox)this.TabPage.Controls["pbxGameDetailsAge"]).Image = global::school_games_launcher.Properties.Resources.age_12;
+                    break;
+                case 16:
+                    ((PictureBox)this.TabPage.Controls["pbxGameDetailsAge"]).Image = global::school_games_launcher.Properties.Resources.age_16;
+                    break;
+                case 18:
+                    ((PictureBox)this.TabPage.Controls["pbxGameDetailsAge"]).Image = global::school_games_launcher.Properties.Resources.age_18;
+                    break;
+                default:
+                    ((PictureBox)this.TabPage.Controls["pbxGameDetailsAge"]).Visible = false;
+                    break;
+            }
+
+            // clear steam info labels
             ((Label)this.TabPage.Controls["lblGameDetailsDeveloper"]).Text = "";
             ((Label)this.TabPage.Controls["lblGameDetailsPublisher"]).Text = "";
             ((TextBox)this.TabPage.Controls["tbxGameDetailsDescription"]).Text = "";
             ((Label)this.TabPage.Controls["lblGameDetailsSteamId"]).Text = "";
 
+            // if game is steam game
             if (game.SteamId.HasValue)
             {
+                // display loading in labels
                 ((Label)this.TabPage.Controls["lblGameDetailsDeveloper"]).Text = "Developer: [loading]";
                 ((Label)this.TabPage.Controls["lblGameDetailsPublisher"]).Text = "Publisher: [loading]";
                 ((Label)this.TabPage.Controls["lblGameDetailsSteamId"]).Text = "SteamID: " + game.SteamId;
 
+                // load game details
                 var gameDetails = await Program.app.LoadSteamGameDetails(game.SteamId.Value);
 
+                // if loaded successfully
                 if(gameDetails != null)
                 {
+                    // fill info
                     ((Label)this.TabPage.Controls["lblGameDetailsDeveloper"]).Text = "Developer: " + gameDetails.Developer;
                     ((Label)this.TabPage.Controls["lblGameDetailsPublisher"]).Text = "Publisher: " + gameDetails.Publisher;
                     ((TextBox)this.TabPage.Controls["tbxGameDetailsDescription"]).Text = gameDetails.ShortDescription;
 
+                    // display game screenshots
                     for(int i = 0; i < gameDetails.Screenshots.Count && i < 8; i++)
                     {
                         string screenshot = gameDetails.Screenshots[i];
