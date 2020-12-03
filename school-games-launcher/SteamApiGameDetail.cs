@@ -15,5 +15,6 @@ namespace school_games_launcher
         public string ShortDescription { get; set; }
         public string Developer { get; set; }
         public string Publisher { get; set; }
-    }
+        public List<string> Screenshots { get; set; }
+}
 }

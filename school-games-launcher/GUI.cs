@@ -319,6 +319,8 @@ namespace school_games_launcher
             ((Label)this.TabPage.Controls["lblGameDetailsName"]).Text = game.Name;
             ((Label)this.TabPage.Controls["lblGameDetailsAge"]).Text = "Age: " + Convert.ToString(game.Age);
 
+            this.TabPage.Controls["flpGameDetailsImages"].Controls.Clear();
+
             PictureBox coverart = ((PictureBox)this.TabPage.Controls["pbxGameDetailsCoverart"]); 
             try
             {
@@ -335,9 +337,30 @@ namespace school_games_launcher
             {
                 var gameDetails = await Program.app.LoadSteamGameDetails(game.SteamId.Value);
 
-                ((Label)this.TabPage.Controls["lblGameDetailsDeveloper"]).Text = "Developer: " + gameDetails.Developer;
-                ((Label)this.TabPage.Controls["lblGameDetailsPublisher"]).Text = "Publisher: " + gameDetails.Publisher;
-                ((TextBox)this.TabPage.Controls["tbxGameDetailsDescription"]).Text = gameDetails.ShortDescription;
+                if(gameDetails != null)
+                {
+                    ((Label)this.TabPage.Controls["lblGameDetailsDeveloper"]).Text = "Developer: " + gameDetails.Developer;
+                    ((Label)this.TabPage.Controls["lblGameDetailsPublisher"]).Text = "Publisher: " + gameDetails.Publisher;
+                    ((TextBox)this.TabPage.Controls["tbxGameDetailsDescription"]).Text = gameDetails.ShortDescription;
+
+                    foreach (string screenshot in gameDetails.Screenshots)
+                    {
+                        PictureBox coverartPictureBox = new System.Windows.Forms.PictureBox();
+                        try
+                        {
+                            coverartPictureBox.Load(screenshot);
+                        }
+                        catch
+                        {
+                            coverartPictureBox.Image = global::school_games_launcher.Properties.Resources.game_coverart_placeholder;
+                        }
+                        coverartPictureBox.Size = new System.Drawing.Size(240, 135);
+                        coverartPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+                        coverartPictureBox.BackColor = System.Drawing.Color.Black;
+
+                        this.TabPage.Controls["flpGameDetailsImages"].Controls.Add(coverartPictureBox);
+                    }
+                }
             }
         }
     }

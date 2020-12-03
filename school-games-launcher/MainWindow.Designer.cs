@@ -123,6 +123,7 @@
             this.lblGameDetailsAge = new System.Windows.Forms.Label();
             this.lblGameDetailsName = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.flpGameDetailsImages = new System.Windows.Forms.FlowLayoutPanel();
             this.TabControl.SuspendLayout();
             this.tabLibrary.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLibraryOptions)).BeginInit();
@@ -1054,6 +1055,7 @@
             // tapGameDetails
             // 
             this.tapGameDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
+            this.tapGameDetails.Controls.Add(this.flpGameDetailsImages);
             this.tapGameDetails.Controls.Add(this.tbxGameDetailsDescription);
             this.tapGameDetails.Controls.Add(this.lblGameDetailsPublisher);
             this.tapGameDetails.Controls.Add(this.lblGameDetailsDeveloper);
@@ -1064,6 +1066,7 @@
             this.tapGameDetails.Controls.Add(this.lblGameDetailsName);
             this.tapGameDetails.ForeColor = System.Drawing.Color.White;
             this.tapGameDetails.Location = new System.Drawing.Point(4, 22);
+            this.tapGameDetails.Margin = new System.Windows.Forms.Padding(0);
             this.tapGameDetails.Name = "tapGameDetails";
             this.tapGameDetails.Size = new System.Drawing.Size(1136, 712);
             this.tapGameDetails.TabIndex = 8;
@@ -1165,10 +1168,19 @@
             this.pictureBox3.TabIndex = 1;
             this.pictureBox3.TabStop = false;
             // 
+            // flpGameDetailsImages
+            // 
+            this.flpGameDetailsImages.AutoScroll = true;
+            this.flpGameDetailsImages.Location = new System.Drawing.Point(537, 45);
+            this.flpGameDetailsImages.Name = "flpGameDetailsImages";
+            this.flpGameDetailsImages.Size = new System.Drawing.Size(584, 655);
+            this.flpGameDetailsImages.TabIndex = 16;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
             this.ClientSize = new System.Drawing.Size(1136, 733);
             this.Controls.Add(this.TabControl);
             this.Controls.Add(this.pictureBox3);
@@ -1317,6 +1329,7 @@
         private System.Windows.Forms.TextBox tbxGameDetailsDescription;
         private System.Windows.Forms.Label lblGameDetailsPublisher;
         private System.Windows.Forms.Label lblGameDetailsDeveloper;
+        private System.Windows.Forms.FlowLayoutPanel flpGameDetailsImages;
     }
 }
 

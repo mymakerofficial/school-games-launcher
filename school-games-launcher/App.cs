@@ -323,6 +323,12 @@ namespace school_games_launcher
             {
                 var jsonString = await response.Content.ReadAsStringAsync();
                 JObject json = JObject.Parse(jsonString);
+
+                List<string> screenshotList = new List<string>();
+                for (int i = 0; i < json[Convert.ToString(id)]["data"]["screenshots"].Value<dynamic>().Count; i++)
+                {
+                    screenshotList.Add(json[Convert.ToString(id)]["data"]["screenshots"][i].Value<dynamic>()["path_thumbnail"].Value);
+                }
                 var game = new SteamApiGameDetail()
                 {
                     Name = json[Convert.ToString(id)]["data"]["name"].Value<string>(),
@@ -332,6 +338,7 @@ namespace school_games_launcher
                     ShortDescription = json[Convert.ToString(id)]["data"]["short_description"].Value<string>(),
                     Developer = json[Convert.ToString(id)]["data"]["developers"][0].Value<string>(),
                     Publisher = json[Convert.ToString(id)]["data"]["publishers"][0].Value<string>(),
+                    Screenshots = screenshotList
                 };
                 return game;
             }
