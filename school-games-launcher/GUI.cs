@@ -43,10 +43,13 @@ namespace school_games_launcher
             library.updateOnActive = true;
             options = new GUITab(this.tabControl, (TabPage)this.tabControl.TabPages["tabOptions"]);
             addGame = new GUIAddGame(this.tabControl, (TabPage)this.tabControl.TabPages["tabAddGame"]);
+            addGame.resetOnActive = true;
             editGame = new GUITab(this.tabControl, (TabPage)this.tabControl.TabPages["tabEditGame"]);
             profile = new GUIProfile(this.tabControl, (TabPage)this.tabControl.TabPages["tabProfile"]);
             login = new GUITab(this.tabControl, (TabPage)this.tabControl.TabPages["tabLogin"]);
+            login.resetOnActive = true;
             register = new GUITab(this.tabControl, (TabPage)this.tabControl.TabPages["tabRegister"]);
+            register.resetOnActive = true;
             playing = new GUIPlaying(this.tabControl, (TabPage)this.tabControl.TabPages["tabPlaying"]);
             gameDetails = new GUIGameDetails(this.tabControl, (TabPage)this.tabControl.TabPages["tapGameDetails"]);
             gameDetails.Setup();
@@ -67,6 +70,7 @@ namespace school_games_launcher
         public TabPage TabPage { get { return tabPage; } }
         public TabControl TabControl { get { return tabControl; } }
         public bool updateOnActive = false;
+        public bool resetOnActive = false;
 
         public GUITab(TabControl tabControl, TabPage tabPage)
         {
@@ -76,12 +80,16 @@ namespace school_games_launcher
         public void Activate()
         {
             this.tabControl.SelectedTab = this.tabPage;
-            if(this.updateOnActive) this.Update();
+            if (this.updateOnActive) this.Update();
+            if (this.resetOnActive) this.Reset();
         }
         public virtual void Setup()
         {
         }
         public virtual void Update()
+        {
+        }
+        public virtual void Reset()
         {
         }
     }
@@ -262,6 +270,15 @@ namespace school_games_launcher
         public override void Update()
         {
             
+        }
+
+        public override void Reset()
+        {
+            Name = "";
+            Path = "";
+            SelectedAge = 0;
+            Coverart = "";
+            SteamId = null;
         }
         private void UpdateAgeDisplay()
         {
