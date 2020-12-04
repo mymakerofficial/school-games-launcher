@@ -1102,13 +1102,14 @@
             // llblGameDetailsEdit
             // 
             this.llblGameDetailsEdit.AutoSize = true;
+            this.llblGameDetailsEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.llblGameDetailsEdit.LinkColor = System.Drawing.Color.MediumSpringGreen;
-            this.llblGameDetailsEdit.Location = new System.Drawing.Point(25, 336);
+            this.llblGameDetailsEdit.Location = new System.Drawing.Point(24, 336);
             this.llblGameDetailsEdit.Name = "llblGameDetailsEdit";
-            this.llblGameDetailsEdit.Size = new System.Drawing.Size(24, 13);
+            this.llblGameDetailsEdit.Size = new System.Drawing.Size(85, 20);
             this.llblGameDetailsEdit.TabIndex = 18;
             this.llblGameDetailsEdit.TabStop = true;
-            this.llblGameDetailsEdit.Text = "edit";
+            this.llblGameDetailsEdit.Text = "Edit Game";
             // 
             // lblGameDetailsSteamId
             // 

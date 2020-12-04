@@ -37,7 +37,10 @@ namespace school_games_launcher
         }
         public void SetPath(string path)
         {
-            this.path = path;
+            if (Program.app.ActiveUser.Admin)
+            {
+                this.path = path;
+            }
         }
     }
 }

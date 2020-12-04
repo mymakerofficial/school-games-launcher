@@ -47,11 +47,14 @@ namespace school_games_launcher
         }
         public void Set(string name, string path, int age, string coverart, int? steamId)
         {
-            this.name = name;
-            this.age = age;
-            this.coverart = coverart;
-            this.executable.SetPath(path);
-            this.SteamId = steamId;
+            if (Program.app.ActiveUser.Admin)
+            {
+                this.name = name;
+                this.age = age;
+                this.coverart = coverart;
+                this.executable.SetPath(path);
+                this.SteamId = steamId;
+            }
         }
         /// <summary>
         /// Launches GameExecutable (if given user is allowed to play) and returns a Session.

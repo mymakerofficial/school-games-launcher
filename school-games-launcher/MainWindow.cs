@@ -405,22 +405,22 @@ namespace school_games_launcher
 
         private void PbxEditGameAge6_Click(object sender, EventArgs e)
         {
-            Program.app.Gui.editGame.SelectedAge = 0;
+            Program.app.Gui.editGame.SelectedAge = 6;
         }
 
         private void PbxEditGameAge12_Click(object sender, EventArgs e)
         {
-            Program.app.Gui.editGame.SelectedAge = 0;
+            Program.app.Gui.editGame.SelectedAge = 12;
         }
 
         private void PbxEditGameAge16_Click(object sender, EventArgs e)
         {
-            Program.app.Gui.editGame.SelectedAge = 0;
+            Program.app.Gui.editGame.SelectedAge = 16;
         }
 
         private void PbxEditGameAge18_Click(object sender, EventArgs e)
         {
-            Program.app.Gui.editGame.SelectedAge = 0;
+            Program.app.Gui.editGame.SelectedAge = 18;
         }
 
         private void BtnEditGameCancel_Click(object sender, EventArgs e)

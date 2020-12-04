@@ -52,6 +52,7 @@ namespace school_games_launcher
             register.resetOnActive = true;
             playing = new GUIPlaying(this.tabControl, (TabPage)this.tabControl.TabPages["tabPlaying"]);
             gameDetails = new GUIGameDetails(this.tabControl, (TabPage)this.tabControl.TabPages["tapGameDetails"]);
+            gameDetails.updateOnActive = true;
             gameDetails.Setup();
 
             this.tabControl.Appearance = TabAppearance.FlatButtons;
@@ -496,7 +497,7 @@ namespace school_games_launcher
         }
         public override void Update()
         {
-            
+            if(Program.app.ActiveUser != null) ((LinkLabel)this.TabPage.Controls["llblGameDetailsEdit"]).Visible = Program.app.ActiveUser.Admin;
         }
         public void LaunchGame(object sender, EventArgs e)
         {
