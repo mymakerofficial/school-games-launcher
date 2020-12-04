@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 using System.Drawing;
+using System.Globalization;
 
 namespace school_games_launcher
 {
@@ -46,6 +47,7 @@ namespace school_games_launcher
             addGame.resetOnActive = true;
             editGame = new GUIEditGame(this.tabControl, (TabPage)this.tabControl.TabPages["tabEditGame"]);
             profile = new GUIProfile(this.tabControl, (TabPage)this.tabControl.TabPages["tabProfile"]);
+            profile.updateOnActive = true;
             login = new GUITab(this.tabControl, (TabPage)this.tabControl.TabPages["tabLogin"]);
             login.resetOnActive = true;
             register = new GUITab(this.tabControl, (TabPage)this.tabControl.TabPages["tabRegister"]);
@@ -97,7 +99,7 @@ namespace school_games_launcher
     public class GUILibrary : GUITab
     {
         public string search = "";
-        public List<GroupBox> groups = new List<GroupBox>();
+        public List<Panel> groups = new List<Panel>();
         public GUILibrary(TabControl tabControl, TabPage tabPage) : base(tabControl, tabPage) 
         {
 
@@ -120,12 +122,13 @@ namespace school_games_launcher
                 control.Dispose();
             }
             groups.Clear();
-            
+
+            int margin = 12;
             foreach (Game game in games)
             {
-                GroupBox group = new System.Windows.Forms.GroupBox();
+                Panel group = new System.Windows.Forms.Panel();
                 group.Name = "gbxLibraryGame_" + game.Name;
-                group.Size = new System.Drawing.Size(306, 143);
+                group.Size = new System.Drawing.Size(306 + (margin * 2), 143 + (margin * 2));
 
                 PictureBox coverart = new System.Windows.Forms.PictureBox();
                 try
@@ -136,7 +139,7 @@ namespace school_games_launcher
                 {
                     coverart.Image = global::school_games_launcher.Properties.Resources.game_coverart_placeholder;
                 }
-                coverart.Location = new System.Drawing.Point(0, 0);
+                coverart.Location = new System.Drawing.Point(margin, margin);
                 coverart.Size = new System.Drawing.Size(306, 143);
                 coverart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
                 coverart.BackColor = System.Drawing.Color.Black;
@@ -199,7 +202,8 @@ namespace school_games_launcher
         public void SetUser(User user)
         {
             ((Label)this.TabPage.Controls["lblProfileName"]).Text = user.Name;
-            ((Label)this.TabPage.Controls["lblProfileBirth"]).Text = "Age: " + Convert.ToString(user.Age);
+            ((Label)this.TabPage.Controls["lblProfileBirth"]).Text = String.Format("Age: {0} ({1})", user.Age, user.BirthDate.ToString("d", CultureInfo.CreateSpecificCulture("de-DE")));
+            ((Label)this.TabPage.Controls["lblProfileId"]).Text = String.Format("ID: {0}", user.Id);
         }
     }
     public class GUIAddGame : GUITab

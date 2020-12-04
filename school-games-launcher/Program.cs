@@ -21,7 +21,14 @@ namespace school_games_launcher
         {
             app = new App();
 
+            AppDomain.CurrentDomain.ProcessExit += new EventHandler(OnProcessExit);
+
             app.Run();
+        }
+        static void OnProcessExit(object sender, EventArgs e)
+        {
+            // saves data before program closes
+            app.SaveData();
         }
     }
 }

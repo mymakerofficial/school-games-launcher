@@ -428,5 +428,75 @@ namespace school_games_launcher
             Program.app.Gui.gameDetails.Activate();
             Program.app.Gui.gameDetails.SetGame(Program.app.Gui.editGame.EditGame);
         }
+
+        private void pbxEditUserHome_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.library.Activate();
+        }
+
+        private void pbxChangePasswordHome_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.library.Activate();
+        }
+
+        private void pbxUserRulesHome_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.library.Activate();
+        }
+
+        private void pbxEditUserProfile_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.profile.Activate();
+        }
+
+        private void pbxChangePasswordProfile_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.profile.Activate();
+        }
+
+        private void pbxEditUserOptions_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.options.Activate();
+        }
+
+        private void pbxChangePasswordOptions_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.options.Activate();
+        }
+
+        private void pbxUserRulesProfile_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.options.Activate();
+        }
+
+        private void pbxEditUserMinimize_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.Minimize();
+        }
+
+        private void pbxChangePasswordMinimize_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.Minimize();
+        }
+
+        private void pbxUserRulesMinimize_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.Minimize();
+        }
+
+        private void pbxEditUserClose_Click(object sender, EventArgs e)
+        {
+            Program.app.Exit();
+        }
+
+        private void pbxChangePasswordClose_Click(object sender, EventArgs e)
+        {
+            Program.app.Exit();
+        }
+
+        private void pbxUserRulesClose_Click(object sender, EventArgs e)
+        {
+            Program.app.Exit();
+        }
     }
 }

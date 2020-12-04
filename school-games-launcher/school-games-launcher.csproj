@@ -133,9 +133,6 @@
     <None Include="Resources\settings.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\512px-Steam_icon_logo.svg.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\grain_dark.png" />
   </ItemGroup>
   <ItemGroup>
@@ -185,6 +182,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\show_less_images.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transparent_gradient.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
