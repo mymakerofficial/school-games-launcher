@@ -485,6 +485,7 @@ namespace school_games_launcher
     public class GUIGameDetails : GUITab
     {
         private Game game;
+        public List<PictureBox> ScreenshotList;
         public Game Game { get { return game; } }
         public GUIGameDetails(TabControl tabControl, TabPage tabPage) : base(tabControl, tabPage)
         {
@@ -580,8 +581,10 @@ namespace school_games_launcher
                     ((Label)this.TabPage.Controls["lblGameDetailsPublisher"]).Text = "Publisher: " + gameDetails.Publisher;
                     ((TextBox)this.TabPage.Controls["tbxGameDetailsDescription"]).Text = gameDetails.ShortDescription;
 
+                    ScreenshotList = new List<PictureBox>();
+
                     // display game screenshots
-                    for(int i = 0; i < gameDetails.Screenshots.Count && i < 8; i++)
+                    for (int i = 0; i < gameDetails.Screenshots.Count; i++)
                     {
                         string screenshot = gameDetails.Screenshots[i];
 
@@ -598,7 +601,32 @@ namespace school_games_launcher
                         coverartPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
                         coverartPictureBox.BackColor = System.Drawing.Color.Black;
 
+                        coverartPictureBox.Visible = i < 6;
+
+                        ScreenshotList.Add(coverartPictureBox);
                         this.TabPage.Controls["flpGameDetailsImages"].Controls.Add(coverartPictureBox);
+                    }
+                    if(ScreenshotList.Count() > 6)
+                    {
+                        PictureBox morePictureBox = new System.Windows.Forms.PictureBox();
+                        morePictureBox.Image = global::school_games_launcher.Properties.Resources.show_more_images;
+                        morePictureBox.Size = new System.Drawing.Size(240, 135);
+                        morePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+                        morePictureBox.BackColor = System.Drawing.Color.Black;
+
+                        ScreenshotList.Add(morePictureBox);
+
+                        void ShowAllScreenshots(object sender, EventArgs e)
+                        {
+                            foreach (PictureBox coverartPictureBox in ScreenshotList)
+                            {
+                                coverartPictureBox.Visible = true;
+                            }
+                            ScreenshotList[ScreenshotList.Count() - 1].Visible = false;
+                        }
+                        morePictureBox.Click += new System.EventHandler(ShowAllScreenshots);
+
+                        this.TabPage.Controls["flpGameDetailsImages"].Controls.Add(morePictureBox);
                     }
                 }
             }

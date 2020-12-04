@@ -180,5 +180,11 @@
   <ItemGroup>
     <None Include="Resources\steam_button_danger.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\show_more_images.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\show_less_images.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

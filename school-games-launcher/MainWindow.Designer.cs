@@ -108,6 +108,7 @@
             this.lblGameDetailsDeveloper = new System.Windows.Forms.Label();
             this.lblGameDetailsAge = new System.Windows.Forms.Label();
             this.lblGameDetailsName = new System.Windows.Forms.Label();
+            this.lblEditGameId = new System.Windows.Forms.Label();
             this.pbxLibraryOptions = new System.Windows.Forms.PictureBox();
             this.pbxLibraryProfile = new System.Windows.Forms.PictureBox();
             this.pbxLibraryHome = new System.Windows.Forms.PictureBox();
@@ -167,7 +168,7 @@
             this.pbxGameDetailsClose = new System.Windows.Forms.PictureBox();
             this.pbxGameDetailsCoverart = new System.Windows.Forms.PictureBox();
             this.pbxGameDetailsPlayButton = new System.Windows.Forms.PictureBox();
-            this.lblEditGameId = new System.Windows.Forms.Label();
+            this.pbxGameDetailsMoreSample = new System.Windows.Forms.PictureBox();
             this.tabControl.SuspendLayout();
             this.tabLibrary.SuspendLayout();
             this.tabOptions.SuspendLayout();
@@ -178,6 +179,7 @@
             this.tabRegister.SuspendLayout();
             this.tabPlaying.SuspendLayout();
             this.tapGameDetails.SuspendLayout();
+            this.flpGameDetailsImages.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLibraryOptions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLibraryProfile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLibraryHome)).BeginInit();
@@ -234,6 +236,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxGameDetailsClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxGameDetailsCoverart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxGameDetailsPlayButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxGameDetailsMoreSample)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -1125,6 +1128,7 @@
             // flpGameDetailsImages
             // 
             this.flpGameDetailsImages.AutoScroll = true;
+            this.flpGameDetailsImages.Controls.Add(this.pbxGameDetailsMoreSample);
             this.flpGameDetailsImages.Location = new System.Drawing.Point(537, 45);
             this.flpGameDetailsImages.Name = "flpGameDetailsImages";
             this.flpGameDetailsImages.Size = new System.Drawing.Size(584, 655);
@@ -1185,6 +1189,17 @@
             this.lblGameDetailsName.Size = new System.Drawing.Size(125, 44);
             this.lblGameDetailsName.TabIndex = 7;
             this.lblGameDetailsName.Text = "Game";
+            // 
+            // lblEditGameId
+            // 
+            this.lblEditGameId.AutoSize = true;
+            this.lblEditGameId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEditGameId.ForeColor = System.Drawing.Color.Gray;
+            this.lblEditGameId.Location = new System.Drawing.Point(38, 694);
+            this.lblEditGameId.Name = "lblEditGameId";
+            this.lblEditGameId.Size = new System.Drawing.Size(34, 16);
+            this.lblEditGameId.TabIndex = 38;
+            this.lblEditGameId.Text = "ID: 0";
             // 
             // pbxLibraryOptions
             // 
@@ -1840,16 +1855,15 @@
             this.pbxGameDetailsPlayButton.TabIndex = 10;
             this.pbxGameDetailsPlayButton.TabStop = false;
             // 
-            // lblEditGameId
+            // pbxGameDetailsMoreSample
             // 
-            this.lblEditGameId.AutoSize = true;
-            this.lblEditGameId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEditGameId.ForeColor = System.Drawing.Color.Gray;
-            this.lblEditGameId.Location = new System.Drawing.Point(38, 694);
-            this.lblEditGameId.Name = "lblEditGameId";
-            this.lblEditGameId.Size = new System.Drawing.Size(34, 16);
-            this.lblEditGameId.TabIndex = 38;
-            this.lblEditGameId.Text = "ID: 0";
+            this.pbxGameDetailsMoreSample.Image = global::school_games_launcher.Properties.Resources.show_more_images;
+            this.pbxGameDetailsMoreSample.Location = new System.Drawing.Point(3, 3);
+            this.pbxGameDetailsMoreSample.Name = "pbxGameDetailsMoreSample";
+            this.pbxGameDetailsMoreSample.Size = new System.Drawing.Size(240, 135);
+            this.pbxGameDetailsMoreSample.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxGameDetailsMoreSample.TabIndex = 0;
+            this.pbxGameDetailsMoreSample.TabStop = false;
             // 
             // MainWindow
             // 
@@ -1882,6 +1896,7 @@
             this.tabPlaying.ResumeLayout(false);
             this.tapGameDetails.ResumeLayout(false);
             this.tapGameDetails.PerformLayout();
+            this.flpGameDetailsImages.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbxLibraryOptions)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLibraryProfile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLibraryHome)).EndInit();
@@ -1938,6 +1953,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxGameDetailsClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxGameDetailsCoverart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxGameDetailsPlayButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxGameDetailsMoreSample)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2082,6 +2098,7 @@
         private System.Windows.Forms.Button btnEditGameGetSteam;
         private System.Windows.Forms.TextBox tbxEditGameAge;
         private System.Windows.Forms.Label lblEditGameId;
+        private System.Windows.Forms.PictureBox pbxGameDetailsMoreSample;
     }
 }
 
