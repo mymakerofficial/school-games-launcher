@@ -358,5 +358,75 @@ namespace school_games_launcher
         {
             Program.app.Logout();
         }
+
+        private void BtnEditGameRemoveSteam_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.editGame.SteamId = null;
+        }
+
+        private void BtnEditGameGetSteam_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.editGame.AutoFillSteamGame();
+        }
+
+        private void TbxEditGameName_TextChanged(object sender, EventArgs e)
+        {
+            Program.app.Gui.editGame.Name = this.tbxEditGameName.Text;
+        }
+
+        private void TbxEditGamePath_TextChanged(object sender, EventArgs e)
+        {
+            Program.app.Gui.editGame.Path = this.tbxEditGamePath.Text;
+        }
+
+        private void TbxEditGameAge_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Program.app.Gui.editGame.SelectedAge = Convert.ToInt32(this.tbxEditGameAge.Text);
+            }
+            catch { }
+        }
+
+        private void TbxEditGameCoverart_TextChanged(object sender, EventArgs e)
+        {
+            Program.app.Gui.editGame.Coverart = this.tbxEditGameCoverart.Text;
+        }
+
+        private void BtnEditGameConfirm_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.editGame.Save();
+        }
+
+        private void PbxEditGameAge0_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.editGame.SelectedAge = 0;
+        }
+
+        private void PbxEditGameAge6_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.editGame.SelectedAge = 0;
+        }
+
+        private void PbxEditGameAge12_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.editGame.SelectedAge = 0;
+        }
+
+        private void PbxEditGameAge16_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.editGame.SelectedAge = 0;
+        }
+
+        private void PbxEditGameAge18_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.editGame.SelectedAge = 0;
+        }
+
+        private void BtnEditGameCancel_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.gameDetails.Activate();
+            Program.app.Gui.gameDetails.SetGame(Program.app.Gui.editGame.EditGame);
+        }
     }
 }

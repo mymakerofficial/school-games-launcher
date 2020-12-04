@@ -177,5 +177,8 @@
   <ItemGroup>
     <None Include="Resources\steam_button_background.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\steam_button_danger.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

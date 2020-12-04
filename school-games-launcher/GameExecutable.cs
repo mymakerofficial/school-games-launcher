@@ -35,5 +35,9 @@ namespace school_games_launcher
                 return null;
             }
         }
+        public void SetPath(string path)
+        {
+            this.path = path;
+        }
     }
 }

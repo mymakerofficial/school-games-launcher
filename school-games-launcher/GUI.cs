@@ -14,7 +14,7 @@ namespace school_games_launcher
         public GUILibrary library;
         public GUITab options;
         public GUIAddGame addGame;
-        public GUITab editGame;
+        public GUIEditGame editGame;
         public GUIProfile profile;
         public GUITab login;
         public GUITab register;
@@ -44,7 +44,7 @@ namespace school_games_launcher
             options = new GUITab(this.tabControl, (TabPage)this.tabControl.TabPages["tabOptions"]);
             addGame = new GUIAddGame(this.tabControl, (TabPage)this.tabControl.TabPages["tabAddGame"]);
             addGame.resetOnActive = true;
-            editGame = new GUITab(this.tabControl, (TabPage)this.tabControl.TabPages["tabEditGame"]);
+            editGame = new GUIEditGame(this.tabControl, (TabPage)this.tabControl.TabPages["tabEditGame"]);
             profile = new GUIProfile(this.tabControl, (TabPage)this.tabControl.TabPages["tabProfile"]);
             login = new GUITab(this.tabControl, (TabPage)this.tabControl.TabPages["tabLogin"]);
             login.resetOnActive = true;
@@ -333,6 +333,154 @@ namespace school_games_launcher
             Program.app.Gui.library.Activate();
         }
     }
+    public class GUIEditGame : GUITab
+    {
+        private Game editGame;
+        private string name = "";
+        private string path = "";
+        private int selectedAge = 0;
+        private string coverart = "";
+        private int? steamId = null;
+        private SteamApiGameDetail GameDetails;
+        public Game EditGame
+        {
+            get { return editGame; }
+            set
+            {
+                editGame = value;
+                Name = value.Name;
+                Path = value.Executable.Path;
+                SelectedAge = value.Age;
+                Coverart = value.Coverart;
+                SteamId = value.SteamId;
+                ((Label)this.TabPage.Controls["lblEditGameId"]).Text = "ID: " + Convert.ToString(value.Id);
+            }
+        }
+        public string Name
+        {
+            get { return name; }
+            set
+            {
+                name = value;
+                ((TextBox)this.TabPage.Controls["tbxEditGameName"]).Text = Convert.ToString(name);
+            }
+        }
+        public string Path
+        {
+            get { return path; }
+            set
+            {
+                path = value;
+                ((TextBox)this.TabPage.Controls["tbxEditGamePath"]).Text = Convert.ToString(path);
+            }
+        }
+        public int SelectedAge
+        {
+            get { return selectedAge; }
+            set
+            {
+                selectedAge = value;
+                this.UpdateAgeDisplay();
+            }
+        }
+        public int? SteamId
+        {
+            get { return steamId; }
+            set
+            {
+                steamId = value;
+                ((Label)this.TabPage.Controls["lblEditGameSteamId"]).Text = steamId == null ? "SteamID: null" : "SteamID: " + Convert.ToString(steamId);
+            }
+        }
+        public string Coverart
+        {
+            get { return coverart; }
+            set
+            {
+                coverart = value;
+                ((TextBox)this.TabPage.Controls["tbxEditGameCoverart"]).Text = Convert.ToString(coverart);
+                try
+                {
+                    ((PictureBox)this.TabPage.Controls["pbxEditGameCoverart"]).Load(coverart);
+                }
+                catch
+                {
+                    ((PictureBox)this.TabPage.Controls["pbxEditGameCoverart"]).Image = global::school_games_launcher.Properties.Resources.game_coverart_placeholder;
+                }
+            }
+        }
+        public GUIEditGame(TabControl tabControl, TabPage tabPage) : base(tabControl, tabPage)
+        {
+
+        }
+
+        public override void Update()
+        {
+
+        }
+
+        public override void Reset()
+        {
+            Name = "";
+            Path = "";
+            SelectedAge = 0;
+            Coverart = "";
+            SteamId = null;
+        }
+        private void UpdateAgeDisplay()
+        {
+            ((TextBox)this.TabPage.Controls["tbxEditGameAge"]).Text = Convert.ToString(selectedAge);
+            ((PictureBox)this.TabPage.Controls["pbxEditGameAge0"]).Image = selectedAge == 0 ? global::school_games_launcher.Properties.Resources.age_0_selected : global::school_games_launcher.Properties.Resources.age_0;
+            ((PictureBox)this.TabPage.Controls["pbxEditGameAge6"]).Image = selectedAge == 6 ? global::school_games_launcher.Properties.Resources.age_6_selected : global::school_games_launcher.Properties.Resources.age_6;
+            ((PictureBox)this.TabPage.Controls["pbxEditGameAge12"]).Image = selectedAge == 12 ? global::school_games_launcher.Properties.Resources.age_12_selected : global::school_games_launcher.Properties.Resources.age_12;
+            ((PictureBox)this.TabPage.Controls["pbxEditGameAge16"]).Image = selectedAge == 16 ? global::school_games_launcher.Properties.Resources.age_16_selected : global::school_games_launcher.Properties.Resources.age_16;
+            ((PictureBox)this.TabPage.Controls["pbxEditGameAge18"]).Image = selectedAge == 18 ? global::school_games_launcher.Properties.Resources.age_18_selected : global::school_games_launcher.Properties.Resources.age_18;
+        }
+        public async void AutoFillSteamGame(SteamApiGame game)
+        {
+            if (game != null)
+            {
+                GameDetails = await Program.app.LoadSteamGameDetails(game.AppId);
+                SteamId = game.AppId;
+                Name = game.Name;
+                Path = "steam://rungameid/" + Convert.ToString(game.AppId);
+                if (GameDetails != null)
+                {
+                    SelectedAge = GameDetails.RequiredAge;
+                    Coverart = GameDetails.HeaderImage;
+                }
+            }
+            else
+            {
+                SteamId = null;
+            }
+        }
+        public void AutoFillSteamGame()
+        {
+            if (Name != "")
+            {
+                SteamApiGame game = null;
+                try
+                {
+                    game = Program.app.FindSteamGameById(Convert.ToInt32(Name));
+                }
+                catch { }
+                if (game == null) game = Program.app.FindSteamGameByName(Name);
+                this.AutoFillSteamGame(game);
+            }
+            else
+            {
+                SteamId = null;
+            }
+        }
+        public void Save()
+        {
+            // TODO Check if input is valid!!!
+            EditGame.Set(Name, Path, SelectedAge, Coverart, SteamId);
+            Program.app.Gui.gameDetails.Activate();
+            Program.app.Gui.gameDetails.SetGame(EditGame);
+        }
+    }
     public class GUIGameDetails : GUITab
     {
         private Game game;
@@ -344,6 +492,7 @@ namespace school_games_launcher
         public override void Setup()
         {
             ((PictureBox)this.TabPage.Controls["pbxGameDetailsPlayButton"]).Click += this.LaunchGame;
+            ((LinkLabel)this.TabPage.Controls["llblGameDetailsEdit"]).Click += this.EditGame;
         }
         public override void Update()
         {
@@ -352,6 +501,11 @@ namespace school_games_launcher
         public void LaunchGame(object sender, EventArgs e)
         {
             Program.app.Launch(Game);
+        }
+        public void EditGame(object sender, EventArgs e)
+        {
+            Program.app.Gui.editGame.Activate();
+            Program.app.Gui.editGame.EditGame = Game;
         }
         public async void SetGame(Game game)
         {
