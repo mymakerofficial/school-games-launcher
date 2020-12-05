@@ -21,8 +21,8 @@ namespace school_games_launcher
         public GUITab register;
         public GUIPlaying playing;
         public GUIGameDetails gameDetails;
-        public GUITab editUser;
-        public GUITab changePassword;
+        public GUIEditUser editUser;
+        public GUIChangePassword changePassword;
         public GUITab userRules;
 
         public MainWindow form;
@@ -60,6 +60,10 @@ namespace school_games_launcher
             gameDetails = new GUIGameDetails(this.tabControl, (TabPage)this.tabControl.TabPages["tapGameDetails"]);
             gameDetails.updateOnActive = true;
             gameDetails.Setup();
+            editUser = new GUIEditUser(this.tabControl, (TabPage)this.tabControl.TabPages["tabEditUser"]);
+            changePassword = new GUIChangePassword(this.tabControl, (TabPage)this.tabControl.TabPages["tabChangePassword"]);
+            changePassword.resetOnActive = true;
+
 
             this.tabControl.Appearance = TabAppearance.FlatButtons;
             this.tabControl.ItemSize = new System.Drawing.Size(0, 1);
@@ -122,18 +126,7 @@ namespace school_games_launcher
         {
             List<Game> list = Program.app.SearchGames(query);
 
-            if(list.Count == 1)
-            {
-                Program.app.Gui.gameDetails.SetGame(list[0]);
-                Program.app.Gui.gameDetails.Activate();
-            }
-            else if(list.Count > 0)
-            {
-                this.UpdateList(list);
-            }else
-            {
-
-            }
+            this.UpdateList(list);
         }
         public void UpdateList(List<Game> games)
         {
@@ -210,6 +203,50 @@ namespace school_games_launcher
     }
     public class GUIProfile : GUITab
     {
+        private User user;
+        public User User
+        {
+            get { return user; }
+            set
+            {
+                user = value;
+                ((Label)this.TabPage.Controls["lblProfileName"]).Text = user.Name;
+                ((Label)this.TabPage.Controls["lblProfileBirth"]).Text = String.Format("Age: {0} ({1})", user.Age, user.BirthDate.ToString("d", CultureInfo.CreateSpecificCulture("de-DE")));
+                ((Label)this.TabPage.Controls["lblProfileId"]).Text = String.Format("ID: {0}", user.Id);
+
+                switch (user.Avatar)
+                {
+                    case "0":
+                        ((PictureBox)this.TabPage.Controls["pbxProfileAvatar"]).Image = global::school_games_launcher.Properties.Resources.avatar_0;
+                        break;
+                    case "1":
+                        ((PictureBox)this.TabPage.Controls["pbxProfileAvatar"]).Image = global::school_games_launcher.Properties.Resources.avatar_1;
+                        break;
+                    case "2":
+                        ((PictureBox)this.TabPage.Controls["pbxProfileAvatar"]).Image = global::school_games_launcher.Properties.Resources.avatar_2;
+                        break;
+                    case "3":
+                        ((PictureBox)this.TabPage.Controls["pbxProfileAvatar"]).Image = global::school_games_launcher.Properties.Resources.avatar_3;
+                        break;
+                    case "4":
+                        ((PictureBox)this.TabPage.Controls["pbxProfileAvatar"]).Image = global::school_games_launcher.Properties.Resources.avatar_4;
+                        break;
+                    case "5":
+                        ((PictureBox)this.TabPage.Controls["pbxProfileAvatar"]).Image = global::school_games_launcher.Properties.Resources.avatar_5;
+                        break;
+                    default:
+                        try
+                        {
+                            ((PictureBox)this.TabPage.Controls["pbxProfileAvatar"]).Load(value.Avatar);
+                        }
+                        catch
+                        {
+                            ((PictureBox)this.TabPage.Controls["pbxProfileAvatar"]).Image = global::school_games_launcher.Properties.Resources.game_coverart_placeholder;
+                        }
+                        break;
+                }
+            }
+        }
         public GUIProfile(TabControl tabControl, TabPage tabPage) : base(tabControl, tabPage)
         {
 
@@ -217,14 +254,13 @@ namespace school_games_launcher
 
         public override void Update()
         {
-            this.SetUser(Program.app.ActiveUser);
+            this.User = Program.app.ActiveUser;
         }
-
-        public void SetUser(User user)
+       
+        public void Edit()
         {
-            ((Label)this.TabPage.Controls["lblProfileName"]).Text = user.Name;
-            ((Label)this.TabPage.Controls["lblProfileBirth"]).Text = String.Format("Age: {0} ({1})", user.Age, user.BirthDate.ToString("d", CultureInfo.CreateSpecificCulture("de-DE")));
-            ((Label)this.TabPage.Controls["lblProfileId"]).Text = String.Format("ID: {0}", user.Id);
+            Program.app.Gui.editUser.Activate();
+            Program.app.Gui.editUser.EditUser = user;
         }
     }
     public class GUIAddGame : GUITab
@@ -661,6 +697,8 @@ namespace school_games_launcher
     {
         private User editUser;
         private string name = "";
+        private string avatar = "";
+        private DateTime birthDate;
         public User EditUser
         {
             get { return editUser; }
@@ -668,7 +706,51 @@ namespace school_games_launcher
             {
                 editUser = value;
                 Name = value.Name;
+                Avatar = value.Avatar;
+                BirthDate = value.BirthDate;
+                ((Label)this.TabPage.Controls["lblEditUserNameOriginal"]).Text = value.Name;
                 ((Label)this.TabPage.Controls["lblEditUserId"]).Text = "ID: " + Convert.ToString(value.Id);
+
+
+                switch (editUser.Avatar)
+                {
+                    case "0":
+                        ((PictureBox)this.TabPage.Controls["pbxEditUserAvatarOld"]).Image = global::school_games_launcher.Properties.Resources.avatar_0;
+                        ((PictureBox)this.TabPage.Controls["pbxEditUserAvatarOriginal"]).Image = global::school_games_launcher.Properties.Resources.avatar_0;
+                        break;
+                    case "1":
+                        ((PictureBox)this.TabPage.Controls["pbxEditUserAvatarOld"]).Image = global::school_games_launcher.Properties.Resources.avatar_1;
+                        ((PictureBox)this.TabPage.Controls["pbxEditUserAvatarOriginal"]).Image = global::school_games_launcher.Properties.Resources.avatar_1;
+                        break;
+                    case "2":
+                        ((PictureBox)this.TabPage.Controls["pbxEditUserAvatarOld"]).Image = global::school_games_launcher.Properties.Resources.avatar_2;
+                        ((PictureBox)this.TabPage.Controls["pbxEditUserAvatarOriginal"]).Image = global::school_games_launcher.Properties.Resources.avatar_2;
+                        break;
+                    case "3":
+                        ((PictureBox)this.TabPage.Controls["pbxEditUserAvatarOld"]).Image = global::school_games_launcher.Properties.Resources.avatar_3;
+                        ((PictureBox)this.TabPage.Controls["pbxEditUserAvatarOriginal"]).Image = global::school_games_launcher.Properties.Resources.avatar_3;
+                        break;
+                    case "4":
+                        ((PictureBox)this.TabPage.Controls["pbxEditUserAvatarOld"]).Image = global::school_games_launcher.Properties.Resources.avatar_4;
+                        ((PictureBox)this.TabPage.Controls["pbxEditUserAvatarOriginal"]).Image = global::school_games_launcher.Properties.Resources.avatar_4;
+                        break;
+                    case "5":
+                        ((PictureBox)this.TabPage.Controls["pbxEditUserAvatarOld"]).Image = global::school_games_launcher.Properties.Resources.avatar_5;
+                        ((PictureBox)this.TabPage.Controls["pbxEditUserAvatarOriginal"]).Image = global::school_games_launcher.Properties.Resources.avatar_5;
+                        break;
+                    default:
+                        try
+                        {
+                            ((PictureBox)this.TabPage.Controls["pbxEditUserAvatarOld"]).Load(value.Avatar);
+                            ((PictureBox)this.TabPage.Controls["pbxEditUserAvatarOriginal"]).Load(value.Avatar);
+                        }
+                        catch
+                        {
+                            ((PictureBox)this.TabPage.Controls["pbxEditUserAvatarOld"]).Image = global::school_games_launcher.Properties.Resources.game_coverart_placeholder;
+                            ((PictureBox)this.TabPage.Controls["pbxEditUserAvatarOriginal"]).Image = global::school_games_launcher.Properties.Resources.game_coverart_placeholder;
+                        }
+                        break;
+                }
             }
         }
         public string Name
@@ -680,93 +762,175 @@ namespace school_games_launcher
                 ((TextBox)this.TabPage.Controls["tbxEditUserName"]).Text = Convert.ToString(name);
             }
         }
-        public string Coverart
+        public DateTime BirthDate
         {
-            get { return coverart; }
+            get { return birthDate; }
             set
             {
-                coverart = value;
-                ((TextBox)this.TabPage.Controls["tbxEditGameCoverart"]).Text = Convert.ToString(coverart);
-                try
+                birthDate = value;
+                ((DateTimePicker)this.TabPage.Controls["dtpEditUserBirthdate"]).Value = value;
+            }
+        }
+        public string Avatar
+        {
+            get { return avatar; }
+            set
+            {
+                avatar = value;
+                ((TextBox)this.TabPage.Controls["tbxEditUserAvatarInput"]).Text = Convert.ToString(avatar);
+
+                switch (avatar)
                 {
-                    ((PictureBox)this.TabPage.Controls["pbxEditGameCoverart"]).Load(coverart);
-                }
-                catch
-                {
-                    ((PictureBox)this.TabPage.Controls["pbxEditGameCoverart"]).Image = global::school_games_launcher.Properties.Resources.game_coverart_placeholder;
+                    case "0":
+                        ((PictureBox)this.TabPage.Controls["pbxEditUserAvatar"]).Image = global::school_games_launcher.Properties.Resources.avatar_0;
+                        break;
+                    case "1":
+                        ((PictureBox)this.TabPage.Controls["pbxEditUserAvatar"]).Image = global::school_games_launcher.Properties.Resources.avatar_1;
+                        break;
+                    case "2":
+                        ((PictureBox)this.TabPage.Controls["pbxEditUserAvatar"]).Image = global::school_games_launcher.Properties.Resources.avatar_2;
+                        break;
+                    case "3":
+                        ((PictureBox)this.TabPage.Controls["pbxEditUserAvatar"]).Image = global::school_games_launcher.Properties.Resources.avatar_3;
+                        break;
+                    case "4":
+                        ((PictureBox)this.TabPage.Controls["pbxEditUserAvatar"]).Image = global::school_games_launcher.Properties.Resources.avatar_4;
+                        break;
+                    case "5":
+                        ((PictureBox)this.TabPage.Controls["pbxEditUserAvatar"]).Image = global::school_games_launcher.Properties.Resources.avatar_5;
+                        break;
+                    default:
+                        try
+                        {
+                            ((PictureBox)this.TabPage.Controls["pbxEditUserAvatar"]).Load(avatar);
+                        }
+                        catch
+                        {
+                            ((PictureBox)this.TabPage.Controls["pbxEditUserAvatar"]).Image = global::school_games_launcher.Properties.Resources.game_coverart_placeholder;
+                        }
+                        break;
                 }
             }
         }
-        public GUIEditGame(TabControl tabControl, TabPage tabPage) : base(tabControl, tabPage)
+        public GUIEditUser(TabControl tabControl, TabPage tabPage) : base(tabControl, tabPage)
         {
 
         }
-
         public override void Update()
         {
 
         }
-
         public override void Reset()
         {
             Name = "";
-            Path = "";
-            SelectedAge = 0;
-            Coverart = "";
-            SteamId = null;
+            Avatar = "";
         }
-        private void UpdateAgeDisplay()
+        public void SetOldAvatar()
         {
-            ((TextBox)this.TabPage.Controls["tbxEditGameAge"]).Text = Convert.ToString(selectedAge);
-            ((PictureBox)this.TabPage.Controls["pbxEditGameAge0"]).Image = selectedAge == 0 ? global::school_games_launcher.Properties.Resources.age_0_selected : global::school_games_launcher.Properties.Resources.age_0;
-            ((PictureBox)this.TabPage.Controls["pbxEditGameAge6"]).Image = selectedAge == 6 ? global::school_games_launcher.Properties.Resources.age_6_selected : global::school_games_launcher.Properties.Resources.age_6;
-            ((PictureBox)this.TabPage.Controls["pbxEditGameAge12"]).Image = selectedAge == 12 ? global::school_games_launcher.Properties.Resources.age_12_selected : global::school_games_launcher.Properties.Resources.age_12;
-            ((PictureBox)this.TabPage.Controls["pbxEditGameAge16"]).Image = selectedAge == 16 ? global::school_games_launcher.Properties.Resources.age_16_selected : global::school_games_launcher.Properties.Resources.age_16;
-            ((PictureBox)this.TabPage.Controls["pbxEditGameAge18"]).Image = selectedAge == 18 ? global::school_games_launcher.Properties.Resources.age_18_selected : global::school_games_launcher.Properties.Resources.age_18;
-        }
-        public async void AutoFillSteamGame(SteamApiGame game)
-        {
-            if (game != null)
-            {
-                GameDetails = await Program.app.LoadSteamGameDetails(game.AppId);
-                SteamId = game.AppId;
-                Name = game.Name;
-                Path = "steam://rungameid/" + Convert.ToString(game.AppId);
-                if (GameDetails != null)
-                {
-                    SelectedAge = GameDetails.RequiredAge;
-                    Coverart = GameDetails.HeaderImage;
-                }
-            }
-            else
-            {
-                SteamId = null;
-            }
-        }
-        public void AutoFillSteamGame()
-        {
-            if (Name != "")
-            {
-                SteamApiGame game = null;
-                try
-                {
-                    game = Program.app.FindSteamGameById(Convert.ToInt32(Name));
-                }
-                catch { }
-                if (game == null) game = Program.app.FindSteamGameByName(Name);
-                this.AutoFillSteamGame(game);
-            }
-            else
-            {
-                SteamId = null;
-            }
+            this.Avatar = this.EditUser.Avatar;
         }
         public void Save()
         {
-            // TODO Check if input is valid!!!
-            EditGame.Set(Name, Path, SelectedAge, Coverart, SteamId);
-            Program.app.Gui.gameDetails.Activate();
-            Program.app.Gui.gameDetails.SetGame(EditGame);
+            if (Program.app.ActiveUser.Admin || Program.app.ActiveUser == EditUser)
+            {
+                EditUser.Name = Name;
+                EditUser.Avatar = Avatar;
+                if(Program.app.ActiveUser.Admin) EditUser.BirthDate = BirthDate;
+                Program.app.Gui.profile.Activate();
+                Program.app.Gui.profile.User = EditUser;
+            }
+        }
+        public void Delete()
+        {
+            if(Program.app.ActiveUser.Admin && Program.app.ActiveUser != EditUser)
+            {
+                Program.app.Users.Remove(EditUser);
+            }
+        }
+        public void Cancel()
+        {
+            Program.app.Gui.options.Activate();
+        }
+        public void ChangePassword()
+        {
+            Program.app.Gui.changePassword.Activate();
+            Program.app.Gui.changePassword.EditUser = EditUser;
+        }
+    }
+    public class GUIChangePassword : GUITab
+    {
+        private User editUser;
+        public User EditUser
+        {
+            get { return editUser; }
+            set
+            {
+                editUser = value;
+                ((Label)this.TabPage.Controls["lblChangePasswordName"]).Text = value.Name;
+                ((Label)this.TabPage.Controls["lblChangePasswordId"]).Text = "ID: " + Convert.ToString(value.Id);
+
+
+                switch (editUser.Avatar)
+                {
+                    case "0":
+                        ((PictureBox)this.TabPage.Controls["pbxChangePasswordAvatar"]).Image = global::school_games_launcher.Properties.Resources.avatar_0;
+                        break;
+                    case "1":
+                        ((PictureBox)this.TabPage.Controls["pbxChangePasswordAvatar"]).Image = global::school_games_launcher.Properties.Resources.avatar_1;
+                        break;
+                    case "2":
+                        ((PictureBox)this.TabPage.Controls["pbxChangePasswordAvatar"]).Image = global::school_games_launcher.Properties.Resources.avatar_2;
+                        break;
+                    case "3":
+                        ((PictureBox)this.TabPage.Controls["pbxChangePasswordAvatar"]).Image = global::school_games_launcher.Properties.Resources.avatar_3;
+                        break;
+                    case "4":
+                        ((PictureBox)this.TabPage.Controls["pbxChangePasswordAvatar"]).Image = global::school_games_launcher.Properties.Resources.avatar_4;
+                        break;
+                    case "5":
+                        ((PictureBox)this.TabPage.Controls["pbxChangePasswordAvatar"]).Image = global::school_games_launcher.Properties.Resources.avatar_5;
+                        break;
+                    default:
+                        try
+                        {
+                            ((PictureBox)this.TabPage.Controls["pbxChangePasswordAvatar"]).Load(value.Avatar);
+                        }
+                        catch
+                        {
+                            ((PictureBox)this.TabPage.Controls["pbxChangePasswordAvatar"]).Image = global::school_games_launcher.Properties.Resources.game_coverart_placeholder;
+                        }
+                        break;
+                }
+            }
+        }
+        public GUIChangePassword(TabControl tabControl, TabPage tabPage) : base(tabControl, tabPage)
+        {
+
+        }
+        public override void Update()
+        {
+
+        }
+        public override void Reset()
+        {
+            ((TextBox)this.TabPage.Controls["tbxChangePasswordOld"]).Text = "";
+            ((TextBox)this.TabPage.Controls["tbxChangePasswordNew"]).Text = "";
+            ((TextBox)this.TabPage.Controls["tbxChangePasswordNewRepeat"]).Text = "";
+        }
+        public void Cancel()
+        {
+            Program.app.Gui.editUser.Activate();
+        }
+        public void Save()
+        {
+            if(Program.app.ActiveUser == EditUser)
+            {
+                if (((TextBox)this.TabPage.Controls["tbxChangePasswordNew"]).Text == ((TextBox)this.TabPage.Controls["tbxChangePasswordNewRepeat"]).Text)
+                {
+                    EditUser.SetPassword(((TextBox)this.TabPage.Controls["tbxChangePasswordOld"]).Text, ((TextBox)this.TabPage.Controls["tbxChangePasswordNew"]).Text);
+                    Program.app.Gui.editUser.Activate();
+                }
+            }
         }
     }
 }

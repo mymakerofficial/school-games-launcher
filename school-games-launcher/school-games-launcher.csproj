@@ -121,9 +121,6 @@
     <None Include="Resources\play_button.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\game_thumbnail_shadow.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\play_button_no_shadow.png" />
   </ItemGroup>
   <ItemGroup>
@@ -143,15 +140,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\add_game_button.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\maker_fox.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\settings.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\grain_dark.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\close_button.png" />
@@ -202,9 +190,6 @@
     <None Include="Resources\show_less_images.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\transparent_gradient.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.7.2 %28x86 und x64%29</ProductName>
@@ -215,6 +200,24 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avatar_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avatar_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avatar_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avatar_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avatar_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avatar_3.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

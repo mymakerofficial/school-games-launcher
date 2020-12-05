@@ -503,5 +503,90 @@ namespace school_games_launcher
         {
             Program.app.Gui.library.SearchGames(this.tbxLibrarySearchGame.Text);
         }
+
+        private void btnProfileEdit_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.profile.Edit();
+        }
+
+        private void tbxEditUserName_TextChanged(object sender, EventArgs e)
+        {
+            Program.app.Gui.editUser.Name = tbxEditUserName.Text;
+        }
+
+        private void tbxEditUserAvatarInput_TextChanged(object sender, EventArgs e)
+        {
+            Program.app.Gui.editUser.Avatar = tbxEditUserAvatarInput.Text;
+        }
+
+        private void pbxEditUserAvatar0_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.editUser.Avatar = "0";
+        }
+
+        private void pbxEditUserAvatar1_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.editUser.Avatar = "1";
+        }
+
+        private void pbxEditUserAvatar2_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.editUser.Avatar = "2";
+        }
+
+        private void pbxEditUserAvatar3_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.editUser.Avatar = "3";
+        }
+
+        private void pbxEditUserAvatar4_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.editUser.Avatar = "4";
+        }
+
+        private void pbxEditUserAvatar5_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.editUser.Avatar = "5";
+        }
+
+        private void pbxEditUserAvatarOld_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.editUser.SetOldAvatar();
+        }
+
+        private void dtpEditUserBirthdate_ValueChanged(object sender, EventArgs e)
+        {
+            Program.app.Gui.editUser.BirthDate = dtpEditUserBirthdate.Value;
+        }
+
+        private void btnEditUserSave_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.editUser.Save();
+        }
+
+        private void llblEditUserDelete_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Program.app.Gui.editUser.Delete();
+        }
+
+        private void btnEditUserChangePassword_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.editUser.ChangePassword();
+        }
+
+        private void btnChangePasswordSave_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.changePassword.Save();
+        }
+
+        private void btnEditUserCancel_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.editUser.Cancel();
+        }
+
+        private void btnChangePasswordCancel_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.changePassword.Cancel();
+        }
     }
 }

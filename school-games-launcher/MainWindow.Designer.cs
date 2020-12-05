@@ -31,28 +31,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabLibrary = new System.Windows.Forms.TabPage();
-            this.pbxLibraryOptions = new System.Windows.Forms.PictureBox();
-            this.pbxLibraryProfile = new System.Windows.Forms.PictureBox();
-            this.pbxLibraryHome = new System.Windows.Forms.PictureBox();
-            this.pbxLibraryMinimize = new System.Windows.Forms.PictureBox();
-            this.pbxLibraryClose = new System.Windows.Forms.PictureBox();
             this.lblLibraryNotAllowedToPlay = new System.Windows.Forms.Label();
             this.flpLibraryGameList = new System.Windows.Forms.FlowLayoutPanel();
             this.lblLibrarySearchGame = new System.Windows.Forms.Label();
             this.tbxLibrarySearchGame = new System.Windows.Forms.TextBox();
             this.tabOptions = new System.Windows.Forms.TabPage();
-            this.pbxOptionsOptions = new System.Windows.Forms.PictureBox();
-            this.pbxOptionsProfile = new System.Windows.Forms.PictureBox();
-            this.pbxOptionsHome = new System.Windows.Forms.PictureBox();
-            this.pbxOptionsMinimize = new System.Windows.Forms.PictureBox();
-            this.pbxOptionsClose = new System.Windows.Forms.PictureBox();
             this.btnOptionsAddUser = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.lblOptionsTitle = new System.Windows.Forms.Label();
             this.tabAddGame = new System.Windows.Forms.TabPage();
-            this.pbxAddGameOptions = new System.Windows.Forms.PictureBox();
-            this.pbxAddGameProfile = new System.Windows.Forms.PictureBox();
-            this.pbxAddGameHome = new System.Windows.Forms.PictureBox();
             this.btnAddGameCancel = new System.Windows.Forms.Button();
             this.lblAddGameSteamId = new System.Windows.Forms.Label();
             this.tbxAddGameAge = new System.Windows.Forms.TextBox();
@@ -65,15 +52,6 @@
             this.tbxAddGamePath = new System.Windows.Forms.TextBox();
             this.lblAddGameTitle = new System.Windows.Forms.Label();
             this.tbxAddGameName = new System.Windows.Forms.TextBox();
-            this.btnAddGameFindSteamGame = new System.Windows.Forms.Button();
-            this.pbxAddGameMinimize = new System.Windows.Forms.PictureBox();
-            this.pbxAddGameClose = new System.Windows.Forms.PictureBox();
-            this.pbxAddGameCoverart = new System.Windows.Forms.PictureBox();
-            this.pbxAddGameAge18 = new System.Windows.Forms.PictureBox();
-            this.pbxAddGameAge16 = new System.Windows.Forms.PictureBox();
-            this.pbxAddGameAge12 = new System.Windows.Forms.PictureBox();
-            this.pbxAddGameAge6 = new System.Windows.Forms.PictureBox();
-            this.pbxAddGameAge0 = new System.Windows.Forms.PictureBox();
             this.tabEditGame = new System.Windows.Forms.TabPage();
             this.lblEditGameId = new System.Windows.Forms.Label();
             this.tbxEditGameAge = new System.Windows.Forms.TextBox();
@@ -89,19 +67,6 @@
             this.tbxEditGamePath = new System.Windows.Forms.TextBox();
             this.lblEditGameTitle = new System.Windows.Forms.Label();
             this.tbxEditGameName = new System.Windows.Forms.TextBox();
-            this.btnEditGameRemoveSteam = new System.Windows.Forms.Button();
-            this.btnEditGameGetSteam = new System.Windows.Forms.Button();
-            this.pbxEditGameOptions = new System.Windows.Forms.PictureBox();
-            this.pbxEditGameProfile = new System.Windows.Forms.PictureBox();
-            this.pbxEditGameHome = new System.Windows.Forms.PictureBox();
-            this.pbxEditGameMinimize = new System.Windows.Forms.PictureBox();
-            this.pbxEditGameClose = new System.Windows.Forms.PictureBox();
-            this.pbxEditGameCoverart = new System.Windows.Forms.PictureBox();
-            this.pbxEditGameAge18 = new System.Windows.Forms.PictureBox();
-            this.pbxEditGameAge16 = new System.Windows.Forms.PictureBox();
-            this.pbxEditGameAge12 = new System.Windows.Forms.PictureBox();
-            this.pbxEditGameAge6 = new System.Windows.Forms.PictureBox();
-            this.pbxEditGameAge0 = new System.Windows.Forms.PictureBox();
             this.tabProfile = new System.Windows.Forms.TabPage();
             this.btnProfileEdit = new System.Windows.Forms.Button();
             this.btnProfileLogout = new System.Windows.Forms.Button();
@@ -111,16 +76,7 @@
             this.lblProfileBirth = new System.Windows.Forms.Label();
             this.lblProfileLastPlayed = new System.Windows.Forms.Label();
             this.flpProfileLastPlayed = new System.Windows.Forms.FlowLayoutPanel();
-            this.pbxProfileOptions = new System.Windows.Forms.PictureBox();
-            this.pbxProfileProfile = new System.Windows.Forms.PictureBox();
-            this.pbxProfileHome = new System.Windows.Forms.PictureBox();
-            this.pbxProfileMinimize = new System.Windows.Forms.PictureBox();
-            this.pbxProfileClose = new System.Windows.Forms.PictureBox();
-            this.pbxProfileAvatar = new System.Windows.Forms.PictureBox();
             this.tabLogin = new System.Windows.Forms.TabPage();
-            this.pbxLoginHome = new System.Windows.Forms.PictureBox();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.pbxLoginClose = new System.Windows.Forms.PictureBox();
             this.tbxLoginPassword = new System.Windows.Forms.TextBox();
             this.tbxLoginUsername = new System.Windows.Forms.TextBox();
             this.lblLoginTitle = new System.Windows.Forms.Label();
@@ -128,11 +84,6 @@
             this.llbLoginUsername = new System.Windows.Forms.Label();
             this.btnLoginConfirm = new System.Windows.Forms.Button();
             this.tabRegister = new System.Windows.Forms.TabPage();
-            this.pbxRegisterOptions = new System.Windows.Forms.PictureBox();
-            this.pbxRegisterProfile = new System.Windows.Forms.PictureBox();
-            this.pbxRegisterHome = new System.Windows.Forms.PictureBox();
-            this.pbxRegisterMinimize = new System.Windows.Forms.PictureBox();
-            this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.llblRegisterCancel = new System.Windows.Forms.LinkLabel();
             this.btnRegisterConfirm = new System.Windows.Forms.Button();
             this.dtpRegisterBirthday = new System.Windows.Forms.DateTimePicker();
@@ -146,20 +97,112 @@
             this.lblRegisterTitle = new System.Windows.Forms.Label();
             this.tabPlaying = new System.Windows.Forms.TabPage();
             this.label4 = new System.Windows.Forms.Label();
-            this.pbxPlayingMinimize = new System.Windows.Forms.PictureBox();
-            this.pbxPlayingCoverart = new System.Windows.Forms.PictureBox();
             this.btnPlayingStop = new System.Windows.Forms.Button();
             this.tapGameDetails = new System.Windows.Forms.TabPage();
             this.lblGameDetailsId = new System.Windows.Forms.Label();
             this.llblGameDetailsEdit = new System.Windows.Forms.LinkLabel();
             this.lblGameDetailsSteamId = new System.Windows.Forms.Label();
             this.flpGameDetailsImages = new System.Windows.Forms.FlowLayoutPanel();
-            this.pbxGameDetailsMoreSample = new System.Windows.Forms.PictureBox();
             this.tbxGameDetailsDescription = new System.Windows.Forms.TextBox();
             this.lblGameDetailsPublisher = new System.Windows.Forms.Label();
             this.lblGameDetailsDeveloper = new System.Windows.Forms.Label();
             this.lblGameDetailsAge = new System.Windows.Forms.Label();
             this.lblGameDetailsName = new System.Windows.Forms.Label();
+            this.tabEditUser = new System.Windows.Forms.TabPage();
+            this.lblEditUserId = new System.Windows.Forms.Label();
+            this.llblEditUserDelete = new System.Windows.Forms.LinkLabel();
+            this.btnEditUserCancel = new System.Windows.Forms.Button();
+            this.btnEditUserUserRules = new System.Windows.Forms.Button();
+            this.btnEditUserChangePassword = new System.Windows.Forms.Button();
+            this.tbxEditUserAvatarInput = new System.Windows.Forms.TextBox();
+            this.tbxEditUserAvatar = new System.Windows.Forms.Label();
+            this.btnEditUserSave = new System.Windows.Forms.Button();
+            this.dtpEditUserBirthdate = new System.Windows.Forms.DateTimePicker();
+            this.tbxEditUserName = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.lblEditUserName = new System.Windows.Forms.Label();
+            this.lblEditUserNameOriginal = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.tabChangePassword = new System.Windows.Forms.TabPage();
+            this.btnChangePasswordCancel = new System.Windows.Forms.Button();
+            this.btnChangePasswordSave = new System.Windows.Forms.Button();
+            this.tbxChangePasswordNewRepeat = new System.Windows.Forms.TextBox();
+            this.lblChangePasswordNewPasswordRepeat = new System.Windows.Forms.Label();
+            this.tbxChangePasswordNew = new System.Windows.Forms.TextBox();
+            this.lblChangePasswordNewPassword = new System.Windows.Forms.Label();
+            this.tbxChangePasswordOld = new System.Windows.Forms.TextBox();
+            this.lblChangePasswordOldPassword = new System.Windows.Forms.Label();
+            this.lblChangePasswordId = new System.Windows.Forms.Label();
+            this.lblChangePasswordName = new System.Windows.Forms.Label();
+            this.lblChangePasswordTitle = new System.Windows.Forms.Label();
+            this.tabEditUserRules = new System.Windows.Forms.TabPage();
+            this.label20 = new System.Windows.Forms.Label();
+            this.btnUserRulesAgeExeptionsAdd = new System.Windows.Forms.Button();
+            this.btnUserRulesAllowedPlaytimesAdd = new System.Windows.Forms.Button();
+            this.btnUserRulesCancel = new System.Windows.Forms.Button();
+            this.btnUserRulesSave = new System.Windows.Forms.Button();
+            this.lblUserRulesUserName = new System.Windows.Forms.Label();
+            this.lblUserRulesTitle = new System.Windows.Forms.Label();
+            this.lblUserRulesAgeExeptionsTip = new System.Windows.Forms.Label();
+            this.lblUserRulesAgeExeptionsTitle = new System.Windows.Forms.Label();
+            this.lblUserRulesAllowedPlaytimesTip = new System.Windows.Forms.Label();
+            this.lblUserRulesAllowedPlaytimesTitle = new System.Windows.Forms.Label();
+            this.flpUserRulesAlowedPlaytimes = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.flpUserRulesAgeExeptions = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pbxLibraryOptions = new System.Windows.Forms.PictureBox();
+            this.pbxLibraryProfile = new System.Windows.Forms.PictureBox();
+            this.pbxLibraryHome = new System.Windows.Forms.PictureBox();
+            this.pbxLibraryMinimize = new System.Windows.Forms.PictureBox();
+            this.pbxLibraryClose = new System.Windows.Forms.PictureBox();
+            this.pbxOptionsOptions = new System.Windows.Forms.PictureBox();
+            this.pbxOptionsProfile = new System.Windows.Forms.PictureBox();
+            this.pbxOptionsHome = new System.Windows.Forms.PictureBox();
+            this.pbxOptionsMinimize = new System.Windows.Forms.PictureBox();
+            this.pbxOptionsClose = new System.Windows.Forms.PictureBox();
+            this.pbxAddGameOptions = new System.Windows.Forms.PictureBox();
+            this.pbxAddGameProfile = new System.Windows.Forms.PictureBox();
+            this.pbxAddGameHome = new System.Windows.Forms.PictureBox();
+            this.btnAddGameFindSteamGame = new System.Windows.Forms.Button();
+            this.pbxAddGameMinimize = new System.Windows.Forms.PictureBox();
+            this.pbxAddGameClose = new System.Windows.Forms.PictureBox();
+            this.pbxAddGameCoverart = new System.Windows.Forms.PictureBox();
+            this.pbxAddGameAge18 = new System.Windows.Forms.PictureBox();
+            this.pbxAddGameAge16 = new System.Windows.Forms.PictureBox();
+            this.pbxAddGameAge12 = new System.Windows.Forms.PictureBox();
+            this.pbxAddGameAge6 = new System.Windows.Forms.PictureBox();
+            this.pbxAddGameAge0 = new System.Windows.Forms.PictureBox();
+            this.btnEditGameRemoveSteam = new System.Windows.Forms.Button();
+            this.btnEditGameGetSteam = new System.Windows.Forms.Button();
+            this.pbxEditGameOptions = new System.Windows.Forms.PictureBox();
+            this.pbxEditGameProfile = new System.Windows.Forms.PictureBox();
+            this.pbxEditGameHome = new System.Windows.Forms.PictureBox();
+            this.pbxEditGameMinimize = new System.Windows.Forms.PictureBox();
+            this.pbxEditGameClose = new System.Windows.Forms.PictureBox();
+            this.pbxEditGameCoverart = new System.Windows.Forms.PictureBox();
+            this.pbxEditGameAge18 = new System.Windows.Forms.PictureBox();
+            this.pbxEditGameAge16 = new System.Windows.Forms.PictureBox();
+            this.pbxEditGameAge12 = new System.Windows.Forms.PictureBox();
+            this.pbxEditGameAge6 = new System.Windows.Forms.PictureBox();
+            this.pbxEditGameAge0 = new System.Windows.Forms.PictureBox();
+            this.pbxProfileOptions = new System.Windows.Forms.PictureBox();
+            this.pbxProfileProfile = new System.Windows.Forms.PictureBox();
+            this.pbxProfileHome = new System.Windows.Forms.PictureBox();
+            this.pbxProfileMinimize = new System.Windows.Forms.PictureBox();
+            this.pbxProfileClose = new System.Windows.Forms.PictureBox();
+            this.pbxProfileAvatar = new System.Windows.Forms.PictureBox();
+            this.pbxLoginHome = new System.Windows.Forms.PictureBox();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.pbxLoginClose = new System.Windows.Forms.PictureBox();
+            this.pbxRegisterOptions = new System.Windows.Forms.PictureBox();
+            this.pbxRegisterProfile = new System.Windows.Forms.PictureBox();
+            this.pbxRegisterHome = new System.Windows.Forms.PictureBox();
+            this.pbxRegisterMinimize = new System.Windows.Forms.PictureBox();
+            this.pictureBox14 = new System.Windows.Forms.PictureBox();
+            this.pbxPlayingMinimize = new System.Windows.Forms.PictureBox();
+            this.pbxPlayingCoverart = new System.Windows.Forms.PictureBox();
+            this.pbxGameDetailsMoreSample = new System.Windows.Forms.PictureBox();
             this.pbxGameDetailsAge = new System.Windows.Forms.PictureBox();
             this.pbxGameDetailsOptions = new System.Windows.Forms.PictureBox();
             this.pbxGameDetailProfile = new System.Windows.Forms.PictureBox();
@@ -168,82 +211,58 @@
             this.pbxGameDetailsClose = new System.Windows.Forms.PictureBox();
             this.pbxGameDetailsCoverart = new System.Windows.Forms.PictureBox();
             this.pbxGameDetailsPlayButton = new System.Windows.Forms.PictureBox();
-            this.tabEditUser = new System.Windows.Forms.TabPage();
-            this.label18 = new System.Windows.Forms.Label();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pbxEditUserAvatar5 = new System.Windows.Forms.PictureBox();
+            this.pbxEditUserAvatar4 = new System.Windows.Forms.PictureBox();
+            this.pbxEditUserAvatar3 = new System.Windows.Forms.PictureBox();
+            this.pbxEditUserAvatar2 = new System.Windows.Forms.PictureBox();
+            this.pbxEditUserAvatar1 = new System.Windows.Forms.PictureBox();
+            this.pbxEditUserAvatar0 = new System.Windows.Forms.PictureBox();
+            this.pbxEditUserAvatar = new System.Windows.Forms.PictureBox();
+            this.pbxEditUserAvatarOriginal = new System.Windows.Forms.PictureBox();
             this.pbxEditUserOptions = new System.Windows.Forms.PictureBox();
             this.pbxEditUserProfile = new System.Windows.Forms.PictureBox();
             this.pbxEditUserHome = new System.Windows.Forms.PictureBox();
             this.pbxEditUserMinimize = new System.Windows.Forms.PictureBox();
             this.pbxEditUserClose = new System.Windows.Forms.PictureBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.tabChangePassword = new System.Windows.Forms.TabPage();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.pbxChangePasswordAvatar = new System.Windows.Forms.PictureBox();
             this.pbxChangePasswordOptions = new System.Windows.Forms.PictureBox();
             this.pbxChangePasswordProfile = new System.Windows.Forms.PictureBox();
             this.pbxChangePasswordHome = new System.Windows.Forms.PictureBox();
             this.pbxChangePasswordMinimize = new System.Windows.Forms.PictureBox();
             this.pbxChangePasswordClose = new System.Windows.Forms.PictureBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.tabEditUserRules = new System.Windows.Forms.TabPage();
-            this.label20 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pbxUserRulesAvatar = new System.Windows.Forms.PictureBox();
             this.pbxUserRulesProfile = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pbxUserRulesHome = new System.Windows.Forms.PictureBox();
             this.pbxUserRulesMinimize = new System.Windows.Forms.PictureBox();
             this.pbxUserRulesClose = new System.Windows.Forms.PictureBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pbxEditUserAvatarOld = new System.Windows.Forms.PictureBox();
             this.tabControl.SuspendLayout();
             this.tabLibrary.SuspendLayout();
+            this.tabOptions.SuspendLayout();
+            this.tabAddGame.SuspendLayout();
+            this.tabEditGame.SuspendLayout();
+            this.tabProfile.SuspendLayout();
+            this.tabLogin.SuspendLayout();
+            this.tabRegister.SuspendLayout();
+            this.tabPlaying.SuspendLayout();
+            this.tapGameDetails.SuspendLayout();
+            this.flpGameDetailsImages.SuspendLayout();
+            this.tabEditUser.SuspendLayout();
+            this.tabChangePassword.SuspendLayout();
+            this.tabEditUserRules.SuspendLayout();
+            this.flpUserRulesAlowedPlaytimes.SuspendLayout();
+            this.flpUserRulesAgeExeptions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLibraryOptions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLibraryProfile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLibraryHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLibraryMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLibraryClose)).BeginInit();
-            this.tabOptions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxOptionsOptions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxOptionsProfile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxOptionsHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxOptionsMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxOptionsClose)).BeginInit();
-            this.tabAddGame.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAddGameOptions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAddGameProfile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAddGameHome)).BeginInit();
@@ -255,7 +274,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxAddGameAge12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAddGameAge6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAddGameAge0)).BeginInit();
-            this.tabEditGame.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxEditGameOptions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxEditGameProfile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxEditGameHome)).BeginInit();
@@ -267,28 +285,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxEditGameAge12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxEditGameAge6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxEditGameAge0)).BeginInit();
-            this.tabProfile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxProfileOptions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxProfileProfile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxProfileHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxProfileMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxProfileClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxProfileAvatar)).BeginInit();
-            this.tabLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLoginHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLoginClose)).BeginInit();
-            this.tabRegister.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxRegisterOptions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxRegisterProfile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxRegisterHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxRegisterMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
-            this.tabPlaying.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPlayingMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPlayingCoverart)).BeginInit();
-            this.tapGameDetails.SuspendLayout();
-            this.flpGameDetailsImages.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxGameDetailsMoreSample)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxGameDetailsAge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxGameDetailsOptions)).BeginInit();
@@ -298,30 +310,32 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxGameDetailsClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxGameDetailsCoverart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxGameDetailsPlayButton)).BeginInit();
-            this.tabEditUser.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxEditUserAvatar5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxEditUserAvatar4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxEditUserAvatar3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxEditUserAvatar2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxEditUserAvatar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxEditUserAvatar0)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxEditUserAvatar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxEditUserAvatarOriginal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxEditUserOptions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxEditUserProfile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxEditUserHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxEditUserMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxEditUserClose)).BeginInit();
-            this.tabChangePassword.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxChangePasswordAvatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxChangePasswordOptions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxChangePasswordProfile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxChangePasswordHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxChangePasswordMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxChangePasswordClose)).BeginInit();
-            this.tabEditUserRules.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxUserRulesAvatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxUserRulesProfile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxUserRulesHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxUserRulesMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxUserRulesClose)).BeginInit();
-            this.flowLayoutPanel1.SuspendLayout();
-            this.flowLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxEditUserAvatarOld)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -367,60 +381,6 @@
             this.tabLibrary.TabIndex = 0;
             this.tabLibrary.Text = "Library";
             this.tabLibrary.Click += new System.EventHandler(this.tabLibrary_Click);
-            // 
-            // pbxLibraryOptions
-            // 
-            this.pbxLibraryOptions.Image = global::school_games_launcher.Properties.Resources.options_button;
-            this.pbxLibraryOptions.Location = new System.Drawing.Point(125, 0);
-            this.pbxLibraryOptions.Name = "pbxLibraryOptions";
-            this.pbxLibraryOptions.Size = new System.Drawing.Size(75, 25);
-            this.pbxLibraryOptions.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxLibraryOptions.TabIndex = 17;
-            this.pbxLibraryOptions.TabStop = false;
-            this.pbxLibraryOptions.Click += new System.EventHandler(this.pbxLibraryOptions_Click_1);
-            // 
-            // pbxLibraryProfile
-            // 
-            this.pbxLibraryProfile.Image = global::school_games_launcher.Properties.Resources.profile_button;
-            this.pbxLibraryProfile.Location = new System.Drawing.Point(50, 0);
-            this.pbxLibraryProfile.Name = "pbxLibraryProfile";
-            this.pbxLibraryProfile.Size = new System.Drawing.Size(75, 25);
-            this.pbxLibraryProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxLibraryProfile.TabIndex = 16;
-            this.pbxLibraryProfile.TabStop = false;
-            this.pbxLibraryProfile.Click += new System.EventHandler(this.pbxLibraryProfile_Click);
-            // 
-            // pbxLibraryHome
-            // 
-            this.pbxLibraryHome.Image = global::school_games_launcher.Properties.Resources.home_button;
-            this.pbxLibraryHome.Location = new System.Drawing.Point(0, 0);
-            this.pbxLibraryHome.Name = "pbxLibraryHome";
-            this.pbxLibraryHome.Size = new System.Drawing.Size(50, 25);
-            this.pbxLibraryHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxLibraryHome.TabIndex = 15;
-            this.pbxLibraryHome.TabStop = false;
-            // 
-            // pbxLibraryMinimize
-            // 
-            this.pbxLibraryMinimize.Image = ((System.Drawing.Image)(resources.GetObject("pbxLibraryMinimize.Image")));
-            this.pbxLibraryMinimize.Location = new System.Drawing.Point(1036, 0);
-            this.pbxLibraryMinimize.Name = "pbxLibraryMinimize";
-            this.pbxLibraryMinimize.Size = new System.Drawing.Size(50, 25);
-            this.pbxLibraryMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxLibraryMinimize.TabIndex = 11;
-            this.pbxLibraryMinimize.TabStop = false;
-            this.pbxLibraryMinimize.Click += new System.EventHandler(this.pbxLibraryMinimize_Click);
-            // 
-            // pbxLibraryClose
-            // 
-            this.pbxLibraryClose.Image = global::school_games_launcher.Properties.Resources.close_button;
-            this.pbxLibraryClose.Location = new System.Drawing.Point(1086, 0);
-            this.pbxLibraryClose.Name = "pbxLibraryClose";
-            this.pbxLibraryClose.Size = new System.Drawing.Size(50, 25);
-            this.pbxLibraryClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxLibraryClose.TabIndex = 10;
-            this.pbxLibraryClose.TabStop = false;
-            this.pbxLibraryClose.Click += new System.EventHandler(this.pbxLibraryClose_Click);
             // 
             // lblLibraryNotAllowedToPlay
             // 
@@ -484,61 +444,6 @@
             this.tabOptions.Size = new System.Drawing.Size(1144, 723);
             this.tabOptions.TabIndex = 1;
             this.tabOptions.Text = "Options ";
-            // 
-            // pbxOptionsOptions
-            // 
-            this.pbxOptionsOptions.Image = global::school_games_launcher.Properties.Resources.options_button;
-            this.pbxOptionsOptions.Location = new System.Drawing.Point(125, 0);
-            this.pbxOptionsOptions.Name = "pbxOptionsOptions";
-            this.pbxOptionsOptions.Size = new System.Drawing.Size(75, 25);
-            this.pbxOptionsOptions.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxOptionsOptions.TabIndex = 19;
-            this.pbxOptionsOptions.TabStop = false;
-            this.pbxOptionsOptions.Click += new System.EventHandler(this.pbxOptionsOptions_Click);
-            // 
-            // pbxOptionsProfile
-            // 
-            this.pbxOptionsProfile.Image = global::school_games_launcher.Properties.Resources.profile_button;
-            this.pbxOptionsProfile.Location = new System.Drawing.Point(50, 0);
-            this.pbxOptionsProfile.Name = "pbxOptionsProfile";
-            this.pbxOptionsProfile.Size = new System.Drawing.Size(75, 25);
-            this.pbxOptionsProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxOptionsProfile.TabIndex = 18;
-            this.pbxOptionsProfile.TabStop = false;
-            this.pbxOptionsProfile.Click += new System.EventHandler(this.pbxOptionsProfile_Click);
-            // 
-            // pbxOptionsHome
-            // 
-            this.pbxOptionsHome.Image = global::school_games_launcher.Properties.Resources.home_button;
-            this.pbxOptionsHome.Location = new System.Drawing.Point(0, 0);
-            this.pbxOptionsHome.Name = "pbxOptionsHome";
-            this.pbxOptionsHome.Size = new System.Drawing.Size(50, 25);
-            this.pbxOptionsHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxOptionsHome.TabIndex = 14;
-            this.pbxOptionsHome.TabStop = false;
-            this.pbxOptionsHome.Click += new System.EventHandler(this.pbxOptionsHome_Click);
-            // 
-            // pbxOptionsMinimize
-            // 
-            this.pbxOptionsMinimize.Image = ((System.Drawing.Image)(resources.GetObject("pbxOptionsMinimize.Image")));
-            this.pbxOptionsMinimize.Location = new System.Drawing.Point(1035, 0);
-            this.pbxOptionsMinimize.Name = "pbxOptionsMinimize";
-            this.pbxOptionsMinimize.Size = new System.Drawing.Size(50, 25);
-            this.pbxOptionsMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxOptionsMinimize.TabIndex = 13;
-            this.pbxOptionsMinimize.TabStop = false;
-            this.pbxOptionsMinimize.Click += new System.EventHandler(this.pbxOptionsMinimize_Click);
-            // 
-            // pbxOptionsClose
-            // 
-            this.pbxOptionsClose.Image = global::school_games_launcher.Properties.Resources.close_button;
-            this.pbxOptionsClose.Location = new System.Drawing.Point(1085, 0);
-            this.pbxOptionsClose.Name = "pbxOptionsClose";
-            this.pbxOptionsClose.Size = new System.Drawing.Size(50, 25);
-            this.pbxOptionsClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxOptionsClose.TabIndex = 12;
-            this.pbxOptionsClose.TabStop = false;
-            this.pbxOptionsClose.Click += new System.EventHandler(this.pbxOptionsClose_Click);
             // 
             // btnOptionsAddUser
             // 
@@ -605,39 +510,6 @@
             this.tabAddGame.Size = new System.Drawing.Size(1144, 723);
             this.tabAddGame.TabIndex = 4;
             this.tabAddGame.Text = "Add Game";
-            // 
-            // pbxAddGameOptions
-            // 
-            this.pbxAddGameOptions.Image = global::school_games_launcher.Properties.Resources.options_button;
-            this.pbxAddGameOptions.Location = new System.Drawing.Point(125, 0);
-            this.pbxAddGameOptions.Name = "pbxAddGameOptions";
-            this.pbxAddGameOptions.Size = new System.Drawing.Size(75, 25);
-            this.pbxAddGameOptions.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxAddGameOptions.TabIndex = 22;
-            this.pbxAddGameOptions.TabStop = false;
-            this.pbxAddGameOptions.Click += new System.EventHandler(this.pbxAddGameOptions_Click);
-            // 
-            // pbxAddGameProfile
-            // 
-            this.pbxAddGameProfile.Image = global::school_games_launcher.Properties.Resources.profile_button;
-            this.pbxAddGameProfile.Location = new System.Drawing.Point(50, 0);
-            this.pbxAddGameProfile.Name = "pbxAddGameProfile";
-            this.pbxAddGameProfile.Size = new System.Drawing.Size(75, 25);
-            this.pbxAddGameProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxAddGameProfile.TabIndex = 21;
-            this.pbxAddGameProfile.TabStop = false;
-            this.pbxAddGameProfile.Click += new System.EventHandler(this.pbxAddGameProfile_Click);
-            // 
-            // pbxAddGameHome
-            // 
-            this.pbxAddGameHome.Image = global::school_games_launcher.Properties.Resources.home_button;
-            this.pbxAddGameHome.Location = new System.Drawing.Point(0, 0);
-            this.pbxAddGameHome.Name = "pbxAddGameHome";
-            this.pbxAddGameHome.Size = new System.Drawing.Size(50, 25);
-            this.pbxAddGameHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxAddGameHome.TabIndex = 20;
-            this.pbxAddGameHome.TabStop = false;
-            this.pbxAddGameHome.Click += new System.EventHandler(this.pbxAddGameHome_Click);
             // 
             // btnAddGameCancel
             // 
@@ -758,109 +630,6 @@
             this.tbxAddGameName.Size = new System.Drawing.Size(320, 20);
             this.tbxAddGameName.TabIndex = 0;
             this.tbxAddGameName.TextChanged += new System.EventHandler(this.tbxAddGameName_TextChanged);
-            // 
-            // btnAddGameFindSteamGame
-            // 
-            this.btnAddGameFindSteamGame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnAddGameFindSteamGame.BackgroundImage = global::school_games_launcher.Properties.Resources.steam_button_background;
-            this.btnAddGameFindSteamGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddGameFindSteamGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddGameFindSteamGame.ForeColor = System.Drawing.Color.White;
-            this.btnAddGameFindSteamGame.Location = new System.Drawing.Point(28, 156);
-            this.btnAddGameFindSteamGame.Name = "btnAddGameFindSteamGame";
-            this.btnAddGameFindSteamGame.Size = new System.Drawing.Size(320, 43);
-            this.btnAddGameFindSteamGame.TabIndex = 1;
-            this.btnAddGameFindSteamGame.Text = "Auto fill Steam game";
-            this.btnAddGameFindSteamGame.UseVisualStyleBackColor = false;
-            this.btnAddGameFindSteamGame.Click += new System.EventHandler(this.btnAddGameFindSteamGame_Click);
-            // 
-            // pbxAddGameMinimize
-            // 
-            this.pbxAddGameMinimize.Image = ((System.Drawing.Image)(resources.GetObject("pbxAddGameMinimize.Image")));
-            this.pbxAddGameMinimize.Location = new System.Drawing.Point(1036, 0);
-            this.pbxAddGameMinimize.Name = "pbxAddGameMinimize";
-            this.pbxAddGameMinimize.Size = new System.Drawing.Size(50, 25);
-            this.pbxAddGameMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxAddGameMinimize.TabIndex = 19;
-            this.pbxAddGameMinimize.TabStop = false;
-            this.pbxAddGameMinimize.Click += new System.EventHandler(this.pbxAddGameMinimize_Click);
-            // 
-            // pbxAddGameClose
-            // 
-            this.pbxAddGameClose.Image = global::school_games_launcher.Properties.Resources.close_button;
-            this.pbxAddGameClose.Location = new System.Drawing.Point(1086, 0);
-            this.pbxAddGameClose.Name = "pbxAddGameClose";
-            this.pbxAddGameClose.Size = new System.Drawing.Size(50, 25);
-            this.pbxAddGameClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxAddGameClose.TabIndex = 18;
-            this.pbxAddGameClose.TabStop = false;
-            this.pbxAddGameClose.Click += new System.EventHandler(this.pbxAddGameClose_Click);
-            // 
-            // pbxAddGameCoverart
-            // 
-            this.pbxAddGameCoverart.BackColor = System.Drawing.Color.Black;
-            this.pbxAddGameCoverart.Image = ((System.Drawing.Image)(resources.GetObject("pbxAddGameCoverart.Image")));
-            this.pbxAddGameCoverart.Location = new System.Drawing.Point(427, 157);
-            this.pbxAddGameCoverart.Name = "pbxAddGameCoverart";
-            this.pbxAddGameCoverart.Size = new System.Drawing.Size(429, 200);
-            this.pbxAddGameCoverart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxAddGameCoverart.TabIndex = 0;
-            this.pbxAddGameCoverart.TabStop = false;
-            // 
-            // pbxAddGameAge18
-            // 
-            this.pbxAddGameAge18.Image = global::school_games_launcher.Properties.Resources.age_18;
-            this.pbxAddGameAge18.Location = new System.Drawing.Point(292, 363);
-            this.pbxAddGameAge18.Name = "pbxAddGameAge18";
-            this.pbxAddGameAge18.Size = new System.Drawing.Size(60, 60);
-            this.pbxAddGameAge18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxAddGameAge18.TabIndex = 9;
-            this.pbxAddGameAge18.TabStop = false;
-            this.pbxAddGameAge18.Click += new System.EventHandler(this.pbxAddGameAge18_Click);
-            // 
-            // pbxAddGameAge16
-            // 
-            this.pbxAddGameAge16.Image = global::school_games_launcher.Properties.Resources.age_16;
-            this.pbxAddGameAge16.Location = new System.Drawing.Point(226, 363);
-            this.pbxAddGameAge16.Name = "pbxAddGameAge16";
-            this.pbxAddGameAge16.Size = new System.Drawing.Size(60, 60);
-            this.pbxAddGameAge16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxAddGameAge16.TabIndex = 8;
-            this.pbxAddGameAge16.TabStop = false;
-            this.pbxAddGameAge16.Click += new System.EventHandler(this.pbxAddGameAge16_Click);
-            // 
-            // pbxAddGameAge12
-            // 
-            this.pbxAddGameAge12.Image = global::school_games_launcher.Properties.Resources.age_12;
-            this.pbxAddGameAge12.Location = new System.Drawing.Point(160, 363);
-            this.pbxAddGameAge12.Name = "pbxAddGameAge12";
-            this.pbxAddGameAge12.Size = new System.Drawing.Size(60, 60);
-            this.pbxAddGameAge12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxAddGameAge12.TabIndex = 7;
-            this.pbxAddGameAge12.TabStop = false;
-            this.pbxAddGameAge12.Click += new System.EventHandler(this.pbxAddGameAge12_Click);
-            // 
-            // pbxAddGameAge6
-            // 
-            this.pbxAddGameAge6.Image = global::school_games_launcher.Properties.Resources.age_6;
-            this.pbxAddGameAge6.Location = new System.Drawing.Point(94, 363);
-            this.pbxAddGameAge6.Name = "pbxAddGameAge6";
-            this.pbxAddGameAge6.Size = new System.Drawing.Size(60, 60);
-            this.pbxAddGameAge6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxAddGameAge6.TabIndex = 6;
-            this.pbxAddGameAge6.TabStop = false;
-            this.pbxAddGameAge6.Click += new System.EventHandler(this.pbxAddGameAge6_Click);
-            // 
-            // pbxAddGameAge0
-            // 
-            this.pbxAddGameAge0.Image = global::school_games_launcher.Properties.Resources.age_0;
-            this.pbxAddGameAge0.Location = new System.Drawing.Point(28, 363);
-            this.pbxAddGameAge0.Name = "pbxAddGameAge0";
-            this.pbxAddGameAge0.Size = new System.Drawing.Size(60, 60);
-            this.pbxAddGameAge0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxAddGameAge0.TabIndex = 5;
-            this.pbxAddGameAge0.TabStop = false;
-            this.pbxAddGameAge0.Click += new System.EventHandler(this.pbxAddGameAge0_Click);
             // 
             // tabEditGame
             // 
@@ -1039,6 +808,1227 @@
             this.tbxEditGameName.TabIndex = 0;
             this.tbxEditGameName.TextChanged += new System.EventHandler(this.TbxEditGameName_TextChanged);
             // 
+            // tabProfile
+            // 
+            this.tabProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
+            this.tabProfile.Controls.Add(this.btnProfileEdit);
+            this.tabProfile.Controls.Add(this.btnProfileLogout);
+            this.tabProfile.Controls.Add(this.lblProfileId);
+            this.tabProfile.Controls.Add(this.label1);
+            this.tabProfile.Controls.Add(this.lblProfileName);
+            this.tabProfile.Controls.Add(this.lblProfileBirth);
+            this.tabProfile.Controls.Add(this.lblProfileLastPlayed);
+            this.tabProfile.Controls.Add(this.flpProfileLastPlayed);
+            this.tabProfile.Controls.Add(this.pbxProfileOptions);
+            this.tabProfile.Controls.Add(this.pbxProfileProfile);
+            this.tabProfile.Controls.Add(this.pbxProfileHome);
+            this.tabProfile.Controls.Add(this.pbxProfileMinimize);
+            this.tabProfile.Controls.Add(this.pbxProfileClose);
+            this.tabProfile.Controls.Add(this.pbxProfileAvatar);
+            this.tabProfile.ForeColor = System.Drawing.Color.White;
+            this.tabProfile.Location = new System.Drawing.Point(4, 22);
+            this.tabProfile.Name = "tabProfile";
+            this.tabProfile.Size = new System.Drawing.Size(1144, 723);
+            this.tabProfile.TabIndex = 7;
+            this.tabProfile.Text = "Profile";
+            // 
+            // btnProfileEdit
+            // 
+            this.btnProfileEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProfileEdit.Location = new System.Drawing.Point(1015, 95);
+            this.btnProfileEdit.Name = "btnProfileEdit";
+            this.btnProfileEdit.Size = new System.Drawing.Size(106, 23);
+            this.btnProfileEdit.TabIndex = 26;
+            this.btnProfileEdit.Text = "Edit Profile";
+            this.btnProfileEdit.UseVisualStyleBackColor = true;
+            this.btnProfileEdit.Click += new System.EventHandler(this.btnProfileEdit_Click);
+            // 
+            // btnProfileLogout
+            // 
+            this.btnProfileLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProfileLogout.Location = new System.Drawing.Point(1015, 57);
+            this.btnProfileLogout.Name = "btnProfileLogout";
+            this.btnProfileLogout.Size = new System.Drawing.Size(106, 23);
+            this.btnProfileLogout.TabIndex = 25;
+            this.btnProfileLogout.Text = "Logout";
+            this.btnProfileLogout.UseVisualStyleBackColor = true;
+            this.btnProfileLogout.Click += new System.EventHandler(this.btnProfileLogout_Click);
+            // 
+            // lblProfileId
+            // 
+            this.lblProfileId.AutoSize = true;
+            this.lblProfileId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProfileId.ForeColor = System.Drawing.Color.Gray;
+            this.lblProfileId.Location = new System.Drawing.Point(33, 694);
+            this.lblProfileId.Name = "lblProfileId";
+            this.lblProfileId.Size = new System.Drawing.Size(34, 16);
+            this.lblProfileId.TabIndex = 24;
+            this.lblProfileId.Text = "ID: 0";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.LightGray;
+            this.label1.Location = new System.Drawing.Point(25, 240);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(106, 20);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Hours played:";
+            // 
+            // lblProfileName
+            // 
+            this.lblProfileName.AutoSize = true;
+            this.lblProfileName.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProfileName.Location = new System.Drawing.Point(22, 164);
+            this.lblProfileName.Name = "lblProfileName";
+            this.lblProfileName.Size = new System.Drawing.Size(84, 37);
+            this.lblProfileName.TabIndex = 1;
+            this.lblProfileName.Text = "User";
+            // 
+            // lblProfileBirth
+            // 
+            this.lblProfileBirth.AutoSize = true;
+            this.lblProfileBirth.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProfileBirth.ForeColor = System.Drawing.Color.LightGray;
+            this.lblProfileBirth.Location = new System.Drawing.Point(25, 215);
+            this.lblProfileBirth.Name = "lblProfileBirth";
+            this.lblProfileBirth.Size = new System.Drawing.Size(42, 20);
+            this.lblProfileBirth.TabIndex = 2;
+            this.lblProfileBirth.Text = "Age:";
+            // 
+            // lblProfileLastPlayed
+            // 
+            this.lblProfileLastPlayed.AutoSize = true;
+            this.lblProfileLastPlayed.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProfileLastPlayed.Location = new System.Drawing.Point(20, 285);
+            this.lblProfileLastPlayed.Name = "lblProfileLastPlayed";
+            this.lblProfileLastPlayed.Size = new System.Drawing.Size(128, 25);
+            this.lblProfileLastPlayed.TabIndex = 3;
+            this.lblProfileLastPlayed.Text = "Last Activity";
+            // 
+            // flpProfileLastPlayed
+            // 
+            this.flpProfileLastPlayed.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flpProfileLastPlayed.AutoScroll = true;
+            this.flpProfileLastPlayed.BackColor = System.Drawing.Color.Transparent;
+            this.flpProfileLastPlayed.Location = new System.Drawing.Point(29, 327);
+            this.flpProfileLastPlayed.Name = "flpProfileLastPlayed";
+            this.flpProfileLastPlayed.Size = new System.Drawing.Size(1115, 363);
+            this.flpProfileLastPlayed.TabIndex = 2;
+            // 
+            // tabLogin
+            // 
+            this.tabLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
+            this.tabLogin.Controls.Add(this.pbxLoginHome);
+            this.tabLogin.Controls.Add(this.pictureBox11);
+            this.tabLogin.Controls.Add(this.pbxLoginClose);
+            this.tabLogin.Controls.Add(this.tbxLoginPassword);
+            this.tabLogin.Controls.Add(this.tbxLoginUsername);
+            this.tabLogin.Controls.Add(this.lblLoginTitle);
+            this.tabLogin.Controls.Add(this.lblLoginPassword);
+            this.tabLogin.Controls.Add(this.llbLoginUsername);
+            this.tabLogin.Controls.Add(this.btnLoginConfirm);
+            this.tabLogin.ForeColor = System.Drawing.Color.White;
+            this.tabLogin.Location = new System.Drawing.Point(4, 22);
+            this.tabLogin.Name = "tabLogin";
+            this.tabLogin.Size = new System.Drawing.Size(1144, 723);
+            this.tabLogin.TabIndex = 2;
+            this.tabLogin.Text = "Login";
+            // 
+            // tbxLoginPassword
+            // 
+            this.tbxLoginPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(56)))), ((int)(((byte)(66)))));
+            this.tbxLoginPassword.ForeColor = System.Drawing.Color.White;
+            this.tbxLoginPassword.Location = new System.Drawing.Point(32, 199);
+            this.tbxLoginPassword.Name = "tbxLoginPassword";
+            this.tbxLoginPassword.PasswordChar = '●';
+            this.tbxLoginPassword.Size = new System.Drawing.Size(173, 20);
+            this.tbxLoginPassword.TabIndex = 1;
+            // 
+            // tbxLoginUsername
+            // 
+            this.tbxLoginUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(56)))), ((int)(((byte)(66)))));
+            this.tbxLoginUsername.ForeColor = System.Drawing.Color.White;
+            this.tbxLoginUsername.Location = new System.Drawing.Point(32, 135);
+            this.tbxLoginUsername.Name = "tbxLoginUsername";
+            this.tbxLoginUsername.Size = new System.Drawing.Size(173, 20);
+            this.tbxLoginUsername.TabIndex = 0;
+            // 
+            // lblLoginTitle
+            // 
+            this.lblLoginTitle.AutoSize = true;
+            this.lblLoginTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoginTitle.Location = new System.Drawing.Point(25, 45);
+            this.lblLoginTitle.Name = "lblLoginTitle";
+            this.lblLoginTitle.Size = new System.Drawing.Size(96, 37);
+            this.lblLoginTitle.TabIndex = 3;
+            this.lblLoginTitle.Text = "Login";
+            // 
+            // lblLoginPassword
+            // 
+            this.lblLoginPassword.AutoSize = true;
+            this.lblLoginPassword.Location = new System.Drawing.Point(32, 183);
+            this.lblLoginPassword.Name = "lblLoginPassword";
+            this.lblLoginPassword.Size = new System.Drawing.Size(53, 13);
+            this.lblLoginPassword.TabIndex = 2;
+            this.lblLoginPassword.Text = "Password";
+            // 
+            // llbLoginUsername
+            // 
+            this.llbLoginUsername.AutoSize = true;
+            this.llbLoginUsername.Location = new System.Drawing.Point(32, 119);
+            this.llbLoginUsername.Name = "llbLoginUsername";
+            this.llbLoginUsername.Size = new System.Drawing.Size(55, 13);
+            this.llbLoginUsername.TabIndex = 1;
+            this.llbLoginUsername.Text = "Username";
+            // 
+            // btnLoginConfirm
+            // 
+            this.btnLoginConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoginConfirm.Location = new System.Drawing.Point(32, 259);
+            this.btnLoginConfirm.Name = "btnLoginConfirm";
+            this.btnLoginConfirm.Size = new System.Drawing.Size(173, 32);
+            this.btnLoginConfirm.TabIndex = 2;
+            this.btnLoginConfirm.Text = "Login";
+            this.btnLoginConfirm.UseVisualStyleBackColor = true;
+            this.btnLoginConfirm.Click += new System.EventHandler(this.btnLoginConfirm_Click);
+            // 
+            // tabRegister
+            // 
+            this.tabRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
+            this.tabRegister.Controls.Add(this.pbxRegisterOptions);
+            this.tabRegister.Controls.Add(this.pbxRegisterProfile);
+            this.tabRegister.Controls.Add(this.pbxRegisterHome);
+            this.tabRegister.Controls.Add(this.pbxRegisterMinimize);
+            this.tabRegister.Controls.Add(this.pictureBox14);
+            this.tabRegister.Controls.Add(this.llblRegisterCancel);
+            this.tabRegister.Controls.Add(this.btnRegisterConfirm);
+            this.tabRegister.Controls.Add(this.dtpRegisterBirthday);
+            this.tabRegister.Controls.Add(this.tbxRegisterPasswordConfirm);
+            this.tabRegister.Controls.Add(this.tbxRegisterPassword);
+            this.tabRegister.Controls.Add(this.tbxRegisterUsername);
+            this.tabRegister.Controls.Add(this.lblRegisterBirthday);
+            this.tabRegister.Controls.Add(this.lblRegisterPasswordConfirm);
+            this.tabRegister.Controls.Add(this.lblRegisterPassword);
+            this.tabRegister.Controls.Add(this.lblRegisterUsername);
+            this.tabRegister.Controls.Add(this.lblRegisterTitle);
+            this.tabRegister.ForeColor = System.Drawing.Color.White;
+            this.tabRegister.Location = new System.Drawing.Point(4, 22);
+            this.tabRegister.Name = "tabRegister";
+            this.tabRegister.Size = new System.Drawing.Size(1144, 723);
+            this.tabRegister.TabIndex = 3;
+            this.tabRegister.Text = "Register";
+            // 
+            // llblRegisterCancel
+            // 
+            this.llblRegisterCancel.AutoSize = true;
+            this.llblRegisterCancel.Location = new System.Drawing.Point(35, 424);
+            this.llblRegisterCancel.Name = "llblRegisterCancel";
+            this.llblRegisterCancel.Size = new System.Drawing.Size(40, 13);
+            this.llblRegisterCancel.TabIndex = 5;
+            this.llblRegisterCancel.TabStop = true;
+            this.llblRegisterCancel.Text = "Cancel";
+            this.llblRegisterCancel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblRegisterCancel_LinkClicked);
+            // 
+            // btnRegisterConfirm
+            // 
+            this.btnRegisterConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegisterConfirm.Location = new System.Drawing.Point(32, 384);
+            this.btnRegisterConfirm.Name = "btnRegisterConfirm";
+            this.btnRegisterConfirm.Size = new System.Drawing.Size(212, 33);
+            this.btnRegisterConfirm.TabIndex = 4;
+            this.btnRegisterConfirm.Text = "Register";
+            this.btnRegisterConfirm.UseVisualStyleBackColor = true;
+            this.btnRegisterConfirm.Click += new System.EventHandler(this.BtnRegisterConfirm_Click);
+            // 
+            // dtpRegisterBirthday
+            // 
+            this.dtpRegisterBirthday.CalendarForeColor = System.Drawing.Color.White;
+            this.dtpRegisterBirthday.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(56)))), ((int)(((byte)(66)))));
+            this.dtpRegisterBirthday.CalendarTitleForeColor = System.Drawing.Color.White;
+            this.dtpRegisterBirthday.Location = new System.Drawing.Point(35, 336);
+            this.dtpRegisterBirthday.MinDate = new System.DateTime(1770, 1, 1, 0, 0, 0, 0);
+            this.dtpRegisterBirthday.Name = "dtpRegisterBirthday";
+            this.dtpRegisterBirthday.Size = new System.Drawing.Size(209, 20);
+            this.dtpRegisterBirthday.TabIndex = 3;
+            // 
+            // tbxRegisterPasswordConfirm
+            // 
+            this.tbxRegisterPasswordConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(56)))), ((int)(((byte)(66)))));
+            this.tbxRegisterPasswordConfirm.ForeColor = System.Drawing.Color.White;
+            this.tbxRegisterPasswordConfirm.Location = new System.Drawing.Point(35, 261);
+            this.tbxRegisterPasswordConfirm.Name = "tbxRegisterPasswordConfirm";
+            this.tbxRegisterPasswordConfirm.PasswordChar = '●';
+            this.tbxRegisterPasswordConfirm.Size = new System.Drawing.Size(209, 20);
+            this.tbxRegisterPasswordConfirm.TabIndex = 2;
+            // 
+            // tbxRegisterPassword
+            // 
+            this.tbxRegisterPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(56)))), ((int)(((byte)(66)))));
+            this.tbxRegisterPassword.ForeColor = System.Drawing.Color.White;
+            this.tbxRegisterPassword.Location = new System.Drawing.Point(35, 187);
+            this.tbxRegisterPassword.Name = "tbxRegisterPassword";
+            this.tbxRegisterPassword.PasswordChar = '●';
+            this.tbxRegisterPassword.Size = new System.Drawing.Size(209, 20);
+            this.tbxRegisterPassword.TabIndex = 1;
+            // 
+            // tbxRegisterUsername
+            // 
+            this.tbxRegisterUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(56)))), ((int)(((byte)(66)))));
+            this.tbxRegisterUsername.ForeColor = System.Drawing.Color.White;
+            this.tbxRegisterUsername.Location = new System.Drawing.Point(35, 124);
+            this.tbxRegisterUsername.Name = "tbxRegisterUsername";
+            this.tbxRegisterUsername.Size = new System.Drawing.Size(209, 20);
+            this.tbxRegisterUsername.TabIndex = 0;
+            // 
+            // lblRegisterBirthday
+            // 
+            this.lblRegisterBirthday.AutoSize = true;
+            this.lblRegisterBirthday.Location = new System.Drawing.Point(32, 319);
+            this.lblRegisterBirthday.Name = "lblRegisterBirthday";
+            this.lblRegisterBirthday.Size = new System.Drawing.Size(46, 13);
+            this.lblRegisterBirthday.TabIndex = 4;
+            this.lblRegisterBirthday.Text = "Bithdate";
+            // 
+            // lblRegisterPasswordConfirm
+            // 
+            this.lblRegisterPasswordConfirm.AutoSize = true;
+            this.lblRegisterPasswordConfirm.Location = new System.Drawing.Point(32, 245);
+            this.lblRegisterPasswordConfirm.Name = "lblRegisterPasswordConfirm";
+            this.lblRegisterPasswordConfirm.Size = new System.Drawing.Size(86, 13);
+            this.lblRegisterPasswordConfirm.TabIndex = 3;
+            this.lblRegisterPasswordConfirm.Text = "Password repeat";
+            // 
+            // lblRegisterPassword
+            // 
+            this.lblRegisterPassword.AutoSize = true;
+            this.lblRegisterPassword.Location = new System.Drawing.Point(32, 171);
+            this.lblRegisterPassword.Name = "lblRegisterPassword";
+            this.lblRegisterPassword.Size = new System.Drawing.Size(53, 13);
+            this.lblRegisterPassword.TabIndex = 2;
+            this.lblRegisterPassword.Text = "Password";
+            // 
+            // lblRegisterUsername
+            // 
+            this.lblRegisterUsername.AutoSize = true;
+            this.lblRegisterUsername.Location = new System.Drawing.Point(32, 108);
+            this.lblRegisterUsername.Name = "lblRegisterUsername";
+            this.lblRegisterUsername.Size = new System.Drawing.Size(55, 13);
+            this.lblRegisterUsername.TabIndex = 1;
+            this.lblRegisterUsername.Text = "Username";
+            // 
+            // lblRegisterTitle
+            // 
+            this.lblRegisterTitle.AutoSize = true;
+            this.lblRegisterTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegisterTitle.Location = new System.Drawing.Point(25, 45);
+            this.lblRegisterTitle.Name = "lblRegisterTitle";
+            this.lblRegisterTitle.Size = new System.Drawing.Size(134, 37);
+            this.lblRegisterTitle.TabIndex = 0;
+            this.lblRegisterTitle.Text = "Register";
+            // 
+            // tabPlaying
+            // 
+            this.tabPlaying.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
+            this.tabPlaying.Controls.Add(this.label4);
+            this.tabPlaying.Controls.Add(this.btnPlayingStop);
+            this.tabPlaying.Controls.Add(this.pbxPlayingMinimize);
+            this.tabPlaying.Controls.Add(this.pbxPlayingCoverart);
+            this.tabPlaying.ForeColor = System.Drawing.Color.White;
+            this.tabPlaying.Location = new System.Drawing.Point(4, 22);
+            this.tabPlaying.Name = "tabPlaying";
+            this.tabPlaying.Size = new System.Drawing.Size(1144, 723);
+            this.tabPlaying.TabIndex = 5;
+            this.tabPlaying.Text = "Currently playing";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.DarkGray;
+            this.label4.Location = new System.Drawing.Point(493, 151);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(155, 24);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Currently playing:";
+            // 
+            // btnPlayingStop
+            // 
+            this.btnPlayingStop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPlayingStop.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPlayingStop.Location = new System.Drawing.Point(343, 433);
+            this.btnPlayingStop.Name = "btnPlayingStop";
+            this.btnPlayingStop.Size = new System.Drawing.Size(460, 91);
+            this.btnPlayingStop.TabIndex = 1;
+            this.btnPlayingStop.Text = "I stopped playing.";
+            this.btnPlayingStop.UseVisualStyleBackColor = true;
+            this.btnPlayingStop.Click += new System.EventHandler(this.btnPlayingStop_Click);
+            // 
+            // tapGameDetails
+            // 
+            this.tapGameDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
+            this.tapGameDetails.Controls.Add(this.lblGameDetailsId);
+            this.tapGameDetails.Controls.Add(this.llblGameDetailsEdit);
+            this.tapGameDetails.Controls.Add(this.lblGameDetailsSteamId);
+            this.tapGameDetails.Controls.Add(this.flpGameDetailsImages);
+            this.tapGameDetails.Controls.Add(this.tbxGameDetailsDescription);
+            this.tapGameDetails.Controls.Add(this.lblGameDetailsPublisher);
+            this.tapGameDetails.Controls.Add(this.lblGameDetailsDeveloper);
+            this.tapGameDetails.Controls.Add(this.lblGameDetailsAge);
+            this.tapGameDetails.Controls.Add(this.lblGameDetailsName);
+            this.tapGameDetails.Controls.Add(this.pbxGameDetailsAge);
+            this.tapGameDetails.Controls.Add(this.pbxGameDetailsOptions);
+            this.tapGameDetails.Controls.Add(this.pbxGameDetailProfile);
+            this.tapGameDetails.Controls.Add(this.pbxGameDetailsHome);
+            this.tapGameDetails.Controls.Add(this.pbxGameDetailsMinimize);
+            this.tapGameDetails.Controls.Add(this.pbxGameDetailsClose);
+            this.tapGameDetails.Controls.Add(this.pbxGameDetailsCoverart);
+            this.tapGameDetails.Controls.Add(this.pbxGameDetailsPlayButton);
+            this.tapGameDetails.ForeColor = System.Drawing.Color.White;
+            this.tapGameDetails.Location = new System.Drawing.Point(4, 22);
+            this.tapGameDetails.Margin = new System.Windows.Forms.Padding(0);
+            this.tapGameDetails.Name = "tapGameDetails";
+            this.tapGameDetails.Size = new System.Drawing.Size(1144, 723);
+            this.tapGameDetails.TabIndex = 8;
+            this.tapGameDetails.Text = "Game Details";
+            // 
+            // lblGameDetailsId
+            // 
+            this.lblGameDetailsId.AutoSize = true;
+            this.lblGameDetailsId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGameDetailsId.ForeColor = System.Drawing.Color.Gray;
+            this.lblGameDetailsId.Location = new System.Drawing.Point(25, 694);
+            this.lblGameDetailsId.Name = "lblGameDetailsId";
+            this.lblGameDetailsId.Size = new System.Drawing.Size(34, 16);
+            this.lblGameDetailsId.TabIndex = 23;
+            this.lblGameDetailsId.Text = "ID: 0";
+            // 
+            // llblGameDetailsEdit
+            // 
+            this.llblGameDetailsEdit.AutoSize = true;
+            this.llblGameDetailsEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.llblGameDetailsEdit.LinkColor = System.Drawing.Color.MediumSpringGreen;
+            this.llblGameDetailsEdit.Location = new System.Drawing.Point(24, 336);
+            this.llblGameDetailsEdit.Name = "llblGameDetailsEdit";
+            this.llblGameDetailsEdit.Size = new System.Drawing.Size(85, 20);
+            this.llblGameDetailsEdit.TabIndex = 18;
+            this.llblGameDetailsEdit.TabStop = true;
+            this.llblGameDetailsEdit.Text = "Edit Game";
+            // 
+            // lblGameDetailsSteamId
+            // 
+            this.lblGameDetailsSteamId.AutoSize = true;
+            this.lblGameDetailsSteamId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGameDetailsSteamId.ForeColor = System.Drawing.Color.Gray;
+            this.lblGameDetailsSteamId.Location = new System.Drawing.Point(127, 694);
+            this.lblGameDetailsSteamId.Name = "lblGameDetailsSteamId";
+            this.lblGameDetailsSteamId.Size = new System.Drawing.Size(73, 16);
+            this.lblGameDetailsSteamId.TabIndex = 17;
+            this.lblGameDetailsSteamId.Text = "SteamID: 0";
+            // 
+            // flpGameDetailsImages
+            // 
+            this.flpGameDetailsImages.AutoScroll = true;
+            this.flpGameDetailsImages.Controls.Add(this.pbxGameDetailsMoreSample);
+            this.flpGameDetailsImages.Location = new System.Drawing.Point(537, 45);
+            this.flpGameDetailsImages.Name = "flpGameDetailsImages";
+            this.flpGameDetailsImages.Size = new System.Drawing.Size(604, 655);
+            this.flpGameDetailsImages.TabIndex = 16;
+            // 
+            // tbxGameDetailsDescription
+            // 
+            this.tbxGameDetailsDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
+            this.tbxGameDetailsDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbxGameDetailsDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tbxGameDetailsDescription.ForeColor = System.Drawing.Color.LightGray;
+            this.tbxGameDetailsDescription.Location = new System.Drawing.Point(28, 447);
+            this.tbxGameDetailsDescription.Multiline = true;
+            this.tbxGameDetailsDescription.Name = "tbxGameDetailsDescription";
+            this.tbxGameDetailsDescription.ReadOnly = true;
+            this.tbxGameDetailsDescription.Size = new System.Drawing.Size(457, 168);
+            this.tbxGameDetailsDescription.TabIndex = 15;
+            // 
+            // lblGameDetailsPublisher
+            // 
+            this.lblGameDetailsPublisher.AutoSize = true;
+            this.lblGameDetailsPublisher.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGameDetailsPublisher.ForeColor = System.Drawing.Color.LightGray;
+            this.lblGameDetailsPublisher.Location = new System.Drawing.Point(24, 413);
+            this.lblGameDetailsPublisher.Name = "lblGameDetailsPublisher";
+            this.lblGameDetailsPublisher.Size = new System.Drawing.Size(146, 20);
+            this.lblGameDetailsPublisher.TabIndex = 14;
+            this.lblGameDetailsPublisher.Text = "Publisher: unknown";
+            // 
+            // lblGameDetailsDeveloper
+            // 
+            this.lblGameDetailsDeveloper.AutoSize = true;
+            this.lblGameDetailsDeveloper.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGameDetailsDeveloper.ForeColor = System.Drawing.Color.LightGray;
+            this.lblGameDetailsDeveloper.Location = new System.Drawing.Point(24, 388);
+            this.lblGameDetailsDeveloper.Name = "lblGameDetailsDeveloper";
+            this.lblGameDetailsDeveloper.Size = new System.Drawing.Size(153, 20);
+            this.lblGameDetailsDeveloper.TabIndex = 13;
+            this.lblGameDetailsDeveloper.Text = "Developer: unknown";
+            // 
+            // lblGameDetailsAge
+            // 
+            this.lblGameDetailsAge.AutoSize = true;
+            this.lblGameDetailsAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGameDetailsAge.ForeColor = System.Drawing.Color.LightGray;
+            this.lblGameDetailsAge.Location = new System.Drawing.Point(24, 363);
+            this.lblGameDetailsAge.Name = "lblGameDetailsAge";
+            this.lblGameDetailsAge.Size = new System.Drawing.Size(55, 20);
+            this.lblGameDetailsAge.TabIndex = 9;
+            this.lblGameDetailsAge.Text = "Age: 0";
+            // 
+            // lblGameDetailsName
+            // 
+            this.lblGameDetailsName.AutoSize = true;
+            this.lblGameDetailsName.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F);
+            this.lblGameDetailsName.Location = new System.Drawing.Point(198, 289);
+            this.lblGameDetailsName.Name = "lblGameDetailsName";
+            this.lblGameDetailsName.Size = new System.Drawing.Size(125, 44);
+            this.lblGameDetailsName.TabIndex = 7;
+            this.lblGameDetailsName.Text = "Game";
+            // 
+            // tabEditUser
+            // 
+            this.tabEditUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
+            this.tabEditUser.Controls.Add(this.pbxEditUserAvatarOld);
+            this.tabEditUser.Controls.Add(this.pbxEditUserAvatar5);
+            this.tabEditUser.Controls.Add(this.pbxEditUserAvatar4);
+            this.tabEditUser.Controls.Add(this.pbxEditUserAvatar3);
+            this.tabEditUser.Controls.Add(this.pbxEditUserAvatar2);
+            this.tabEditUser.Controls.Add(this.pbxEditUserAvatar1);
+            this.tabEditUser.Controls.Add(this.pbxEditUserAvatar0);
+            this.tabEditUser.Controls.Add(this.lblEditUserId);
+            this.tabEditUser.Controls.Add(this.llblEditUserDelete);
+            this.tabEditUser.Controls.Add(this.btnEditUserCancel);
+            this.tabEditUser.Controls.Add(this.btnEditUserUserRules);
+            this.tabEditUser.Controls.Add(this.btnEditUserChangePassword);
+            this.tabEditUser.Controls.Add(this.pbxEditUserAvatar);
+            this.tabEditUser.Controls.Add(this.tbxEditUserAvatarInput);
+            this.tabEditUser.Controls.Add(this.tbxEditUserAvatar);
+            this.tabEditUser.Controls.Add(this.btnEditUserSave);
+            this.tabEditUser.Controls.Add(this.dtpEditUserBirthdate);
+            this.tabEditUser.Controls.Add(this.tbxEditUserName);
+            this.tabEditUser.Controls.Add(this.label15);
+            this.tabEditUser.Controls.Add(this.lblEditUserName);
+            this.tabEditUser.Controls.Add(this.lblEditUserNameOriginal);
+            this.tabEditUser.Controls.Add(this.pbxEditUserAvatarOriginal);
+            this.tabEditUser.Controls.Add(this.pbxEditUserOptions);
+            this.tabEditUser.Controls.Add(this.pbxEditUserProfile);
+            this.tabEditUser.Controls.Add(this.pbxEditUserHome);
+            this.tabEditUser.Controls.Add(this.pbxEditUserMinimize);
+            this.tabEditUser.Controls.Add(this.pbxEditUserClose);
+            this.tabEditUser.Controls.Add(this.label12);
+            this.tabEditUser.ForeColor = System.Drawing.Color.White;
+            this.tabEditUser.Location = new System.Drawing.Point(4, 22);
+            this.tabEditUser.Name = "tabEditUser";
+            this.tabEditUser.Size = new System.Drawing.Size(1144, 723);
+            this.tabEditUser.TabIndex = 9;
+            this.tabEditUser.Text = "Edit User";
+            // 
+            // lblEditUserId
+            // 
+            this.lblEditUserId.AutoSize = true;
+            this.lblEditUserId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEditUserId.ForeColor = System.Drawing.Color.Gray;
+            this.lblEditUserId.Location = new System.Drawing.Point(26, 694);
+            this.lblEditUserId.Name = "lblEditUserId";
+            this.lblEditUserId.Size = new System.Drawing.Size(34, 16);
+            this.lblEditUserId.TabIndex = 43;
+            this.lblEditUserId.Text = "ID: 0";
+            // 
+            // llblEditUserDelete
+            // 
+            this.llblEditUserDelete.AutoSize = true;
+            this.llblEditUserDelete.LinkColor = System.Drawing.Color.Red;
+            this.llblEditUserDelete.Location = new System.Drawing.Point(47, 513);
+            this.llblEditUserDelete.Name = "llblEditUserDelete";
+            this.llblEditUserDelete.Size = new System.Drawing.Size(63, 13);
+            this.llblEditUserDelete.TabIndex = 7;
+            this.llblEditUserDelete.TabStop = true;
+            this.llblEditUserDelete.Text = "Delete User";
+            this.llblEditUserDelete.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblEditUserDelete_LinkClicked);
+            // 
+            // btnEditUserCancel
+            // 
+            this.btnEditUserCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditUserCancel.Location = new System.Drawing.Point(247, 426);
+            this.btnEditUserCancel.Name = "btnEditUserCancel";
+            this.btnEditUserCancel.Size = new System.Drawing.Size(103, 33);
+            this.btnEditUserCancel.TabIndex = 4;
+            this.btnEditUserCancel.Text = "Cancel";
+            this.btnEditUserCancel.UseVisualStyleBackColor = true;
+            this.btnEditUserCancel.Click += new System.EventHandler(this.btnEditUserCancel_Click);
+            // 
+            // btnEditUserUserRules
+            // 
+            this.btnEditUserUserRules.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditUserUserRules.Location = new System.Drawing.Point(190, 465);
+            this.btnEditUserUserRules.Name = "btnEditUserUserRules";
+            this.btnEditUserUserRules.Size = new System.Drawing.Size(160, 33);
+            this.btnEditUserUserRules.TabIndex = 6;
+            this.btnEditUserUserRules.Text = "User Rules";
+            this.btnEditUserUserRules.UseVisualStyleBackColor = true;
+            // 
+            // btnEditUserChangePassword
+            // 
+            this.btnEditUserChangePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditUserChangePassword.Location = new System.Drawing.Point(29, 465);
+            this.btnEditUserChangePassword.Name = "btnEditUserChangePassword";
+            this.btnEditUserChangePassword.Size = new System.Drawing.Size(155, 33);
+            this.btnEditUserChangePassword.TabIndex = 5;
+            this.btnEditUserChangePassword.Text = "Change Password";
+            this.btnEditUserChangePassword.UseVisualStyleBackColor = true;
+            this.btnEditUserChangePassword.Click += new System.EventHandler(this.btnEditUserChangePassword_Click);
+            // 
+            // tbxEditUserAvatarInput
+            // 
+            this.tbxEditUserAvatarInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(56)))), ((int)(((byte)(66)))));
+            this.tbxEditUserAvatarInput.ForeColor = System.Drawing.Color.White;
+            this.tbxEditUserAvatarInput.Location = new System.Drawing.Point(375, 217);
+            this.tbxEditUserAvatarInput.Name = "tbxEditUserAvatarInput";
+            this.tbxEditUserAvatarInput.Size = new System.Drawing.Size(274, 20);
+            this.tbxEditUserAvatarInput.TabIndex = 2;
+            this.tbxEditUserAvatarInput.TextChanged += new System.EventHandler(this.tbxEditUserAvatarInput_TextChanged);
+            // 
+            // tbxEditUserAvatar
+            // 
+            this.tbxEditUserAvatar.AutoSize = true;
+            this.tbxEditUserAvatar.Location = new System.Drawing.Point(372, 201);
+            this.tbxEditUserAvatar.Name = "tbxEditUserAvatar";
+            this.tbxEditUserAvatar.Size = new System.Drawing.Size(72, 13);
+            this.tbxEditUserAvatar.TabIndex = 37;
+            this.tbxEditUserAvatar.Text = "Profile Picture";
+            // 
+            // btnEditUserSave
+            // 
+            this.btnEditUserSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditUserSave.Location = new System.Drawing.Point(29, 426);
+            this.btnEditUserSave.Name = "btnEditUserSave";
+            this.btnEditUserSave.Size = new System.Drawing.Size(212, 33);
+            this.btnEditUserSave.TabIndex = 3;
+            this.btnEditUserSave.Text = "Save Changes";
+            this.btnEditUserSave.UseVisualStyleBackColor = true;
+            this.btnEditUserSave.Click += new System.EventHandler(this.btnEditUserSave_Click);
+            // 
+            // dtpEditUserBirthdate
+            // 
+            this.dtpEditUserBirthdate.CalendarForeColor = System.Drawing.Color.White;
+            this.dtpEditUserBirthdate.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(56)))), ((int)(((byte)(66)))));
+            this.dtpEditUserBirthdate.CalendarTitleForeColor = System.Drawing.Color.White;
+            this.dtpEditUserBirthdate.Location = new System.Drawing.Point(32, 302);
+            this.dtpEditUserBirthdate.MinDate = new System.DateTime(1770, 1, 1, 0, 0, 0, 0);
+            this.dtpEditUserBirthdate.Name = "dtpEditUserBirthdate";
+            this.dtpEditUserBirthdate.Size = new System.Drawing.Size(209, 20);
+            this.dtpEditUserBirthdate.TabIndex = 1;
+            this.dtpEditUserBirthdate.ValueChanged += new System.EventHandler(this.dtpEditUserBirthdate_ValueChanged);
+            // 
+            // tbxEditUserName
+            // 
+            this.tbxEditUserName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(56)))), ((int)(((byte)(66)))));
+            this.tbxEditUserName.ForeColor = System.Drawing.Color.White;
+            this.tbxEditUserName.Location = new System.Drawing.Point(32, 217);
+            this.tbxEditUserName.Name = "tbxEditUserName";
+            this.tbxEditUserName.Size = new System.Drawing.Size(209, 20);
+            this.tbxEditUserName.TabIndex = 0;
+            this.tbxEditUserName.TextChanged += new System.EventHandler(this.tbxEditUserName_TextChanged);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(29, 286);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(46, 13);
+            this.label15.TabIndex = 35;
+            this.label15.Text = "Bithdate";
+            // 
+            // lblEditUserName
+            // 
+            this.lblEditUserName.AutoSize = true;
+            this.lblEditUserName.Location = new System.Drawing.Point(29, 201);
+            this.lblEditUserName.Name = "lblEditUserName";
+            this.lblEditUserName.Size = new System.Drawing.Size(55, 13);
+            this.lblEditUserName.TabIndex = 32;
+            this.lblEditUserName.Text = "Username";
+            // 
+            // lblEditUserNameOriginal
+            // 
+            this.lblEditUserNameOriginal.AutoSize = true;
+            this.lblEditUserNameOriginal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEditUserNameOriginal.Location = new System.Drawing.Point(78, 114);
+            this.lblEditUserNameOriginal.Name = "lblEditUserNameOriginal";
+            this.lblEditUserNameOriginal.Size = new System.Drawing.Size(49, 24);
+            this.lblEditUserNameOriginal.TabIndex = 30;
+            this.lblEditUserNameOriginal.Text = "User";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(25, 45);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(148, 37);
+            this.label12.TabIndex = 23;
+            this.label12.Text = "Edit User";
+            // 
+            // tabChangePassword
+            // 
+            this.tabChangePassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
+            this.tabChangePassword.Controls.Add(this.btnChangePasswordCancel);
+            this.tabChangePassword.Controls.Add(this.btnChangePasswordSave);
+            this.tabChangePassword.Controls.Add(this.tbxChangePasswordNewRepeat);
+            this.tabChangePassword.Controls.Add(this.lblChangePasswordNewPasswordRepeat);
+            this.tabChangePassword.Controls.Add(this.tbxChangePasswordNew);
+            this.tabChangePassword.Controls.Add(this.lblChangePasswordNewPassword);
+            this.tabChangePassword.Controls.Add(this.tbxChangePasswordOld);
+            this.tabChangePassword.Controls.Add(this.lblChangePasswordOldPassword);
+            this.tabChangePassword.Controls.Add(this.lblChangePasswordId);
+            this.tabChangePassword.Controls.Add(this.lblChangePasswordName);
+            this.tabChangePassword.Controls.Add(this.lblChangePasswordTitle);
+            this.tabChangePassword.Controls.Add(this.pbxChangePasswordAvatar);
+            this.tabChangePassword.Controls.Add(this.pbxChangePasswordOptions);
+            this.tabChangePassword.Controls.Add(this.pbxChangePasswordProfile);
+            this.tabChangePassword.Controls.Add(this.pbxChangePasswordHome);
+            this.tabChangePassword.Controls.Add(this.pbxChangePasswordMinimize);
+            this.tabChangePassword.Controls.Add(this.pbxChangePasswordClose);
+            this.tabChangePassword.ForeColor = System.Drawing.Color.White;
+            this.tabChangePassword.Location = new System.Drawing.Point(4, 22);
+            this.tabChangePassword.Name = "tabChangePassword";
+            this.tabChangePassword.Size = new System.Drawing.Size(1144, 723);
+            this.tabChangePassword.TabIndex = 10;
+            this.tabChangePassword.Text = "Change Password";
+            // 
+            // btnChangePasswordCancel
+            // 
+            this.btnChangePasswordCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangePasswordCancel.Location = new System.Drawing.Point(32, 458);
+            this.btnChangePasswordCancel.Name = "btnChangePasswordCancel";
+            this.btnChangePasswordCancel.Size = new System.Drawing.Size(209, 28);
+            this.btnChangePasswordCancel.TabIndex = 4;
+            this.btnChangePasswordCancel.Text = "Cancel";
+            this.btnChangePasswordCancel.UseVisualStyleBackColor = true;
+            this.btnChangePasswordCancel.Click += new System.EventHandler(this.btnChangePasswordCancel_Click);
+            // 
+            // btnChangePasswordSave
+            // 
+            this.btnChangePasswordSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangePasswordSave.Location = new System.Drawing.Point(32, 407);
+            this.btnChangePasswordSave.Name = "btnChangePasswordSave";
+            this.btnChangePasswordSave.Size = new System.Drawing.Size(209, 33);
+            this.btnChangePasswordSave.TabIndex = 3;
+            this.btnChangePasswordSave.Text = "Save";
+            this.btnChangePasswordSave.UseVisualStyleBackColor = true;
+            this.btnChangePasswordSave.Click += new System.EventHandler(this.btnChangePasswordSave_Click);
+            // 
+            // tbxChangePasswordNewRepeat
+            // 
+            this.tbxChangePasswordNewRepeat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(56)))), ((int)(((byte)(66)))));
+            this.tbxChangePasswordNewRepeat.ForeColor = System.Drawing.Color.White;
+            this.tbxChangePasswordNewRepeat.Location = new System.Drawing.Point(32, 346);
+            this.tbxChangePasswordNewRepeat.Name = "tbxChangePasswordNewRepeat";
+            this.tbxChangePasswordNewRepeat.PasswordChar = '●';
+            this.tbxChangePasswordNewRepeat.Size = new System.Drawing.Size(209, 20);
+            this.tbxChangePasswordNewRepeat.TabIndex = 2;
+            // 
+            // lblChangePasswordNewPasswordRepeat
+            // 
+            this.lblChangePasswordNewPasswordRepeat.AutoSize = true;
+            this.lblChangePasswordNewPasswordRepeat.Location = new System.Drawing.Point(29, 330);
+            this.lblChangePasswordNewPasswordRepeat.Name = "lblChangePasswordNewPasswordRepeat";
+            this.lblChangePasswordNewPasswordRepeat.Size = new System.Drawing.Size(116, 13);
+            this.lblChangePasswordNewPasswordRepeat.TabIndex = 50;
+            this.lblChangePasswordNewPasswordRepeat.Text = "New Password Repeat";
+            // 
+            // tbxChangePasswordNew
+            // 
+            this.tbxChangePasswordNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(56)))), ((int)(((byte)(66)))));
+            this.tbxChangePasswordNew.ForeColor = System.Drawing.Color.White;
+            this.tbxChangePasswordNew.Location = new System.Drawing.Point(32, 279);
+            this.tbxChangePasswordNew.Name = "tbxChangePasswordNew";
+            this.tbxChangePasswordNew.PasswordChar = '●';
+            this.tbxChangePasswordNew.Size = new System.Drawing.Size(209, 20);
+            this.tbxChangePasswordNew.TabIndex = 1;
+            // 
+            // lblChangePasswordNewPassword
+            // 
+            this.lblChangePasswordNewPassword.AutoSize = true;
+            this.lblChangePasswordNewPassword.Location = new System.Drawing.Point(29, 263);
+            this.lblChangePasswordNewPassword.Name = "lblChangePasswordNewPassword";
+            this.lblChangePasswordNewPassword.Size = new System.Drawing.Size(78, 13);
+            this.lblChangePasswordNewPassword.TabIndex = 48;
+            this.lblChangePasswordNewPassword.Text = "New Password";
+            // 
+            // tbxChangePasswordOld
+            // 
+            this.tbxChangePasswordOld.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(56)))), ((int)(((byte)(66)))));
+            this.tbxChangePasswordOld.ForeColor = System.Drawing.Color.White;
+            this.tbxChangePasswordOld.Location = new System.Drawing.Point(32, 212);
+            this.tbxChangePasswordOld.Name = "tbxChangePasswordOld";
+            this.tbxChangePasswordOld.PasswordChar = '●';
+            this.tbxChangePasswordOld.Size = new System.Drawing.Size(209, 20);
+            this.tbxChangePasswordOld.TabIndex = 0;
+            // 
+            // lblChangePasswordOldPassword
+            // 
+            this.lblChangePasswordOldPassword.AutoSize = true;
+            this.lblChangePasswordOldPassword.Location = new System.Drawing.Point(29, 196);
+            this.lblChangePasswordOldPassword.Name = "lblChangePasswordOldPassword";
+            this.lblChangePasswordOldPassword.Size = new System.Drawing.Size(72, 13);
+            this.lblChangePasswordOldPassword.TabIndex = 46;
+            this.lblChangePasswordOldPassword.Text = "Old Password";
+            // 
+            // lblChangePasswordId
+            // 
+            this.lblChangePasswordId.AutoSize = true;
+            this.lblChangePasswordId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChangePasswordId.ForeColor = System.Drawing.Color.Gray;
+            this.lblChangePasswordId.Location = new System.Drawing.Point(29, 694);
+            this.lblChangePasswordId.Name = "lblChangePasswordId";
+            this.lblChangePasswordId.Size = new System.Drawing.Size(34, 16);
+            this.lblChangePasswordId.TabIndex = 44;
+            this.lblChangePasswordId.Text = "ID: 0";
+            // 
+            // lblChangePasswordName
+            // 
+            this.lblChangePasswordName.AutoSize = true;
+            this.lblChangePasswordName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChangePasswordName.Location = new System.Drawing.Point(78, 114);
+            this.lblChangePasswordName.Name = "lblChangePasswordName";
+            this.lblChangePasswordName.Size = new System.Drawing.Size(49, 24);
+            this.lblChangePasswordName.TabIndex = 31;
+            this.lblChangePasswordName.Text = "User";
+            // 
+            // lblChangePasswordTitle
+            // 
+            this.lblChangePasswordTitle.AutoSize = true;
+            this.lblChangePasswordTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChangePasswordTitle.Location = new System.Drawing.Point(25, 45);
+            this.lblChangePasswordTitle.Name = "lblChangePasswordTitle";
+            this.lblChangePasswordTitle.Size = new System.Drawing.Size(279, 37);
+            this.lblChangePasswordTitle.TabIndex = 23;
+            this.lblChangePasswordTitle.Text = "Change Password";
+            // 
+            // tabEditUserRules
+            // 
+            this.tabEditUserRules.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
+            this.tabEditUserRules.Controls.Add(this.label20);
+            this.tabEditUserRules.Controls.Add(this.btnUserRulesAgeExeptionsAdd);
+            this.tabEditUserRules.Controls.Add(this.btnUserRulesAllowedPlaytimesAdd);
+            this.tabEditUserRules.Controls.Add(this.btnUserRulesCancel);
+            this.tabEditUserRules.Controls.Add(this.btnUserRulesSave);
+            this.tabEditUserRules.Controls.Add(this.lblUserRulesUserName);
+            this.tabEditUserRules.Controls.Add(this.lblUserRulesTitle);
+            this.tabEditUserRules.Controls.Add(this.lblUserRulesAgeExeptionsTip);
+            this.tabEditUserRules.Controls.Add(this.lblUserRulesAgeExeptionsTitle);
+            this.tabEditUserRules.Controls.Add(this.lblUserRulesAllowedPlaytimesTip);
+            this.tabEditUserRules.Controls.Add(this.lblUserRulesAllowedPlaytimesTitle);
+            this.tabEditUserRules.Controls.Add(this.flpUserRulesAlowedPlaytimes);
+            this.tabEditUserRules.Controls.Add(this.flpUserRulesAgeExeptions);
+            this.tabEditUserRules.Controls.Add(this.pbxUserRulesAvatar);
+            this.tabEditUserRules.Controls.Add(this.pbxUserRulesProfile);
+            this.tabEditUserRules.Controls.Add(this.pictureBox2);
+            this.tabEditUserRules.Controls.Add(this.pbxUserRulesHome);
+            this.tabEditUserRules.Controls.Add(this.pbxUserRulesMinimize);
+            this.tabEditUserRules.Controls.Add(this.pbxUserRulesClose);
+            this.tabEditUserRules.ForeColor = System.Drawing.Color.White;
+            this.tabEditUserRules.Location = new System.Drawing.Point(4, 22);
+            this.tabEditUserRules.Name = "tabEditUserRules";
+            this.tabEditUserRules.Size = new System.Drawing.Size(1144, 723);
+            this.tabEditUserRules.TabIndex = 11;
+            this.tabEditUserRules.Text = "User Rules";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.Gray;
+            this.label20.Location = new System.Drawing.Point(29, 694);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(34, 16);
+            this.label20.TabIndex = 44;
+            this.label20.Text = "ID: 0";
+            // 
+            // btnUserRulesAgeExeptionsAdd
+            // 
+            this.btnUserRulesAgeExeptionsAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUserRulesAgeExeptionsAdd.Location = new System.Drawing.Point(1023, 182);
+            this.btnUserRulesAgeExeptionsAdd.Name = "btnUserRulesAgeExeptionsAdd";
+            this.btnUserRulesAgeExeptionsAdd.Size = new System.Drawing.Size(75, 40);
+            this.btnUserRulesAgeExeptionsAdd.TabIndex = 1;
+            this.btnUserRulesAgeExeptionsAdd.Text = "Add";
+            this.btnUserRulesAgeExeptionsAdd.UseVisualStyleBackColor = true;
+            // 
+            // btnUserRulesAllowedPlaytimesAdd
+            // 
+            this.btnUserRulesAllowedPlaytimesAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUserRulesAllowedPlaytimesAdd.Location = new System.Drawing.Point(479, 182);
+            this.btnUserRulesAllowedPlaytimesAdd.Name = "btnUserRulesAllowedPlaytimesAdd";
+            this.btnUserRulesAllowedPlaytimesAdd.Size = new System.Drawing.Size(75, 40);
+            this.btnUserRulesAllowedPlaytimesAdd.TabIndex = 0;
+            this.btnUserRulesAllowedPlaytimesAdd.Text = "Add";
+            this.btnUserRulesAllowedPlaytimesAdd.UseVisualStyleBackColor = true;
+            // 
+            // btnUserRulesCancel
+            // 
+            this.btnUserRulesCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUserRulesCancel.Location = new System.Drawing.Point(1023, 120);
+            this.btnUserRulesCancel.Name = "btnUserRulesCancel";
+            this.btnUserRulesCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnUserRulesCancel.TabIndex = 3;
+            this.btnUserRulesCancel.Text = "Cancel";
+            this.btnUserRulesCancel.UseVisualStyleBackColor = true;
+            // 
+            // btnUserRulesSave
+            // 
+            this.btnUserRulesSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUserRulesSave.Location = new System.Drawing.Point(942, 120);
+            this.btnUserRulesSave.Name = "btnUserRulesSave";
+            this.btnUserRulesSave.Size = new System.Drawing.Size(75, 23);
+            this.btnUserRulesSave.TabIndex = 2;
+            this.btnUserRulesSave.Text = "Save";
+            this.btnUserRulesSave.UseVisualStyleBackColor = true;
+            // 
+            // lblUserRulesUserName
+            // 
+            this.lblUserRulesUserName.AutoSize = true;
+            this.lblUserRulesUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserRulesUserName.Location = new System.Drawing.Point(105, 120);
+            this.lblUserRulesUserName.Name = "lblUserRulesUserName";
+            this.lblUserRulesUserName.Size = new System.Drawing.Size(49, 24);
+            this.lblUserRulesUserName.TabIndex = 24;
+            this.lblUserRulesUserName.Text = "User";
+            // 
+            // lblUserRulesTitle
+            // 
+            this.lblUserRulesTitle.AutoSize = true;
+            this.lblUserRulesTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserRulesTitle.Location = new System.Drawing.Point(25, 45);
+            this.lblUserRulesTitle.Name = "lblUserRulesTitle";
+            this.lblUserRulesTitle.Size = new System.Drawing.Size(173, 37);
+            this.lblUserRulesTitle.TabIndex = 8;
+            this.lblUserRulesTitle.Text = "User Rules";
+            // 
+            // lblUserRulesAgeExeptionsTip
+            // 
+            this.lblUserRulesAgeExeptionsTip.AutoSize = true;
+            this.lblUserRulesAgeExeptionsTip.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblUserRulesAgeExeptionsTip.Location = new System.Drawing.Point(603, 209);
+            this.lblUserRulesAgeExeptionsTip.Name = "lblUserRulesAgeExeptionsTip";
+            this.lblUserRulesAgeExeptionsTip.Size = new System.Drawing.Size(269, 13);
+            this.lblUserRulesAgeExeptionsTip.TabIndex = 7;
+            this.lblUserRulesAgeExeptionsTip.Text = "This overrides the age restriction of a game for the user.";
+            // 
+            // lblUserRulesAgeExeptionsTitle
+            // 
+            this.lblUserRulesAgeExeptionsTitle.AutoSize = true;
+            this.lblUserRulesAgeExeptionsTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserRulesAgeExeptionsTitle.Location = new System.Drawing.Point(599, 182);
+            this.lblUserRulesAgeExeptionsTitle.Name = "lblUserRulesAgeExeptionsTitle";
+            this.lblUserRulesAgeExeptionsTitle.Size = new System.Drawing.Size(134, 24);
+            this.lblUserRulesAgeExeptionsTitle.TabIndex = 6;
+            this.lblUserRulesAgeExeptionsTitle.Text = "Age Exeptions";
+            // 
+            // lblUserRulesAllowedPlaytimesTip
+            // 
+            this.lblUserRulesAllowedPlaytimesTip.AutoSize = true;
+            this.lblUserRulesAllowedPlaytimesTip.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblUserRulesAllowedPlaytimesTip.Location = new System.Drawing.Point(62, 209);
+            this.lblUserRulesAllowedPlaytimesTip.Name = "lblUserRulesAllowedPlaytimesTip";
+            this.lblUserRulesAllowedPlaytimesTip.Size = new System.Drawing.Size(243, 13);
+            this.lblUserRulesAllowedPlaytimesTip.TabIndex = 5;
+            this.lblUserRulesAllowedPlaytimesTip.Text = "The user is only alowed to play during these times.";
+            // 
+            // lblUserRulesAllowedPlaytimesTitle
+            // 
+            this.lblUserRulesAllowedPlaytimesTitle.AutoSize = true;
+            this.lblUserRulesAllowedPlaytimesTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserRulesAllowedPlaytimesTitle.Location = new System.Drawing.Point(58, 182);
+            this.lblUserRulesAllowedPlaytimesTitle.Name = "lblUserRulesAllowedPlaytimesTitle";
+            this.lblUserRulesAllowedPlaytimesTitle.Size = new System.Drawing.Size(162, 24);
+            this.lblUserRulesAllowedPlaytimesTitle.TabIndex = 4;
+            this.lblUserRulesAllowedPlaytimesTitle.Text = "Allowed Playtimes";
+            // 
+            // flpUserRulesAlowedPlaytimes
+            // 
+            this.flpUserRulesAlowedPlaytimes.Controls.Add(this.panel1);
+            this.flpUserRulesAlowedPlaytimes.Location = new System.Drawing.Point(59, 230);
+            this.flpUserRulesAlowedPlaytimes.Name = "flpUserRulesAlowedPlaytimes";
+            this.flpUserRulesAlowedPlaytimes.Size = new System.Drawing.Size(495, 454);
+            this.flpUserRulesAlowedPlaytimes.TabIndex = 2;
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(492, 99);
+            this.panel1.TabIndex = 1;
+            // 
+            // flpUserRulesAgeExeptions
+            // 
+            this.flpUserRulesAgeExeptions.Controls.Add(this.panel2);
+            this.flpUserRulesAgeExeptions.Location = new System.Drawing.Point(603, 230);
+            this.flpUserRulesAgeExeptions.Name = "flpUserRulesAgeExeptions";
+            this.flpUserRulesAgeExeptions.Size = new System.Drawing.Size(495, 457);
+            this.flpUserRulesAgeExeptions.TabIndex = 3;
+            // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(492, 99);
+            this.panel2.TabIndex = 1;
+            // 
+            // pbxLibraryOptions
+            // 
+            this.pbxLibraryOptions.Image = global::school_games_launcher.Properties.Resources.options_button;
+            this.pbxLibraryOptions.Location = new System.Drawing.Point(125, 0);
+            this.pbxLibraryOptions.Name = "pbxLibraryOptions";
+            this.pbxLibraryOptions.Size = new System.Drawing.Size(75, 25);
+            this.pbxLibraryOptions.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxLibraryOptions.TabIndex = 17;
+            this.pbxLibraryOptions.TabStop = false;
+            this.pbxLibraryOptions.Click += new System.EventHandler(this.pbxLibraryOptions_Click_1);
+            // 
+            // pbxLibraryProfile
+            // 
+            this.pbxLibraryProfile.Image = global::school_games_launcher.Properties.Resources.profile_button;
+            this.pbxLibraryProfile.Location = new System.Drawing.Point(50, 0);
+            this.pbxLibraryProfile.Name = "pbxLibraryProfile";
+            this.pbxLibraryProfile.Size = new System.Drawing.Size(75, 25);
+            this.pbxLibraryProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxLibraryProfile.TabIndex = 16;
+            this.pbxLibraryProfile.TabStop = false;
+            this.pbxLibraryProfile.Click += new System.EventHandler(this.pbxLibraryProfile_Click);
+            // 
+            // pbxLibraryHome
+            // 
+            this.pbxLibraryHome.Image = global::school_games_launcher.Properties.Resources.home_button;
+            this.pbxLibraryHome.Location = new System.Drawing.Point(0, 0);
+            this.pbxLibraryHome.Name = "pbxLibraryHome";
+            this.pbxLibraryHome.Size = new System.Drawing.Size(50, 25);
+            this.pbxLibraryHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxLibraryHome.TabIndex = 15;
+            this.pbxLibraryHome.TabStop = false;
+            // 
+            // pbxLibraryMinimize
+            // 
+            this.pbxLibraryMinimize.Image = ((System.Drawing.Image)(resources.GetObject("pbxLibraryMinimize.Image")));
+            this.pbxLibraryMinimize.Location = new System.Drawing.Point(1036, 0);
+            this.pbxLibraryMinimize.Name = "pbxLibraryMinimize";
+            this.pbxLibraryMinimize.Size = new System.Drawing.Size(50, 25);
+            this.pbxLibraryMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxLibraryMinimize.TabIndex = 11;
+            this.pbxLibraryMinimize.TabStop = false;
+            this.pbxLibraryMinimize.Click += new System.EventHandler(this.pbxLibraryMinimize_Click);
+            // 
+            // pbxLibraryClose
+            // 
+            this.pbxLibraryClose.Image = global::school_games_launcher.Properties.Resources.close_button;
+            this.pbxLibraryClose.Location = new System.Drawing.Point(1086, 0);
+            this.pbxLibraryClose.Name = "pbxLibraryClose";
+            this.pbxLibraryClose.Size = new System.Drawing.Size(50, 25);
+            this.pbxLibraryClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxLibraryClose.TabIndex = 10;
+            this.pbxLibraryClose.TabStop = false;
+            this.pbxLibraryClose.Click += new System.EventHandler(this.pbxLibraryClose_Click);
+            // 
+            // pbxOptionsOptions
+            // 
+            this.pbxOptionsOptions.Image = global::school_games_launcher.Properties.Resources.options_button;
+            this.pbxOptionsOptions.Location = new System.Drawing.Point(125, 0);
+            this.pbxOptionsOptions.Name = "pbxOptionsOptions";
+            this.pbxOptionsOptions.Size = new System.Drawing.Size(75, 25);
+            this.pbxOptionsOptions.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxOptionsOptions.TabIndex = 19;
+            this.pbxOptionsOptions.TabStop = false;
+            this.pbxOptionsOptions.Click += new System.EventHandler(this.pbxOptionsOptions_Click);
+            // 
+            // pbxOptionsProfile
+            // 
+            this.pbxOptionsProfile.Image = global::school_games_launcher.Properties.Resources.profile_button;
+            this.pbxOptionsProfile.Location = new System.Drawing.Point(50, 0);
+            this.pbxOptionsProfile.Name = "pbxOptionsProfile";
+            this.pbxOptionsProfile.Size = new System.Drawing.Size(75, 25);
+            this.pbxOptionsProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxOptionsProfile.TabIndex = 18;
+            this.pbxOptionsProfile.TabStop = false;
+            this.pbxOptionsProfile.Click += new System.EventHandler(this.pbxOptionsProfile_Click);
+            // 
+            // pbxOptionsHome
+            // 
+            this.pbxOptionsHome.Image = global::school_games_launcher.Properties.Resources.home_button;
+            this.pbxOptionsHome.Location = new System.Drawing.Point(0, 0);
+            this.pbxOptionsHome.Name = "pbxOptionsHome";
+            this.pbxOptionsHome.Size = new System.Drawing.Size(50, 25);
+            this.pbxOptionsHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxOptionsHome.TabIndex = 14;
+            this.pbxOptionsHome.TabStop = false;
+            this.pbxOptionsHome.Click += new System.EventHandler(this.pbxOptionsHome_Click);
+            // 
+            // pbxOptionsMinimize
+            // 
+            this.pbxOptionsMinimize.Image = ((System.Drawing.Image)(resources.GetObject("pbxOptionsMinimize.Image")));
+            this.pbxOptionsMinimize.Location = new System.Drawing.Point(1035, 0);
+            this.pbxOptionsMinimize.Name = "pbxOptionsMinimize";
+            this.pbxOptionsMinimize.Size = new System.Drawing.Size(50, 25);
+            this.pbxOptionsMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxOptionsMinimize.TabIndex = 13;
+            this.pbxOptionsMinimize.TabStop = false;
+            this.pbxOptionsMinimize.Click += new System.EventHandler(this.pbxOptionsMinimize_Click);
+            // 
+            // pbxOptionsClose
+            // 
+            this.pbxOptionsClose.Image = global::school_games_launcher.Properties.Resources.close_button;
+            this.pbxOptionsClose.Location = new System.Drawing.Point(1085, 0);
+            this.pbxOptionsClose.Name = "pbxOptionsClose";
+            this.pbxOptionsClose.Size = new System.Drawing.Size(50, 25);
+            this.pbxOptionsClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxOptionsClose.TabIndex = 12;
+            this.pbxOptionsClose.TabStop = false;
+            this.pbxOptionsClose.Click += new System.EventHandler(this.pbxOptionsClose_Click);
+            // 
+            // pbxAddGameOptions
+            // 
+            this.pbxAddGameOptions.Image = global::school_games_launcher.Properties.Resources.options_button;
+            this.pbxAddGameOptions.Location = new System.Drawing.Point(125, 0);
+            this.pbxAddGameOptions.Name = "pbxAddGameOptions";
+            this.pbxAddGameOptions.Size = new System.Drawing.Size(75, 25);
+            this.pbxAddGameOptions.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxAddGameOptions.TabIndex = 22;
+            this.pbxAddGameOptions.TabStop = false;
+            this.pbxAddGameOptions.Click += new System.EventHandler(this.pbxAddGameOptions_Click);
+            // 
+            // pbxAddGameProfile
+            // 
+            this.pbxAddGameProfile.Image = global::school_games_launcher.Properties.Resources.profile_button;
+            this.pbxAddGameProfile.Location = new System.Drawing.Point(50, 0);
+            this.pbxAddGameProfile.Name = "pbxAddGameProfile";
+            this.pbxAddGameProfile.Size = new System.Drawing.Size(75, 25);
+            this.pbxAddGameProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxAddGameProfile.TabIndex = 21;
+            this.pbxAddGameProfile.TabStop = false;
+            this.pbxAddGameProfile.Click += new System.EventHandler(this.pbxAddGameProfile_Click);
+            // 
+            // pbxAddGameHome
+            // 
+            this.pbxAddGameHome.Image = global::school_games_launcher.Properties.Resources.home_button;
+            this.pbxAddGameHome.Location = new System.Drawing.Point(0, 0);
+            this.pbxAddGameHome.Name = "pbxAddGameHome";
+            this.pbxAddGameHome.Size = new System.Drawing.Size(50, 25);
+            this.pbxAddGameHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxAddGameHome.TabIndex = 20;
+            this.pbxAddGameHome.TabStop = false;
+            this.pbxAddGameHome.Click += new System.EventHandler(this.pbxAddGameHome_Click);
+            // 
+            // btnAddGameFindSteamGame
+            // 
+            this.btnAddGameFindSteamGame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnAddGameFindSteamGame.BackgroundImage = global::school_games_launcher.Properties.Resources.steam_button_background;
+            this.btnAddGameFindSteamGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddGameFindSteamGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddGameFindSteamGame.ForeColor = System.Drawing.Color.White;
+            this.btnAddGameFindSteamGame.Location = new System.Drawing.Point(28, 156);
+            this.btnAddGameFindSteamGame.Name = "btnAddGameFindSteamGame";
+            this.btnAddGameFindSteamGame.Size = new System.Drawing.Size(320, 43);
+            this.btnAddGameFindSteamGame.TabIndex = 1;
+            this.btnAddGameFindSteamGame.Text = "Auto fill Steam game";
+            this.btnAddGameFindSteamGame.UseVisualStyleBackColor = false;
+            this.btnAddGameFindSteamGame.Click += new System.EventHandler(this.btnAddGameFindSteamGame_Click);
+            // 
+            // pbxAddGameMinimize
+            // 
+            this.pbxAddGameMinimize.Image = ((System.Drawing.Image)(resources.GetObject("pbxAddGameMinimize.Image")));
+            this.pbxAddGameMinimize.Location = new System.Drawing.Point(1036, 0);
+            this.pbxAddGameMinimize.Name = "pbxAddGameMinimize";
+            this.pbxAddGameMinimize.Size = new System.Drawing.Size(50, 25);
+            this.pbxAddGameMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxAddGameMinimize.TabIndex = 19;
+            this.pbxAddGameMinimize.TabStop = false;
+            this.pbxAddGameMinimize.Click += new System.EventHandler(this.pbxAddGameMinimize_Click);
+            // 
+            // pbxAddGameClose
+            // 
+            this.pbxAddGameClose.Image = global::school_games_launcher.Properties.Resources.close_button;
+            this.pbxAddGameClose.Location = new System.Drawing.Point(1086, 0);
+            this.pbxAddGameClose.Name = "pbxAddGameClose";
+            this.pbxAddGameClose.Size = new System.Drawing.Size(50, 25);
+            this.pbxAddGameClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxAddGameClose.TabIndex = 18;
+            this.pbxAddGameClose.TabStop = false;
+            this.pbxAddGameClose.Click += new System.EventHandler(this.pbxAddGameClose_Click);
+            // 
+            // pbxAddGameCoverart
+            // 
+            this.pbxAddGameCoverart.BackColor = System.Drawing.Color.Black;
+            this.pbxAddGameCoverart.Image = ((System.Drawing.Image)(resources.GetObject("pbxAddGameCoverart.Image")));
+            this.pbxAddGameCoverart.Location = new System.Drawing.Point(427, 157);
+            this.pbxAddGameCoverart.Name = "pbxAddGameCoverart";
+            this.pbxAddGameCoverart.Size = new System.Drawing.Size(429, 200);
+            this.pbxAddGameCoverart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxAddGameCoverart.TabIndex = 0;
+            this.pbxAddGameCoverart.TabStop = false;
+            // 
+            // pbxAddGameAge18
+            // 
+            this.pbxAddGameAge18.Image = global::school_games_launcher.Properties.Resources.age_18;
+            this.pbxAddGameAge18.Location = new System.Drawing.Point(292, 363);
+            this.pbxAddGameAge18.Name = "pbxAddGameAge18";
+            this.pbxAddGameAge18.Size = new System.Drawing.Size(60, 60);
+            this.pbxAddGameAge18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxAddGameAge18.TabIndex = 9;
+            this.pbxAddGameAge18.TabStop = false;
+            this.pbxAddGameAge18.Click += new System.EventHandler(this.pbxAddGameAge18_Click);
+            // 
+            // pbxAddGameAge16
+            // 
+            this.pbxAddGameAge16.Image = global::school_games_launcher.Properties.Resources.age_16;
+            this.pbxAddGameAge16.Location = new System.Drawing.Point(226, 363);
+            this.pbxAddGameAge16.Name = "pbxAddGameAge16";
+            this.pbxAddGameAge16.Size = new System.Drawing.Size(60, 60);
+            this.pbxAddGameAge16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxAddGameAge16.TabIndex = 8;
+            this.pbxAddGameAge16.TabStop = false;
+            this.pbxAddGameAge16.Click += new System.EventHandler(this.pbxAddGameAge16_Click);
+            // 
+            // pbxAddGameAge12
+            // 
+            this.pbxAddGameAge12.Image = global::school_games_launcher.Properties.Resources.age_12;
+            this.pbxAddGameAge12.Location = new System.Drawing.Point(160, 363);
+            this.pbxAddGameAge12.Name = "pbxAddGameAge12";
+            this.pbxAddGameAge12.Size = new System.Drawing.Size(60, 60);
+            this.pbxAddGameAge12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxAddGameAge12.TabIndex = 7;
+            this.pbxAddGameAge12.TabStop = false;
+            this.pbxAddGameAge12.Click += new System.EventHandler(this.pbxAddGameAge12_Click);
+            // 
+            // pbxAddGameAge6
+            // 
+            this.pbxAddGameAge6.Image = global::school_games_launcher.Properties.Resources.age_6;
+            this.pbxAddGameAge6.Location = new System.Drawing.Point(94, 363);
+            this.pbxAddGameAge6.Name = "pbxAddGameAge6";
+            this.pbxAddGameAge6.Size = new System.Drawing.Size(60, 60);
+            this.pbxAddGameAge6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxAddGameAge6.TabIndex = 6;
+            this.pbxAddGameAge6.TabStop = false;
+            this.pbxAddGameAge6.Click += new System.EventHandler(this.pbxAddGameAge6_Click);
+            // 
+            // pbxAddGameAge0
+            // 
+            this.pbxAddGameAge0.Image = global::school_games_launcher.Properties.Resources.age_0;
+            this.pbxAddGameAge0.Location = new System.Drawing.Point(28, 363);
+            this.pbxAddGameAge0.Name = "pbxAddGameAge0";
+            this.pbxAddGameAge0.Size = new System.Drawing.Size(60, 60);
+            this.pbxAddGameAge0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxAddGameAge0.TabIndex = 5;
+            this.pbxAddGameAge0.TabStop = false;
+            this.pbxAddGameAge0.Click += new System.EventHandler(this.pbxAddGameAge0_Click);
+            // 
             // btnEditGameRemoveSteam
             // 
             this.btnEditGameRemoveSteam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -1189,116 +2179,6 @@
             this.pbxEditGameAge0.TabStop = false;
             this.pbxEditGameAge0.Click += new System.EventHandler(this.PbxEditGameAge0_Click);
             // 
-            // tabProfile
-            // 
-            this.tabProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
-            this.tabProfile.Controls.Add(this.btnProfileEdit);
-            this.tabProfile.Controls.Add(this.btnProfileLogout);
-            this.tabProfile.Controls.Add(this.lblProfileId);
-            this.tabProfile.Controls.Add(this.label1);
-            this.tabProfile.Controls.Add(this.lblProfileName);
-            this.tabProfile.Controls.Add(this.lblProfileBirth);
-            this.tabProfile.Controls.Add(this.lblProfileLastPlayed);
-            this.tabProfile.Controls.Add(this.flpProfileLastPlayed);
-            this.tabProfile.Controls.Add(this.pbxProfileOptions);
-            this.tabProfile.Controls.Add(this.pbxProfileProfile);
-            this.tabProfile.Controls.Add(this.pbxProfileHome);
-            this.tabProfile.Controls.Add(this.pbxProfileMinimize);
-            this.tabProfile.Controls.Add(this.pbxProfileClose);
-            this.tabProfile.Controls.Add(this.pbxProfileAvatar);
-            this.tabProfile.ForeColor = System.Drawing.Color.White;
-            this.tabProfile.Location = new System.Drawing.Point(4, 22);
-            this.tabProfile.Name = "tabProfile";
-            this.tabProfile.Size = new System.Drawing.Size(1144, 723);
-            this.tabProfile.TabIndex = 7;
-            this.tabProfile.Text = "Profile";
-            // 
-            // btnProfileEdit
-            // 
-            this.btnProfileEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProfileEdit.Location = new System.Drawing.Point(1015, 95);
-            this.btnProfileEdit.Name = "btnProfileEdit";
-            this.btnProfileEdit.Size = new System.Drawing.Size(106, 23);
-            this.btnProfileEdit.TabIndex = 26;
-            this.btnProfileEdit.Text = "Edit Profile";
-            this.btnProfileEdit.UseVisualStyleBackColor = true;
-            // 
-            // btnProfileLogout
-            // 
-            this.btnProfileLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProfileLogout.Location = new System.Drawing.Point(1015, 57);
-            this.btnProfileLogout.Name = "btnProfileLogout";
-            this.btnProfileLogout.Size = new System.Drawing.Size(106, 23);
-            this.btnProfileLogout.TabIndex = 25;
-            this.btnProfileLogout.Text = "Logout";
-            this.btnProfileLogout.UseVisualStyleBackColor = true;
-            this.btnProfileLogout.Click += new System.EventHandler(this.btnProfileLogout_Click);
-            // 
-            // lblProfileId
-            // 
-            this.lblProfileId.AutoSize = true;
-            this.lblProfileId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProfileId.ForeColor = System.Drawing.Color.Gray;
-            this.lblProfileId.Location = new System.Drawing.Point(33, 694);
-            this.lblProfileId.Name = "lblProfileId";
-            this.lblProfileId.Size = new System.Drawing.Size(34, 16);
-            this.lblProfileId.TabIndex = 24;
-            this.lblProfileId.Text = "ID: 0";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.LightGray;
-            this.label1.Location = new System.Drawing.Point(25, 240);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 20);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Hours played:";
-            // 
-            // lblProfileName
-            // 
-            this.lblProfileName.AutoSize = true;
-            this.lblProfileName.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProfileName.Location = new System.Drawing.Point(22, 164);
-            this.lblProfileName.Name = "lblProfileName";
-            this.lblProfileName.Size = new System.Drawing.Size(84, 37);
-            this.lblProfileName.TabIndex = 1;
-            this.lblProfileName.Text = "User";
-            // 
-            // lblProfileBirth
-            // 
-            this.lblProfileBirth.AutoSize = true;
-            this.lblProfileBirth.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProfileBirth.ForeColor = System.Drawing.Color.LightGray;
-            this.lblProfileBirth.Location = new System.Drawing.Point(25, 215);
-            this.lblProfileBirth.Name = "lblProfileBirth";
-            this.lblProfileBirth.Size = new System.Drawing.Size(42, 20);
-            this.lblProfileBirth.TabIndex = 2;
-            this.lblProfileBirth.Text = "Age:";
-            // 
-            // lblProfileLastPlayed
-            // 
-            this.lblProfileLastPlayed.AutoSize = true;
-            this.lblProfileLastPlayed.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProfileLastPlayed.Location = new System.Drawing.Point(20, 285);
-            this.lblProfileLastPlayed.Name = "lblProfileLastPlayed";
-            this.lblProfileLastPlayed.Size = new System.Drawing.Size(128, 25);
-            this.lblProfileLastPlayed.TabIndex = 3;
-            this.lblProfileLastPlayed.Text = "Last Activity";
-            // 
-            // flpProfileLastPlayed
-            // 
-            this.flpProfileLastPlayed.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flpProfileLastPlayed.AutoScroll = true;
-            this.flpProfileLastPlayed.BackColor = System.Drawing.Color.Transparent;
-            this.flpProfileLastPlayed.Location = new System.Drawing.Point(29, 327);
-            this.flpProfileLastPlayed.Name = "flpProfileLastPlayed";
-            this.flpProfileLastPlayed.Size = new System.Drawing.Size(1115, 363);
-            this.flpProfileLastPlayed.TabIndex = 2;
-            // 
             // pbxProfileOptions
             // 
             this.pbxProfileOptions.Image = global::school_games_launcher.Properties.Resources.options_button;
@@ -1361,28 +2241,9 @@
             this.pbxProfileAvatar.Location = new System.Drawing.Point(25, 45);
             this.pbxProfileAvatar.Name = "pbxProfileAvatar";
             this.pbxProfileAvatar.Size = new System.Drawing.Size(100, 100);
-            this.pbxProfileAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxProfileAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxProfileAvatar.TabIndex = 0;
             this.pbxProfileAvatar.TabStop = false;
-            // 
-            // tabLogin
-            // 
-            this.tabLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
-            this.tabLogin.Controls.Add(this.pbxLoginHome);
-            this.tabLogin.Controls.Add(this.pictureBox11);
-            this.tabLogin.Controls.Add(this.pbxLoginClose);
-            this.tabLogin.Controls.Add(this.tbxLoginPassword);
-            this.tabLogin.Controls.Add(this.tbxLoginUsername);
-            this.tabLogin.Controls.Add(this.lblLoginTitle);
-            this.tabLogin.Controls.Add(this.lblLoginPassword);
-            this.tabLogin.Controls.Add(this.llbLoginUsername);
-            this.tabLogin.Controls.Add(this.btnLoginConfirm);
-            this.tabLogin.ForeColor = System.Drawing.Color.White;
-            this.tabLogin.Location = new System.Drawing.Point(4, 22);
-            this.tabLogin.Name = "tabLogin";
-            this.tabLogin.Size = new System.Drawing.Size(1144, 723);
-            this.tabLogin.TabIndex = 2;
-            this.tabLogin.Text = "Login";
             // 
             // pbxLoginHome
             // 
@@ -1415,90 +2276,6 @@
             this.pbxLoginClose.TabIndex = 12;
             this.pbxLoginClose.TabStop = false;
             this.pbxLoginClose.Click += new System.EventHandler(this.pbxLoginClose_Click);
-            // 
-            // tbxLoginPassword
-            // 
-            this.tbxLoginPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(56)))), ((int)(((byte)(66)))));
-            this.tbxLoginPassword.ForeColor = System.Drawing.Color.White;
-            this.tbxLoginPassword.Location = new System.Drawing.Point(32, 199);
-            this.tbxLoginPassword.Name = "tbxLoginPassword";
-            this.tbxLoginPassword.PasswordChar = '●';
-            this.tbxLoginPassword.Size = new System.Drawing.Size(173, 20);
-            this.tbxLoginPassword.TabIndex = 1;
-            // 
-            // tbxLoginUsername
-            // 
-            this.tbxLoginUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(56)))), ((int)(((byte)(66)))));
-            this.tbxLoginUsername.ForeColor = System.Drawing.Color.White;
-            this.tbxLoginUsername.Location = new System.Drawing.Point(32, 135);
-            this.tbxLoginUsername.Name = "tbxLoginUsername";
-            this.tbxLoginUsername.Size = new System.Drawing.Size(173, 20);
-            this.tbxLoginUsername.TabIndex = 0;
-            // 
-            // lblLoginTitle
-            // 
-            this.lblLoginTitle.AutoSize = true;
-            this.lblLoginTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLoginTitle.Location = new System.Drawing.Point(25, 45);
-            this.lblLoginTitle.Name = "lblLoginTitle";
-            this.lblLoginTitle.Size = new System.Drawing.Size(96, 37);
-            this.lblLoginTitle.TabIndex = 3;
-            this.lblLoginTitle.Text = "Login";
-            // 
-            // lblLoginPassword
-            // 
-            this.lblLoginPassword.AutoSize = true;
-            this.lblLoginPassword.Location = new System.Drawing.Point(32, 183);
-            this.lblLoginPassword.Name = "lblLoginPassword";
-            this.lblLoginPassword.Size = new System.Drawing.Size(53, 13);
-            this.lblLoginPassword.TabIndex = 2;
-            this.lblLoginPassword.Text = "Password";
-            // 
-            // llbLoginUsername
-            // 
-            this.llbLoginUsername.AutoSize = true;
-            this.llbLoginUsername.Location = new System.Drawing.Point(32, 119);
-            this.llbLoginUsername.Name = "llbLoginUsername";
-            this.llbLoginUsername.Size = new System.Drawing.Size(55, 13);
-            this.llbLoginUsername.TabIndex = 1;
-            this.llbLoginUsername.Text = "Username";
-            // 
-            // btnLoginConfirm
-            // 
-            this.btnLoginConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLoginConfirm.Location = new System.Drawing.Point(32, 259);
-            this.btnLoginConfirm.Name = "btnLoginConfirm";
-            this.btnLoginConfirm.Size = new System.Drawing.Size(173, 32);
-            this.btnLoginConfirm.TabIndex = 2;
-            this.btnLoginConfirm.Text = "Login";
-            this.btnLoginConfirm.UseVisualStyleBackColor = true;
-            this.btnLoginConfirm.Click += new System.EventHandler(this.btnLoginConfirm_Click);
-            // 
-            // tabRegister
-            // 
-            this.tabRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
-            this.tabRegister.Controls.Add(this.pbxRegisterOptions);
-            this.tabRegister.Controls.Add(this.pbxRegisterProfile);
-            this.tabRegister.Controls.Add(this.pbxRegisterHome);
-            this.tabRegister.Controls.Add(this.pbxRegisterMinimize);
-            this.tabRegister.Controls.Add(this.pictureBox14);
-            this.tabRegister.Controls.Add(this.llblRegisterCancel);
-            this.tabRegister.Controls.Add(this.btnRegisterConfirm);
-            this.tabRegister.Controls.Add(this.dtpRegisterBirthday);
-            this.tabRegister.Controls.Add(this.tbxRegisterPasswordConfirm);
-            this.tabRegister.Controls.Add(this.tbxRegisterPassword);
-            this.tabRegister.Controls.Add(this.tbxRegisterUsername);
-            this.tabRegister.Controls.Add(this.lblRegisterBirthday);
-            this.tabRegister.Controls.Add(this.lblRegisterPasswordConfirm);
-            this.tabRegister.Controls.Add(this.lblRegisterPassword);
-            this.tabRegister.Controls.Add(this.lblRegisterUsername);
-            this.tabRegister.Controls.Add(this.lblRegisterTitle);
-            this.tabRegister.ForeColor = System.Drawing.Color.White;
-            this.tabRegister.Location = new System.Drawing.Point(4, 22);
-            this.tabRegister.Name = "tabRegister";
-            this.tabRegister.Size = new System.Drawing.Size(1144, 723);
-            this.tabRegister.TabIndex = 3;
-            this.tabRegister.Text = "Register";
             // 
             // pbxRegisterOptions
             // 
@@ -1555,138 +2332,6 @@
             this.pictureBox14.TabStop = false;
             this.pictureBox14.Click += new System.EventHandler(this.pictureBox14_Click);
             // 
-            // llblRegisterCancel
-            // 
-            this.llblRegisterCancel.AutoSize = true;
-            this.llblRegisterCancel.Location = new System.Drawing.Point(35, 424);
-            this.llblRegisterCancel.Name = "llblRegisterCancel";
-            this.llblRegisterCancel.Size = new System.Drawing.Size(40, 13);
-            this.llblRegisterCancel.TabIndex = 5;
-            this.llblRegisterCancel.TabStop = true;
-            this.llblRegisterCancel.Text = "Cancel";
-            this.llblRegisterCancel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblRegisterCancel_LinkClicked);
-            // 
-            // btnRegisterConfirm
-            // 
-            this.btnRegisterConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegisterConfirm.Location = new System.Drawing.Point(32, 384);
-            this.btnRegisterConfirm.Name = "btnRegisterConfirm";
-            this.btnRegisterConfirm.Size = new System.Drawing.Size(212, 33);
-            this.btnRegisterConfirm.TabIndex = 4;
-            this.btnRegisterConfirm.Text = "Register";
-            this.btnRegisterConfirm.UseVisualStyleBackColor = true;
-            this.btnRegisterConfirm.Click += new System.EventHandler(this.BtnRegisterConfirm_Click);
-            // 
-            // dtpRegisterBirthday
-            // 
-            this.dtpRegisterBirthday.CalendarForeColor = System.Drawing.Color.White;
-            this.dtpRegisterBirthday.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(56)))), ((int)(((byte)(66)))));
-            this.dtpRegisterBirthday.CalendarTitleForeColor = System.Drawing.Color.White;
-            this.dtpRegisterBirthday.Location = new System.Drawing.Point(35, 336);
-            this.dtpRegisterBirthday.Name = "dtpRegisterBirthday";
-            this.dtpRegisterBirthday.Size = new System.Drawing.Size(209, 20);
-            this.dtpRegisterBirthday.TabIndex = 3;
-            // 
-            // tbxRegisterPasswordConfirm
-            // 
-            this.tbxRegisterPasswordConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(56)))), ((int)(((byte)(66)))));
-            this.tbxRegisterPasswordConfirm.ForeColor = System.Drawing.Color.White;
-            this.tbxRegisterPasswordConfirm.Location = new System.Drawing.Point(35, 261);
-            this.tbxRegisterPasswordConfirm.Name = "tbxRegisterPasswordConfirm";
-            this.tbxRegisterPasswordConfirm.PasswordChar = '●';
-            this.tbxRegisterPasswordConfirm.Size = new System.Drawing.Size(209, 20);
-            this.tbxRegisterPasswordConfirm.TabIndex = 2;
-            // 
-            // tbxRegisterPassword
-            // 
-            this.tbxRegisterPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(56)))), ((int)(((byte)(66)))));
-            this.tbxRegisterPassword.ForeColor = System.Drawing.Color.White;
-            this.tbxRegisterPassword.Location = new System.Drawing.Point(35, 187);
-            this.tbxRegisterPassword.Name = "tbxRegisterPassword";
-            this.tbxRegisterPassword.PasswordChar = '●';
-            this.tbxRegisterPassword.Size = new System.Drawing.Size(209, 20);
-            this.tbxRegisterPassword.TabIndex = 1;
-            // 
-            // tbxRegisterUsername
-            // 
-            this.tbxRegisterUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(56)))), ((int)(((byte)(66)))));
-            this.tbxRegisterUsername.ForeColor = System.Drawing.Color.White;
-            this.tbxRegisterUsername.Location = new System.Drawing.Point(35, 124);
-            this.tbxRegisterUsername.Name = "tbxRegisterUsername";
-            this.tbxRegisterUsername.Size = new System.Drawing.Size(209, 20);
-            this.tbxRegisterUsername.TabIndex = 0;
-            // 
-            // lblRegisterBirthday
-            // 
-            this.lblRegisterBirthday.AutoSize = true;
-            this.lblRegisterBirthday.Location = new System.Drawing.Point(32, 319);
-            this.lblRegisterBirthday.Name = "lblRegisterBirthday";
-            this.lblRegisterBirthday.Size = new System.Drawing.Size(46, 13);
-            this.lblRegisterBirthday.TabIndex = 4;
-            this.lblRegisterBirthday.Text = "Bithdate";
-            // 
-            // lblRegisterPasswordConfirm
-            // 
-            this.lblRegisterPasswordConfirm.AutoSize = true;
-            this.lblRegisterPasswordConfirm.Location = new System.Drawing.Point(32, 245);
-            this.lblRegisterPasswordConfirm.Name = "lblRegisterPasswordConfirm";
-            this.lblRegisterPasswordConfirm.Size = new System.Drawing.Size(86, 13);
-            this.lblRegisterPasswordConfirm.TabIndex = 3;
-            this.lblRegisterPasswordConfirm.Text = "Password repeat";
-            // 
-            // lblRegisterPassword
-            // 
-            this.lblRegisterPassword.AutoSize = true;
-            this.lblRegisterPassword.Location = new System.Drawing.Point(32, 171);
-            this.lblRegisterPassword.Name = "lblRegisterPassword";
-            this.lblRegisterPassword.Size = new System.Drawing.Size(53, 13);
-            this.lblRegisterPassword.TabIndex = 2;
-            this.lblRegisterPassword.Text = "Password";
-            // 
-            // lblRegisterUsername
-            // 
-            this.lblRegisterUsername.AutoSize = true;
-            this.lblRegisterUsername.Location = new System.Drawing.Point(32, 108);
-            this.lblRegisterUsername.Name = "lblRegisterUsername";
-            this.lblRegisterUsername.Size = new System.Drawing.Size(55, 13);
-            this.lblRegisterUsername.TabIndex = 1;
-            this.lblRegisterUsername.Text = "Username";
-            // 
-            // lblRegisterTitle
-            // 
-            this.lblRegisterTitle.AutoSize = true;
-            this.lblRegisterTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegisterTitle.Location = new System.Drawing.Point(25, 45);
-            this.lblRegisterTitle.Name = "lblRegisterTitle";
-            this.lblRegisterTitle.Size = new System.Drawing.Size(134, 37);
-            this.lblRegisterTitle.TabIndex = 0;
-            this.lblRegisterTitle.Text = "Register";
-            // 
-            // tabPlaying
-            // 
-            this.tabPlaying.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
-            this.tabPlaying.Controls.Add(this.label4);
-            this.tabPlaying.Controls.Add(this.pbxPlayingMinimize);
-            this.tabPlaying.Controls.Add(this.pbxPlayingCoverart);
-            this.tabPlaying.Controls.Add(this.btnPlayingStop);
-            this.tabPlaying.ForeColor = System.Drawing.Color.White;
-            this.tabPlaying.Location = new System.Drawing.Point(4, 22);
-            this.tabPlaying.Name = "tabPlaying";
-            this.tabPlaying.Size = new System.Drawing.Size(1144, 723);
-            this.tabPlaying.TabIndex = 5;
-            this.tabPlaying.Text = "Currently playing";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.DarkGray;
-            this.label4.Location = new System.Drawing.Point(493, 151);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(155, 24);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "Currently playing:";
-            // 
             // pbxPlayingMinimize
             // 
             this.pbxPlayingMinimize.Image = ((System.Drawing.Image)(resources.GetObject("pbxPlayingMinimize.Image")));
@@ -1708,89 +2353,6 @@
             this.pbxPlayingCoverart.TabIndex = 3;
             this.pbxPlayingCoverart.TabStop = false;
             // 
-            // btnPlayingStop
-            // 
-            this.btnPlayingStop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPlayingStop.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPlayingStop.Location = new System.Drawing.Point(343, 433);
-            this.btnPlayingStop.Name = "btnPlayingStop";
-            this.btnPlayingStop.Size = new System.Drawing.Size(460, 91);
-            this.btnPlayingStop.TabIndex = 1;
-            this.btnPlayingStop.Text = "I stopped playing.";
-            this.btnPlayingStop.UseVisualStyleBackColor = true;
-            this.btnPlayingStop.Click += new System.EventHandler(this.btnPlayingStop_Click);
-            // 
-            // tapGameDetails
-            // 
-            this.tapGameDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
-            this.tapGameDetails.Controls.Add(this.lblGameDetailsId);
-            this.tapGameDetails.Controls.Add(this.llblGameDetailsEdit);
-            this.tapGameDetails.Controls.Add(this.lblGameDetailsSteamId);
-            this.tapGameDetails.Controls.Add(this.flpGameDetailsImages);
-            this.tapGameDetails.Controls.Add(this.tbxGameDetailsDescription);
-            this.tapGameDetails.Controls.Add(this.lblGameDetailsPublisher);
-            this.tapGameDetails.Controls.Add(this.lblGameDetailsDeveloper);
-            this.tapGameDetails.Controls.Add(this.lblGameDetailsAge);
-            this.tapGameDetails.Controls.Add(this.lblGameDetailsName);
-            this.tapGameDetails.Controls.Add(this.pbxGameDetailsAge);
-            this.tapGameDetails.Controls.Add(this.pbxGameDetailsOptions);
-            this.tapGameDetails.Controls.Add(this.pbxGameDetailProfile);
-            this.tapGameDetails.Controls.Add(this.pbxGameDetailsHome);
-            this.tapGameDetails.Controls.Add(this.pbxGameDetailsMinimize);
-            this.tapGameDetails.Controls.Add(this.pbxGameDetailsClose);
-            this.tapGameDetails.Controls.Add(this.pbxGameDetailsCoverart);
-            this.tapGameDetails.Controls.Add(this.pbxGameDetailsPlayButton);
-            this.tapGameDetails.ForeColor = System.Drawing.Color.White;
-            this.tapGameDetails.Location = new System.Drawing.Point(4, 22);
-            this.tapGameDetails.Margin = new System.Windows.Forms.Padding(0);
-            this.tapGameDetails.Name = "tapGameDetails";
-            this.tapGameDetails.Size = new System.Drawing.Size(1144, 723);
-            this.tapGameDetails.TabIndex = 8;
-            this.tapGameDetails.Text = "Game Details";
-            // 
-            // lblGameDetailsId
-            // 
-            this.lblGameDetailsId.AutoSize = true;
-            this.lblGameDetailsId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGameDetailsId.ForeColor = System.Drawing.Color.Gray;
-            this.lblGameDetailsId.Location = new System.Drawing.Point(25, 694);
-            this.lblGameDetailsId.Name = "lblGameDetailsId";
-            this.lblGameDetailsId.Size = new System.Drawing.Size(34, 16);
-            this.lblGameDetailsId.TabIndex = 23;
-            this.lblGameDetailsId.Text = "ID: 0";
-            // 
-            // llblGameDetailsEdit
-            // 
-            this.llblGameDetailsEdit.AutoSize = true;
-            this.llblGameDetailsEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.llblGameDetailsEdit.LinkColor = System.Drawing.Color.MediumSpringGreen;
-            this.llblGameDetailsEdit.Location = new System.Drawing.Point(24, 336);
-            this.llblGameDetailsEdit.Name = "llblGameDetailsEdit";
-            this.llblGameDetailsEdit.Size = new System.Drawing.Size(85, 20);
-            this.llblGameDetailsEdit.TabIndex = 18;
-            this.llblGameDetailsEdit.TabStop = true;
-            this.llblGameDetailsEdit.Text = "Edit Game";
-            // 
-            // lblGameDetailsSteamId
-            // 
-            this.lblGameDetailsSteamId.AutoSize = true;
-            this.lblGameDetailsSteamId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGameDetailsSteamId.ForeColor = System.Drawing.Color.Gray;
-            this.lblGameDetailsSteamId.Location = new System.Drawing.Point(127, 694);
-            this.lblGameDetailsSteamId.Name = "lblGameDetailsSteamId";
-            this.lblGameDetailsSteamId.Size = new System.Drawing.Size(73, 16);
-            this.lblGameDetailsSteamId.TabIndex = 17;
-            this.lblGameDetailsSteamId.Text = "SteamID: 0";
-            // 
-            // flpGameDetailsImages
-            // 
-            this.flpGameDetailsImages.AutoScroll = true;
-            this.flpGameDetailsImages.Controls.Add(this.pbxGameDetailsMoreSample);
-            this.flpGameDetailsImages.Location = new System.Drawing.Point(537, 45);
-            this.flpGameDetailsImages.Name = "flpGameDetailsImages";
-            this.flpGameDetailsImages.Size = new System.Drawing.Size(604, 655);
-            this.flpGameDetailsImages.TabIndex = 16;
-            // 
             // pbxGameDetailsMoreSample
             // 
             this.pbxGameDetailsMoreSample.Image = global::school_games_launcher.Properties.Resources.show_more_images;
@@ -1800,62 +2362,6 @@
             this.pbxGameDetailsMoreSample.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxGameDetailsMoreSample.TabIndex = 0;
             this.pbxGameDetailsMoreSample.TabStop = false;
-            // 
-            // tbxGameDetailsDescription
-            // 
-            this.tbxGameDetailsDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
-            this.tbxGameDetailsDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbxGameDetailsDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.tbxGameDetailsDescription.ForeColor = System.Drawing.Color.LightGray;
-            this.tbxGameDetailsDescription.Location = new System.Drawing.Point(28, 447);
-            this.tbxGameDetailsDescription.Multiline = true;
-            this.tbxGameDetailsDescription.Name = "tbxGameDetailsDescription";
-            this.tbxGameDetailsDescription.ReadOnly = true;
-            this.tbxGameDetailsDescription.Size = new System.Drawing.Size(457, 168);
-            this.tbxGameDetailsDescription.TabIndex = 15;
-            // 
-            // lblGameDetailsPublisher
-            // 
-            this.lblGameDetailsPublisher.AutoSize = true;
-            this.lblGameDetailsPublisher.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGameDetailsPublisher.ForeColor = System.Drawing.Color.LightGray;
-            this.lblGameDetailsPublisher.Location = new System.Drawing.Point(24, 413);
-            this.lblGameDetailsPublisher.Name = "lblGameDetailsPublisher";
-            this.lblGameDetailsPublisher.Size = new System.Drawing.Size(146, 20);
-            this.lblGameDetailsPublisher.TabIndex = 14;
-            this.lblGameDetailsPublisher.Text = "Publisher: unknown";
-            // 
-            // lblGameDetailsDeveloper
-            // 
-            this.lblGameDetailsDeveloper.AutoSize = true;
-            this.lblGameDetailsDeveloper.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGameDetailsDeveloper.ForeColor = System.Drawing.Color.LightGray;
-            this.lblGameDetailsDeveloper.Location = new System.Drawing.Point(24, 388);
-            this.lblGameDetailsDeveloper.Name = "lblGameDetailsDeveloper";
-            this.lblGameDetailsDeveloper.Size = new System.Drawing.Size(153, 20);
-            this.lblGameDetailsDeveloper.TabIndex = 13;
-            this.lblGameDetailsDeveloper.Text = "Developer: unknown";
-            // 
-            // lblGameDetailsAge
-            // 
-            this.lblGameDetailsAge.AutoSize = true;
-            this.lblGameDetailsAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGameDetailsAge.ForeColor = System.Drawing.Color.LightGray;
-            this.lblGameDetailsAge.Location = new System.Drawing.Point(24, 363);
-            this.lblGameDetailsAge.Name = "lblGameDetailsAge";
-            this.lblGameDetailsAge.Size = new System.Drawing.Size(55, 20);
-            this.lblGameDetailsAge.TabIndex = 9;
-            this.lblGameDetailsAge.Text = "Age: 0";
-            // 
-            // lblGameDetailsName
-            // 
-            this.lblGameDetailsName.AutoSize = true;
-            this.lblGameDetailsName.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F);
-            this.lblGameDetailsName.Location = new System.Drawing.Point(198, 289);
-            this.lblGameDetailsName.Name = "lblGameDetailsName";
-            this.lblGameDetailsName.Size = new System.Drawing.Size(125, 44);
-            this.lblGameDetailsName.TabIndex = 7;
-            this.lblGameDetailsName.Text = "Game";
             // 
             // pbxGameDetailsAge
             // 
@@ -1942,183 +2448,91 @@
             this.pbxGameDetailsPlayButton.TabIndex = 10;
             this.pbxGameDetailsPlayButton.TabStop = false;
             // 
-            // tabEditUser
+            // pbxEditUserAvatar5
             // 
-            this.tabEditUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
-            this.tabEditUser.Controls.Add(this.label18);
-            this.tabEditUser.Controls.Add(this.linkLabel2);
-            this.tabEditUser.Controls.Add(this.button9);
-            this.tabEditUser.Controls.Add(this.button8);
-            this.tabEditUser.Controls.Add(this.button7);
-            this.tabEditUser.Controls.Add(this.pictureBox1);
-            this.tabEditUser.Controls.Add(this.textBox2);
-            this.tabEditUser.Controls.Add(this.label17);
-            this.tabEditUser.Controls.Add(this.button6);
-            this.tabEditUser.Controls.Add(this.dateTimePicker1);
-            this.tabEditUser.Controls.Add(this.textBox1);
-            this.tabEditUser.Controls.Add(this.label15);
-            this.tabEditUser.Controls.Add(this.label16);
-            this.tabEditUser.Controls.Add(this.label13);
-            this.tabEditUser.Controls.Add(this.pictureBox3);
-            this.tabEditUser.Controls.Add(this.pbxEditUserOptions);
-            this.tabEditUser.Controls.Add(this.pbxEditUserProfile);
-            this.tabEditUser.Controls.Add(this.pbxEditUserHome);
-            this.tabEditUser.Controls.Add(this.pbxEditUserMinimize);
-            this.tabEditUser.Controls.Add(this.pbxEditUserClose);
-            this.tabEditUser.Controls.Add(this.label12);
-            this.tabEditUser.ForeColor = System.Drawing.Color.White;
-            this.tabEditUser.Location = new System.Drawing.Point(4, 22);
-            this.tabEditUser.Name = "tabEditUser";
-            this.tabEditUser.Size = new System.Drawing.Size(1144, 723);
-            this.tabEditUser.TabIndex = 9;
-            this.tabEditUser.Text = "Edit User";
+            this.pbxEditUserAvatar5.Image = global::school_games_launcher.Properties.Resources.avatar_5;
+            this.pbxEditUserAvatar5.Location = new System.Drawing.Point(599, 309);
+            this.pbxEditUserAvatar5.Name = "pbxEditUserAvatar5";
+            this.pbxEditUserAvatar5.Size = new System.Drawing.Size(50, 50);
+            this.pbxEditUserAvatar5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxEditUserAvatar5.TabIndex = 49;
+            this.pbxEditUserAvatar5.TabStop = false;
+            this.pbxEditUserAvatar5.Click += new System.EventHandler(this.pbxEditUserAvatar5_Click);
             // 
-            // label18
+            // pbxEditUserAvatar4
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.Gray;
-            this.label18.Location = new System.Drawing.Point(26, 694);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(34, 16);
-            this.label18.TabIndex = 43;
-            this.label18.Text = "ID: 0";
+            this.pbxEditUserAvatar4.Image = global::school_games_launcher.Properties.Resources.avatar_4;
+            this.pbxEditUserAvatar4.Location = new System.Drawing.Point(543, 309);
+            this.pbxEditUserAvatar4.Name = "pbxEditUserAvatar4";
+            this.pbxEditUserAvatar4.Size = new System.Drawing.Size(50, 50);
+            this.pbxEditUserAvatar4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxEditUserAvatar4.TabIndex = 48;
+            this.pbxEditUserAvatar4.TabStop = false;
+            this.pbxEditUserAvatar4.Click += new System.EventHandler(this.pbxEditUserAvatar4_Click);
             // 
-            // linkLabel2
+            // pbxEditUserAvatar3
             // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.LinkColor = System.Drawing.Color.Red;
-            this.linkLabel2.Location = new System.Drawing.Point(47, 513);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(63, 13);
-            this.linkLabel2.TabIndex = 42;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "Delete User";
+            this.pbxEditUserAvatar3.Image = global::school_games_launcher.Properties.Resources.avatar_3;
+            this.pbxEditUserAvatar3.Location = new System.Drawing.Point(487, 309);
+            this.pbxEditUserAvatar3.Name = "pbxEditUserAvatar3";
+            this.pbxEditUserAvatar3.Size = new System.Drawing.Size(50, 50);
+            this.pbxEditUserAvatar3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxEditUserAvatar3.TabIndex = 47;
+            this.pbxEditUserAvatar3.TabStop = false;
+            this.pbxEditUserAvatar3.Click += new System.EventHandler(this.pbxEditUserAvatar3_Click);
             // 
-            // button9
+            // pbxEditUserAvatar2
             // 
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Location = new System.Drawing.Point(247, 426);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(103, 33);
-            this.button9.TabIndex = 41;
-            this.button9.Text = "Cancel";
-            this.button9.UseVisualStyleBackColor = true;
+            this.pbxEditUserAvatar2.Image = global::school_games_launcher.Properties.Resources.avatar_2;
+            this.pbxEditUserAvatar2.Location = new System.Drawing.Point(599, 253);
+            this.pbxEditUserAvatar2.Name = "pbxEditUserAvatar2";
+            this.pbxEditUserAvatar2.Size = new System.Drawing.Size(50, 50);
+            this.pbxEditUserAvatar2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxEditUserAvatar2.TabIndex = 46;
+            this.pbxEditUserAvatar2.TabStop = false;
+            this.pbxEditUserAvatar2.Click += new System.EventHandler(this.pbxEditUserAvatar2_Click);
             // 
-            // button8
+            // pbxEditUserAvatar1
             // 
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Location = new System.Drawing.Point(190, 465);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(160, 33);
-            this.button8.TabIndex = 40;
-            this.button8.Text = "User Rules";
-            this.button8.UseVisualStyleBackColor = true;
+            this.pbxEditUserAvatar1.Image = global::school_games_launcher.Properties.Resources.avatar_1;
+            this.pbxEditUserAvatar1.Location = new System.Drawing.Point(543, 253);
+            this.pbxEditUserAvatar1.Name = "pbxEditUserAvatar1";
+            this.pbxEditUserAvatar1.Size = new System.Drawing.Size(50, 50);
+            this.pbxEditUserAvatar1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxEditUserAvatar1.TabIndex = 45;
+            this.pbxEditUserAvatar1.TabStop = false;
+            this.pbxEditUserAvatar1.Click += new System.EventHandler(this.pbxEditUserAvatar1_Click);
             // 
-            // button7
+            // pbxEditUserAvatar0
             // 
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Location = new System.Drawing.Point(29, 465);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(155, 33);
-            this.button7.TabIndex = 39;
-            this.button7.Text = "Change Password";
-            this.button7.UseVisualStyleBackColor = true;
+            this.pbxEditUserAvatar0.Image = global::school_games_launcher.Properties.Resources.avatar_0;
+            this.pbxEditUserAvatar0.Location = new System.Drawing.Point(487, 253);
+            this.pbxEditUserAvatar0.Name = "pbxEditUserAvatar0";
+            this.pbxEditUserAvatar0.Size = new System.Drawing.Size(50, 50);
+            this.pbxEditUserAvatar0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxEditUserAvatar0.TabIndex = 44;
+            this.pbxEditUserAvatar0.TabStop = false;
+            this.pbxEditUserAvatar0.Click += new System.EventHandler(this.pbxEditUserAvatar0_Click);
             // 
-            // pictureBox1
+            // pbxEditUserAvatar
             // 
-            this.pictureBox1.Image = global::school_games_launcher.Properties.Resources.avatar_placeholder;
-            this.pictureBox1.Location = new System.Drawing.Point(375, 253);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 38;
-            this.pictureBox1.TabStop = false;
+            this.pbxEditUserAvatar.Image = global::school_games_launcher.Properties.Resources.avatar_placeholder;
+            this.pbxEditUserAvatar.Location = new System.Drawing.Point(375, 253);
+            this.pbxEditUserAvatar.Name = "pbxEditUserAvatar";
+            this.pbxEditUserAvatar.Size = new System.Drawing.Size(106, 106);
+            this.pbxEditUserAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxEditUserAvatar.TabIndex = 38;
+            this.pbxEditUserAvatar.TabStop = false;
             // 
-            // textBox2
+            // pbxEditUserAvatarOriginal
             // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(56)))), ((int)(((byte)(66)))));
-            this.textBox2.ForeColor = System.Drawing.Color.White;
-            this.textBox2.Location = new System.Drawing.Point(375, 217);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(209, 20);
-            this.textBox2.TabIndex = 36;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(372, 201);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(72, 13);
-            this.label17.TabIndex = 37;
-            this.label17.Text = "Profile Picture";
-            // 
-            // button6
-            // 
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Location = new System.Drawing.Point(29, 426);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(212, 33);
-            this.button6.TabIndex = 34;
-            this.button6.Text = "Save Changes";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CalendarForeColor = System.Drawing.Color.White;
-            this.dateTimePicker1.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(56)))), ((int)(((byte)(66)))));
-            this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.Color.White;
-            this.dateTimePicker1.Location = new System.Drawing.Point(32, 302);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(209, 20);
-            this.dateTimePicker1.TabIndex = 33;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(56)))), ((int)(((byte)(66)))));
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(32, 217);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(209, 20);
-            this.textBox1.TabIndex = 31;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(29, 286);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(46, 13);
-            this.label15.TabIndex = 35;
-            this.label15.Text = "Bithdate";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(29, 201);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(55, 13);
-            this.label16.TabIndex = 32;
-            this.label16.Text = "Username";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(78, 114);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(49, 24);
-            this.label13.TabIndex = 30;
-            this.label13.Text = "User";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::school_games_launcher.Properties.Resources.avatar_placeholder;
-            this.pictureBox3.Location = new System.Drawing.Point(32, 106);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 29;
-            this.pictureBox3.TabStop = false;
+            this.pbxEditUserAvatarOriginal.Image = global::school_games_launcher.Properties.Resources.avatar_placeholder;
+            this.pbxEditUserAvatarOriginal.Location = new System.Drawing.Point(32, 106);
+            this.pbxEditUserAvatarOriginal.Name = "pbxEditUserAvatarOriginal";
+            this.pbxEditUserAvatarOriginal.Size = new System.Drawing.Size(40, 40);
+            this.pbxEditUserAvatarOriginal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxEditUserAvatarOriginal.TabIndex = 29;
+            this.pbxEditUserAvatarOriginal.TabStop = false;
             // 
             // pbxEditUserOptions
             // 
@@ -2175,150 +2589,15 @@
             this.pbxEditUserClose.TabStop = false;
             this.pbxEditUserClose.Click += new System.EventHandler(this.pbxEditUserClose_Click);
             // 
-            // label12
+            // pbxChangePasswordAvatar
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(25, 45);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(148, 37);
-            this.label12.TabIndex = 23;
-            this.label12.Text = "Edit User";
-            // 
-            // tabChangePassword
-            // 
-            this.tabChangePassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
-            this.tabChangePassword.Controls.Add(this.button11);
-            this.tabChangePassword.Controls.Add(this.button10);
-            this.tabChangePassword.Controls.Add(this.textBox5);
-            this.tabChangePassword.Controls.Add(this.label23);
-            this.tabChangePassword.Controls.Add(this.textBox4);
-            this.tabChangePassword.Controls.Add(this.label22);
-            this.tabChangePassword.Controls.Add(this.textBox3);
-            this.tabChangePassword.Controls.Add(this.label21);
-            this.tabChangePassword.Controls.Add(this.label19);
-            this.tabChangePassword.Controls.Add(this.label14);
-            this.tabChangePassword.Controls.Add(this.pictureBox9);
-            this.tabChangePassword.Controls.Add(this.pbxChangePasswordOptions);
-            this.tabChangePassword.Controls.Add(this.pbxChangePasswordProfile);
-            this.tabChangePassword.Controls.Add(this.pbxChangePasswordHome);
-            this.tabChangePassword.Controls.Add(this.pbxChangePasswordMinimize);
-            this.tabChangePassword.Controls.Add(this.pbxChangePasswordClose);
-            this.tabChangePassword.Controls.Add(this.label11);
-            this.tabChangePassword.ForeColor = System.Drawing.Color.White;
-            this.tabChangePassword.Location = new System.Drawing.Point(4, 22);
-            this.tabChangePassword.Name = "tabChangePassword";
-            this.tabChangePassword.Size = new System.Drawing.Size(1144, 723);
-            this.tabChangePassword.TabIndex = 10;
-            this.tabChangePassword.Text = "Change Password";
-            // 
-            // button11
-            // 
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Location = new System.Drawing.Point(32, 458);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(209, 28);
-            this.button11.TabIndex = 52;
-            this.button11.Text = "Cancel";
-            this.button11.UseVisualStyleBackColor = true;
-            // 
-            // button10
-            // 
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Location = new System.Drawing.Point(32, 407);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(209, 33);
-            this.button10.TabIndex = 51;
-            this.button10.Text = "Save";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // textBox5
-            // 
-            this.textBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(56)))), ((int)(((byte)(66)))));
-            this.textBox5.ForeColor = System.Drawing.Color.White;
-            this.textBox5.Location = new System.Drawing.Point(32, 346);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.PasswordChar = '●';
-            this.textBox5.Size = new System.Drawing.Size(209, 20);
-            this.textBox5.TabIndex = 49;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(29, 330);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(116, 13);
-            this.label23.TabIndex = 50;
-            this.label23.Text = "New Password Repeat";
-            // 
-            // textBox4
-            // 
-            this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(56)))), ((int)(((byte)(66)))));
-            this.textBox4.ForeColor = System.Drawing.Color.White;
-            this.textBox4.Location = new System.Drawing.Point(32, 279);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.PasswordChar = '●';
-            this.textBox4.Size = new System.Drawing.Size(209, 20);
-            this.textBox4.TabIndex = 47;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(29, 263);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(78, 13);
-            this.label22.TabIndex = 48;
-            this.label22.Text = "New Password";
-            // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(56)))), ((int)(((byte)(66)))));
-            this.textBox3.ForeColor = System.Drawing.Color.White;
-            this.textBox3.Location = new System.Drawing.Point(32, 212);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.PasswordChar = '●';
-            this.textBox3.Size = new System.Drawing.Size(209, 20);
-            this.textBox3.TabIndex = 45;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(29, 196);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(72, 13);
-            this.label21.TabIndex = 46;
-            this.label21.Text = "Old Password";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.Gray;
-            this.label19.Location = new System.Drawing.Point(29, 694);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(34, 16);
-            this.label19.TabIndex = 44;
-            this.label19.Text = "ID: 0";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(78, 114);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(49, 24);
-            this.label14.TabIndex = 31;
-            this.label14.Text = "User";
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Image = global::school_games_launcher.Properties.Resources.avatar_placeholder;
-            this.pictureBox9.Location = new System.Drawing.Point(32, 106);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox9.TabIndex = 30;
-            this.pictureBox9.TabStop = false;
+            this.pbxChangePasswordAvatar.Image = global::school_games_launcher.Properties.Resources.avatar_placeholder;
+            this.pbxChangePasswordAvatar.Location = new System.Drawing.Point(32, 106);
+            this.pbxChangePasswordAvatar.Name = "pbxChangePasswordAvatar";
+            this.pbxChangePasswordAvatar.Size = new System.Drawing.Size(40, 40);
+            this.pbxChangePasswordAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxChangePasswordAvatar.TabIndex = 30;
+            this.pbxChangePasswordAvatar.TabStop = false;
             // 
             // pbxChangePasswordOptions
             // 
@@ -2375,115 +2654,15 @@
             this.pbxChangePasswordClose.TabStop = false;
             this.pbxChangePasswordClose.Click += new System.EventHandler(this.pbxChangePasswordClose_Click);
             // 
-            // label11
+            // pbxUserRulesAvatar
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(25, 45);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(279, 37);
-            this.label11.TabIndex = 23;
-            this.label11.Text = "Change Password";
-            // 
-            // tabEditUserRules
-            // 
-            this.tabEditUserRules.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
-            this.tabEditUserRules.Controls.Add(this.label20);
-            this.tabEditUserRules.Controls.Add(this.button5);
-            this.tabEditUserRules.Controls.Add(this.button4);
-            this.tabEditUserRules.Controls.Add(this.button3);
-            this.tabEditUserRules.Controls.Add(this.button2);
-            this.tabEditUserRules.Controls.Add(this.label10);
-            this.tabEditUserRules.Controls.Add(this.pictureBox6);
-            this.tabEditUserRules.Controls.Add(this.pbxUserRulesProfile);
-            this.tabEditUserRules.Controls.Add(this.pictureBox2);
-            this.tabEditUserRules.Controls.Add(this.pbxUserRulesHome);
-            this.tabEditUserRules.Controls.Add(this.pbxUserRulesMinimize);
-            this.tabEditUserRules.Controls.Add(this.pbxUserRulesClose);
-            this.tabEditUserRules.Controls.Add(this.label9);
-            this.tabEditUserRules.Controls.Add(this.label8);
-            this.tabEditUserRules.Controls.Add(this.label7);
-            this.tabEditUserRules.Controls.Add(this.label6);
-            this.tabEditUserRules.Controls.Add(this.label5);
-            this.tabEditUserRules.Controls.Add(this.flowLayoutPanel1);
-            this.tabEditUserRules.Controls.Add(this.flowLayoutPanel2);
-            this.tabEditUserRules.ForeColor = System.Drawing.Color.White;
-            this.tabEditUserRules.Location = new System.Drawing.Point(4, 22);
-            this.tabEditUserRules.Name = "tabEditUserRules";
-            this.tabEditUserRules.Size = new System.Drawing.Size(1144, 723);
-            this.tabEditUserRules.TabIndex = 11;
-            this.tabEditUserRules.Text = "User Rules";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.Gray;
-            this.label20.Location = new System.Drawing.Point(29, 694);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(34, 16);
-            this.label20.TabIndex = 44;
-            this.label20.Text = "ID: 0";
-            // 
-            // button5
-            // 
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Location = new System.Drawing.Point(1023, 182);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 40);
-            this.button5.TabIndex = 28;
-            this.button5.Text = "Add";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(479, 182);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 40);
-            this.button4.TabIndex = 27;
-            this.button4.Text = "Add";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(1023, 120);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 26;
-            this.button3.Text = "Cancel";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(942, 120);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 25;
-            this.button2.Text = "Save";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(105, 120);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(49, 24);
-            this.label10.TabIndex = 24;
-            this.label10.Text = "User";
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::school_games_launcher.Properties.Resources.avatar_placeholder;
-            this.pictureBox6.Location = new System.Drawing.Point(59, 112);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 23;
-            this.pictureBox6.TabStop = false;
+            this.pbxUserRulesAvatar.Image = global::school_games_launcher.Properties.Resources.avatar_placeholder;
+            this.pbxUserRulesAvatar.Location = new System.Drawing.Point(59, 112);
+            this.pbxUserRulesAvatar.Name = "pbxUserRulesAvatar";
+            this.pbxUserRulesAvatar.Size = new System.Drawing.Size(40, 40);
+            this.pbxUserRulesAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxUserRulesAvatar.TabIndex = 23;
+            this.pbxUserRulesAvatar.TabStop = false;
             // 
             // pbxUserRulesProfile
             // 
@@ -2539,85 +2718,16 @@
             this.pbxUserRulesClose.TabStop = false;
             this.pbxUserRulesClose.Click += new System.EventHandler(this.pbxUserRulesClose_Click);
             // 
-            // label9
+            // pbxEditUserAvatarOld
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(25, 45);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(173, 37);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "User Rules";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.Color.DarkGray;
-            this.label8.Location = new System.Drawing.Point(603, 209);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(269, 13);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "This overrides the age restriction of a game for the user.";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(599, 182);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(134, 24);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Age Exeptions";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.DarkGray;
-            this.label6.Location = new System.Drawing.Point(62, 209);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(243, 13);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "The user is only alowed to play during these times.";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(58, 182);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(162, 24);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Allowed Playtimes";
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.panel1);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(59, 230);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(495, 454);
-            this.flowLayoutPanel1.TabIndex = 2;
-            // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(492, 99);
-            this.panel1.TabIndex = 1;
-            // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.Controls.Add(this.panel2);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(603, 230);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(495, 457);
-            this.flowLayoutPanel2.TabIndex = 3;
-            // 
-            // panel2
-            // 
-            this.panel2.Location = new System.Drawing.Point(3, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(492, 99);
-            this.panel2.TabIndex = 1;
+            this.pbxEditUserAvatarOld.Image = global::school_games_launcher.Properties.Resources.avatar_placeholder;
+            this.pbxEditUserAvatarOld.Location = new System.Drawing.Point(655, 281);
+            this.pbxEditUserAvatarOld.Name = "pbxEditUserAvatarOld";
+            this.pbxEditUserAvatarOld.Size = new System.Drawing.Size(50, 50);
+            this.pbxEditUserAvatarOld.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxEditUserAvatarOld.TabIndex = 50;
+            this.pbxEditUserAvatarOld.TabStop = false;
+            this.pbxEditUserAvatarOld.Click += new System.EventHandler(this.pbxEditUserAvatarOld_Click);
             // 
             // MainWindow
             // 
@@ -2635,20 +2745,41 @@
             this.tabControl.ResumeLayout(false);
             this.tabLibrary.ResumeLayout(false);
             this.tabLibrary.PerformLayout();
+            this.tabOptions.ResumeLayout(false);
+            this.tabOptions.PerformLayout();
+            this.tabAddGame.ResumeLayout(false);
+            this.tabAddGame.PerformLayout();
+            this.tabEditGame.ResumeLayout(false);
+            this.tabEditGame.PerformLayout();
+            this.tabProfile.ResumeLayout(false);
+            this.tabProfile.PerformLayout();
+            this.tabLogin.ResumeLayout(false);
+            this.tabLogin.PerformLayout();
+            this.tabRegister.ResumeLayout(false);
+            this.tabRegister.PerformLayout();
+            this.tabPlaying.ResumeLayout(false);
+            this.tabPlaying.PerformLayout();
+            this.tapGameDetails.ResumeLayout(false);
+            this.tapGameDetails.PerformLayout();
+            this.flpGameDetailsImages.ResumeLayout(false);
+            this.tabEditUser.ResumeLayout(false);
+            this.tabEditUser.PerformLayout();
+            this.tabChangePassword.ResumeLayout(false);
+            this.tabChangePassword.PerformLayout();
+            this.tabEditUserRules.ResumeLayout(false);
+            this.tabEditUserRules.PerformLayout();
+            this.flpUserRulesAlowedPlaytimes.ResumeLayout(false);
+            this.flpUserRulesAgeExeptions.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbxLibraryOptions)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLibraryProfile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLibraryHome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLibraryMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLibraryClose)).EndInit();
-            this.tabOptions.ResumeLayout(false);
-            this.tabOptions.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxOptionsOptions)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxOptionsProfile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxOptionsHome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxOptionsMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxOptionsClose)).EndInit();
-            this.tabAddGame.ResumeLayout(false);
-            this.tabAddGame.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAddGameOptions)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAddGameProfile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAddGameHome)).EndInit();
@@ -2660,8 +2791,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxAddGameAge12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAddGameAge6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAddGameAge0)).EndInit();
-            this.tabEditGame.ResumeLayout(false);
-            this.tabEditGame.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxEditGameOptions)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxEditGameProfile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxEditGameHome)).EndInit();
@@ -2673,33 +2802,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxEditGameAge12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxEditGameAge6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxEditGameAge0)).EndInit();
-            this.tabProfile.ResumeLayout(false);
-            this.tabProfile.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxProfileOptions)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxProfileProfile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxProfileHome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxProfileMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxProfileClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxProfileAvatar)).EndInit();
-            this.tabLogin.ResumeLayout(false);
-            this.tabLogin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLoginHome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLoginClose)).EndInit();
-            this.tabRegister.ResumeLayout(false);
-            this.tabRegister.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxRegisterOptions)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxRegisterProfile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxRegisterHome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxRegisterMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
-            this.tabPlaying.ResumeLayout(false);
-            this.tabPlaying.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPlayingMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPlayingCoverart)).EndInit();
-            this.tapGameDetails.ResumeLayout(false);
-            this.tapGameDetails.PerformLayout();
-            this.flpGameDetailsImages.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbxGameDetailsMoreSample)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxGameDetailsAge)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxGameDetailsOptions)).EndInit();
@@ -2709,33 +2827,32 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxGameDetailsClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxGameDetailsCoverart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxGameDetailsPlayButton)).EndInit();
-            this.tabEditUser.ResumeLayout(false);
-            this.tabEditUser.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxEditUserAvatar5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxEditUserAvatar4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxEditUserAvatar3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxEditUserAvatar2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxEditUserAvatar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxEditUserAvatar0)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxEditUserAvatar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxEditUserAvatarOriginal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxEditUserOptions)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxEditUserProfile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxEditUserHome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxEditUserMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxEditUserClose)).EndInit();
-            this.tabChangePassword.ResumeLayout(false);
-            this.tabChangePassword.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxChangePasswordAvatar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxChangePasswordOptions)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxChangePasswordProfile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxChangePasswordHome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxChangePasswordMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxChangePasswordClose)).EndInit();
-            this.tabEditUserRules.ResumeLayout(false);
-            this.tabEditUserRules.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxUserRulesAvatar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxUserRulesProfile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxUserRulesHome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxUserRulesMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxUserRulesClose)).EndInit();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbxEditUserAvatarOld)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2883,21 +3000,21 @@
         private System.Windows.Forms.TabPage tabEditUser;
         private System.Windows.Forms.TabPage tabChangePassword;
         private System.Windows.Forms.TabPage tabEditUserRules;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Label lblUserRulesUserName;
+        private System.Windows.Forms.PictureBox pbxUserRulesAvatar;
         private System.Windows.Forms.PictureBox pbxUserRulesProfile;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pbxUserRulesHome;
         private System.Windows.Forms.PictureBox pbxUserRulesMinimize;
         private System.Windows.Forms.PictureBox pbxUserRulesClose;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Label lblUserRulesTitle;
+        private System.Windows.Forms.Label lblUserRulesAgeExeptionsTip;
+        private System.Windows.Forms.Label lblUserRulesAgeExeptionsTitle;
+        private System.Windows.Forms.Label lblUserRulesAllowedPlaytimesTip;
+        private System.Windows.Forms.Label lblUserRulesAllowedPlaytimesTitle;
+        private System.Windows.Forms.FlowLayoutPanel flpUserRulesAlowedPlaytimes;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.FlowLayoutPanel flpUserRulesAgeExeptions;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pbxEditUserOptions;
         private System.Windows.Forms.PictureBox pbxEditUserProfile;
@@ -2910,38 +3027,45 @@
         private System.Windows.Forms.PictureBox pbxChangePasswordHome;
         private System.Windows.Forms.PictureBox pbxChangePasswordMinimize;
         private System.Windows.Forms.PictureBox pbxChangePasswordClose;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lblChangePasswordTitle;
+        private System.Windows.Forms.Label lblEditUserNameOriginal;
+        private System.Windows.Forms.PictureBox pbxEditUserAvatarOriginal;
+        private System.Windows.Forms.Label lblChangePasswordName;
+        private System.Windows.Forms.PictureBox pbxChangePasswordAvatar;
+        private System.Windows.Forms.Button btnUserRulesAgeExeptionsAdd;
+        private System.Windows.Forms.Button btnUserRulesAllowedPlaytimesAdd;
+        private System.Windows.Forms.Button btnUserRulesCancel;
+        private System.Windows.Forms.Button btnUserRulesSave;
+        private System.Windows.Forms.PictureBox pbxEditUserAvatar;
+        private System.Windows.Forms.TextBox tbxEditUserAvatarInput;
+        private System.Windows.Forms.Label tbxEditUserAvatar;
+        private System.Windows.Forms.Button btnEditUserSave;
+        private System.Windows.Forms.DateTimePicker dtpEditUserBirthdate;
+        private System.Windows.Forms.TextBox tbxEditUserName;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.LinkLabel linkLabel2;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label lblEditUserName;
+        private System.Windows.Forms.Label lblEditUserId;
+        private System.Windows.Forms.LinkLabel llblEditUserDelete;
+        private System.Windows.Forms.Button btnEditUserCancel;
+        private System.Windows.Forms.Button btnEditUserUserRules;
+        private System.Windows.Forms.Button btnEditUserChangePassword;
+        private System.Windows.Forms.Button btnChangePasswordCancel;
+        private System.Windows.Forms.Button btnChangePasswordSave;
+        private System.Windows.Forms.TextBox tbxChangePasswordNewRepeat;
+        private System.Windows.Forms.Label lblChangePasswordNewPasswordRepeat;
+        private System.Windows.Forms.TextBox tbxChangePasswordNew;
+        private System.Windows.Forms.Label lblChangePasswordNewPassword;
+        private System.Windows.Forms.TextBox tbxChangePasswordOld;
+        private System.Windows.Forms.Label lblChangePasswordOldPassword;
+        private System.Windows.Forms.Label lblChangePasswordId;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.PictureBox pbxEditUserAvatar5;
+        private System.Windows.Forms.PictureBox pbxEditUserAvatar4;
+        private System.Windows.Forms.PictureBox pbxEditUserAvatar3;
+        private System.Windows.Forms.PictureBox pbxEditUserAvatar2;
+        private System.Windows.Forms.PictureBox pbxEditUserAvatar1;
+        private System.Windows.Forms.PictureBox pbxEditUserAvatar0;
+        private System.Windows.Forms.PictureBox pbxEditUserAvatarOld;
     }
 }
 

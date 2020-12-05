@@ -17,7 +17,7 @@ namespace school_games_launcher
         private bool admin;
         private List<PlayPeriod> playPeriods = new List<PlayPeriod>();
         private List<GameExeption> gameExeptions = new List<GameExeption>();
-
+        private string avatar = "0";
         /// <summary>
         /// Id of the user
         /// </summary>
@@ -25,15 +25,31 @@ namespace school_games_launcher
         /// <summary>
         /// The name of the user
         /// </summary>
-        public string Name { get { return name; } }
+        public string Name { 
+            get { return name; }
+            set
+            {
+                name = value;
+            }
+        }
         /// <summary>
         /// The birthday of the user
         /// </summary>
-        public DateTime BirthDate { get { return birthDate; } }
+        public DateTime BirthDate { 
+            get { return birthDate; }
+            set { birthDate = value; }
+        }
         /// <summary>
         /// The users hashed password.
         /// </summary>
         public string PasswordHash { get { return passwordHash; } }
+        /// <summary>
+        /// User avatar.
+        /// </summary>
+        public string Avatar { 
+            get { return avatar; }
+            set { avatar = value; }
+        }
         /// <summary>
         /// Is admin?
         /// </summary>
@@ -84,13 +100,14 @@ namespace school_games_launcher
         /// <summary>
         /// A user is a humon being 
         /// </summary>
-        public User(int id, string name, int birthTimestamp, string passwordHash, bool admin)
+        public User(int id, string name, int birthTimestamp, string passwordHash, bool admin, string avatar)
         {
             this.id = id;
             this.name = name;
             this.birthDate = new DateTime(1970, 1, 1, 0, 0, 0, 0).ToLocalTime().AddSeconds(birthTimestamp);
             this.passwordHash = passwordHash;
             this.admin = admin;
+            this.avatar = avatar;
         }
         /// <summary>
         /// Checks if this user is allowed to play the given game.

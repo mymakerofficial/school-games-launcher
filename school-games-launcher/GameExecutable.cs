@@ -27,7 +27,7 @@ namespace school_games_launcher
             if (user.AllowedToPlay(this.game))
             {
                 Session session = new Session(this.game, user);
-                var game = Process.Start(this.path);
+                Process.Start(this.path);
                 session.Start();
                 return session;
             }else

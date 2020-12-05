@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
@@ -81,6 +80,10 @@ namespace school_games_launcher
                 this.LoadData();
                 this.CheckUser();
             }
+            else
+            {
+                this.CheckUser();
+            }
 
             this.LoadSteamGameList();
         }
@@ -88,7 +91,7 @@ namespace school_games_launcher
         {
             try
             {
-                var response = await HttpClient.GetAsync($"http://api.steampowered.com/ISteamApps/GetAppList/v0002/?key=STEAMKEY&format=json");
+                var response = await HttpClient.GetAsync($"http://api.steampowered.com/ISteamApps/GetAppList/v0002/?format=json");
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -104,7 +107,19 @@ namespace school_games_launcher
         }
         private bool CheckData()
         {
-            return true;
+            if (!Directory.Exists(this.configPath)) Directory.CreateDirectory(this.configPath);
+
+            if (File.Exists(this.configPath + "users.csv") &&
+                File.Exists(this.configPath + "games.csv") &&
+                File.Exists(this.configPath + "allowed_playtime.csv") &&
+                File.Exists(this.configPath + "play_exeptions.csv") &&
+                File.Exists(this.configPath + "sessions.csv")) return true;
+
+            this.Users.Add(new User(0, "admin", 1, "", true, Convert.ToString(new Random().Next(0, 5))));
+            this.Games.Add(new Game(1, "Counting", "https://counting.cf", 0, "https://counting.essiebes551.tk/733fcb3147fa883f2393c5efe66c4195.jpg"));
+            //TODO Maker add more sample data......
+
+            return false;
         }
         public void LoadData()
         {
@@ -112,7 +127,7 @@ namespace school_games_launcher
             Loader loadedUsers = new Loader(this.configPath + "users.csv");
             foreach(List<string> userData in loadedUsers.Data)
             {
-                User user = new User(Int32.Parse(userData[0]), userData[1], Int32.Parse(userData[2]), userData[3], Convert.ToBoolean(userData[4]));
+                User user = new User(Int32.Parse(userData[0]), userData[1], Int32.Parse(userData[2]), userData[3], Convert.ToBoolean(userData[4]), userData[5]);
                 this.Users.Add(user);// puts user in list
             }
             // loads games
@@ -146,7 +161,7 @@ namespace school_games_launcher
                 this.Sessions.Add(session);
             }
 
-            //var hash = this.ActiveUser.HashPassword("admin");
+            // var hash = this.ActiveUser.HashPassword("admin");
             this.SaveData();
         }
         public void SaveData()
@@ -155,7 +170,7 @@ namespace school_games_launcher
             var usersCsv = new StringBuilder();
             foreach(User user in this.Users)
             {
-                var newLine = string.Format("{0},{1},{2},{3},{4}", Convert.ToString(user.Id), user.Name, Convert.ToString(user.BirthTimestamp), user.PasswordHash, Convert.ToString(user.Admin));
+                var newLine = string.Format("{0},{1},{2},{3},{4},{5}", Convert.ToString(user.Id), user.Name, Convert.ToString(user.BirthTimestamp), user.PasswordHash, Convert.ToString(user.Admin), user.Avatar);
                 usersCsv.AppendLine(newLine);
             }
             File.WriteAllText(this.configPath + "users.csv", usersCsv.ToString());
@@ -262,7 +277,7 @@ namespace school_games_launcher
         public bool CreateUser(string name, DateTime birthDate, string password)
         {
             if (!this.CheckUser() || !this.ActiveUser.Admin) return false;
-            User user = new User(this.Users.Count, name, (int)new DateTimeOffset(birthDate).ToUnixTimeSeconds(), "", false);
+            User user = new User(this.Users.Count, name, (int)new DateTimeOffset(birthDate).ToUnixTimeSeconds(), "", false, Convert.ToString(new Random().Next(0, 5)));
             user.SetPassword("", password);// set user password
             for(int i = 0; i <= 6; i++)// create default PlayPeriods
             {
@@ -361,26 +376,25 @@ namespace school_games_launcher
         /// <summary>
         /// Searches for games.
         /// </summary>
-        /// <param name="query">the search request</param>
+        /// <param name="rawQuery">the search request</param>
         /// <param name="searchAll">if all games should be searched or just the games visible to the current user</param>
         /// <returns></returns>
-        public List<Game> SearchGames(string query, bool searchAll = false)
+        public List<Game> SearchGames(string rawQuery, bool searchAll = false)
         {
             List<Game> gameList = searchAll ? this.Games : this.VisibleGames;
             List<Game> filterList = new List<Game>();
 
-            string[] querys = query.Split(' ');
+            string[] queries = rawQuery.ToLower().Split(' ');
 
-            foreach(Game game in gameList)
-            {
-                bool containsAllQuerys = true;
-                foreach (string q in querys)
-                {
-                    if (!(game.Name.ToLower()).Contains(q.ToLower())) containsAllQuerys = false;
+            foreach(Game game in gameList) {
+                int queryMatches = 0;
+                foreach(string query in queries) {
+                    if (game.Name.ToLower().Contains(query)) queryMatches++;
                 }
-                if (containsAllQuerys) filterList.Add(game);
-            }
 
+                if (queryMatches == queries.Length) filterList.Add(game);
+            }
+            
             return filterList;
         }
         public void Exit()
