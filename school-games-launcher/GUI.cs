@@ -668,7 +668,7 @@ namespace school_games_launcher
             {
                 editUser = value;
                 Name = value.Name;
-                ((Label)this.TabPage.Controls["lblEditGameId"]).Text = "ID: " + Convert.ToString(value.Id);
+                ((Label)this.TabPage.Controls["lblEditUserId"]).Text = "ID: " + Convert.ToString(value.Id);
             }
         }
         public string Name
@@ -677,34 +677,7 @@ namespace school_games_launcher
             set
             {
                 name = value;
-                ((TextBox)this.TabPage.Controls["tbxEditGameName"]).Text = Convert.ToString(name);
-            }
-        }
-        public string Path
-        {
-            get { return path; }
-            set
-            {
-                path = value;
-                ((TextBox)this.TabPage.Controls["tbxEditGamePath"]).Text = Convert.ToString(path);
-            }
-        }
-        public int SelectedAge
-        {
-            get { return selectedAge; }
-            set
-            {
-                selectedAge = value;
-                this.UpdateAgeDisplay();
-            }
-        }
-        public int? SteamId
-        {
-            get { return steamId; }
-            set
-            {
-                steamId = value;
-                ((Label)this.TabPage.Controls["lblEditGameSteamId"]).Text = steamId == null ? "SteamID: null" : "SteamID: " + Convert.ToString(steamId);
+                ((TextBox)this.TabPage.Controls["tbxEditUserName"]).Text = Convert.ToString(name);
             }
         }
         public string Coverart

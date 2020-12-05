@@ -449,7 +449,7 @@
             // 
             this.lblLibrarySearchGame.AutoSize = true;
             this.lblLibrarySearchGame.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblLibrarySearchGame.Location = new System.Drawing.Point(100, 61);
+            this.lblLibrarySearchGame.Location = new System.Drawing.Point(100, 59);
             this.lblLibrarySearchGame.Name = "lblLibrarySearchGame";
             this.lblLibrarySearchGame.Size = new System.Drawing.Size(44, 13);
             this.lblLibrarySearchGame.TabIndex = 3;
