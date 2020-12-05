@@ -593,5 +593,30 @@ namespace school_games_launcher
         {
             Program.app.Gui.editGame.Delete();
         }
+
+        private void btnWelcomePasswordSave_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.welcome.SetPassword();
+        }
+
+        private void btnWelcomeAddGame_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.welcome.AddGame();
+        }
+
+        private void btnWelcomeSkip_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.welcome.Skip();
+        }
+
+        private void pbxWelcomeMinimize_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.Minimize();
+        }
+
+        private void pbxWelcomeClose_Click(object sender, EventArgs e)
+        {
+            Program.app.Exit();
+        }
     }
 }

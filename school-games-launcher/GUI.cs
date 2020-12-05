@@ -24,6 +24,7 @@ namespace school_games_launcher
         public GUIEditUser editUser;
         public GUIChangePassword changePassword;
         public GUITab userRules;
+        public GUIWelcome welcome;
 
         public MainWindow form;
         public TabControl tabControl;
@@ -63,6 +64,8 @@ namespace school_games_launcher
             editUser = new GUIEditUser(this.tabControl, (TabPage)this.tabControl.TabPages["tabEditUser"]);
             changePassword = new GUIChangePassword(this.tabControl, (TabPage)this.tabControl.TabPages["tabChangePassword"]);
             changePassword.resetOnActive = true;
+
+            welcome = new GUIWelcome(this.tabControl, (TabPage)this.tabControl.TabPages["tabWelcome"]);
 
 
             this.tabControl.Appearance = TabAppearance.FlatButtons;
@@ -937,6 +940,29 @@ namespace school_games_launcher
                     Program.app.Gui.editUser.Activate();
                 }
             }
+        }
+    }
+    public class GUIWelcome : GUITab
+    {
+        public GUIWelcome(TabControl tabControl, TabPage tabPage) : base(tabControl, tabPage)
+        {
+
+        }
+
+        public void SetPassword()
+        {
+            var password = ((GroupBox)this.TabPage.Controls["gbxWelcomePassword"]).Controls["tbxWelcomePassword"].Text;
+            Program.app.GetUserByName("admin").SetPassword("", password);
+        }
+
+        public void AddGame()
+        {
+            Program.app.Gui.addGame.Activate();
+        }
+
+        public void Skip()
+        {
+            Program.app.Gui.library.Activate();
         }
     }
 }

@@ -237,6 +237,22 @@
             this.pbxUserRulesMinimize = new System.Windows.Forms.PictureBox();
             this.pbxUserRulesClose = new System.Windows.Forms.PictureBox();
             this.pbxEditUserAvatarOld = new System.Windows.Forms.PictureBox();
+            this.tabWelcome = new System.Windows.Forms.TabPage();
+            this.pbxWelcomeHome = new System.Windows.Forms.PictureBox();
+            this.pbxWelcomeMinimize = new System.Windows.Forms.PictureBox();
+            this.pbxWelcomeClose = new System.Windows.Forms.PictureBox();
+            this.lblWelcomeTitle = new System.Windows.Forms.Label();
+            this.lblWelcomeSubtitle = new System.Windows.Forms.Label();
+            this.tbxWelcomePassword = new System.Windows.Forms.TextBox();
+            this.lblWelcomePasswordTitle = new System.Windows.Forms.Label();
+            this.gbxWelcomePassword = new System.Windows.Forms.GroupBox();
+            this.gbxWelcomeAddGame = new System.Windows.Forms.GroupBox();
+            this.lblWelcomeAddGameTitle = new System.Windows.Forms.Label();
+            this.lblWelcomeAddGameSubtitle = new System.Windows.Forms.Label();
+            this.lblWelcomePasswordSubtitle = new System.Windows.Forms.Label();
+            this.btnWelcomeAddGame = new System.Windows.Forms.Button();
+            this.btnWelcomePasswordSave = new System.Windows.Forms.Button();
+            this.btnWelcomeSkip = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabLibrary.SuspendLayout();
             this.tabOptions.SuspendLayout();
@@ -336,6 +352,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxUserRulesMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxUserRulesClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxEditUserAvatarOld)).BeginInit();
+            this.tabWelcome.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxWelcomeHome)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxWelcomeMinimize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxWelcomeClose)).BeginInit();
+            this.gbxWelcomePassword.SuspendLayout();
+            this.gbxWelcomeAddGame.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -352,6 +374,7 @@
             this.tabControl.Controls.Add(this.tabEditUser);
             this.tabControl.Controls.Add(this.tabChangePassword);
             this.tabControl.Controls.Add(this.tabEditUserRules);
+            this.tabControl.Controls.Add(this.tabWelcome);
             this.tabControl.Location = new System.Drawing.Point(-4, -5);
             this.tabControl.Margin = new System.Windows.Forms.Padding(0);
             this.tabControl.Name = "tabControl";
@@ -2730,6 +2753,186 @@
             this.pbxEditUserAvatarOld.TabStop = false;
             this.pbxEditUserAvatarOld.Click += new System.EventHandler(this.pbxEditUserAvatarOld_Click);
             // 
+            // tabWelcome
+            // 
+            this.tabWelcome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
+            this.tabWelcome.Controls.Add(this.btnWelcomeSkip);
+            this.tabWelcome.Controls.Add(this.gbxWelcomeAddGame);
+            this.tabWelcome.Controls.Add(this.gbxWelcomePassword);
+            this.tabWelcome.Controls.Add(this.lblWelcomeSubtitle);
+            this.tabWelcome.Controls.Add(this.lblWelcomeTitle);
+            this.tabWelcome.Controls.Add(this.pbxWelcomeHome);
+            this.tabWelcome.Controls.Add(this.pbxWelcomeMinimize);
+            this.tabWelcome.Controls.Add(this.pbxWelcomeClose);
+            this.tabWelcome.ForeColor = System.Drawing.Color.White;
+            this.tabWelcome.Location = new System.Drawing.Point(4, 22);
+            this.tabWelcome.Name = "tabWelcome";
+            this.tabWelcome.Size = new System.Drawing.Size(1144, 723);
+            this.tabWelcome.TabIndex = 12;
+            this.tabWelcome.Text = "Welcome";
+            // 
+            // pbxWelcomeHome
+            // 
+            this.pbxWelcomeHome.Image = global::school_games_launcher.Properties.Resources.home_button;
+            this.pbxWelcomeHome.Location = new System.Drawing.Point(0, 0);
+            this.pbxWelcomeHome.Name = "pbxWelcomeHome";
+            this.pbxWelcomeHome.Size = new System.Drawing.Size(50, 25);
+            this.pbxWelcomeHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxWelcomeHome.TabIndex = 23;
+            this.pbxWelcomeHome.TabStop = false;
+            // 
+            // pbxWelcomeMinimize
+            // 
+            this.pbxWelcomeMinimize.Image = ((System.Drawing.Image)(resources.GetObject("pbxWelcomeMinimize.Image")));
+            this.pbxWelcomeMinimize.Location = new System.Drawing.Point(1036, 0);
+            this.pbxWelcomeMinimize.Name = "pbxWelcomeMinimize";
+            this.pbxWelcomeMinimize.Size = new System.Drawing.Size(50, 25);
+            this.pbxWelcomeMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxWelcomeMinimize.TabIndex = 22;
+            this.pbxWelcomeMinimize.TabStop = false;
+            this.pbxWelcomeMinimize.Click += new System.EventHandler(this.pbxWelcomeMinimize_Click);
+            // 
+            // pbxWelcomeClose
+            // 
+            this.pbxWelcomeClose.Image = global::school_games_launcher.Properties.Resources.close_button;
+            this.pbxWelcomeClose.Location = new System.Drawing.Point(1086, 0);
+            this.pbxWelcomeClose.Name = "pbxWelcomeClose";
+            this.pbxWelcomeClose.Size = new System.Drawing.Size(50, 25);
+            this.pbxWelcomeClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxWelcomeClose.TabIndex = 21;
+            this.pbxWelcomeClose.TabStop = false;
+            this.pbxWelcomeClose.Click += new System.EventHandler(this.pbxWelcomeClose_Click);
+            // 
+            // lblWelcomeTitle
+            // 
+            this.lblWelcomeTitle.AutoSize = true;
+            this.lblWelcomeTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcomeTitle.Location = new System.Drawing.Point(25, 63);
+            this.lblWelcomeTitle.Name = "lblWelcomeTitle";
+            this.lblWelcomeTitle.Size = new System.Drawing.Size(150, 37);
+            this.lblWelcomeTitle.TabIndex = 24;
+            this.lblWelcomeTitle.Text = "Welcome";
+            // 
+            // lblWelcomeSubtitle
+            // 
+            this.lblWelcomeSubtitle.AutoSize = true;
+            this.lblWelcomeSubtitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcomeSubtitle.Location = new System.Drawing.Point(28, 114);
+            this.lblWelcomeSubtitle.Name = "lblWelcomeSubtitle";
+            this.lblWelcomeSubtitle.Size = new System.Drawing.Size(173, 20);
+            this.lblWelcomeSubtitle.TabIndex = 25;
+            this.lblWelcomeSubtitle.Text = "I see you are new here.";
+            // 
+            // tbxWelcomePassword
+            // 
+            this.tbxWelcomePassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(56)))), ((int)(((byte)(66)))));
+            this.tbxWelcomePassword.ForeColor = System.Drawing.Color.White;
+            this.tbxWelcomePassword.Location = new System.Drawing.Point(21, 77);
+            this.tbxWelcomePassword.Name = "tbxWelcomePassword";
+            this.tbxWelcomePassword.PasswordChar = '●';
+            this.tbxWelcomePassword.Size = new System.Drawing.Size(191, 20);
+            this.tbxWelcomePassword.TabIndex = 26;
+            // 
+            // lblWelcomePasswordTitle
+            // 
+            this.lblWelcomePasswordTitle.AutoSize = true;
+            this.lblWelcomePasswordTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcomePasswordTitle.Location = new System.Drawing.Point(18, 25);
+            this.lblWelcomePasswordTitle.Name = "lblWelcomePasswordTitle";
+            this.lblWelcomePasswordTitle.Size = new System.Drawing.Size(529, 16);
+            this.lblWelcomePasswordTitle.TabIndex = 27;
+            this.lblWelcomePasswordTitle.Text = "You are logged in as \"admin\" but you don\'t have a password yet. Go ahead and set " +
+    "one.";
+            // 
+            // gbxWelcomePassword
+            // 
+            this.gbxWelcomePassword.Controls.Add(this.btnWelcomePasswordSave);
+            this.gbxWelcomePassword.Controls.Add(this.lblWelcomePasswordSubtitle);
+            this.gbxWelcomePassword.Controls.Add(this.tbxWelcomePassword);
+            this.gbxWelcomePassword.Controls.Add(this.lblWelcomePasswordTitle);
+            this.gbxWelcomePassword.Location = new System.Drawing.Point(32, 182);
+            this.gbxWelcomePassword.Name = "gbxWelcomePassword";
+            this.gbxWelcomePassword.Size = new System.Drawing.Size(594, 149);
+            this.gbxWelcomePassword.TabIndex = 28;
+            this.gbxWelcomePassword.TabStop = false;
+            // 
+            // gbxWelcomeAddGame
+            // 
+            this.gbxWelcomeAddGame.Controls.Add(this.btnWelcomeAddGame);
+            this.gbxWelcomeAddGame.Controls.Add(this.lblWelcomeAddGameSubtitle);
+            this.gbxWelcomeAddGame.Controls.Add(this.lblWelcomeAddGameTitle);
+            this.gbxWelcomeAddGame.Location = new System.Drawing.Point(32, 354);
+            this.gbxWelcomeAddGame.Name = "gbxWelcomeAddGame";
+            this.gbxWelcomeAddGame.Size = new System.Drawing.Size(594, 130);
+            this.gbxWelcomeAddGame.TabIndex = 29;
+            this.gbxWelcomeAddGame.TabStop = false;
+            // 
+            // lblWelcomeAddGameTitle
+            // 
+            this.lblWelcomeAddGameTitle.AutoSize = true;
+            this.lblWelcomeAddGameTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcomeAddGameTitle.Location = new System.Drawing.Point(18, 25);
+            this.lblWelcomeAddGameTitle.Name = "lblWelcomeAddGameTitle";
+            this.lblWelcomeAddGameTitle.Size = new System.Drawing.Size(183, 16);
+            this.lblWelcomeAddGameTitle.TabIndex = 27;
+            this.lblWelcomeAddGameTitle.Text = "To start playing. Add a game.";
+            // 
+            // lblWelcomeAddGameSubtitle
+            // 
+            this.lblWelcomeAddGameSubtitle.AutoSize = true;
+            this.lblWelcomeAddGameSubtitle.ForeColor = System.Drawing.Color.Silver;
+            this.lblWelcomeAddGameSubtitle.Location = new System.Drawing.Point(21, 48);
+            this.lblWelcomeAddGameSubtitle.Name = "lblWelcomeAddGameSubtitle";
+            this.lblWelcomeAddGameSubtitle.Size = new System.Drawing.Size(482, 13);
+            this.lblWelcomeAddGameSubtitle.TabIndex = 28;
+            this.lblWelcomeAddGameSubtitle.Text = "If the game is avalable on Steam press the \"Auto fill Steam game\" and it will add" +
+    " aditional information.";
+            // 
+            // lblWelcomePasswordSubtitle
+            // 
+            this.lblWelcomePasswordSubtitle.AutoSize = true;
+            this.lblWelcomePasswordSubtitle.ForeColor = System.Drawing.Color.Silver;
+            this.lblWelcomePasswordSubtitle.Location = new System.Drawing.Point(18, 47);
+            this.lblWelcomePasswordSubtitle.Name = "lblWelcomePasswordSubtitle";
+            this.lblWelcomePasswordSubtitle.Size = new System.Drawing.Size(472, 13);
+            this.lblWelcomePasswordSubtitle.TabIndex = 28;
+            this.lblWelcomePasswordSubtitle.Text = "You can just ignore this and this account will remain without a password (you can" +
+    " change this later)";
+            // 
+            // btnWelcomeAddGame
+            // 
+            this.btnWelcomeAddGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWelcomeAddGame.Location = new System.Drawing.Point(21, 78);
+            this.btnWelcomeAddGame.Name = "btnWelcomeAddGame";
+            this.btnWelcomeAddGame.Size = new System.Drawing.Size(109, 31);
+            this.btnWelcomeAddGame.TabIndex = 29;
+            this.btnWelcomeAddGame.Text = "Add Game";
+            this.btnWelcomeAddGame.UseVisualStyleBackColor = true;
+            this.btnWelcomeAddGame.Click += new System.EventHandler(this.btnWelcomeAddGame_Click);
+            // 
+            // btnWelcomePasswordSave
+            // 
+            this.btnWelcomePasswordSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWelcomePasswordSave.ForeColor = System.Drawing.Color.White;
+            this.btnWelcomePasswordSave.Location = new System.Drawing.Point(21, 104);
+            this.btnWelcomePasswordSave.Name = "btnWelcomePasswordSave";
+            this.btnWelcomePasswordSave.Size = new System.Drawing.Size(75, 23);
+            this.btnWelcomePasswordSave.TabIndex = 29;
+            this.btnWelcomePasswordSave.Text = "Save";
+            this.btnWelcomePasswordSave.UseVisualStyleBackColor = true;
+            this.btnWelcomePasswordSave.Click += new System.EventHandler(this.btnWelcomePasswordSave_Click);
+            // 
+            // btnWelcomeSkip
+            // 
+            this.btnWelcomeSkip.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWelcomeSkip.Location = new System.Drawing.Point(32, 664);
+            this.btnWelcomeSkip.Name = "btnWelcomeSkip";
+            this.btnWelcomeSkip.Size = new System.Drawing.Size(109, 31);
+            this.btnWelcomeSkip.TabIndex = 30;
+            this.btnWelcomeSkip.Text = "Skip";
+            this.btnWelcomeSkip.UseVisualStyleBackColor = true;
+            this.btnWelcomeSkip.Click += new System.EventHandler(this.btnWelcomeSkip_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2854,6 +3057,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxUserRulesMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxUserRulesClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxEditUserAvatarOld)).EndInit();
+            this.tabWelcome.ResumeLayout(false);
+            this.tabWelcome.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxWelcomeHome)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxWelcomeMinimize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxWelcomeClose)).EndInit();
+            this.gbxWelcomePassword.ResumeLayout(false);
+            this.gbxWelcomePassword.PerformLayout();
+            this.gbxWelcomeAddGame.ResumeLayout(false);
+            this.gbxWelcomeAddGame.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -3067,6 +3279,22 @@
         private System.Windows.Forms.PictureBox pbxEditUserAvatar1;
         private System.Windows.Forms.PictureBox pbxEditUserAvatar0;
         private System.Windows.Forms.PictureBox pbxEditUserAvatarOld;
+        private System.Windows.Forms.TabPage tabWelcome;
+        private System.Windows.Forms.Button btnWelcomeSkip;
+        private System.Windows.Forms.GroupBox gbxWelcomeAddGame;
+        private System.Windows.Forms.Button btnWelcomeAddGame;
+        private System.Windows.Forms.Label lblWelcomeAddGameSubtitle;
+        private System.Windows.Forms.Label lblWelcomeAddGameTitle;
+        private System.Windows.Forms.GroupBox gbxWelcomePassword;
+        private System.Windows.Forms.Button btnWelcomePasswordSave;
+        private System.Windows.Forms.Label lblWelcomePasswordSubtitle;
+        private System.Windows.Forms.TextBox tbxWelcomePassword;
+        private System.Windows.Forms.Label lblWelcomePasswordTitle;
+        private System.Windows.Forms.Label lblWelcomeSubtitle;
+        private System.Windows.Forms.Label lblWelcomeTitle;
+        private System.Windows.Forms.PictureBox pbxWelcomeHome;
+        private System.Windows.Forms.PictureBox pbxWelcomeMinimize;
+        private System.Windows.Forms.PictureBox pbxWelcomeClose;
     }
 }
 

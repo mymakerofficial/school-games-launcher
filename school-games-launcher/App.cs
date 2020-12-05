@@ -82,7 +82,8 @@ namespace school_games_launcher
             }
             else
             {
-                this.CheckUser();
+                this.LoginUser("admin", "");
+                this.Gui.welcome.Activate();
             }
 
             this.LoadSteamGameList();
@@ -116,7 +117,7 @@ namespace school_games_launcher
                 File.Exists(this.configPath + "sessions.csv")) return true;
 
             this.Users.Add(new User(0, "admin", 1, "", true, Convert.ToString(new Random().Next(0, 5))));
-            this.Games.Add(new Game(1, "Counting", "https://counting.cf", 0, "https://counting.essiebes551.tk/733fcb3147fa883f2393c5efe66c4195.jpg"));
+            this.Games.Add(new Game(1, "Counting", "https://counting.cf", 0, "https://counter.essiebes551.tk/images/counting.jpg"));
             //TODO Maker add more sample data......
 
             return false;
