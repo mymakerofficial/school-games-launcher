@@ -358,6 +358,31 @@ namespace school_games_launcher
                 return null;
             }
         }
+        /// <summary>
+        /// Searches for games.
+        /// </summary>
+        /// <param name="query">the search request</param>
+        /// <param name="searchAll">if all games should be searched or just the games visible to the current user</param>
+        /// <returns></returns>
+        public List<Game> SearchGames(string query, bool searchAll = false)
+        {
+            List<Game> gameList = searchAll ? this.Games : this.VisibleGames;
+            List<Game> filterList = new List<Game>();
+
+            string[] querys = query.Split(' ');
+
+            foreach(Game game in gameList)
+            {
+                bool containsAllQuerys = true;
+                foreach (string q in querys)
+                {
+                    if (!(game.Name.ToLower()).Contains(q.ToLower())) containsAllQuerys = false;
+                }
+                if (containsAllQuerys) filterList.Add(game);
+            }
+
+            return filterList;
+        }
         public void Exit()
         {
             System.Windows.Forms.Application.Exit();

@@ -498,5 +498,10 @@ namespace school_games_launcher
         {
             Program.app.Exit();
         }
+
+        private void tbxLibrarySearchGame_TextChanged(object sender, EventArgs e)
+        {
+            Program.app.Gui.library.SearchGames(this.tbxLibrarySearchGame.Text);
+        }
     }
 }

@@ -191,6 +191,15 @@
             this.pbxEditUserClose = new System.Windows.Forms.PictureBox();
             this.label12 = new System.Windows.Forms.Label();
             this.tabChangePassword = new System.Windows.Forms.TabPage();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pbxChangePasswordOptions = new System.Windows.Forms.PictureBox();
@@ -200,6 +209,7 @@
             this.pbxChangePasswordClose = new System.Windows.Forms.PictureBox();
             this.label11 = new System.Windows.Forms.Label();
             this.tabEditUserRules = new System.Windows.Forms.TabPage();
+            this.label20 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -220,16 +230,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabLibrary.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLibraryOptions)).BeginInit();
@@ -449,7 +449,7 @@
             // 
             this.lblLibrarySearchGame.AutoSize = true;
             this.lblLibrarySearchGame.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblLibrarySearchGame.Location = new System.Drawing.Point(100, 58);
+            this.lblLibrarySearchGame.Location = new System.Drawing.Point(100, 61);
             this.lblLibrarySearchGame.Name = "lblLibrarySearchGame";
             this.lblLibrarySearchGame.Size = new System.Drawing.Size(44, 13);
             this.lblLibrarySearchGame.TabIndex = 3;
@@ -464,6 +464,7 @@
             this.tbxLibrarySearchGame.Name = "tbxLibrarySearchGame";
             this.tbxLibrarySearchGame.Size = new System.Drawing.Size(212, 20);
             this.tbxLibrarySearchGame.TabIndex = 0;
+            this.tbxLibrarySearchGame.TextChanged += new System.EventHandler(this.tbxLibrarySearchGame_TextChanged);
             // 
             // tabOptions
             // 
@@ -2211,6 +2212,94 @@
             this.tabChangePassword.TabIndex = 10;
             this.tabChangePassword.Text = "Change Password";
             // 
+            // button11
+            // 
+            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button11.Location = new System.Drawing.Point(32, 458);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(209, 28);
+            this.button11.TabIndex = 52;
+            this.button11.Text = "Cancel";
+            this.button11.UseVisualStyleBackColor = true;
+            // 
+            // button10
+            // 
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Location = new System.Drawing.Point(32, 407);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(209, 33);
+            this.button10.TabIndex = 51;
+            this.button10.Text = "Save";
+            this.button10.UseVisualStyleBackColor = true;
+            // 
+            // textBox5
+            // 
+            this.textBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(56)))), ((int)(((byte)(66)))));
+            this.textBox5.ForeColor = System.Drawing.Color.White;
+            this.textBox5.Location = new System.Drawing.Point(32, 346);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.PasswordChar = '●';
+            this.textBox5.Size = new System.Drawing.Size(209, 20);
+            this.textBox5.TabIndex = 49;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(29, 330);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(116, 13);
+            this.label23.TabIndex = 50;
+            this.label23.Text = "New Password Repeat";
+            // 
+            // textBox4
+            // 
+            this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(56)))), ((int)(((byte)(66)))));
+            this.textBox4.ForeColor = System.Drawing.Color.White;
+            this.textBox4.Location = new System.Drawing.Point(32, 279);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.PasswordChar = '●';
+            this.textBox4.Size = new System.Drawing.Size(209, 20);
+            this.textBox4.TabIndex = 47;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(29, 263);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(78, 13);
+            this.label22.TabIndex = 48;
+            this.label22.Text = "New Password";
+            // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(56)))), ((int)(((byte)(66)))));
+            this.textBox3.ForeColor = System.Drawing.Color.White;
+            this.textBox3.Location = new System.Drawing.Point(32, 212);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.PasswordChar = '●';
+            this.textBox3.Size = new System.Drawing.Size(209, 20);
+            this.textBox3.TabIndex = 45;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(29, 196);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(72, 13);
+            this.label21.TabIndex = 46;
+            this.label21.Text = "Old Password";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.Gray;
+            this.label19.Location = new System.Drawing.Point(29, 694);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(34, 16);
+            this.label19.TabIndex = 44;
+            this.label19.Text = "ID: 0";
+            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -2324,6 +2413,17 @@
             this.tabEditUserRules.Size = new System.Drawing.Size(1144, 723);
             this.tabEditUserRules.TabIndex = 11;
             this.tabEditUserRules.Text = "User Rules";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.Gray;
+            this.label20.Location = new System.Drawing.Point(29, 694);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(34, 16);
+            this.label20.TabIndex = 44;
+            this.label20.Text = "ID: 0";
             // 
             // button5
             // 
@@ -2518,105 +2618,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(492, 99);
             this.panel2.TabIndex = 1;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.Gray;
-            this.label19.Location = new System.Drawing.Point(29, 694);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(34, 16);
-            this.label19.TabIndex = 44;
-            this.label19.Text = "ID: 0";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.Gray;
-            this.label20.Location = new System.Drawing.Point(29, 694);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(34, 16);
-            this.label20.TabIndex = 44;
-            this.label20.Text = "ID: 0";
-            // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(56)))), ((int)(((byte)(66)))));
-            this.textBox3.ForeColor = System.Drawing.Color.White;
-            this.textBox3.Location = new System.Drawing.Point(32, 212);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.PasswordChar = '●';
-            this.textBox3.Size = new System.Drawing.Size(209, 20);
-            this.textBox3.TabIndex = 45;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(29, 196);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(72, 13);
-            this.label21.TabIndex = 46;
-            this.label21.Text = "Old Password";
-            // 
-            // textBox4
-            // 
-            this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(56)))), ((int)(((byte)(66)))));
-            this.textBox4.ForeColor = System.Drawing.Color.White;
-            this.textBox4.Location = new System.Drawing.Point(32, 279);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.PasswordChar = '●';
-            this.textBox4.Size = new System.Drawing.Size(209, 20);
-            this.textBox4.TabIndex = 47;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(29, 263);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(78, 13);
-            this.label22.TabIndex = 48;
-            this.label22.Text = "New Password";
-            // 
-            // textBox5
-            // 
-            this.textBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(56)))), ((int)(((byte)(66)))));
-            this.textBox5.ForeColor = System.Drawing.Color.White;
-            this.textBox5.Location = new System.Drawing.Point(32, 346);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.PasswordChar = '●';
-            this.textBox5.Size = new System.Drawing.Size(209, 20);
-            this.textBox5.TabIndex = 49;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(29, 330);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(116, 13);
-            this.label23.TabIndex = 50;
-            this.label23.Text = "New Password Repeat";
-            // 
-            // button10
-            // 
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Location = new System.Drawing.Point(32, 407);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(209, 33);
-            this.button10.TabIndex = 51;
-            this.button10.Text = "Save";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // button11
-            // 
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Location = new System.Drawing.Point(32, 458);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(209, 28);
-            this.button11.TabIndex = 52;
-            this.button11.Text = "Cancel";
-            this.button11.UseVisualStyleBackColor = true;
             // 
             // MainWindow
             // 
