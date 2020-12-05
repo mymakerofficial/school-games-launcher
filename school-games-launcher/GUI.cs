@@ -542,6 +542,12 @@ namespace school_games_launcher
             Program.app.Gui.gameDetails.Activate();
             Program.app.Gui.gameDetails.SetGame(EditGame);
         }
+        public void Delete()
+        {
+            Program.app.Games.Remove(this.EditGame);
+            Program.app.Gui.library.Activate();
+
+        }
     }
     public class GUIGameDetails : GUITab
     {

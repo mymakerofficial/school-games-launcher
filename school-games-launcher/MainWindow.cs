@@ -588,5 +588,10 @@ namespace school_games_launcher
         {
             Program.app.Gui.changePassword.Cancel();
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Program.app.Gui.editGame.Delete();
+        }
     }
 }
