@@ -618,5 +618,10 @@ namespace school_games_launcher
         {
             Program.app.Exit();
         }
+
+        private void llblOptionsShowWelcome_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Program.app.Gui.welcome.Activate();
+        }
     }
 }

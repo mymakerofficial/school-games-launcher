@@ -253,6 +253,19 @@
             this.btnWelcomeAddGame = new System.Windows.Forms.Button();
             this.btnWelcomePasswordSave = new System.Windows.Forms.Button();
             this.btnWelcomeSkip = new System.Windows.Forms.Button();
+            this.lblEditGameCoverartTip = new System.Windows.Forms.Label();
+            this.lblAddGameCoverartTip = new System.Windows.Forms.Label();
+            this.llblOptionsShowWelcome = new System.Windows.Forms.LinkLabel();
+            this.gbxWelcomeTip1 = new System.Windows.Forms.GroupBox();
+            this.lblWelcomeTip1 = new System.Windows.Forms.Label();
+            this.gbxWelcomeUserRules = new System.Windows.Forms.GroupBox();
+            this.lblWelcomeUserRulesText = new System.Windows.Forms.Label();
+            this.lblWelcomeUserRulesTitle = new System.Windows.Forms.Label();
+            this.lblWelcomeUserRulesPlaytimesTitle = new System.Windows.Forms.Label();
+            this.lblWelcomeUserRulesPlaytimesText = new System.Windows.Forms.Label();
+            this.lblWelcomeUserRulesExeptionsText = new System.Windows.Forms.Label();
+            this.lblWelcomeUserRulesExeptionsTitle = new System.Windows.Forms.Label();
+            this.lblWelcomeUserRulesText2 = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabLibrary.SuspendLayout();
             this.tabOptions.SuspendLayout();
@@ -358,6 +371,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxWelcomeClose)).BeginInit();
             this.gbxWelcomePassword.SuspendLayout();
             this.gbxWelcomeAddGame.SuspendLayout();
+            this.gbxWelcomeTip1.SuspendLayout();
+            this.gbxWelcomeUserRules.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -452,6 +467,7 @@
             // tabOptions
             // 
             this.tabOptions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
+            this.tabOptions.Controls.Add(this.llblOptionsShowWelcome);
             this.tabOptions.Controls.Add(this.pbxOptionsOptions);
             this.tabOptions.Controls.Add(this.pbxOptionsProfile);
             this.tabOptions.Controls.Add(this.pbxOptionsHome);
@@ -503,6 +519,7 @@
             // tabAddGame
             // 
             this.tabAddGame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
+            this.tabAddGame.Controls.Add(this.lblAddGameCoverartTip);
             this.tabAddGame.Controls.Add(this.pbxAddGameOptions);
             this.tabAddGame.Controls.Add(this.pbxAddGameProfile);
             this.tabAddGame.Controls.Add(this.pbxAddGameHome);
@@ -657,6 +674,7 @@
             // tabEditGame
             // 
             this.tabEditGame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
+            this.tabEditGame.Controls.Add(this.lblEditGameCoverartTip);
             this.tabEditGame.Controls.Add(this.lblEditGameId);
             this.tabEditGame.Controls.Add(this.tbxEditGameAge);
             this.tabEditGame.Controls.Add(this.linkLabel1);
@@ -2756,6 +2774,8 @@
             // tabWelcome
             // 
             this.tabWelcome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
+            this.tabWelcome.Controls.Add(this.gbxWelcomeUserRules);
+            this.tabWelcome.Controls.Add(this.gbxWelcomeTip1);
             this.tabWelcome.Controls.Add(this.btnWelcomeSkip);
             this.tabWelcome.Controls.Add(this.gbxWelcomeAddGame);
             this.tabWelcome.Controls.Add(this.gbxWelcomePassword);
@@ -2819,9 +2839,9 @@
             this.lblWelcomeSubtitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWelcomeSubtitle.Location = new System.Drawing.Point(28, 114);
             this.lblWelcomeSubtitle.Name = "lblWelcomeSubtitle";
-            this.lblWelcomeSubtitle.Size = new System.Drawing.Size(173, 20);
+            this.lblWelcomeSubtitle.Size = new System.Drawing.Size(515, 20);
             this.lblWelcomeSubtitle.TabIndex = 25;
-            this.lblWelcomeSubtitle.Text = "I see you are new here.";
+            this.lblWelcomeSubtitle.Text = "I see you are new here. Here are some tips and tricks to get you started.";
             // 
             // tbxWelcomePassword
             // 
@@ -2850,9 +2870,10 @@
             this.gbxWelcomePassword.Controls.Add(this.lblWelcomePasswordSubtitle);
             this.gbxWelcomePassword.Controls.Add(this.tbxWelcomePassword);
             this.gbxWelcomePassword.Controls.Add(this.lblWelcomePasswordTitle);
-            this.gbxWelcomePassword.Location = new System.Drawing.Point(32, 182);
+            this.gbxWelcomePassword.Enabled = false;
+            this.gbxWelcomePassword.Location = new System.Drawing.Point(32, 161);
             this.gbxWelcomePassword.Name = "gbxWelcomePassword";
-            this.gbxWelcomePassword.Size = new System.Drawing.Size(594, 149);
+            this.gbxWelcomePassword.Size = new System.Drawing.Size(581, 149);
             this.gbxWelcomePassword.TabIndex = 28;
             this.gbxWelcomePassword.TabStop = false;
             // 
@@ -2861,9 +2882,9 @@
             this.gbxWelcomeAddGame.Controls.Add(this.btnWelcomeAddGame);
             this.gbxWelcomeAddGame.Controls.Add(this.lblWelcomeAddGameSubtitle);
             this.gbxWelcomeAddGame.Controls.Add(this.lblWelcomeAddGameTitle);
-            this.gbxWelcomeAddGame.Location = new System.Drawing.Point(32, 354);
+            this.gbxWelcomeAddGame.Location = new System.Drawing.Point(32, 333);
             this.gbxWelcomeAddGame.Name = "gbxWelcomeAddGame";
-            this.gbxWelcomeAddGame.Size = new System.Drawing.Size(594, 130);
+            this.gbxWelcomeAddGame.Size = new System.Drawing.Size(581, 130);
             this.gbxWelcomeAddGame.TabIndex = 29;
             this.gbxWelcomeAddGame.TabStop = false;
             // 
@@ -2932,6 +2953,152 @@
             this.btnWelcomeSkip.Text = "Skip";
             this.btnWelcomeSkip.UseVisualStyleBackColor = true;
             this.btnWelcomeSkip.Click += new System.EventHandler(this.btnWelcomeSkip_Click);
+            // 
+            // lblEditGameCoverartTip
+            // 
+            this.lblEditGameCoverartTip.AutoSize = true;
+            this.lblEditGameCoverartTip.ForeColor = System.Drawing.Color.Silver;
+            this.lblEditGameCoverartTip.Location = new System.Drawing.Point(462, 403);
+            this.lblEditGameCoverartTip.Name = "lblEditGameCoverartTip";
+            this.lblEditGameCoverartTip.Size = new System.Drawing.Size(164, 13);
+            this.lblEditGameCoverartTip.TabIndex = 39;
+            this.lblEditGameCoverartTip.Text = "Image should be 460 x 215 pixels";
+            // 
+            // lblAddGameCoverartTip
+            // 
+            this.lblAddGameCoverartTip.AutoSize = true;
+            this.lblAddGameCoverartTip.ForeColor = System.Drawing.Color.Silver;
+            this.lblAddGameCoverartTip.Location = new System.Drawing.Point(424, 363);
+            this.lblAddGameCoverartTip.Name = "lblAddGameCoverartTip";
+            this.lblAddGameCoverartTip.Size = new System.Drawing.Size(164, 13);
+            this.lblAddGameCoverartTip.TabIndex = 40;
+            this.lblAddGameCoverartTip.Text = "Image should be 460 x 215 pixels";
+            // 
+            // llblOptionsShowWelcome
+            // 
+            this.llblOptionsShowWelcome.ActiveLinkColor = System.Drawing.Color.DarkGray;
+            this.llblOptionsShowWelcome.AutoSize = true;
+            this.llblOptionsShowWelcome.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(56)))), ((int)(((byte)(66)))));
+            this.llblOptionsShowWelcome.Location = new System.Drawing.Point(29, 697);
+            this.llblOptionsShowWelcome.Name = "llblOptionsShowWelcome";
+            this.llblOptionsShowWelcome.Size = new System.Drawing.Size(106, 13);
+            this.llblOptionsShowWelcome.TabIndex = 20;
+            this.llblOptionsShowWelcome.TabStop = true;
+            this.llblOptionsShowWelcome.Text = "Show welcome page";
+            this.llblOptionsShowWelcome.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(56)))), ((int)(((byte)(66)))));
+            this.llblOptionsShowWelcome.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblOptionsShowWelcome_LinkClicked);
+            // 
+            // gbxWelcomeTip1
+            // 
+            this.gbxWelcomeTip1.Controls.Add(this.lblWelcomeTip1);
+            this.gbxWelcomeTip1.Location = new System.Drawing.Point(32, 488);
+            this.gbxWelcomeTip1.Name = "gbxWelcomeTip1";
+            this.gbxWelcomeTip1.Size = new System.Drawing.Size(581, 113);
+            this.gbxWelcomeTip1.TabIndex = 30;
+            this.gbxWelcomeTip1.TabStop = false;
+            // 
+            // lblWelcomeTip1
+            // 
+            this.lblWelcomeTip1.AutoSize = true;
+            this.lblWelcomeTip1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcomeTip1.Location = new System.Drawing.Point(18, 24);
+            this.lblWelcomeTip1.Name = "lblWelcomeTip1";
+            this.lblWelcomeTip1.Size = new System.Drawing.Size(434, 64);
+            this.lblWelcomeTip1.TabIndex = 27;
+            this.lblWelcomeTip1.Text = "You can always add more games or users by going to the options page.\r\n\r\nIf you wa" +
+    "nt to edit / remove a game or user, \r\ngo their page and click on edit";
+            // 
+            // gbxWelcomeUserRules
+            // 
+            this.gbxWelcomeUserRules.Controls.Add(this.lblWelcomeUserRulesText2);
+            this.gbxWelcomeUserRules.Controls.Add(this.lblWelcomeUserRulesExeptionsText);
+            this.gbxWelcomeUserRules.Controls.Add(this.lblWelcomeUserRulesExeptionsTitle);
+            this.gbxWelcomeUserRules.Controls.Add(this.lblWelcomeUserRulesPlaytimesText);
+            this.gbxWelcomeUserRules.Controls.Add(this.lblWelcomeUserRulesPlaytimesTitle);
+            this.gbxWelcomeUserRules.Controls.Add(this.lblWelcomeUserRulesTitle);
+            this.gbxWelcomeUserRules.Controls.Add(this.lblWelcomeUserRulesText);
+            this.gbxWelcomeUserRules.Location = new System.Drawing.Point(640, 161);
+            this.gbxWelcomeUserRules.Name = "gbxWelcomeUserRules";
+            this.gbxWelcomeUserRules.Size = new System.Drawing.Size(469, 440);
+            this.gbxWelcomeUserRules.TabIndex = 31;
+            this.gbxWelcomeUserRules.TabStop = false;
+            // 
+            // lblWelcomeUserRulesText
+            // 
+            this.lblWelcomeUserRulesText.AutoSize = true;
+            this.lblWelcomeUserRulesText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcomeUserRulesText.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblWelcomeUserRulesText.Location = new System.Drawing.Point(22, 65);
+            this.lblWelcomeUserRulesText.Name = "lblWelcomeUserRulesText";
+            this.lblWelcomeUserRulesText.Size = new System.Drawing.Size(273, 32);
+            this.lblWelcomeUserRulesText.TabIndex = 27;
+            this.lblWelcomeUserRulesText.Text = "User rules are a way for you to control who is \r\nallowed to play when and what.";
+            // 
+            // lblWelcomeUserRulesTitle
+            // 
+            this.lblWelcomeUserRulesTitle.AutoSize = true;
+            this.lblWelcomeUserRulesTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcomeUserRulesTitle.ForeColor = System.Drawing.Color.White;
+            this.lblWelcomeUserRulesTitle.Location = new System.Drawing.Point(20, 25);
+            this.lblWelcomeUserRulesTitle.Name = "lblWelcomeUserRulesTitle";
+            this.lblWelcomeUserRulesTitle.Size = new System.Drawing.Size(118, 25);
+            this.lblWelcomeUserRulesTitle.TabIndex = 28;
+            this.lblWelcomeUserRulesTitle.Text = "User Rules";
+            // 
+            // lblWelcomeUserRulesPlaytimesTitle
+            // 
+            this.lblWelcomeUserRulesPlaytimesTitle.AutoSize = true;
+            this.lblWelcomeUserRulesPlaytimesTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcomeUserRulesPlaytimesTitle.ForeColor = System.Drawing.Color.White;
+            this.lblWelcomeUserRulesPlaytimesTitle.Location = new System.Drawing.Point(20, 124);
+            this.lblWelcomeUserRulesPlaytimesTitle.Name = "lblWelcomeUserRulesPlaytimesTitle";
+            this.lblWelcomeUserRulesPlaytimesTitle.Size = new System.Drawing.Size(135, 20);
+            this.lblWelcomeUserRulesPlaytimesTitle.TabIndex = 29;
+            this.lblWelcomeUserRulesPlaytimesTitle.Text = "Allowed Playtimes";
+            // 
+            // lblWelcomeUserRulesPlaytimesText
+            // 
+            this.lblWelcomeUserRulesPlaytimesText.AutoSize = true;
+            this.lblWelcomeUserRulesPlaytimesText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcomeUserRulesPlaytimesText.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblWelcomeUserRulesPlaytimesText.Location = new System.Drawing.Point(22, 154);
+            this.lblWelcomeUserRulesPlaytimesText.Name = "lblWelcomeUserRulesPlaytimesText";
+            this.lblWelcomeUserRulesPlaytimesText.Size = new System.Drawing.Size(341, 48);
+            this.lblWelcomeUserRulesPlaytimesText.TabIndex = 30;
+            this.lblWelcomeUserRulesPlaytimesText.Text = "A user is only allowed  to play during these set times.\r\nYou can set multiple per" +
+    " day and playtimes always have\r\nthe highest priority.\r\n";
+            // 
+            // lblWelcomeUserRulesExeptionsText
+            // 
+            this.lblWelcomeUserRulesExeptionsText.AutoSize = true;
+            this.lblWelcomeUserRulesExeptionsText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcomeUserRulesExeptionsText.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblWelcomeUserRulesExeptionsText.Location = new System.Drawing.Point(23, 250);
+            this.lblWelcomeUserRulesExeptionsText.Name = "lblWelcomeUserRulesExeptionsText";
+            this.lblWelcomeUserRulesExeptionsText.Size = new System.Drawing.Size(362, 64);
+            this.lblWelcomeUserRulesExeptionsText.TabIndex = 32;
+            this.lblWelcomeUserRulesExeptionsText.Text = resources.GetString("lblWelcomeUserRulesExeptionsText.Text");
+            // 
+            // lblWelcomeUserRulesExeptionsTitle
+            // 
+            this.lblWelcomeUserRulesExeptionsTitle.AutoSize = true;
+            this.lblWelcomeUserRulesExeptionsTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcomeUserRulesExeptionsTitle.ForeColor = System.Drawing.Color.White;
+            this.lblWelcomeUserRulesExeptionsTitle.Location = new System.Drawing.Point(21, 220);
+            this.lblWelcomeUserRulesExeptionsTitle.Name = "lblWelcomeUserRulesExeptionsTitle";
+            this.lblWelcomeUserRulesExeptionsTitle.Size = new System.Drawing.Size(103, 20);
+            this.lblWelcomeUserRulesExeptionsTitle.TabIndex = 31;
+            this.lblWelcomeUserRulesExeptionsTitle.Text = "Age Exptions";
+            // 
+            // lblWelcomeUserRulesText2
+            // 
+            this.lblWelcomeUserRulesText2.AutoSize = true;
+            this.lblWelcomeUserRulesText2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcomeUserRulesText2.Location = new System.Drawing.Point(23, 351);
+            this.lblWelcomeUserRulesText2.Name = "lblWelcomeUserRulesText2";
+            this.lblWelcomeUserRulesText2.Size = new System.Drawing.Size(259, 16);
+            this.lblWelcomeUserRulesText2.TabIndex = 33;
+            this.lblWelcomeUserRulesText2.Text = "You can find User Rules on a users profile.\r\n";
             // 
             // MainWindow
             // 
@@ -3066,6 +3233,10 @@
             this.gbxWelcomePassword.PerformLayout();
             this.gbxWelcomeAddGame.ResumeLayout(false);
             this.gbxWelcomeAddGame.PerformLayout();
+            this.gbxWelcomeTip1.ResumeLayout(false);
+            this.gbxWelcomeTip1.PerformLayout();
+            this.gbxWelcomeUserRules.ResumeLayout(false);
+            this.gbxWelcomeUserRules.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -3295,6 +3466,19 @@
         private System.Windows.Forms.PictureBox pbxWelcomeHome;
         private System.Windows.Forms.PictureBox pbxWelcomeMinimize;
         private System.Windows.Forms.PictureBox pbxWelcomeClose;
+        private System.Windows.Forms.Label lblAddGameCoverartTip;
+        private System.Windows.Forms.Label lblEditGameCoverartTip;
+        private System.Windows.Forms.LinkLabel llblOptionsShowWelcome;
+        private System.Windows.Forms.GroupBox gbxWelcomeTip1;
+        private System.Windows.Forms.Label lblWelcomeTip1;
+        private System.Windows.Forms.GroupBox gbxWelcomeUserRules;
+        private System.Windows.Forms.Label lblWelcomeUserRulesText2;
+        private System.Windows.Forms.Label lblWelcomeUserRulesExeptionsText;
+        private System.Windows.Forms.Label lblWelcomeUserRulesExeptionsTitle;
+        private System.Windows.Forms.Label lblWelcomeUserRulesPlaytimesText;
+        private System.Windows.Forms.Label lblWelcomeUserRulesPlaytimesTitle;
+        private System.Windows.Forms.Label lblWelcomeUserRulesTitle;
+        private System.Windows.Forms.Label lblWelcomeUserRulesText;
     }
 }
 

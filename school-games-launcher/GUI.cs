@@ -66,7 +66,7 @@ namespace school_games_launcher
             changePassword.resetOnActive = true;
 
             welcome = new GUIWelcome(this.tabControl, (TabPage)this.tabControl.TabPages["tabWelcome"]);
-
+            welcome.updateOnActive = true;
 
             this.tabControl.Appearance = TabAppearance.FlatButtons;
             this.tabControl.ItemSize = new System.Drawing.Size(0, 1);
@@ -949,10 +949,19 @@ namespace school_games_launcher
 
         }
 
+        public override void Update()
+        {
+            if (Program.app.ActiveUser != null)
+            {
+                ((GroupBox)this.TabPage.Controls["gbxWelcomePassword"]).Enabled = (Program.app.ActiveUser.Name == "admin" && Program.app.ActiveUser.Id == 0 && Program.app.ActiveUser.PasswordHash == "");
+            }
+        }
+
         public void SetPassword()
         {
             var password = ((GroupBox)this.TabPage.Controls["gbxWelcomePassword"]).Controls["tbxWelcomePassword"].Text;
             Program.app.GetUserByName("admin").SetPassword("", password);
+            this.Update();
         }
 
         public void AddGame()
