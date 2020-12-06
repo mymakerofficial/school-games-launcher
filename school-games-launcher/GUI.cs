@@ -755,8 +755,8 @@ namespace school_games_launcher
                         }
                         catch
                         {
-                            ((PictureBox)this.TabPage.Controls["pbxEditUserAvatarOld"]).Image = global::school_games_launcher.Properties.Resources.game_coverart_placeholder;
-                            ((PictureBox)this.TabPage.Controls["pbxEditUserAvatarOriginal"]).Image = global::school_games_launcher.Properties.Resources.game_coverart_placeholder;
+                            ((PictureBox)this.TabPage.Controls["pbxEditUserAvatarOld"]).Image = global::school_games_launcher.Properties.Resources.avatar_placeholder;
+                            ((PictureBox)this.TabPage.Controls["pbxEditUserAvatarOriginal"]).Image = global::school_games_launcher.Properties.Resources.avatar_placeholder;
                         }
                         break;
                 }
@@ -815,7 +815,7 @@ namespace school_games_launcher
                         }
                         catch
                         {
-                            ((PictureBox)this.TabPage.Controls["pbxEditUserAvatar"]).Image = global::school_games_launcher.Properties.Resources.game_coverart_placeholder;
+                            ((PictureBox)this.TabPage.Controls["pbxEditUserAvatar"]).Image = global::school_games_launcher.Properties.Resources.avatar_placeholder;
                         }
                         break;
                 }
@@ -906,7 +906,7 @@ namespace school_games_launcher
                         }
                         catch
                         {
-                            ((PictureBox)this.TabPage.Controls["pbxChangePasswordAvatar"]).Image = global::school_games_launcher.Properties.Resources.game_coverart_placeholder;
+                            ((PictureBox)this.TabPage.Controls["pbxChangePasswordAvatar"]).Image = global::school_games_launcher.Properties.Resources.avatar_placeholder;
                         }
                         break;
                 }
