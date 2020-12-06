@@ -201,7 +201,7 @@ namespace school_games_launcher
 
         private void btnAddGameCancel_Click(object sender, EventArgs e)
         {
-            Program.app.Gui.library.Activate();
+            Program.app.Gui.options.Activate();
         }
 
         private void pbxLibraryMinimize_Click(object sender, EventArgs e)
@@ -622,6 +622,11 @@ namespace school_games_launcher
         private void llblOptionsShowWelcome_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Program.app.Gui.welcome.Activate();
+        }
+
+        private void llblOptionsLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Program.app.Logout();
         }
     }
 }

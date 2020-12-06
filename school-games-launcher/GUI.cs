@@ -13,7 +13,7 @@ namespace school_games_launcher
     public class GUI
     {
         public GUILibrary library;
-        public GUITab options;
+        public GUIOptions options;
         public GUIAddGame addGame;
         public GUIEditGame editGame;
         public GUIProfile profile;
@@ -47,7 +47,8 @@ namespace school_games_launcher
             this.tabControl = (TabControl)this.form.Controls["TabControl"];
             library = new GUILibrary(this.tabControl, (TabPage)this.tabControl.TabPages["tabLibrary"]);
             library.updateOnActive = true;
-            options = new GUITab(this.tabControl, (TabPage)this.tabControl.TabPages["tabOptions"]);
+            options = new GUIOptions(this.tabControl, (TabPage)this.tabControl.TabPages["tabOptions"]);
+            options.updateOnActive = true;
             addGame = new GUIAddGame(this.tabControl, (TabPage)this.tabControl.TabPages["tabAddGame"]);
             addGame.resetOnActive = true;
             editGame = new GUIEditGame(this.tabControl, (TabPage)this.tabControl.TabPages["tabEditGame"]);
@@ -76,6 +77,40 @@ namespace school_games_launcher
         public void Minimize()
         {
             form.WindowState = FormWindowState.Minimized;
+        }
+        public void SetAvatar(PictureBox pictureBox, string avatar)
+        {
+            switch (avatar)
+            {
+                case "0":
+                    pictureBox.Image = global::school_games_launcher.Properties.Resources.avatar_0;
+                    break;
+                case "1":
+                    pictureBox.Image = global::school_games_launcher.Properties.Resources.avatar_1;
+                    break;
+                case "2":
+                    pictureBox.Image = global::school_games_launcher.Properties.Resources.avatar_2;
+                    break;
+                case "3":
+                    pictureBox.Image = global::school_games_launcher.Properties.Resources.avatar_3;
+                    break;
+                case "4":
+                    pictureBox.Image = global::school_games_launcher.Properties.Resources.avatar_4;
+                    break;
+                case "5":
+                    pictureBox.Image = global::school_games_launcher.Properties.Resources.avatar_5;
+                    break;
+                default:
+                    try
+                    {
+                        pictureBox.Load(avatar);
+                    }
+                    catch
+                    {
+                        pictureBox.Image = global::school_games_launcher.Properties.Resources.avatar_placeholder;
+                    }
+                    break;
+            }
         }
     }
     public class GUITab
@@ -111,7 +146,7 @@ namespace school_games_launcher
     public class GUILibrary : GUITab
     {
         public string search = "";
-        public List<Panel> groups = new List<Panel>();
+        public List<Panel> panels = new List<Panel>();
         public List<Game> games;
         public GUILibrary(TabControl tabControl, TabPage tabPage) : base(tabControl, tabPage) 
         {
@@ -138,20 +173,20 @@ namespace school_games_launcher
             this.games = games;
 
             // fixes memory leak ishue
-            foreach (Control control in groups)
+            foreach (Control control in panels)
             {
                 control.Dispose();
             }
-            groups.Clear();
+            panels.Clear();
 
 
             int margin = 12;
             foreach (Game game in this.games)
             {
                 // creates a panel
-                Panel group = new System.Windows.Forms.Panel();
-                group.Name = "pnlLibraryGame_" + game.Name;
-                group.Size = new System.Drawing.Size(306 + (margin * 2), 143 + (margin * 2));
+                Panel panel = new System.Windows.Forms.Panel();
+                panel.Name = "pnlLibraryGame_" + game.Name;
+                panel.Size = new System.Drawing.Size(306 + (margin * 2), 143 + (margin * 2));
 
                 // create PictureBox for coverart
                 PictureBox coverart = new System.Windows.Forms.PictureBox();
@@ -161,6 +196,7 @@ namespace school_games_launcher
                 coverart.Size = new System.Drawing.Size(306, 143);
                 coverart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
                 coverart.BackColor = System.Drawing.Color.Black;
+
                 // create function to go to game page
                 void LaunchGame(object sender, EventArgs e)
                 {
@@ -169,18 +205,18 @@ namespace school_games_launcher
                     //Program.app.Launch(game);
                 }
                 // add function as EventHandler
-                coverart.Click += new System.EventHandler(LaunchGame);
+                panel.Click += new System.EventHandler(LaunchGame);
 
                 // add the PictureBox to the Panel
-                group.Controls.Add(coverart);
+                panel.Controls.Add(coverart);
 
                 // add Panel to array
-                groups.Add(group);
+                panels.Add(panel);
             }
 
             // add the panels to the Form
             this.TabPage.Controls["flpLibraryGameList"].Controls.Clear();
-            foreach (Control control in groups)
+            foreach (Control control in panels)
             {
                 this.TabPage.Controls["flpLibraryGameList"].Controls.Add(control);
             }
@@ -191,16 +227,186 @@ namespace school_games_launcher
             {
                 Thread.CurrentThread.IsBackground = true;
 
-                for(int i = 0; i < groups.Count(); i++)
+                for(int i = 0; i < panels.Count(); i++)
                 {
                     try
                     {
-                        PictureBox coverart = (PictureBox)groups[i].Controls[0];
+                        PictureBox coverart = (PictureBox)panels[i].Controls[0];
                         coverart.Load(this.games[i].Coverart);
                     }
                     catch { }
                 }
             });
+        }
+    }
+    public class GUIOptions : GUITab
+    {
+        public List<GroupBox> gamePanels = new List<GroupBox>();
+        public List<GroupBox> userPanels = new List<GroupBox>();
+        public List<Game> games;
+        public List<User> users;
+        public GUIOptions(TabControl tabControl, TabPage tabPage) : base(tabControl, tabPage)
+        {
+
+        }
+
+        public override void Update()
+        {
+            this.UpdateGameList(Program.app.Games);
+            this.UpdateUserList(Program.app.Users);
+            if(Program.app.ActiveUser != null)
+                ((Button)this.TabPage.Controls["btnOptionsAddGame"]).Visible =
+                    ((Button)this.TabPage.Controls["btnOptionsAddUser"]).Visible = Program.app.ActiveUser.Admin;
+        }
+
+        public void UpdateGameList(List<Game> games)
+        {
+            this.games = games;
+
+            // fixes memory leak ishue
+            foreach (Control control in gamePanels)
+            {
+                control.Dispose();
+            }
+            gamePanels.Clear();
+
+
+            foreach (Game game in this.games)
+            {
+                // creates a panel
+                GroupBox panel = new System.Windows.Forms.GroupBox();
+                panel.Name = "gbxOptionsGame_" + game.Name;
+                panel.Size = new System.Drawing.Size(360, 80);
+
+                // create PictureBox for coverart
+                PictureBox coverart = new System.Windows.Forms.PictureBox();
+                coverart.Name = "pbxOptionsGame_" + game.Name;
+                coverart.Image = global::school_games_launcher.Properties.Resources.game_coverart_placeholder;
+                coverart.Location = new System.Drawing.Point(15, 15);
+                coverart.Size = new System.Drawing.Size(100, 50);
+                coverart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+                coverart.BackColor = System.Drawing.Color.Black;
+
+                Label name = new System.Windows.Forms.Label();
+                name.Text = game.Name;
+                name.Size = new System.Drawing.Size(100, 15);
+                name.Location = new System.Drawing.Point(130, 25);
+
+                Label id = new System.Windows.Forms.Label();
+                id.Text = String.Format("ID: {0}", game.Id);
+                id.ForeColor = System.Drawing.Color.Silver;
+                id.Location = new System.Drawing.Point(130, 45);
+
+                // create function to go to game page
+                void LaunchGame(object sender, EventArgs e)
+                {
+                    Program.app.Gui.gameDetails.SetGame(game);
+                    Program.app.Gui.gameDetails.Activate();
+                    //Program.app.Launch(game);
+                }
+                // add function as EventHandler
+                panel.Click += new System.EventHandler(LaunchGame);
+                coverart.Click += new System.EventHandler(LaunchGame);
+                name.Click += new System.EventHandler(LaunchGame);
+                id.Click += new System.EventHandler(LaunchGame);
+
+                // add the elements to the Panel
+                panel.Controls.Add(coverart);
+                panel.Controls.Add(name);
+                panel.Controls.Add(id);
+
+                // add Panel to array
+                gamePanels.Add(panel);
+            }
+
+            // add the panels to the Form
+            this.TabPage.Controls["flpOptionsGames"].Controls.Clear();
+            foreach (Control control in gamePanels)
+            {
+                this.TabPage.Controls["flpOptionsGames"].Controls.Add(control);
+            }
+
+            // Load images in different thread.
+            // This makes the loading of the library way smoother.
+            Task.Run(() =>
+            {
+                Thread.CurrentThread.IsBackground = true;
+
+                for (int i = 0; i < gamePanels.Count(); i++)
+                {
+                    try
+                    {
+                        PictureBox coverart = (PictureBox)gamePanels[i].Controls[0];
+                        coverart.Load(this.games[i].Coverart);
+                    }
+                    catch { }
+                }
+            });
+        }
+        public void UpdateUserList(List<User> users)
+        {
+            this.users = users;
+
+            // fixes memory leak ishue
+            foreach (Control control in userPanels)
+            {
+                control.Dispose();
+            }
+            userPanels.Clear();
+
+
+            foreach (User user in this.users)
+            {
+                // creates a panel
+                GroupBox panel = new System.Windows.Forms.GroupBox();
+                panel.Name = "gbxOptionsGame_" + user.Name;
+                panel.Size = new System.Drawing.Size(360, 80);
+
+                // create PictureBox for coverart
+                PictureBox avatar = new System.Windows.Forms.PictureBox();
+                Program.app.Gui.SetAvatar(avatar, user.Avatar);
+                avatar.Location = new System.Drawing.Point(15, 15);
+                avatar.Size = new System.Drawing.Size(50, 50);
+                avatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+                avatar.BackColor = System.Drawing.Color.Black;
+
+                Label name = new System.Windows.Forms.Label();
+                name.Text = user.Name;
+                name.Size = new System.Drawing.Size(100, 15);
+                name.Location = new System.Drawing.Point(80, 25);
+
+                Label id = new System.Windows.Forms.Label();
+                id.Text = String.Format("ID: {0}", user.Id);
+                id.ForeColor = System.Drawing.Color.Silver;
+                id.Location = new System.Drawing.Point(80, 45);
+
+                // create function to go to open profile
+                void OpenProfile(object sender, EventArgs e)
+                {
+                    Program.app.Gui.profile.Activate();
+                    Program.app.Gui.profile.User = user;
+                }
+                // add function as EventHandler
+                panel.Click += new System.EventHandler(OpenProfile);
+                avatar.Click += new System.EventHandler(OpenProfile);
+                name.Click += new System.EventHandler(OpenProfile);
+                id.Click += new System.EventHandler(OpenProfile);
+
+                // add the elements to the Panel
+                panel.Controls.Add(avatar);
+                panel.Controls.Add(name);
+                panel.Controls.Add(id);
+
+                // add Panel to array
+                userPanels.Add(panel);
+            }
+
+            // add the panels to the Form
+            this.TabPage.Controls["flpOptionsUsers"].Controls.Clear();
+            foreach (Control control in userPanels)
+            {
+                this.TabPage.Controls["flpOptionsUsers"].Controls.Add(control);
+            }
         }
     }
     public class GUIPlaying : GUITab
@@ -240,37 +446,7 @@ namespace school_games_launcher
                 ((Label)this.TabPage.Controls["lblProfileBirth"]).Text = String.Format("Age: {0} ({1})", user.Age, user.BirthDate.ToString("d", CultureInfo.CreateSpecificCulture("de-DE")));
                 ((Label)this.TabPage.Controls["lblProfileId"]).Text = String.Format("ID: {0}", user.Id);
 
-                switch (user.Avatar)
-                {
-                    case "0":
-                        ((PictureBox)this.TabPage.Controls["pbxProfileAvatar"]).Image = global::school_games_launcher.Properties.Resources.avatar_0;
-                        break;
-                    case "1":
-                        ((PictureBox)this.TabPage.Controls["pbxProfileAvatar"]).Image = global::school_games_launcher.Properties.Resources.avatar_1;
-                        break;
-                    case "2":
-                        ((PictureBox)this.TabPage.Controls["pbxProfileAvatar"]).Image = global::school_games_launcher.Properties.Resources.avatar_2;
-                        break;
-                    case "3":
-                        ((PictureBox)this.TabPage.Controls["pbxProfileAvatar"]).Image = global::school_games_launcher.Properties.Resources.avatar_3;
-                        break;
-                    case "4":
-                        ((PictureBox)this.TabPage.Controls["pbxProfileAvatar"]).Image = global::school_games_launcher.Properties.Resources.avatar_4;
-                        break;
-                    case "5":
-                        ((PictureBox)this.TabPage.Controls["pbxProfileAvatar"]).Image = global::school_games_launcher.Properties.Resources.avatar_5;
-                        break;
-                    default:
-                        try
-                        {
-                            ((PictureBox)this.TabPage.Controls["pbxProfileAvatar"]).Load(value.Avatar);
-                        }
-                        catch
-                        {
-                            ((PictureBox)this.TabPage.Controls["pbxProfileAvatar"]).Image = global::school_games_launcher.Properties.Resources.game_coverart_placeholder;
-                        }
-                        break;
-                }
+                Program.app.Gui.SetAvatar(((PictureBox)this.TabPage.Controls["pbxProfileAvatar"]), user.Avatar);
             }
         }
         public GUIProfile(TabControl tabControl, TabPage tabPage) : base(tabControl, tabPage)
@@ -755,46 +931,8 @@ namespace school_games_launcher
                 ((Label)this.TabPage.Controls["lblEditUserNameOriginal"]).Text = value.Name;
                 ((Label)this.TabPage.Controls["lblEditUserId"]).Text = "ID: " + Convert.ToString(value.Id);
 
-
-                switch (editUser.Avatar)
-                {
-                    case "0":
-                        ((PictureBox)this.TabPage.Controls["pbxEditUserAvatarOld"]).Image = global::school_games_launcher.Properties.Resources.avatar_0;
-                        ((PictureBox)this.TabPage.Controls["pbxEditUserAvatarOriginal"]).Image = global::school_games_launcher.Properties.Resources.avatar_0;
-                        break;
-                    case "1":
-                        ((PictureBox)this.TabPage.Controls["pbxEditUserAvatarOld"]).Image = global::school_games_launcher.Properties.Resources.avatar_1;
-                        ((PictureBox)this.TabPage.Controls["pbxEditUserAvatarOriginal"]).Image = global::school_games_launcher.Properties.Resources.avatar_1;
-                        break;
-                    case "2":
-                        ((PictureBox)this.TabPage.Controls["pbxEditUserAvatarOld"]).Image = global::school_games_launcher.Properties.Resources.avatar_2;
-                        ((PictureBox)this.TabPage.Controls["pbxEditUserAvatarOriginal"]).Image = global::school_games_launcher.Properties.Resources.avatar_2;
-                        break;
-                    case "3":
-                        ((PictureBox)this.TabPage.Controls["pbxEditUserAvatarOld"]).Image = global::school_games_launcher.Properties.Resources.avatar_3;
-                        ((PictureBox)this.TabPage.Controls["pbxEditUserAvatarOriginal"]).Image = global::school_games_launcher.Properties.Resources.avatar_3;
-                        break;
-                    case "4":
-                        ((PictureBox)this.TabPage.Controls["pbxEditUserAvatarOld"]).Image = global::school_games_launcher.Properties.Resources.avatar_4;
-                        ((PictureBox)this.TabPage.Controls["pbxEditUserAvatarOriginal"]).Image = global::school_games_launcher.Properties.Resources.avatar_4;
-                        break;
-                    case "5":
-                        ((PictureBox)this.TabPage.Controls["pbxEditUserAvatarOld"]).Image = global::school_games_launcher.Properties.Resources.avatar_5;
-                        ((PictureBox)this.TabPage.Controls["pbxEditUserAvatarOriginal"]).Image = global::school_games_launcher.Properties.Resources.avatar_5;
-                        break;
-                    default:
-                        try
-                        {
-                            ((PictureBox)this.TabPage.Controls["pbxEditUserAvatarOld"]).Load(value.Avatar);
-                            ((PictureBox)this.TabPage.Controls["pbxEditUserAvatarOriginal"]).Load(value.Avatar);
-                        }
-                        catch
-                        {
-                            ((PictureBox)this.TabPage.Controls["pbxEditUserAvatarOld"]).Image = global::school_games_launcher.Properties.Resources.avatar_placeholder;
-                            ((PictureBox)this.TabPage.Controls["pbxEditUserAvatarOriginal"]).Image = global::school_games_launcher.Properties.Resources.avatar_placeholder;
-                        }
-                        break;
-                }
+                Program.app.Gui.SetAvatar(((PictureBox)this.TabPage.Controls["pbxEditUserAvatarOld"]), editUser.Avatar);
+                Program.app.Gui.SetAvatar(((PictureBox)this.TabPage.Controls["pbxEditUserAvatarOriginal"]), editUser.Avatar);
             }
         }
         public string Name
@@ -823,37 +961,7 @@ namespace school_games_launcher
                 avatar = value;
                 ((TextBox)this.TabPage.Controls["tbxEditUserAvatarInput"]).Text = Convert.ToString(avatar);
 
-                switch (avatar)
-                {
-                    case "0":
-                        ((PictureBox)this.TabPage.Controls["pbxEditUserAvatar"]).Image = global::school_games_launcher.Properties.Resources.avatar_0;
-                        break;
-                    case "1":
-                        ((PictureBox)this.TabPage.Controls["pbxEditUserAvatar"]).Image = global::school_games_launcher.Properties.Resources.avatar_1;
-                        break;
-                    case "2":
-                        ((PictureBox)this.TabPage.Controls["pbxEditUserAvatar"]).Image = global::school_games_launcher.Properties.Resources.avatar_2;
-                        break;
-                    case "3":
-                        ((PictureBox)this.TabPage.Controls["pbxEditUserAvatar"]).Image = global::school_games_launcher.Properties.Resources.avatar_3;
-                        break;
-                    case "4":
-                        ((PictureBox)this.TabPage.Controls["pbxEditUserAvatar"]).Image = global::school_games_launcher.Properties.Resources.avatar_4;
-                        break;
-                    case "5":
-                        ((PictureBox)this.TabPage.Controls["pbxEditUserAvatar"]).Image = global::school_games_launcher.Properties.Resources.avatar_5;
-                        break;
-                    default:
-                        try
-                        {
-                            ((PictureBox)this.TabPage.Controls["pbxEditUserAvatar"]).Load(avatar);
-                        }
-                        catch
-                        {
-                            ((PictureBox)this.TabPage.Controls["pbxEditUserAvatar"]).Image = global::school_games_launcher.Properties.Resources.avatar_placeholder;
-                        }
-                        break;
-                }
+                Program.app.Gui.SetAvatar(((PictureBox)this.TabPage.Controls["pbxEditUserAvatar"]), avatar);
             }
         }
         public GUIEditUser(TabControl tabControl, TabPage tabPage) : base(tabControl, tabPage)
@@ -894,6 +1002,7 @@ namespace school_games_launcher
         public void Cancel()
         {
             Program.app.Gui.profile.Activate();
+            Program.app.Gui.profile.User = this.EditUser;
         }
         public void ChangePassword()
         {
@@ -913,38 +1022,7 @@ namespace school_games_launcher
                 ((Label)this.TabPage.Controls["lblChangePasswordName"]).Text = value.Name;
                 ((Label)this.TabPage.Controls["lblChangePasswordId"]).Text = "ID: " + Convert.ToString(value.Id);
 
-
-                switch (editUser.Avatar)
-                {
-                    case "0":
-                        ((PictureBox)this.TabPage.Controls["pbxChangePasswordAvatar"]).Image = global::school_games_launcher.Properties.Resources.avatar_0;
-                        break;
-                    case "1":
-                        ((PictureBox)this.TabPage.Controls["pbxChangePasswordAvatar"]).Image = global::school_games_launcher.Properties.Resources.avatar_1;
-                        break;
-                    case "2":
-                        ((PictureBox)this.TabPage.Controls["pbxChangePasswordAvatar"]).Image = global::school_games_launcher.Properties.Resources.avatar_2;
-                        break;
-                    case "3":
-                        ((PictureBox)this.TabPage.Controls["pbxChangePasswordAvatar"]).Image = global::school_games_launcher.Properties.Resources.avatar_3;
-                        break;
-                    case "4":
-                        ((PictureBox)this.TabPage.Controls["pbxChangePasswordAvatar"]).Image = global::school_games_launcher.Properties.Resources.avatar_4;
-                        break;
-                    case "5":
-                        ((PictureBox)this.TabPage.Controls["pbxChangePasswordAvatar"]).Image = global::school_games_launcher.Properties.Resources.avatar_5;
-                        break;
-                    default:
-                        try
-                        {
-                            ((PictureBox)this.TabPage.Controls["pbxChangePasswordAvatar"]).Load(value.Avatar);
-                        }
-                        catch
-                        {
-                            ((PictureBox)this.TabPage.Controls["pbxChangePasswordAvatar"]).Image = global::school_games_launcher.Properties.Resources.avatar_placeholder;
-                        }
-                        break;
-                }
+                Program.app.Gui.SetAvatar(((PictureBox)this.TabPage.Controls["pbxChangePasswordAvatar"]), editUser.Avatar);
             }
         }
         public GUIChangePassword(TabControl tabControl, TabPage tabPage) : base(tabControl, tabPage)

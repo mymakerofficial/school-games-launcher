@@ -41,6 +41,14 @@
             this.lblLibrarySearchGame = new System.Windows.Forms.Label();
             this.tbxLibrarySearchGame = new System.Windows.Forms.TextBox();
             this.tabOptions = new System.Windows.Forms.TabPage();
+            this.flpOptionsGames = new System.Windows.Forms.FlowLayoutPanel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.flpOptionsUsers = new System.Windows.Forms.FlowLayoutPanel();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.llblOptionsShowWelcome = new System.Windows.Forms.LinkLabel();
             this.pbxOptionsOptions = new System.Windows.Forms.PictureBox();
             this.pbxOptionsProfile = new System.Windows.Forms.PictureBox();
@@ -48,8 +56,7 @@
             this.pbxOptionsMinimize = new System.Windows.Forms.PictureBox();
             this.pbxOptionsClose = new System.Windows.Forms.PictureBox();
             this.btnOptionsAddUser = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.lblOptionsTitle = new System.Windows.Forms.Label();
+            this.btnOptionsAddGame = new System.Windows.Forms.Button();
             this.tabAddGame = new System.Windows.Forms.TabPage();
             this.lblAddGameCoverartTip = new System.Windows.Forms.Label();
             this.pbxAddGameOptions = new System.Windows.Forms.PictureBox();
@@ -266,14 +273,9 @@
             this.pbxWelcomeHome = new System.Windows.Forms.PictureBox();
             this.pbxWelcomeMinimize = new System.Windows.Forms.PictureBox();
             this.pbxWelcomeClose = new System.Windows.Forms.PictureBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.llblOptionsLogout = new System.Windows.Forms.LinkLabel();
             this.tabControl.SuspendLayout();
             this.tabLibrary.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLibraryOptions)).BeginInit();
@@ -282,6 +284,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxLibraryMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLibraryClose)).BeginInit();
             this.tabOptions.SuspendLayout();
+            this.flpOptionsGames.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.flpOptionsUsers.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxOptionsOptions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxOptionsProfile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxOptionsHome)).BeginInit();
@@ -381,12 +389,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxWelcomeHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxWelcomeMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxWelcomeClose)).BeginInit();
-            this.flowLayoutPanel1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.flowLayoutPanel2.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -535,8 +537,11 @@
             // tabOptions
             // 
             this.tabOptions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
-            this.tabOptions.Controls.Add(this.flowLayoutPanel1);
-            this.tabOptions.Controls.Add(this.flowLayoutPanel2);
+            this.tabOptions.Controls.Add(this.llblOptionsLogout);
+            this.tabOptions.Controls.Add(this.label6);
+            this.tabOptions.Controls.Add(this.label5);
+            this.tabOptions.Controls.Add(this.flpOptionsGames);
+            this.tabOptions.Controls.Add(this.flpOptionsUsers);
             this.tabOptions.Controls.Add(this.llblOptionsShowWelcome);
             this.tabOptions.Controls.Add(this.pbxOptionsOptions);
             this.tabOptions.Controls.Add(this.pbxOptionsProfile);
@@ -544,8 +549,7 @@
             this.tabOptions.Controls.Add(this.pbxOptionsMinimize);
             this.tabOptions.Controls.Add(this.pbxOptionsClose);
             this.tabOptions.Controls.Add(this.btnOptionsAddUser);
-            this.tabOptions.Controls.Add(this.button1);
-            this.tabOptions.Controls.Add(this.lblOptionsTitle);
+            this.tabOptions.Controls.Add(this.btnOptionsAddGame);
             this.tabOptions.ForeColor = System.Drawing.Color.White;
             this.tabOptions.Location = new System.Drawing.Point(4, 22);
             this.tabOptions.Name = "tabOptions";
@@ -554,12 +558,90 @@
             this.tabOptions.TabIndex = 1;
             this.tabOptions.Text = "Options ";
             // 
+            // flpOptionsGames
+            // 
+            this.flpOptionsGames.AutoScroll = true;
+            this.flpOptionsGames.Controls.Add(this.groupBox1);
+            this.flpOptionsGames.Location = new System.Drawing.Point(29, 100);
+            this.flpOptionsGames.Name = "flpOptionsGames";
+            this.flpOptionsGames.Size = new System.Drawing.Size(394, 541);
+            this.flpOptionsGames.TabIndex = 21;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.pictureBox1);
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(368, 79);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(127, 27);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(69, 25);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Game";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::school_games_launcher.Properties.Resources.game_coverart_placeholder;
+            this.pictureBox1.Location = new System.Drawing.Point(15, 16);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // flpOptionsUsers
+            // 
+            this.flpOptionsUsers.AutoScroll = true;
+            this.flpOptionsUsers.Controls.Add(this.groupBox2);
+            this.flpOptionsUsers.Location = new System.Drawing.Point(519, 100);
+            this.flpOptionsUsers.Name = "flpOptionsUsers";
+            this.flpOptionsUsers.Size = new System.Drawing.Size(394, 541);
+            this.flpOptionsUsers.TabIndex = 22;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.pictureBox3);
+            this.groupBox2.Location = new System.Drawing.Point(3, 3);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(376, 79);
+            this.groupBox2.TabIndex = 0;
+            this.groupBox2.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(75, 27);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(57, 25);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "User";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::school_games_launcher.Properties.Resources.avatar_0;
+            this.pictureBox3.Location = new System.Drawing.Point(15, 16);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 0;
+            this.pictureBox3.TabStop = false;
+            // 
             // llblOptionsShowWelcome
             // 
             this.llblOptionsShowWelcome.ActiveLinkColor = System.Drawing.Color.DarkGray;
             this.llblOptionsShowWelcome.AutoSize = true;
             this.llblOptionsShowWelcome.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(56)))), ((int)(((byte)(66)))));
-            this.llblOptionsShowWelcome.Location = new System.Drawing.Point(29, 697);
+            this.llblOptionsShowWelcome.Location = new System.Drawing.Point(103, 697);
             this.llblOptionsShowWelcome.Name = "llblOptionsShowWelcome";
             this.llblOptionsShowWelcome.Size = new System.Drawing.Size(106, 13);
             this.llblOptionsShowWelcome.TabIndex = 20;
@@ -626,7 +708,7 @@
             // btnOptionsAddUser
             // 
             this.btnOptionsAddUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOptionsAddUser.Location = new System.Drawing.Point(522, 118);
+            this.btnOptionsAddUser.Location = new System.Drawing.Point(740, 52);
             this.btnOptionsAddUser.Name = "btnOptionsAddUser";
             this.btnOptionsAddUser.Size = new System.Drawing.Size(173, 34);
             this.btnOptionsAddUser.TabIndex = 8;
@@ -634,26 +716,16 @@
             this.btnOptionsAddUser.UseVisualStyleBackColor = true;
             this.btnOptionsAddUser.Click += new System.EventHandler(this.btnOptionsAddUser_Click);
             // 
-            // button1
+            // btnOptionsAddGame
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(32, 118);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(173, 32);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Add Game";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // lblOptionsTitle
-            // 
-            this.lblOptionsTitle.AutoSize = true;
-            this.lblOptionsTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOptionsTitle.Location = new System.Drawing.Point(25, 45);
-            this.lblOptionsTitle.Name = "lblOptionsTitle";
-            this.lblOptionsTitle.Size = new System.Drawing.Size(128, 37);
-            this.lblOptionsTitle.TabIndex = 7;
-            this.lblOptionsTitle.Text = "Options";
+            this.btnOptionsAddGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOptionsAddGame.Location = new System.Drawing.Point(250, 54);
+            this.btnOptionsAddGame.Name = "btnOptionsAddGame";
+            this.btnOptionsAddGame.Size = new System.Drawing.Size(173, 32);
+            this.btnOptionsAddGame.TabIndex = 0;
+            this.btnOptionsAddGame.Text = "Add Game";
+            this.btnOptionsAddGame.UseVisualStyleBackColor = true;
+            this.btnOptionsAddGame.Click += new System.EventHandler(this.button1_Click);
             // 
             // tabAddGame
             // 
@@ -3116,81 +3188,40 @@
             this.pbxWelcomeClose.TabStop = false;
             this.pbxWelcomeClose.Click += new System.EventHandler(this.pbxWelcomeClose_Click);
             // 
-            // flowLayoutPanel1
+            // label5
             // 
-            this.flowLayoutPanel1.Controls.Add(this.groupBox1);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(32, 178);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(394, 439);
-            this.flowLayoutPanel1.TabIndex = 21;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(27, 51);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(90, 29);
+            this.label5.TabIndex = 23;
+            this.label5.Text = "Games";
             // 
-            // groupBox1
+            // label6
             // 
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.pictureBox1);
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(391, 79);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(517, 51);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(76, 29);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "Users";
             // 
-            // pictureBox1
+            // llblOptionsLogout
             // 
-            this.pictureBox1.Image = global::school_games_launcher.Properties.Resources.game_coverart_placeholder;
-            this.pictureBox1.Location = new System.Drawing.Point(15, 16);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(127, 27);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 25);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Game";
-            // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.Controls.Add(this.groupBox2);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(522, 178);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(394, 439);
-            this.flowLayoutPanel2.TabIndex = 22;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.pictureBox3);
-            this.groupBox2.Location = new System.Drawing.Point(3, 3);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(391, 79);
-            this.groupBox2.TabIndex = 0;
-            this.groupBox2.TabStop = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(75, 27);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 25);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "User";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::school_games_launcher.Properties.Resources.avatar_0;
-            this.pictureBox3.Location = new System.Drawing.Point(15, 16);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 0;
-            this.pictureBox3.TabStop = false;
+            this.llblOptionsLogout.ActiveLinkColor = System.Drawing.Color.DarkGray;
+            this.llblOptionsLogout.AutoSize = true;
+            this.llblOptionsLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.llblOptionsLogout.LinkColor = System.Drawing.Color.LightGray;
+            this.llblOptionsLogout.Location = new System.Drawing.Point(28, 690);
+            this.llblOptionsLogout.Name = "llblOptionsLogout";
+            this.llblOptionsLogout.Size = new System.Drawing.Size(59, 20);
+            this.llblOptionsLogout.TabIndex = 25;
+            this.llblOptionsLogout.TabStop = true;
+            this.llblOptionsLogout.Text = "Logout";
+            this.llblOptionsLogout.VisitedLinkColor = System.Drawing.Color.LightGray;
+            this.llblOptionsLogout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblOptionsLogout_LinkClicked);
             // 
             // MainWindow
             // 
@@ -3215,6 +3246,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxLibraryClose)).EndInit();
             this.tabOptions.ResumeLayout(false);
             this.tabOptions.PerformLayout();
+            this.flpOptionsGames.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.flpOptionsUsers.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxOptionsOptions)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxOptionsProfile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxOptionsHome)).EndInit();
@@ -3329,14 +3368,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxWelcomeHome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxWelcomeMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxWelcomeClose)).EndInit();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.flowLayoutPanel2.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3406,9 +3437,8 @@
         private System.Windows.Forms.FlowLayoutPanel flpProfileLastPlayed;
         private System.Windows.Forms.Label lblProfileBirth;
         private System.Windows.Forms.Label lblProfileName;
-        private System.Windows.Forms.Label lblOptionsTitle;
         private System.Windows.Forms.PictureBox pbxPlayingCoverart;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnOptionsAddGame;
         private System.Windows.Forms.Label lblLibraryNotAllowedToPlay;
         private System.Windows.Forms.Button btnAddGameFindSteamGame;
         private System.Windows.Forms.TextBox tbxAddGameAge;
@@ -3579,14 +3609,17 @@
         private System.Windows.Forms.Label lblWelcomeUserRulesPlaytimesTitle;
         private System.Windows.Forms.Label lblWelcomeUserRulesTitle;
         private System.Windows.Forms.Label lblWelcomeUserRulesText;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flpOptionsGames;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.FlowLayoutPanel flpOptionsUsers;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.LinkLabel llblOptionsLogout;
     }
 }
 
