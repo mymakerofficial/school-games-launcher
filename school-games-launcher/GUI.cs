@@ -112,6 +112,7 @@ namespace school_games_launcher
     {
         public string search = "";
         public List<Panel> groups = new List<Panel>();
+        public List<Game> games;
         public GUILibrary(TabControl tabControl, TabPage tabPage) : base(tabControl, tabPage) 
         {
 
@@ -134,6 +135,8 @@ namespace school_games_launcher
         }
         public void UpdateList(List<Game> games)
         {
+            this.games = games;
+
             // fixes memory leak ishue
             foreach (Control control in groups)
             {
@@ -141,44 +144,63 @@ namespace school_games_launcher
             }
             groups.Clear();
 
+
             int margin = 12;
-            foreach (Game game in games)
+            foreach (Game game in this.games)
             {
+                // creates a panel
                 Panel group = new System.Windows.Forms.Panel();
-                group.Name = "gbxLibraryGame_" + game.Name;
+                group.Name = "pnlLibraryGame_" + game.Name;
                 group.Size = new System.Drawing.Size(306 + (margin * 2), 143 + (margin * 2));
 
+                // create PictureBox for coverart
                 PictureBox coverart = new System.Windows.Forms.PictureBox();
-                try
-                {
-                    coverart.Load(game.Coverart);
-                }
-                catch
-                {
-                    coverart.Image = global::school_games_launcher.Properties.Resources.game_coverart_placeholder;
-                }
+                coverart.Name = "pbxLibraryGame_" + game.Name;
+                coverart.Image = global::school_games_launcher.Properties.Resources.game_coverart_placeholder;
                 coverart.Location = new System.Drawing.Point(margin, margin);
                 coverart.Size = new System.Drawing.Size(306, 143);
                 coverart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
                 coverart.BackColor = System.Drawing.Color.Black;
+                // create function to go to game page
                 void LaunchGame(object sender, EventArgs e)
                 {
                     Program.app.Gui.gameDetails.SetGame(game);
                     Program.app.Gui.gameDetails.Activate();
                     //Program.app.Launch(game);
                 }
+                // add function as EventHandler
                 coverart.Click += new System.EventHandler(LaunchGame);
 
+                // add the PictureBox to the Panel
                 group.Controls.Add(coverart);
 
+                // add Panel to array
                 groups.Add(group);
             }
 
+            // add the panels to the Form
             this.TabPage.Controls["flpLibraryGameList"].Controls.Clear();
             foreach (Control control in groups)
             {
                 this.TabPage.Controls["flpLibraryGameList"].Controls.Add(control);
             }
+
+            // Load images in different thread.
+            // This makes the loading of the library way smoother.
+            Task.Run(() =>
+            {
+                Thread.CurrentThread.IsBackground = true;
+
+                for(int i = 0; i < groups.Count(); i++)
+                {
+                    try
+                    {
+                        PictureBox coverart = (PictureBox)groups[i].Controls[0];
+                        coverart.Load(this.games[i].Coverart);
+                    }
+                    catch { }
+                }
+            });
         }
     }
     public class GUIPlaying : GUITab
