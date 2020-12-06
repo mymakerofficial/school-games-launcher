@@ -8,24 +8,27 @@ using System.Windows.Forms;
 namespace school_games_launcher
 {
 
-    static class Program
+    public static class Program
     {
 
-        static App app;
+        public static App app;
 
         /// <summary>
         /// The main entrace point of this program. This is where shid beginns.
         /// </summary>
-        [STAThread]
+        //[STAThread]
         static void Main()
         {
             app = new App();
 
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainWindow());
+            AppDomain.CurrentDomain.ProcessExit += new EventHandler(OnProcessExit);
 
-
+            app.Run();
+        }
+        static void OnProcessExit(object sender, EventArgs e)
+        {
+            // saves data before program closes
+            app.SaveData();
         }
     }
 }

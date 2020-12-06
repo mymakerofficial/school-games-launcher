@@ -12,6 +12,8 @@ namespace school_games_launcher
     {
         private string path;
         private Game game;
+        public string Path { get { return path; } }
+        public Game Game { get { return game; } }
         public GameExecutable(string path, Game game)
         {
             this.path = path;
@@ -25,11 +27,19 @@ namespace school_games_launcher
             if (user.AllowedToPlay(this.game))
             {
                 Session session = new Session(this.game, user);
-                var game = System.Diagnostics.Process.Start(this.path);
+                Process.Start(this.path);
+                session.Start();
                 return session;
             }else
             {
                 return null;
+            }
+        }
+        public void SetPath(string path)
+        {
+            if (Program.app.ActiveUser.Admin)
+            {
+                this.path = path;
             }
         }
     }

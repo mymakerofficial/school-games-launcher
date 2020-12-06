@@ -10,25 +10,57 @@ namespace school_games_launcher
 {
     public class User
     {
+        private int id;
         private string name;
         private DateTime birthDate;
         private string passwordHash;
         private bool admin;
         private List<PlayPeriod> playPeriods = new List<PlayPeriod>();
         private List<GameExeption> gameExeptions = new List<GameExeption>();
-
+        private string avatar = "0";
+        /// <summary>
+        /// Id of the user
+        /// </summary>
+        public int Id { get { return id; } }
         /// <summary>
         /// The name of the user
         /// </summary>
-        public string Name { get { return name; } }
+        public string Name { 
+            get { return name; }
+            set
+            {
+                name = value;
+            }
+        }
         /// <summary>
         /// The birthday of the user
         /// </summary>
-        public DateTime BirthDate { get { return birthDate; } }
+        public DateTime BirthDate { 
+            get { return birthDate; }
+            set { birthDate = value; }
+        }
+        /// <summary>
+        /// The users hashed password.
+        /// </summary>
+        public string PasswordHash { get { return passwordHash; } }
+        /// <summary>
+        /// User avatar.
+        /// </summary>
+        public string Avatar { 
+            get { return avatar; }
+            set { avatar = value; }
+        }
         /// <summary>
         /// Is admin?
         /// </summary>
-        public bool Admin { get { return admin; } }
+        public bool Admin { 
+            get { return admin; }
+            set
+            {
+                if (Program.app.ActiveUser != null)
+                    if (Program.app.ActiveUser.Admin) admin = value;
+            }
+        }
         /// <summary>
         /// List of the users play periods (when the user is allowed to play)
         /// </summary>
@@ -49,24 +81,65 @@ namespace school_games_launcher
             }
         }
         /// <summary>
+        /// The users birth unixtimestamp as int.
+        /// </summary>
+        public int BirthTimestamp
+        {
+            get
+            {
+                return (int)new DateTimeOffset(this.BirthDate).ToUnixTimeSeconds();
+            }
+        }
+        /// <summary>
+        /// Is this user currently allowed to play.
+        /// </summary>
+        public bool InPlayPeriod
+        {
+            get
+            {
+                foreach (PlayPeriod period in this.PlayPeriods)
+                {
+                    if(period.IsActive) return true;
+                }
+                return this.Admin;
+            }
+        }
+        /// <summary>
         /// A user is a humon being 
         /// </summary>
-        public User(string name, int birthTimestamp, string passwordHash, bool admin)
+        public User(int id, string name, int birthTimestamp, string passwordHash, bool admin, string avatar)
         {
+            this.id = id;
             this.name = name;
             this.birthDate = new DateTime(1970, 1, 1, 0, 0, 0, 0).ToLocalTime().AddSeconds(birthTimestamp);
             this.passwordHash = passwordHash;
             this.admin = admin;
+            this.avatar = avatar;
         }
         /// <summary>
         /// Checks if this user is allowed to play the given game.
         /// </summary>
         public bool AllowedToPlay(Game game)
         {
-            bool allowed = false; // nobody is allowed to play games... untill they are.
-            if (this.Age >= game.Age) allowed = true; // is user old enough?
-            if (this.Admin == true) allowed = true; // admins are allowed to play every game!!!!
+            if (this.Admin == true) return true; // admins are allowed to play every game!!!!
+
+            bool allowed = true; // nobody is allowed to play games... untill they are.
+
+            if (this.Age < game.Age) allowed = false; // is user old enough?
+
+            GameExeption exeption = this.GetGameExeption(game);
+            if (exeption != null) allowed = exeption.Allowed; // a game exeption overrides every condition exept admin and playperiod
+
+            if (!this.InPlayPeriod) allowed = false; // players are only allowed to play if a play period is active
             return allowed;
+        }
+        public GameExeption GetGameExeption(Game game)
+        {
+            foreach(GameExeption exeption in this.gameExeptions)
+            {
+                if (exeption.Game == game) return exeption;
+            }
+            return null;
         }
         /// <summary>
         /// Checks if given password is correct
@@ -99,6 +172,21 @@ namespace school_games_launcher
                 // return empty string if given password is empty
                 return "";
             }
+        }
+        /// <summary>
+        /// Sets a new password. Requires old password.
+        /// </summary>
+        /// <param name="oldPwd">Old Password</param>
+        /// <param name="newPwd">New Password</param>
+        /// <returns></returns>
+        public bool SetPassword(string oldPwd, string newPwd)
+        {
+            if (this.VerifyPassword(oldPwd))
+            {
+                this.passwordHash = this.HashPassword(newPwd);
+                return true;
+            }
+            return false;
         }
     }
 }
