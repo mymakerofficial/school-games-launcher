@@ -1012,6 +1012,7 @@ namespace school_games_launcher
         private User editUser;
         private string name = "";
         private string avatar = "";
+        private bool admin = false;
         private DateTime birthDate;
         public User EditUser
         {
@@ -1021,12 +1022,21 @@ namespace school_games_launcher
                 editUser = value;
                 Name = value.Name;
                 Avatar = value.Avatar;
+                Admin = value.Admin;
                 BirthDate = value.BirthDate;
                 ((Label)this.TabPage.Controls["lblEditUserNameOriginal"]).Text = value.Name;
                 ((Label)this.TabPage.Controls["lblEditUserId"]).Text = "ID: " + Convert.ToString(value.Id);
 
                 Program.app.Gui.SetAvatar(((PictureBox)this.TabPage.Controls["pbxEditUserAvatarOld"]), editUser.Avatar);
                 Program.app.Gui.SetAvatar(((PictureBox)this.TabPage.Controls["pbxEditUserAvatarOriginal"]), editUser.Avatar);
+
+                ((Label)this.TabPage.Controls["lblEditUserAdminWarning0"]).Visible = editUser.Id == 0;
+                ((CheckBox)this.TabPage.Controls["cbxEditUserAdmin"]).Enabled = editUser.Id != 0;
+                ((LinkLabel)this.TabPage.Controls["llblEditUserDelete"]).Visible = Program.app.ActiveUser.Admin && !editUser.Admin;
+
+                ((Label)this.TabPage.Controls["lblEditUserBirthdate"]).Visible =
+                    ((DateTimePicker)this.TabPage.Controls["dtpEditUserBirthdate"]).Visible =
+                    ((CheckBox)this.TabPage.Controls["cbxEditUserAdmin"]).Visible = Program.app.ActiveUser.Admin;
             }
         }
         public string Name
@@ -1058,6 +1068,15 @@ namespace school_games_launcher
                 Program.app.Gui.SetAvatar(((PictureBox)this.TabPage.Controls["pbxEditUserAvatar"]), avatar);
             }
         }
+        public bool Admin
+        {
+            get { return admin; }
+            set
+            {
+                admin = value;
+                ((CheckBox)this.TabPage.Controls["cbxEditUserAdmin"]).Checked = admin;
+            }
+        }
         public GUIEditUser(TabControl tabControl, TabPage tabPage) : base(tabControl, tabPage)
         {
 
@@ -1081,7 +1100,8 @@ namespace school_games_launcher
             {
                 EditUser.Name = Name;
                 EditUser.Avatar = Avatar;
-                if(Program.app.ActiveUser.Admin) EditUser.BirthDate = BirthDate;
+                EditUser.Admin = Admin;
+                if (Program.app.ActiveUser.Admin) EditUser.BirthDate = BirthDate;
                 Program.app.Gui.profile.Activate();
                 Program.app.Gui.profile.User = EditUser;
             }

@@ -53,7 +53,14 @@ namespace school_games_launcher
         /// <summary>
         /// Is admin?
         /// </summary>
-        public bool Admin { get { return admin; } }
+        public bool Admin { 
+            get { return admin; }
+            set
+            {
+                if (Program.app.ActiveUser != null)
+                    if (Program.app.ActiveUser.Admin) admin = value;
+            }
+        }
         /// <summary>
         /// List of the users play periods (when the user is allowed to play)
         /// </summary>

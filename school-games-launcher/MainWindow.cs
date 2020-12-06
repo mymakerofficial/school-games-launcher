@@ -629,5 +629,9 @@ namespace school_games_launcher
             Program.app.Logout();
         }
 
+        private void cbxEditUserAdmin_CheckedChanged(object sender, EventArgs e)
+        {
+            Program.app.Gui.editUser.Admin = this.cbxEditUserAdmin.Checked;
+        }
     }
 }

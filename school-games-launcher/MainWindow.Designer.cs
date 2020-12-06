@@ -200,7 +200,7 @@
             this.btnEditUserSave = new System.Windows.Forms.Button();
             this.dtpEditUserBirthdate = new System.Windows.Forms.DateTimePicker();
             this.tbxEditUserName = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
+            this.lblEditUserBirthdate = new System.Windows.Forms.Label();
             this.lblEditUserName = new System.Windows.Forms.Label();
             this.lblEditUserNameOriginal = new System.Windows.Forms.Label();
             this.pbxEditUserAvatarOriginal = new System.Windows.Forms.PictureBox();
@@ -276,6 +276,8 @@
             this.pbxWelcomeHome = new System.Windows.Forms.PictureBox();
             this.pbxWelcomeMinimize = new System.Windows.Forms.PictureBox();
             this.pbxWelcomeClose = new System.Windows.Forms.PictureBox();
+            this.cbxEditUserAdmin = new System.Windows.Forms.CheckBox();
+            this.lblEditUserAdminWarning0 = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabLibrary.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLibraryOptions)).BeginInit();
@@ -2159,6 +2161,8 @@
             // tabEditUser
             // 
             this.tabEditUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
+            this.tabEditUser.Controls.Add(this.lblEditUserAdminWarning0);
+            this.tabEditUser.Controls.Add(this.cbxEditUserAdmin);
             this.tabEditUser.Controls.Add(this.pbxEditUserAvatarOld);
             this.tabEditUser.Controls.Add(this.pbxEditUserAvatar5);
             this.tabEditUser.Controls.Add(this.pbxEditUserAvatar4);
@@ -2177,7 +2181,7 @@
             this.tabEditUser.Controls.Add(this.btnEditUserSave);
             this.tabEditUser.Controls.Add(this.dtpEditUserBirthdate);
             this.tabEditUser.Controls.Add(this.tbxEditUserName);
-            this.tabEditUser.Controls.Add(this.label15);
+            this.tabEditUser.Controls.Add(this.lblEditUserBirthdate);
             this.tabEditUser.Controls.Add(this.lblEditUserName);
             this.tabEditUser.Controls.Add(this.lblEditUserNameOriginal);
             this.tabEditUser.Controls.Add(this.pbxEditUserAvatarOriginal);
@@ -2289,7 +2293,7 @@
             this.llblEditUserDelete.Location = new System.Drawing.Point(47, 513);
             this.llblEditUserDelete.Name = "llblEditUserDelete";
             this.llblEditUserDelete.Size = new System.Drawing.Size(63, 13);
-            this.llblEditUserDelete.TabIndex = 7;
+            this.llblEditUserDelete.TabIndex = 8;
             this.llblEditUserDelete.TabStop = true;
             this.llblEditUserDelete.Text = "Delete User";
             this.llblEditUserDelete.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblEditUserDelete_LinkClicked);
@@ -2300,7 +2304,7 @@
             this.btnEditUserCancel.Location = new System.Drawing.Point(247, 426);
             this.btnEditUserCancel.Name = "btnEditUserCancel";
             this.btnEditUserCancel.Size = new System.Drawing.Size(103, 33);
-            this.btnEditUserCancel.TabIndex = 4;
+            this.btnEditUserCancel.TabIndex = 5;
             this.btnEditUserCancel.Text = "Cancel";
             this.btnEditUserCancel.UseVisualStyleBackColor = true;
             this.btnEditUserCancel.Click += new System.EventHandler(this.btnEditUserCancel_Click);
@@ -2311,7 +2315,7 @@
             this.btnEditUserUserRules.Location = new System.Drawing.Point(190, 465);
             this.btnEditUserUserRules.Name = "btnEditUserUserRules";
             this.btnEditUserUserRules.Size = new System.Drawing.Size(160, 33);
-            this.btnEditUserUserRules.TabIndex = 6;
+            this.btnEditUserUserRules.TabIndex = 7;
             this.btnEditUserUserRules.Text = "User Rules";
             this.btnEditUserUserRules.UseVisualStyleBackColor = true;
             // 
@@ -2321,7 +2325,7 @@
             this.btnEditUserChangePassword.Location = new System.Drawing.Point(29, 465);
             this.btnEditUserChangePassword.Name = "btnEditUserChangePassword";
             this.btnEditUserChangePassword.Size = new System.Drawing.Size(155, 33);
-            this.btnEditUserChangePassword.TabIndex = 5;
+            this.btnEditUserChangePassword.TabIndex = 6;
             this.btnEditUserChangePassword.Text = "Change Password";
             this.btnEditUserChangePassword.UseVisualStyleBackColor = true;
             this.btnEditUserChangePassword.Click += new System.EventHandler(this.btnEditUserChangePassword_Click);
@@ -2343,7 +2347,7 @@
             this.tbxEditUserAvatarInput.Location = new System.Drawing.Point(375, 217);
             this.tbxEditUserAvatarInput.Name = "tbxEditUserAvatarInput";
             this.tbxEditUserAvatarInput.Size = new System.Drawing.Size(274, 20);
-            this.tbxEditUserAvatarInput.TabIndex = 2;
+            this.tbxEditUserAvatarInput.TabIndex = 3;
             this.tbxEditUserAvatarInput.TextChanged += new System.EventHandler(this.tbxEditUserAvatarInput_TextChanged);
             // 
             // tbxEditUserAvatar
@@ -2361,7 +2365,7 @@
             this.btnEditUserSave.Location = new System.Drawing.Point(29, 426);
             this.btnEditUserSave.Name = "btnEditUserSave";
             this.btnEditUserSave.Size = new System.Drawing.Size(212, 33);
-            this.btnEditUserSave.TabIndex = 3;
+            this.btnEditUserSave.TabIndex = 4;
             this.btnEditUserSave.Text = "Save Changes";
             this.btnEditUserSave.UseVisualStyleBackColor = true;
             this.btnEditUserSave.Click += new System.EventHandler(this.btnEditUserSave_Click);
@@ -2371,7 +2375,7 @@
             this.dtpEditUserBirthdate.CalendarForeColor = System.Drawing.Color.White;
             this.dtpEditUserBirthdate.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(56)))), ((int)(((byte)(66)))));
             this.dtpEditUserBirthdate.CalendarTitleForeColor = System.Drawing.Color.White;
-            this.dtpEditUserBirthdate.Location = new System.Drawing.Point(32, 302);
+            this.dtpEditUserBirthdate.Location = new System.Drawing.Point(32, 283);
             this.dtpEditUserBirthdate.MinDate = new System.DateTime(1770, 1, 1, 0, 0, 0, 0);
             this.dtpEditUserBirthdate.Name = "dtpEditUserBirthdate";
             this.dtpEditUserBirthdate.Size = new System.Drawing.Size(209, 20);
@@ -2388,14 +2392,14 @@
             this.tbxEditUserName.TabIndex = 0;
             this.tbxEditUserName.TextChanged += new System.EventHandler(this.tbxEditUserName_TextChanged);
             // 
-            // label15
+            // lblEditUserBirthdate
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(29, 286);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(46, 13);
-            this.label15.TabIndex = 35;
-            this.label15.Text = "Bithdate";
+            this.lblEditUserBirthdate.AutoSize = true;
+            this.lblEditUserBirthdate.Location = new System.Drawing.Point(29, 267);
+            this.lblEditUserBirthdate.Name = "lblEditUserBirthdate";
+            this.lblEditUserBirthdate.Size = new System.Drawing.Size(46, 13);
+            this.lblEditUserBirthdate.TabIndex = 35;
+            this.lblEditUserBirthdate.Text = "Bithdate";
             // 
             // lblEditUserName
             // 
@@ -3222,6 +3226,28 @@
             this.pbxWelcomeClose.TabStop = false;
             this.pbxWelcomeClose.Click += new System.EventHandler(this.pbxWelcomeClose_Click);
             // 
+            // cbxEditUserAdmin
+            // 
+            this.cbxEditUserAdmin.AutoSize = true;
+            this.cbxEditUserAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbxEditUserAdmin.Location = new System.Drawing.Point(32, 342);
+            this.cbxEditUserAdmin.Name = "cbxEditUserAdmin";
+            this.cbxEditUserAdmin.Size = new System.Drawing.Size(52, 17);
+            this.cbxEditUserAdmin.TabIndex = 2;
+            this.cbxEditUserAdmin.Text = "Admin";
+            this.cbxEditUserAdmin.UseVisualStyleBackColor = true;
+            this.cbxEditUserAdmin.CheckedChanged += new System.EventHandler(this.cbxEditUserAdmin_CheckedChanged);
+            // 
+            // lblEditUserAdminWarning0
+            // 
+            this.lblEditUserAdminWarning0.AutoSize = true;
+            this.lblEditUserAdminWarning0.ForeColor = System.Drawing.Color.Yellow;
+            this.lblEditUserAdminWarning0.Location = new System.Drawing.Point(90, 344);
+            this.lblEditUserAdminWarning0.Name = "lblEditUserAdminWarning0";
+            this.lblEditUserAdminWarning0.Size = new System.Drawing.Size(128, 13);
+            this.lblEditUserAdminWarning0.TabIndex = 52;
+            this.lblEditUserAdminWarning0.Text = "User 0 needs to be admin";
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3554,7 +3580,7 @@
         private System.Windows.Forms.Button btnEditUserSave;
         private System.Windows.Forms.DateTimePicker dtpEditUserBirthdate;
         private System.Windows.Forms.TextBox tbxEditUserName;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label lblEditUserBirthdate;
         private System.Windows.Forms.Label lblEditUserName;
         private System.Windows.Forms.Label lblEditUserId;
         private System.Windows.Forms.LinkLabel llblEditUserDelete;
@@ -3619,6 +3645,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.LinkLabel llblOptionsLogout;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.CheckBox cbxEditUserAdmin;
+        private System.Windows.Forms.Label lblEditUserAdminWarning0;
     }
 }
 
