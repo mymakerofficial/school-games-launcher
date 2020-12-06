@@ -142,23 +142,32 @@ namespace school_games_launcher
             Loader loadedTimes = new Loader(this.configPath + "allowed_playtime.csv");
             foreach (List<string> timeData in loadedTimes.Data)
             {
-                PlayPeriod period = new PlayPeriod(Int32.Parse(timeData[1]), Int32.Parse(timeData[2]), Int32.Parse(timeData[3]));
-                this.GetUserById(Int32.Parse(timeData[0])).PlayPeriods.Add(period);// adds play period to correct player
+                if (this.GetUserById(Int32.Parse(timeData[0])) != null)
+                {
+                    PlayPeriod period = new PlayPeriod(Int32.Parse(timeData[1]), Int32.Parse(timeData[2]), Int32.Parse(timeData[3]));
+                    this.GetUserById(Int32.Parse(timeData[0])).PlayPeriods.Add(period);// adds play period to correct player
+                }
             }
             // loads game exeptions
             Loader loadedExeptions = new Loader(this.configPath + "play_exeptions.csv");
             foreach (List<string> exeptionData in loadedExeptions.Data)
             {
-                GameExeption exeption = new GameExeption(this.GetGameById(Int32.Parse(exeptionData[1])), Convert.ToBoolean(exeptionData[2]));
-                this.GetUserById(Int32.Parse(exeptionData[0])).GameExeptions.Add(exeption);// adds game exeption to correct player
+                if (this.GetGameById(Int32.Parse(exeptionData[1])) != null && this.GetUserById(Int32.Parse(exeptionData[0])) != null)
+                {
+                    GameExeption exeption = new GameExeption(this.GetGameById(Int32.Parse(exeptionData[1])), Convert.ToBoolean(exeptionData[2]));
+                    this.GetUserById(Int32.Parse(exeptionData[0])).GameExeptions.Add(exeption);// adds game exeption to correct player
+                }
             }
             // loads sessions
             Loader loadedSessions = new Loader(this.configPath + "sessions.csv");
             foreach (List<string> sessionData in loadedSessions.Data)
             {
-                Session session = new Session(this.GetGameById(Int32.Parse(sessionData[0])), this.GetUserById(Int32.Parse(sessionData[1])));
-                session.Set(Int32.Parse(sessionData[2]), Int32.Parse(sessionData[3]));
-                this.Sessions.Add(session);
+                if(this.GetGameById(Int32.Parse(sessionData[0])) != null && this.GetUserById(Int32.Parse(sessionData[1])) != null)
+                {
+                    Session session = new Session(this.GetGameById(Int32.Parse(sessionData[0])), this.GetUserById(Int32.Parse(sessionData[1])));
+                    session.Set(Int32.Parse(sessionData[2]), Int32.Parse(sessionData[3]));
+                    this.Sessions.Add(session);
+                }
             }
 
             // var hash = this.ActiveUser.HashPassword("admin");
@@ -277,7 +286,7 @@ namespace school_games_launcher
         public bool CreateUser(string name, DateTime birthDate, string password)
         {
             if (!this.CheckUser() || !this.ActiveUser.Admin) return false;
-            User user = new User(this.Users.Count, name, (int)new DateTimeOffset(birthDate).ToUnixTimeSeconds(), "", false, Convert.ToString(new Random().Next(0, 5)));
+            User user = new User(this.GetNextUserId(), name, (int)new DateTimeOffset(birthDate).ToUnixTimeSeconds(), "", false, Convert.ToString(new Random().Next(0, 5))); ;
             user.SetPassword("", password);// set user password
             for(int i = 0; i <= 6; i++)// create default PlayPeriods
             {
@@ -292,7 +301,7 @@ namespace school_games_launcher
         public bool CreateGame(string name, string path, int age, string coverart, int? steamId = null)
         {
             if (!this.CheckUser() || !this.ActiveUser.Admin) return false;
-            Game game = new Game(this.Games.Count, name, path, age, coverart);
+            Game game = new Game(this.GetNextGameId(), name, path, age, coverart);
             game.SteamId = steamId;
             this.Games.Add(game);
             return true;
@@ -419,6 +428,24 @@ namespace school_games_launcher
             }
 
             return duration;
+        }
+        public int GetNextUserId()
+        {
+            int id = 0;
+            foreach(User user in this.Users)
+            {
+                if (user.Id > id) id = user.Id;
+            }
+            return id + 1;
+        }
+        public int GetNextGameId()
+        {
+            int id = 0;
+            foreach (Game game in this.Games)
+            {
+                if (game.Id > id) id = game.Id;
+            }
+            return id + 1;
         }
         public void Exit()
         {
