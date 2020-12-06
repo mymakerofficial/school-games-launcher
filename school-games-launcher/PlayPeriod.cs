@@ -8,12 +8,10 @@ namespace school_games_launcher
 {
     public class PlayPeriod
     {
-        private DateTime startTime;
-        private DateTime endTime;
-        private int weekDay;
-        public DateTime StartTime { get { return startTime; } }
-        public DateTime EndTime { get { return endTime; } }
-        public int WeekDay { get { return weekDay; } }
+        public DateTime StartTime { get; set; }
+        public DateTime EndTime { get; set; }
+        public int WeekDay { get; set; }
+
         public int StartTimestamp
         {
             get
@@ -30,14 +28,14 @@ namespace school_games_launcher
         }
         public PlayPeriod(int weekDay, int startTime, int endTime)
         {
-            this.startTime = new DateTime(1970, 1, 1, 0, 0, 0, 0).ToLocalTime().AddSeconds(startTime);
-            this.endTime = new DateTime(1970, 1, 1, 0, 0, 0, 0).ToLocalTime().AddSeconds(endTime);
-            this.weekDay = weekDay;
+            this.StartTime = new DateTime(1970, 1, 1, 0, 0, 0, 0).ToLocalTime().AddSeconds(startTime);
+            this.EndTime = new DateTime(1970, 1, 1, 0, 0, 0, 0).ToLocalTime().AddSeconds(endTime);
+            this.WeekDay = weekDay;
         }
         public bool IsActive
         {
             get {// checks if current time is during weekDay and between startTime and endTime
-                return (int)DateTime.Now.DayOfWeek == this.weekDay && new DateTime(1970, 1, 1, 0, 0, 0, 0).ToLocalTime().Add(DateTime.Now.TimeOfDay) >= this.startTime && new DateTime(1970, 1, 1, 0, 0, 0, 0).ToLocalTime().Add(DateTime.Now.TimeOfDay) <= this.endTime; 
+                return (int)DateTime.Now.DayOfWeek == this.WeekDay && new DateTime(1970, 1, 1, 0, 0, 0, 0).ToLocalTime().Add(DateTime.Now.TimeOfDay) >= this.StartTime && new DateTime(1970, 1, 1, 0, 0, 0, 0).ToLocalTime().Add(DateTime.Now.TimeOfDay) <= this.EndTime; 
             }
         }
     }

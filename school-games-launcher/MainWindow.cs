@@ -653,5 +653,110 @@ namespace school_games_launcher
         {
             Program.app.Gui.userRules.GoToProfile();
         }
+
+        private void cbxPlayPeriodDay_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Program.app.Gui.playPeriod.WeekDay = cbxPlayPeriodDay.SelectedIndex;
+        }
+
+        private void tbxPlayPeriodStartTime_TextChanged(object sender, EventArgs e)
+        {
+            Program.app.Gui.playPeriod.StartTimeFormated = tbxPlayPeriodStartTime.Text;
+        }
+
+        private void tbxPlayPeriodEndTime_TextChanged(object sender, EventArgs e)
+        {
+            Program.app.Gui.playPeriod.EndTimeFormated = tbxPlayPeriodEndTime.Text;
+        }
+
+        private void btnPlayPeriodSave_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.playPeriod.Save();
+        }
+
+        private void tbxPlayPeriodCancel_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.playPeriod.Cancel();
+        }
+
+        private void pbxPlayPeriodHome_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.library.Activate();
+        }
+
+        private void pbxPlayPeriodProfile_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.profile.Activate();
+        }
+
+        private void pbxPlayPeriodOptions_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.options.Activate();
+        }
+
+        private void pbxPlayPeriodMinimize_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.Minimize();
+        }
+
+        private void pbxPlayPeriodClose_Click(object sender, EventArgs e)
+        {
+            Program.app.Exit();
+        }
+
+        private void pbxGameExeptionHome_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.library.Activate();
+        }
+
+        private void pbxGameExeptionProfile_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.profile.Activate();
+        }
+
+        private void pbxGameExeptionOptions_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.options.Activate();
+        }
+
+        private void pbxGameExeptionMInimize_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.Minimize();
+        }
+
+        private void pbxGameExeptionClose_Click(object sender, EventArgs e)
+        {
+            Program.app.Exit();
+        }
+
+        private void btnGameExeptionSave_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.gameExeption.Save();
+        }
+
+        private void btnGameExeptionCancel_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.gameExeption.Cancel();
+        }
+
+        private void llblGameExeptionDelete_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Program.app.Gui.gameExeption.Delete();
+        }
+
+        private void llblPlayPeriodDelete_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Program.app.Gui.playPeriod.Delete();
+        }
+
+        private void btnUserRulesAllowedPlaytimesAdd_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.userRules.AddPlayPeriod();
+        }
+
+        private void btnUserRulesAgeExeptionsAdd_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.userRules.AddGameExeption();
+        }
     }
 }

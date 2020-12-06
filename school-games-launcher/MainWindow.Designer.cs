@@ -273,6 +273,41 @@
             this.pbxWelcomeHome = new System.Windows.Forms.PictureBox();
             this.pbxWelcomeMinimize = new System.Windows.Forms.PictureBox();
             this.pbxWelcomeClose = new System.Windows.Forms.PictureBox();
+            this.tabPlayPeriod = new System.Windows.Forms.TabPage();
+            this.lblPlayPeriodTitle = new System.Windows.Forms.Label();
+            this.pbxPlayPeriodOptions = new System.Windows.Forms.PictureBox();
+            this.pbxPlayPeriodProfile = new System.Windows.Forms.PictureBox();
+            this.pbxPlayPeriodHome = new System.Windows.Forms.PictureBox();
+            this.pbxPlayPeriodMinimize = new System.Windows.Forms.PictureBox();
+            this.pbxPlayPeriodClose = new System.Windows.Forms.PictureBox();
+            this.lblPlayPeriodUserName = new System.Windows.Forms.Label();
+            this.pbxPlayPeriodAvatar = new System.Windows.Forms.PictureBox();
+            this.tbxPlayPeriodStartTime = new System.Windows.Forms.TextBox();
+            this.lblPlayPeriodStartTime = new System.Windows.Forms.Label();
+            this.lblPlayPeriodEndTime = new System.Windows.Forms.Label();
+            this.tbxPlayPeriodEndTime = new System.Windows.Forms.TextBox();
+            this.cbxPlayPeriodDay = new System.Windows.Forms.ComboBox();
+            this.lblPlayPeriodDay = new System.Windows.Forms.Label();
+            this.tabGameExeption = new System.Windows.Forms.TabPage();
+            this.lblPlayGameExeptionName = new System.Windows.Forms.Label();
+            this.pbxGameExeptionAvatar = new System.Windows.Forms.PictureBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.pbxGameExeptionOptions = new System.Windows.Forms.PictureBox();
+            this.pbxGameExeptionProfile = new System.Windows.Forms.PictureBox();
+            this.pbxGameExeptionHome = new System.Windows.Forms.PictureBox();
+            this.pbxGameExeptionMInimize = new System.Windows.Forms.PictureBox();
+            this.pbxGameExeptionClose = new System.Windows.Forms.PictureBox();
+            this.lblGameExeptionGame = new System.Windows.Forms.Label();
+            this.cbxGameExeptionGame = new System.Windows.Forms.ComboBox();
+            this.cbxGameExeptionAlowed = new System.Windows.Forms.CheckBox();
+            this.btnPlayPeriodSave = new System.Windows.Forms.Button();
+            this.tbxPlayPeriodCancel = new System.Windows.Forms.Button();
+            this.lblPlayPeriodStartTimeOut = new System.Windows.Forms.Label();
+            this.lblPlayPeriodEndTimeOut = new System.Windows.Forms.Label();
+            this.btnGameExeptionCancel = new System.Windows.Forms.Button();
+            this.btnGameExeptionSave = new System.Windows.Forms.Button();
+            this.llblGameExeptionDelete = new System.Windows.Forms.LinkLabel();
+            this.llblPlayPeriodDelete = new System.Windows.Forms.LinkLabel();
             this.tabControl.SuspendLayout();
             this.tabLibrary.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLibraryOptions)).BeginInit();
@@ -384,6 +419,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxWelcomeHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxWelcomeMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxWelcomeClose)).BeginInit();
+            this.tabPlayPeriod.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxPlayPeriodOptions)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxPlayPeriodProfile)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxPlayPeriodHome)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxPlayPeriodMinimize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxPlayPeriodClose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxPlayPeriodAvatar)).BeginInit();
+            this.tabGameExeption.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxGameExeptionAvatar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxGameExeptionOptions)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxGameExeptionProfile)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxGameExeptionHome)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxGameExeptionMInimize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxGameExeptionClose)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -400,6 +449,8 @@
             this.tabControl.Controls.Add(this.tabEditUser);
             this.tabControl.Controls.Add(this.tabChangePassword);
             this.tabControl.Controls.Add(this.tabEditUserRules);
+            this.tabControl.Controls.Add(this.tabPlayPeriod);
+            this.tabControl.Controls.Add(this.tabGameExeption);
             this.tabControl.Controls.Add(this.tabWelcome);
             this.tabControl.Location = new System.Drawing.Point(-4, -5);
             this.tabControl.Margin = new System.Windows.Forms.Padding(0);
@@ -2749,6 +2800,7 @@
             this.btnUserRulesAgeExeptionsAdd.TabIndex = 1;
             this.btnUserRulesAgeExeptionsAdd.Text = "Add";
             this.btnUserRulesAgeExeptionsAdd.UseVisualStyleBackColor = true;
+            this.btnUserRulesAgeExeptionsAdd.Click += new System.EventHandler(this.btnUserRulesAgeExeptionsAdd_Click);
             // 
             // btnUserRulesAllowedPlaytimesAdd
             // 
@@ -2759,6 +2811,7 @@
             this.btnUserRulesAllowedPlaytimesAdd.TabIndex = 0;
             this.btnUserRulesAllowedPlaytimesAdd.Text = "Add";
             this.btnUserRulesAllowedPlaytimesAdd.UseVisualStyleBackColor = true;
+            this.btnUserRulesAllowedPlaytimesAdd.Click += new System.EventHandler(this.btnUserRulesAllowedPlaytimesAdd_Click);
             // 
             // lblUserRulesUserName
             // 
@@ -3198,6 +3251,417 @@
             this.pbxWelcomeClose.TabStop = false;
             this.pbxWelcomeClose.Click += new System.EventHandler(this.pbxWelcomeClose_Click);
             // 
+            // tabPlayPeriod
+            // 
+            this.tabPlayPeriod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
+            this.tabPlayPeriod.Controls.Add(this.llblPlayPeriodDelete);
+            this.tabPlayPeriod.Controls.Add(this.lblPlayPeriodEndTimeOut);
+            this.tabPlayPeriod.Controls.Add(this.lblPlayPeriodStartTimeOut);
+            this.tabPlayPeriod.Controls.Add(this.tbxPlayPeriodCancel);
+            this.tabPlayPeriod.Controls.Add(this.btnPlayPeriodSave);
+            this.tabPlayPeriod.Controls.Add(this.lblPlayPeriodDay);
+            this.tabPlayPeriod.Controls.Add(this.cbxPlayPeriodDay);
+            this.tabPlayPeriod.Controls.Add(this.lblPlayPeriodEndTime);
+            this.tabPlayPeriod.Controls.Add(this.tbxPlayPeriodEndTime);
+            this.tabPlayPeriod.Controls.Add(this.lblPlayPeriodStartTime);
+            this.tabPlayPeriod.Controls.Add(this.tbxPlayPeriodStartTime);
+            this.tabPlayPeriod.Controls.Add(this.lblPlayPeriodUserName);
+            this.tabPlayPeriod.Controls.Add(this.pbxPlayPeriodAvatar);
+            this.tabPlayPeriod.Controls.Add(this.lblPlayPeriodTitle);
+            this.tabPlayPeriod.Controls.Add(this.pbxPlayPeriodOptions);
+            this.tabPlayPeriod.Controls.Add(this.pbxPlayPeriodProfile);
+            this.tabPlayPeriod.Controls.Add(this.pbxPlayPeriodHome);
+            this.tabPlayPeriod.Controls.Add(this.pbxPlayPeriodMinimize);
+            this.tabPlayPeriod.Controls.Add(this.pbxPlayPeriodClose);
+            this.tabPlayPeriod.ForeColor = System.Drawing.Color.White;
+            this.tabPlayPeriod.Location = new System.Drawing.Point(4, 22);
+            this.tabPlayPeriod.Name = "tabPlayPeriod";
+            this.tabPlayPeriod.Size = new System.Drawing.Size(1144, 723);
+            this.tabPlayPeriod.TabIndex = 13;
+            this.tabPlayPeriod.Text = "Play Period";
+            // 
+            // lblPlayPeriodTitle
+            // 
+            this.lblPlayPeriodTitle.AutoSize = true;
+            this.lblPlayPeriodTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayPeriodTitle.Location = new System.Drawing.Point(25, 45);
+            this.lblPlayPeriodTitle.Name = "lblPlayPeriodTitle";
+            this.lblPlayPeriodTitle.Size = new System.Drawing.Size(138, 37);
+            this.lblPlayPeriodTitle.TabIndex = 23;
+            this.lblPlayPeriodTitle.Text = "Playtime";
+            // 
+            // pbxPlayPeriodOptions
+            // 
+            this.pbxPlayPeriodOptions.Image = global::school_games_launcher.Properties.Resources.options_button;
+            this.pbxPlayPeriodOptions.Location = new System.Drawing.Point(125, 0);
+            this.pbxPlayPeriodOptions.Name = "pbxPlayPeriodOptions";
+            this.pbxPlayPeriodOptions.Size = new System.Drawing.Size(75, 25);
+            this.pbxPlayPeriodOptions.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxPlayPeriodOptions.TabIndex = 28;
+            this.pbxPlayPeriodOptions.TabStop = false;
+            this.pbxPlayPeriodOptions.Click += new System.EventHandler(this.pbxPlayPeriodOptions_Click);
+            // 
+            // pbxPlayPeriodProfile
+            // 
+            this.pbxPlayPeriodProfile.Image = global::school_games_launcher.Properties.Resources.profile_button;
+            this.pbxPlayPeriodProfile.Location = new System.Drawing.Point(50, 0);
+            this.pbxPlayPeriodProfile.Name = "pbxPlayPeriodProfile";
+            this.pbxPlayPeriodProfile.Size = new System.Drawing.Size(75, 25);
+            this.pbxPlayPeriodProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxPlayPeriodProfile.TabIndex = 27;
+            this.pbxPlayPeriodProfile.TabStop = false;
+            this.pbxPlayPeriodProfile.Click += new System.EventHandler(this.pbxPlayPeriodProfile_Click);
+            // 
+            // pbxPlayPeriodHome
+            // 
+            this.pbxPlayPeriodHome.Image = global::school_games_launcher.Properties.Resources.home_button;
+            this.pbxPlayPeriodHome.Location = new System.Drawing.Point(0, 0);
+            this.pbxPlayPeriodHome.Name = "pbxPlayPeriodHome";
+            this.pbxPlayPeriodHome.Size = new System.Drawing.Size(50, 25);
+            this.pbxPlayPeriodHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxPlayPeriodHome.TabIndex = 26;
+            this.pbxPlayPeriodHome.TabStop = false;
+            this.pbxPlayPeriodHome.Click += new System.EventHandler(this.pbxPlayPeriodHome_Click);
+            // 
+            // pbxPlayPeriodMinimize
+            // 
+            this.pbxPlayPeriodMinimize.Image = ((System.Drawing.Image)(resources.GetObject("pbxPlayPeriodMinimize.Image")));
+            this.pbxPlayPeriodMinimize.Location = new System.Drawing.Point(1036, 0);
+            this.pbxPlayPeriodMinimize.Name = "pbxPlayPeriodMinimize";
+            this.pbxPlayPeriodMinimize.Size = new System.Drawing.Size(50, 25);
+            this.pbxPlayPeriodMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxPlayPeriodMinimize.TabIndex = 25;
+            this.pbxPlayPeriodMinimize.TabStop = false;
+            this.pbxPlayPeriodMinimize.Click += new System.EventHandler(this.pbxPlayPeriodMinimize_Click);
+            // 
+            // pbxPlayPeriodClose
+            // 
+            this.pbxPlayPeriodClose.Image = global::school_games_launcher.Properties.Resources.close_button;
+            this.pbxPlayPeriodClose.Location = new System.Drawing.Point(1086, 0);
+            this.pbxPlayPeriodClose.Name = "pbxPlayPeriodClose";
+            this.pbxPlayPeriodClose.Size = new System.Drawing.Size(50, 25);
+            this.pbxPlayPeriodClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxPlayPeriodClose.TabIndex = 24;
+            this.pbxPlayPeriodClose.TabStop = false;
+            this.pbxPlayPeriodClose.Click += new System.EventHandler(this.pbxPlayPeriodClose_Click);
+            // 
+            // lblPlayPeriodUserName
+            // 
+            this.lblPlayPeriodUserName.AutoSize = true;
+            this.lblPlayPeriodUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayPeriodUserName.Location = new System.Drawing.Point(78, 122);
+            this.lblPlayPeriodUserName.Name = "lblPlayPeriodUserName";
+            this.lblPlayPeriodUserName.Size = new System.Drawing.Size(49, 24);
+            this.lblPlayPeriodUserName.TabIndex = 30;
+            this.lblPlayPeriodUserName.Text = "User";
+            // 
+            // pbxPlayPeriodAvatar
+            // 
+            this.pbxPlayPeriodAvatar.Image = global::school_games_launcher.Properties.Resources.avatar_placeholder;
+            this.pbxPlayPeriodAvatar.Location = new System.Drawing.Point(32, 114);
+            this.pbxPlayPeriodAvatar.Name = "pbxPlayPeriodAvatar";
+            this.pbxPlayPeriodAvatar.Size = new System.Drawing.Size(40, 40);
+            this.pbxPlayPeriodAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxPlayPeriodAvatar.TabIndex = 29;
+            this.pbxPlayPeriodAvatar.TabStop = false;
+            // 
+            // tbxPlayPeriodStartTime
+            // 
+            this.tbxPlayPeriodStartTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(56)))), ((int)(((byte)(66)))));
+            this.tbxPlayPeriodStartTime.ForeColor = System.Drawing.Color.White;
+            this.tbxPlayPeriodStartTime.Location = new System.Drawing.Point(34, 312);
+            this.tbxPlayPeriodStartTime.Name = "tbxPlayPeriodStartTime";
+            this.tbxPlayPeriodStartTime.Size = new System.Drawing.Size(190, 20);
+            this.tbxPlayPeriodStartTime.TabIndex = 31;
+            this.tbxPlayPeriodStartTime.TextChanged += new System.EventHandler(this.tbxPlayPeriodStartTime_TextChanged);
+            // 
+            // lblPlayPeriodStartTime
+            // 
+            this.lblPlayPeriodStartTime.AutoSize = true;
+            this.lblPlayPeriodStartTime.Location = new System.Drawing.Point(34, 293);
+            this.lblPlayPeriodStartTime.Name = "lblPlayPeriodStartTime";
+            this.lblPlayPeriodStartTime.Size = new System.Drawing.Size(204, 13);
+            this.lblPlayPeriodStartTime.TabIndex = 32;
+            this.lblPlayPeriodStartTime.Text = "Start time (hh:mm) (min: 01:00 max: 23:59)";
+            // 
+            // lblPlayPeriodEndTime
+            // 
+            this.lblPlayPeriodEndTime.AutoSize = true;
+            this.lblPlayPeriodEndTime.Location = new System.Drawing.Point(34, 367);
+            this.lblPlayPeriodEndTime.Name = "lblPlayPeriodEndTime";
+            this.lblPlayPeriodEndTime.Size = new System.Drawing.Size(201, 13);
+            this.lblPlayPeriodEndTime.TabIndex = 34;
+            this.lblPlayPeriodEndTime.Text = "End time (hh:mm) (min: 01:00 max: 23:59)";
+            // 
+            // tbxPlayPeriodEndTime
+            // 
+            this.tbxPlayPeriodEndTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(56)))), ((int)(((byte)(66)))));
+            this.tbxPlayPeriodEndTime.ForeColor = System.Drawing.Color.White;
+            this.tbxPlayPeriodEndTime.Location = new System.Drawing.Point(34, 386);
+            this.tbxPlayPeriodEndTime.Name = "tbxPlayPeriodEndTime";
+            this.tbxPlayPeriodEndTime.Size = new System.Drawing.Size(190, 20);
+            this.tbxPlayPeriodEndTime.TabIndex = 33;
+            this.tbxPlayPeriodEndTime.TextChanged += new System.EventHandler(this.tbxPlayPeriodEndTime_TextChanged);
+            // 
+            // cbxPlayPeriodDay
+            // 
+            this.cbxPlayPeriodDay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(56)))), ((int)(((byte)(66)))));
+            this.cbxPlayPeriodDay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbxPlayPeriodDay.ForeColor = System.Drawing.Color.White;
+            this.cbxPlayPeriodDay.FormattingEnabled = true;
+            this.cbxPlayPeriodDay.Items.AddRange(new object[] {
+            "Su",
+            "Mo",
+            "Tu",
+            "We",
+            "Th",
+            "Fr",
+            "Sa"});
+            this.cbxPlayPeriodDay.Location = new System.Drawing.Point(32, 231);
+            this.cbxPlayPeriodDay.Name = "cbxPlayPeriodDay";
+            this.cbxPlayPeriodDay.Size = new System.Drawing.Size(192, 21);
+            this.cbxPlayPeriodDay.TabIndex = 35;
+            this.cbxPlayPeriodDay.SelectedIndexChanged += new System.EventHandler(this.cbxPlayPeriodDay_SelectedIndexChanged);
+            // 
+            // lblPlayPeriodDay
+            // 
+            this.lblPlayPeriodDay.AutoSize = true;
+            this.lblPlayPeriodDay.Location = new System.Drawing.Point(37, 212);
+            this.lblPlayPeriodDay.Name = "lblPlayPeriodDay";
+            this.lblPlayPeriodDay.Size = new System.Drawing.Size(56, 13);
+            this.lblPlayPeriodDay.TabIndex = 36;
+            this.lblPlayPeriodDay.Text = "Week day";
+            // 
+            // tabGameExeption
+            // 
+            this.tabGameExeption.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
+            this.tabGameExeption.Controls.Add(this.llblGameExeptionDelete);
+            this.tabGameExeption.Controls.Add(this.btnGameExeptionCancel);
+            this.tabGameExeption.Controls.Add(this.btnGameExeptionSave);
+            this.tabGameExeption.Controls.Add(this.cbxGameExeptionAlowed);
+            this.tabGameExeption.Controls.Add(this.lblGameExeptionGame);
+            this.tabGameExeption.Controls.Add(this.cbxGameExeptionGame);
+            this.tabGameExeption.Controls.Add(this.lblPlayGameExeptionName);
+            this.tabGameExeption.Controls.Add(this.pbxGameExeptionAvatar);
+            this.tabGameExeption.Controls.Add(this.label13);
+            this.tabGameExeption.Controls.Add(this.pbxGameExeptionOptions);
+            this.tabGameExeption.Controls.Add(this.pbxGameExeptionProfile);
+            this.tabGameExeption.Controls.Add(this.pbxGameExeptionHome);
+            this.tabGameExeption.Controls.Add(this.pbxGameExeptionMInimize);
+            this.tabGameExeption.Controls.Add(this.pbxGameExeptionClose);
+            this.tabGameExeption.ForeColor = System.Drawing.SystemColors.Control;
+            this.tabGameExeption.Location = new System.Drawing.Point(4, 22);
+            this.tabGameExeption.Name = "tabGameExeption";
+            this.tabGameExeption.Size = new System.Drawing.Size(1144, 723);
+            this.tabGameExeption.TabIndex = 14;
+            this.tabGameExeption.Text = "Game Exeption";
+            // 
+            // lblPlayGameExeptionName
+            // 
+            this.lblPlayGameExeptionName.AutoSize = true;
+            this.lblPlayGameExeptionName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayGameExeptionName.Location = new System.Drawing.Point(78, 122);
+            this.lblPlayGameExeptionName.Name = "lblPlayGameExeptionName";
+            this.lblPlayGameExeptionName.Size = new System.Drawing.Size(49, 24);
+            this.lblPlayGameExeptionName.TabIndex = 38;
+            this.lblPlayGameExeptionName.Text = "User";
+            // 
+            // pbxGameExeptionAvatar
+            // 
+            this.pbxGameExeptionAvatar.Image = global::school_games_launcher.Properties.Resources.avatar_placeholder;
+            this.pbxGameExeptionAvatar.Location = new System.Drawing.Point(32, 114);
+            this.pbxGameExeptionAvatar.Name = "pbxGameExeptionAvatar";
+            this.pbxGameExeptionAvatar.Size = new System.Drawing.Size(40, 40);
+            this.pbxGameExeptionAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxGameExeptionAvatar.TabIndex = 37;
+            this.pbxGameExeptionAvatar.TabStop = false;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(25, 45);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(206, 37);
+            this.label13.TabIndex = 31;
+            this.label13.Text = "Age Exeption";
+            // 
+            // pbxGameExeptionOptions
+            // 
+            this.pbxGameExeptionOptions.Image = global::school_games_launcher.Properties.Resources.options_button;
+            this.pbxGameExeptionOptions.Location = new System.Drawing.Point(125, 0);
+            this.pbxGameExeptionOptions.Name = "pbxGameExeptionOptions";
+            this.pbxGameExeptionOptions.Size = new System.Drawing.Size(75, 25);
+            this.pbxGameExeptionOptions.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxGameExeptionOptions.TabIndex = 36;
+            this.pbxGameExeptionOptions.TabStop = false;
+            this.pbxGameExeptionOptions.Click += new System.EventHandler(this.pbxGameExeptionOptions_Click);
+            // 
+            // pbxGameExeptionProfile
+            // 
+            this.pbxGameExeptionProfile.Image = global::school_games_launcher.Properties.Resources.profile_button;
+            this.pbxGameExeptionProfile.Location = new System.Drawing.Point(50, 0);
+            this.pbxGameExeptionProfile.Name = "pbxGameExeptionProfile";
+            this.pbxGameExeptionProfile.Size = new System.Drawing.Size(75, 25);
+            this.pbxGameExeptionProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxGameExeptionProfile.TabIndex = 35;
+            this.pbxGameExeptionProfile.TabStop = false;
+            this.pbxGameExeptionProfile.Click += new System.EventHandler(this.pbxGameExeptionProfile_Click);
+            // 
+            // pbxGameExeptionHome
+            // 
+            this.pbxGameExeptionHome.Image = global::school_games_launcher.Properties.Resources.home_button;
+            this.pbxGameExeptionHome.Location = new System.Drawing.Point(0, 0);
+            this.pbxGameExeptionHome.Name = "pbxGameExeptionHome";
+            this.pbxGameExeptionHome.Size = new System.Drawing.Size(50, 25);
+            this.pbxGameExeptionHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxGameExeptionHome.TabIndex = 34;
+            this.pbxGameExeptionHome.TabStop = false;
+            this.pbxGameExeptionHome.Click += new System.EventHandler(this.pbxGameExeptionHome_Click);
+            // 
+            // pbxGameExeptionMInimize
+            // 
+            this.pbxGameExeptionMInimize.Image = ((System.Drawing.Image)(resources.GetObject("pbxGameExeptionMInimize.Image")));
+            this.pbxGameExeptionMInimize.Location = new System.Drawing.Point(1036, 0);
+            this.pbxGameExeptionMInimize.Name = "pbxGameExeptionMInimize";
+            this.pbxGameExeptionMInimize.Size = new System.Drawing.Size(50, 25);
+            this.pbxGameExeptionMInimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxGameExeptionMInimize.TabIndex = 33;
+            this.pbxGameExeptionMInimize.TabStop = false;
+            this.pbxGameExeptionMInimize.Click += new System.EventHandler(this.pbxGameExeptionMInimize_Click);
+            // 
+            // pbxGameExeptionClose
+            // 
+            this.pbxGameExeptionClose.Image = global::school_games_launcher.Properties.Resources.close_button;
+            this.pbxGameExeptionClose.Location = new System.Drawing.Point(1086, 0);
+            this.pbxGameExeptionClose.Name = "pbxGameExeptionClose";
+            this.pbxGameExeptionClose.Size = new System.Drawing.Size(50, 25);
+            this.pbxGameExeptionClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxGameExeptionClose.TabIndex = 32;
+            this.pbxGameExeptionClose.TabStop = false;
+            this.pbxGameExeptionClose.Click += new System.EventHandler(this.pbxGameExeptionClose_Click);
+            // 
+            // lblGameExeptionGame
+            // 
+            this.lblGameExeptionGame.AutoSize = true;
+            this.lblGameExeptionGame.Location = new System.Drawing.Point(29, 187);
+            this.lblGameExeptionGame.Name = "lblGameExeptionGame";
+            this.lblGameExeptionGame.Size = new System.Drawing.Size(35, 13);
+            this.lblGameExeptionGame.TabIndex = 40;
+            this.lblGameExeptionGame.Text = "Game";
+            // 
+            // cbxGameExeptionGame
+            // 
+            this.cbxGameExeptionGame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(56)))), ((int)(((byte)(66)))));
+            this.cbxGameExeptionGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbxGameExeptionGame.ForeColor = System.Drawing.Color.White;
+            this.cbxGameExeptionGame.FormattingEnabled = true;
+            this.cbxGameExeptionGame.Items.AddRange(new object[] {
+            ""});
+            this.cbxGameExeptionGame.Location = new System.Drawing.Point(32, 205);
+            this.cbxGameExeptionGame.Name = "cbxGameExeptionGame";
+            this.cbxGameExeptionGame.Size = new System.Drawing.Size(273, 21);
+            this.cbxGameExeptionGame.TabIndex = 39;
+            // 
+            // cbxGameExeptionAlowed
+            // 
+            this.cbxGameExeptionAlowed.AutoSize = true;
+            this.cbxGameExeptionAlowed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbxGameExeptionAlowed.Location = new System.Drawing.Point(32, 254);
+            this.cbxGameExeptionAlowed.Name = "cbxGameExeptionAlowed";
+            this.cbxGameExeptionAlowed.Size = new System.Drawing.Size(95, 17);
+            this.cbxGameExeptionAlowed.TabIndex = 41;
+            this.cbxGameExeptionAlowed.Text = "Alowed to play ";
+            this.cbxGameExeptionAlowed.UseVisualStyleBackColor = true;
+            // 
+            // btnPlayPeriodSave
+            // 
+            this.btnPlayPeriodSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPlayPeriodSave.Location = new System.Drawing.Point(34, 443);
+            this.btnPlayPeriodSave.Name = "btnPlayPeriodSave";
+            this.btnPlayPeriodSave.Size = new System.Drawing.Size(190, 23);
+            this.btnPlayPeriodSave.TabIndex = 37;
+            this.btnPlayPeriodSave.Text = "Save";
+            this.btnPlayPeriodSave.UseVisualStyleBackColor = true;
+            this.btnPlayPeriodSave.Click += new System.EventHandler(this.btnPlayPeriodSave_Click);
+            // 
+            // tbxPlayPeriodCancel
+            // 
+            this.tbxPlayPeriodCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.tbxPlayPeriodCancel.Location = new System.Drawing.Point(34, 472);
+            this.tbxPlayPeriodCancel.Name = "tbxPlayPeriodCancel";
+            this.tbxPlayPeriodCancel.Size = new System.Drawing.Size(190, 23);
+            this.tbxPlayPeriodCancel.TabIndex = 38;
+            this.tbxPlayPeriodCancel.Text = "Cancel";
+            this.tbxPlayPeriodCancel.UseVisualStyleBackColor = true;
+            this.tbxPlayPeriodCancel.Click += new System.EventHandler(this.tbxPlayPeriodCancel_Click);
+            // 
+            // lblPlayPeriodStartTimeOut
+            // 
+            this.lblPlayPeriodStartTimeOut.AutoSize = true;
+            this.lblPlayPeriodStartTimeOut.ForeColor = System.Drawing.Color.Cyan;
+            this.lblPlayPeriodStartTimeOut.Location = new System.Drawing.Point(230, 315);
+            this.lblPlayPeriodStartTimeOut.Name = "lblPlayPeriodStartTimeOut";
+            this.lblPlayPeriodStartTimeOut.Size = new System.Drawing.Size(38, 13);
+            this.lblPlayPeriodStartTimeOut.TabIndex = 39;
+            this.lblPlayPeriodStartTimeOut.Text = "hh:mm";
+            // 
+            // lblPlayPeriodEndTimeOut
+            // 
+            this.lblPlayPeriodEndTimeOut.AutoSize = true;
+            this.lblPlayPeriodEndTimeOut.ForeColor = System.Drawing.Color.Cyan;
+            this.lblPlayPeriodEndTimeOut.Location = new System.Drawing.Point(230, 389);
+            this.lblPlayPeriodEndTimeOut.Name = "lblPlayPeriodEndTimeOut";
+            this.lblPlayPeriodEndTimeOut.Size = new System.Drawing.Size(38, 13);
+            this.lblPlayPeriodEndTimeOut.TabIndex = 40;
+            this.lblPlayPeriodEndTimeOut.Text = "hh:mm";
+            // 
+            // btnGameExeptionCancel
+            // 
+            this.btnGameExeptionCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGameExeptionCancel.Location = new System.Drawing.Point(32, 335);
+            this.btnGameExeptionCancel.Name = "btnGameExeptionCancel";
+            this.btnGameExeptionCancel.Size = new System.Drawing.Size(190, 23);
+            this.btnGameExeptionCancel.TabIndex = 43;
+            this.btnGameExeptionCancel.Text = "Cancel";
+            this.btnGameExeptionCancel.UseVisualStyleBackColor = true;
+            this.btnGameExeptionCancel.Click += new System.EventHandler(this.btnGameExeptionCancel_Click);
+            // 
+            // btnGameExeptionSave
+            // 
+            this.btnGameExeptionSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGameExeptionSave.Location = new System.Drawing.Point(32, 306);
+            this.btnGameExeptionSave.Name = "btnGameExeptionSave";
+            this.btnGameExeptionSave.Size = new System.Drawing.Size(190, 23);
+            this.btnGameExeptionSave.TabIndex = 42;
+            this.btnGameExeptionSave.Text = "Save";
+            this.btnGameExeptionSave.UseVisualStyleBackColor = true;
+            this.btnGameExeptionSave.Click += new System.EventHandler(this.btnGameExeptionSave_Click);
+            // 
+            // llblGameExeptionDelete
+            // 
+            this.llblGameExeptionDelete.AutoSize = true;
+            this.llblGameExeptionDelete.LinkColor = System.Drawing.Color.Red;
+            this.llblGameExeptionDelete.Location = new System.Drawing.Point(32, 385);
+            this.llblGameExeptionDelete.Name = "llblGameExeptionDelete";
+            this.llblGameExeptionDelete.Size = new System.Drawing.Size(38, 13);
+            this.llblGameExeptionDelete.TabIndex = 44;
+            this.llblGameExeptionDelete.TabStop = true;
+            this.llblGameExeptionDelete.Text = "Delete";
+            this.llblGameExeptionDelete.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblGameExeptionDelete_LinkClicked);
+            // 
+            // llblPlayPeriodDelete
+            // 
+            this.llblPlayPeriodDelete.AutoSize = true;
+            this.llblPlayPeriodDelete.LinkColor = System.Drawing.Color.Red;
+            this.llblPlayPeriodDelete.Location = new System.Drawing.Point(34, 518);
+            this.llblPlayPeriodDelete.Name = "llblPlayPeriodDelete";
+            this.llblPlayPeriodDelete.Size = new System.Drawing.Size(38, 13);
+            this.llblPlayPeriodDelete.TabIndex = 45;
+            this.llblPlayPeriodDelete.TabStop = true;
+            this.llblPlayPeriodDelete.Text = "Delete";
+            this.llblPlayPeriodDelete.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblPlayPeriodDelete_LinkClicked);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3341,6 +3805,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxWelcomeHome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxWelcomeMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxWelcomeClose)).EndInit();
+            this.tabPlayPeriod.ResumeLayout(false);
+            this.tabPlayPeriod.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxPlayPeriodOptions)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxPlayPeriodProfile)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxPlayPeriodHome)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxPlayPeriodMinimize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxPlayPeriodClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxPlayPeriodAvatar)).EndInit();
+            this.tabGameExeption.ResumeLayout(false);
+            this.tabGameExeption.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxGameExeptionAvatar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxGameExeptionOptions)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxGameExeptionProfile)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxGameExeptionHome)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxGameExeptionMInimize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxGameExeptionClose)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3590,6 +4070,41 @@
         private System.Windows.Forms.Button btnProfileUserRules;
         private System.Windows.Forms.CheckBox cbxEditUserAdmin;
         private System.Windows.Forms.Label lblEditUserAdminWarning0;
+        private System.Windows.Forms.TabPage tabPlayPeriod;
+        private System.Windows.Forms.Label lblPlayPeriodDay;
+        private System.Windows.Forms.ComboBox cbxPlayPeriodDay;
+        private System.Windows.Forms.Label lblPlayPeriodEndTime;
+        private System.Windows.Forms.TextBox tbxPlayPeriodEndTime;
+        private System.Windows.Forms.Label lblPlayPeriodStartTime;
+        private System.Windows.Forms.TextBox tbxPlayPeriodStartTime;
+        private System.Windows.Forms.Label lblPlayPeriodUserName;
+        private System.Windows.Forms.PictureBox pbxPlayPeriodAvatar;
+        private System.Windows.Forms.Label lblPlayPeriodTitle;
+        private System.Windows.Forms.PictureBox pbxPlayPeriodOptions;
+        private System.Windows.Forms.PictureBox pbxPlayPeriodProfile;
+        private System.Windows.Forms.PictureBox pbxPlayPeriodHome;
+        private System.Windows.Forms.PictureBox pbxPlayPeriodMinimize;
+        private System.Windows.Forms.PictureBox pbxPlayPeriodClose;
+        private System.Windows.Forms.TabPage tabGameExeption;
+        private System.Windows.Forms.CheckBox cbxGameExeptionAlowed;
+        private System.Windows.Forms.Label lblGameExeptionGame;
+        private System.Windows.Forms.ComboBox cbxGameExeptionGame;
+        private System.Windows.Forms.Label lblPlayGameExeptionName;
+        private System.Windows.Forms.PictureBox pbxGameExeptionAvatar;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.PictureBox pbxGameExeptionOptions;
+        private System.Windows.Forms.PictureBox pbxGameExeptionProfile;
+        private System.Windows.Forms.PictureBox pbxGameExeptionHome;
+        private System.Windows.Forms.PictureBox pbxGameExeptionMInimize;
+        private System.Windows.Forms.PictureBox pbxGameExeptionClose;
+        private System.Windows.Forms.Button tbxPlayPeriodCancel;
+        private System.Windows.Forms.Button btnPlayPeriodSave;
+        private System.Windows.Forms.Label lblPlayPeriodStartTimeOut;
+        private System.Windows.Forms.Label lblPlayPeriodEndTimeOut;
+        private System.Windows.Forms.Button btnGameExeptionCancel;
+        private System.Windows.Forms.Button btnGameExeptionSave;
+        private System.Windows.Forms.LinkLabel llblGameExeptionDelete;
+        private System.Windows.Forms.LinkLabel llblPlayPeriodDelete;
     }
 }
 

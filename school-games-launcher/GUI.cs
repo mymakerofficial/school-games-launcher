@@ -24,6 +24,8 @@ namespace school_games_launcher
         public GUIEditUser editUser;
         public GUIChangePassword changePassword;
         public GUIUserRules userRules;
+        public GUIPlayPeriod playPeriod;
+        public GUIGameExeption gameExeption;
         public GUIWelcome welcome;
 
         public MainWindow form;
@@ -68,7 +70,9 @@ namespace school_games_launcher
             changePassword.resetOnActive = true;
             userRules = new GUIUserRules(this.tabControl, (TabPage)this.tabControl.TabPages["tabEditUserRules"]);
             userRules.updateOnActive = true;
-
+            playPeriod = new GUIPlayPeriod(this.tabControl, (TabPage)this.tabControl.TabPages["tabPlayPeriod"]); 
+            gameExeption = new GUIGameExeption(this.tabControl, (TabPage)this.tabControl.TabPages["tabGameExeption"]);
+            gameExeption.updateOnActive = true;
             welcome = new GUIWelcome(this.tabControl, (TabPage)this.tabControl.TabPages["tabWelcome"]);
             welcome.updateOnActive = true;
 
@@ -1243,12 +1247,18 @@ namespace school_games_launcher
                 time.Size = new System.Drawing.Size(100, 15);
                 time.Location = new System.Drawing.Point(15, 40);
 
-                void Open(object sender, EventArgs e)
+                if (Program.app.ActiveUser.Admin)
                 {
-
+                    void Open(object sender, EventArgs e)
+                    {
+                        Program.app.Gui.playPeriod.Activate();
+                        Program.app.Gui.playPeriod.PlayPeriod = period;
+                        Program.app.Gui.playPeriod.User = User;
+                    }
+                    // add function as EventHandler
+                    panel.Click += new System.EventHandler(Open);
                 }
-                // add function as EventHandler
-                panel.Click += new System.EventHandler(Open);
+                
 
                 // add the Stuff to the Panel
                 panel.Controls.Add(day);
@@ -1298,17 +1308,24 @@ namespace school_games_launcher
                 Label allowed = new System.Windows.Forms.Label();
                 allowed.Text = exeption.Allowed ? "Allowed to play." : "Not allowed to play.";
                 allowed.ForeColor = exeption.Allowed ? System.Drawing.Color.Lime : System.Drawing.Color.Red;
+                allowed.Size = new System.Drawing.Size(100, 15);
                 allowed.Location = new System.Drawing.Point(130, 40);
 
-                void Open(object sender, EventArgs e)
+                if (Program.app.ActiveUser.Admin)
                 {
-
+                    void Open(object sender, EventArgs e)
+                    {
+                        Program.app.Gui.gameExeption.Activate();
+                        Program.app.Gui.gameExeption.User = User;
+                        Program.app.Gui.gameExeption.GameExeption = exeption;
+                    }
+                    // add function as EventHandler
+                    panel.Click += new System.EventHandler(Open);
+                    coverart.Click += new System.EventHandler(Open);
+                    name.Click += new System.EventHandler(Open);
+                    allowed.Click += new System.EventHandler(Open);
                 }
-                // add function as EventHandler
-                panel.Click += new System.EventHandler(Open);
-                coverart.Click += new System.EventHandler(Open);
-                name.Click += new System.EventHandler(Open);
-                allowed.Click += new System.EventHandler(Open);
+                
 
                 // add the PictureBox to the Panel
                 panel.Controls.Add(coverart);
@@ -1342,6 +1359,240 @@ namespace school_games_launcher
                     catch { }
                 }
             });
+        }
+        public void AddPlayPeriod()
+        {
+            var playPeriod = new PlayPeriod(0, 0, 82740);
+            this.User.PlayPeriods.Add(playPeriod);
+            Program.app.Gui.playPeriod.Activate();
+            Program.app.Gui.playPeriod.User = this.User;
+            Program.app.Gui.playPeriod.PlayPeriod = playPeriod;
+        }
+        public void AddGameExeption()
+        {
+            var gameExeption = new GameExeption(Program.app.Games[0], true);
+            this.User.GameExeptions.Add(gameExeption);
+            Program.app.Gui.gameExeption.Activate();
+            Program.app.Gui.gameExeption.User = this.User;
+            Program.app.Gui.gameExeption.GameExeption = gameExeption;
+        }
+    }
+    public class GUIPlayPeriod : GUITab
+    {
+        private string[] weekdays = new string[] { "Su", "Mo", "Tu", "We", "Th", "Fr", "Sa" };
+        private User user;
+        private PlayPeriod playPeriod;
+        private int weekDay;
+        private DateTime startTime;
+        private DateTime endTime;
+        public User User
+        {
+            get { return user; }
+            set
+            {
+                user = value;
+
+                ((Label)this.TabPage.Controls["lblPlayPeriodUserName"]).Text = user.Name;
+                Program.app.Gui.SetAvatar(((PictureBox)this.TabPage.Controls["pbxPlayPeriodAvatar"]), user.Avatar);
+            }
+        }
+        public PlayPeriod PlayPeriod
+        {
+            get { return playPeriod; }
+            set
+            {
+                playPeriod = value;
+
+                this.WeekDay = playPeriod.WeekDay;
+                this.StartTime = playPeriod.StartTime;
+                this.EndTime = playPeriod.EndTime;
+
+                ((TextBox)this.TabPage.Controls["tbxPlayPeriodStartTime"]).Text = this.StartTimeFormated;
+                ((TextBox)this.TabPage.Controls["tbxPlayPeriodEndTime"]).Text = this.EndTimeFormated;
+            }
+        }
+        public int WeekDay
+        {
+            get { return weekDay; }
+            set
+            {
+                weekDay = value;
+
+                ((ComboBox)this.TabPage.Controls["cbxPlayPeriodDay"]).SelectedIndex = weekDay;
+            }
+        }
+        public string WeekDayFormated
+        {
+            get { return weekdays[WeekDay]; }
+            set
+            {
+                for(int i = 0;i < weekdays.Count(); i++)
+                {
+                    if(value.ToLower() == weekdays[i].ToLower()) WeekDay = i;
+                }
+            }
+        }
+        public DateTime StartTime
+        {
+            get { return startTime; }
+            set
+            {
+                startTime = value;
+
+                ((Label)this.TabPage.Controls["lblPlayPeriodStartTimeOut"]).Text = this.StartTimeFormated;
+            }
+        }
+        public string StartTimeFormated
+        {
+            get { return this.StartTime.ToString("t", CultureInfo.CreateSpecificCulture("de-DE")); }
+            set
+            {
+                try
+                {
+                    string[] input = value.Split(':');
+
+                    if(input.Count() == 2)
+                    {
+                        if (Convert.ToInt32(input[0]) >= 0 && Convert.ToInt32(input[0]) <= 24 && Convert.ToInt32(input[0]) >= 0 && Convert.ToInt32(input[1]) <= 60)
+                        {
+                            DateTime time = new DateTime(1970, 1, 1, Convert.ToInt32(input[0])-1, Convert.ToInt32(input[1]), 0, 0).ToLocalTime();
+
+                            this.StartTime = time;
+                        } 
+                    }
+                }
+                catch { }
+            }
+        }
+        public DateTime EndTime
+        {
+            get { return endTime; }
+            set
+            {
+                endTime = value;
+
+                ((Label)this.TabPage.Controls["lblPlayPeriodEndTimeOut"]).Text = this.EndTimeFormated;
+            }
+        }
+        public string EndTimeFormated
+        {
+            get { return this.EndTime.ToString("t", CultureInfo.CreateSpecificCulture("de-DE")); }
+            set
+            {
+                try
+                {
+                    string[] input = value.Split(':');
+
+                    if (input.Count() == 2)
+                    {
+                        if (Convert.ToInt32(input[0]) >= 0 && Convert.ToInt32(input[0]) <= 24 && Convert.ToInt32(input[0]) >= 0 && Convert.ToInt32(input[1]) <= 60)
+                        {
+                            DateTime time = new DateTime(1970, 1, 1, Convert.ToInt32(input[0]) - 1, Convert.ToInt32(input[1]), 0, 0).ToLocalTime();
+
+                            this.EndTime = time;
+                        }
+                    }
+                }
+                catch { }
+            }
+        }
+        public GUIPlayPeriod(TabControl tabControl, TabPage tabPage) : base(tabControl, tabPage)
+        {
+
+        }
+
+        public override void Update()
+        {
+        }
+        public override void Setup()
+        {
+            ((DateTimePicker)this.TabPage.Controls["dtpPlayPeriodStartTime"]).Format = DateTimePickerFormat.Time;
+            ((DateTimePicker)this.TabPage.Controls["dtpPlayPeriodStartTime"]).CustomFormat = "HH:mm"; // Only use hours and minutes
+            ((DateTimePicker)this.TabPage.Controls["dtpPlayPeriodStartTime"]).ShowUpDown = true;
+        }
+        public void Save()
+        {
+            if (Program.app.ActiveUser.Admin)
+            {
+                this.playPeriod.WeekDay = this.WeekDay;
+                this.playPeriod.StartTime = this.StartTime;
+                this.playPeriod.EndTime = this.EndTime;
+            }
+            Program.app.Gui.userRules.Activate();
+            Program.app.Gui.userRules.User = this.User;
+        }
+        public void Cancel()
+        {
+            Program.app.Gui.userRules.Activate();
+            Program.app.Gui.userRules.User = this.User;
+        }
+        public void Delete()
+        {
+            if (Program.app.ActiveUser.Admin)
+                User.PlayPeriods.Remove(this.playPeriod);
+            Program.app.Gui.userRules.Activate();
+            Program.app.Gui.userRules.User = User;
+        }
+    }
+    public class GUIGameExeption : GUITab
+    {
+        private User user;
+        private GameExeption gameExeption;
+        public User User
+        {
+            get { return user; }
+            set
+            {
+                user = value;
+
+                ((Label)this.TabPage.Controls["lblPlayGameExeptionName"]).Text = user.Name;
+                Program.app.Gui.SetAvatar(((PictureBox)this.TabPage.Controls["pbxGameExeptionAvatar"]), user.Avatar);
+            }
+        }
+        public GameExeption GameExeption
+        {
+            get { return gameExeption; }
+            set
+            {
+                gameExeption = value;
+
+                ((ComboBox)this.TabPage.Controls["cbxGameExeptionGame"]).SelectedItem = gameExeption.Game.Name;
+                ((CheckBox)this.TabPage.Controls["cbxGameExeptionAlowed"]).Checked = gameExeption.Allowed;
+            }
+        }
+        public GUIGameExeption(TabControl tabControl, TabPage tabPage) : base(tabControl, tabPage)
+        {
+
+        }
+        public override void Update()
+        {
+            ((ComboBox)this.TabPage.Controls["cbxGameExeptionGame"]).Items.Clear();
+            foreach(Game game in Program.app.Games)
+            {
+                ((ComboBox)this.TabPage.Controls["cbxGameExeptionGame"]).Items.Add(game.Name);
+            }
+        }
+        public void Save()
+        {
+            if (Program.app.ActiveUser.Admin)
+            {
+                GameExeption.Game = Program.app.Games[((ComboBox)this.TabPage.Controls["cbxGameExeptionGame"]).SelectedIndex];
+                GameExeption.Allowed = ((CheckBox)this.TabPage.Controls["cbxGameExeptionAlowed"]).Checked;
+            }
+            Program.app.Gui.userRules.Activate(); 
+            Program.app.Gui.userRules.User = User;
+        }
+        public void Cancel()
+        {
+            Program.app.Gui.userRules.Activate();
+            Program.app.Gui.userRules.User = User;
+        }
+        public void Delete()
+        {
+            if (Program.app.ActiveUser.Admin)
+                User.GameExeptions.Remove(this.gameExeption);
+            Program.app.Gui.userRules.Activate();
+            Program.app.Gui.userRules.User = User;
         }
     }
     public class GUIWelcome : GUITab

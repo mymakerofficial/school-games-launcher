@@ -281,7 +281,7 @@ namespace school_games_launcher
             user.SetPassword("", password);// set user password
             for(int i = 0; i <= 6; i++)// create default PlayPeriods
             {
-                user.PlayPeriods.Add(new PlayPeriod(i, 0, 86400));
+                user.PlayPeriods.Add(new PlayPeriod(i, 0, 82740));
             }
             this.Users.Add(user);
             return true;
