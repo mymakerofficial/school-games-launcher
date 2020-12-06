@@ -23,7 +23,7 @@ namespace school_games_launcher
         public GUIGameDetails gameDetails;
         public GUIEditUser editUser;
         public GUIChangePassword changePassword;
-        public GUITab userRules;
+        public GUIUserRules userRules;
         public GUIWelcome welcome;
 
         public MainWindow form;
@@ -66,6 +66,8 @@ namespace school_games_launcher
             editUser.updateOnActive = true;
             changePassword = new GUIChangePassword(this.tabControl, (TabPage)this.tabControl.TabPages["tabChangePassword"]);
             changePassword.resetOnActive = true;
+            userRules = new GUIUserRules(this.tabControl, (TabPage)this.tabControl.TabPages["tabEditUserRules"]);
+            userRules.updateOnActive = true;
 
             welcome = new GUIWelcome(this.tabControl, (TabPage)this.tabControl.TabPages["tabWelcome"]);
             welcome.updateOnActive = true;
@@ -557,6 +559,12 @@ namespace school_games_launcher
         {
             Program.app.Gui.editUser.Activate();
             Program.app.Gui.editUser.EditUser = user;
+        }
+
+        public void UserRules()
+        {
+            Program.app.Gui.userRules.Activate();
+            Program.app.Gui.userRules.User = user;
         }
     }
     public class GUIRegister : GUITab
@@ -1167,6 +1175,173 @@ namespace school_games_launcher
                     Program.app.Gui.editUser.Activate();
                 }
             }
+        }
+    }
+    public class GUIUserRules : GUITab
+    {
+        private User user;
+        private List<GameExeption> gameExeptions;
+        private List<PlayPeriod> playPeriods;
+        private List<Control> exeptionPanels = new List<Control>();
+        private List<Control> periodPanels = new List<Control>();
+        public User User
+        {
+            get { return user; }
+            set
+            {
+                user = value;
+
+                ((Label)this.TabPage.Controls["lblUserRulesUserName"]).Text = user.Name;
+                ((Label)this.TabPage.Controls["lblUserRulesId"]).Text = string.Format("ID: {0}", user.Id);
+                Program.app.Gui.SetAvatar(((PictureBox)this.TabPage.Controls["pbxUserRulesAvatar"]), user.Avatar);
+
+                this.UpdatePlayPeriodList(user.PlayPeriods);
+                this.UpdateAgeExeptionList(user.GameExeptions);
+            }
+        }
+        public GUIUserRules(TabControl tabControl, TabPage tabPage) : base(tabControl, tabPage)
+        {
+
+        }
+        public override void Update()
+        {
+            if (Program.app.ActiveUser != null)
+                ((Button)this.TabPage.Controls["btnUserRulesAllowedPlaytimesAdd"]).Visible =
+                    ((Button)this.TabPage.Controls["btnUserRulesAgeExeptionsAdd"]).Visible = Program.app.ActiveUser.Admin;
+        }
+        public void GoToProfile()
+        {
+            Program.app.Gui.profile.Activate();
+            Program.app.Gui.profile.User = User;
+        }
+        public void UpdatePlayPeriodList(List<PlayPeriod> playPeriods)
+        {
+            this.playPeriods = playPeriods;
+
+            // fixes memory leak ishue
+            foreach (Control control in periodPanels)
+            {
+                control.Dispose();
+            }
+            periodPanels.Clear();
+
+            string[] weekdays = new string[] { "Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"};
+
+            foreach (PlayPeriod period in this.playPeriods)
+            {
+                // creates a panel
+                GroupBox panel = new System.Windows.Forms.GroupBox();
+                panel.Size = new System.Drawing.Size(470, 65);
+
+                Label day = new System.Windows.Forms.Label();
+                day.Text = string.Format("Day: {0}", weekdays[period.WeekDay]);
+                day.Size = new System.Drawing.Size(100, 15);
+                day.Location = new System.Drawing.Point(15, 15);
+
+                Label time = new System.Windows.Forms.Label();
+                time.Text = string.Format("{0} -> {1}", period.StartTime.ToString("t", CultureInfo.CreateSpecificCulture("de-DE")), period.EndTime.ToString("t", CultureInfo.CreateSpecificCulture("de-DE")));
+                time.Size = new System.Drawing.Size(100, 15);
+                time.Location = new System.Drawing.Point(15, 40);
+
+                void Open(object sender, EventArgs e)
+                {
+
+                }
+                // add function as EventHandler
+                panel.Click += new System.EventHandler(Open);
+
+                // add the Stuff to the Panel
+                panel.Controls.Add(day);
+                panel.Controls.Add(time);
+
+                // add Panel to array
+                periodPanels.Add(panel);
+            }
+
+            // add the panels to the Form
+            this.TabPage.Controls["flpUserRulesAlowedPlaytimes"].Controls.Clear();
+            foreach (Control control in periodPanels)
+            {
+                this.TabPage.Controls["flpUserRulesAlowedPlaytimes"].Controls.Add(control);
+            }
+        }
+        public void UpdateAgeExeptionList(List<GameExeption> gameExeptions)
+        {
+            this.gameExeptions = gameExeptions;
+
+            // fixes memory leak ishue
+            foreach (Control control in exeptionPanels)
+            {
+                control.Dispose();
+            }
+            exeptionPanels.Clear();
+
+            foreach (GameExeption exeption in this.gameExeptions)
+            {
+                // creates a panel
+                GroupBox panel = new System.Windows.Forms.GroupBox();
+                panel.Size = new System.Drawing.Size(470, 75);
+
+                // create PictureBox for coverart
+                PictureBox coverart = new System.Windows.Forms.PictureBox();
+                coverart.Image = global::school_games_launcher.Properties.Resources.game_coverart_placeholder;
+                coverart.Location = new System.Drawing.Point(15, 15);
+                coverart.Size = new System.Drawing.Size(100, 50);
+                coverart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+                coverart.BackColor = System.Drawing.Color.Black;
+
+                Label name = new System.Windows.Forms.Label();
+                name.Text = exeption.Game.Name;
+                name.Size = new System.Drawing.Size(100, 15);
+                name.Location = new System.Drawing.Point(130, 20);
+
+                Label allowed = new System.Windows.Forms.Label();
+                allowed.Text = exeption.Allowed ? "Allowed to play." : "Not allowed to play.";
+                allowed.ForeColor = exeption.Allowed ? System.Drawing.Color.Lime : System.Drawing.Color.Red;
+                allowed.Location = new System.Drawing.Point(130, 40);
+
+                void Open(object sender, EventArgs e)
+                {
+
+                }
+                // add function as EventHandler
+                panel.Click += new System.EventHandler(Open);
+                coverart.Click += new System.EventHandler(Open);
+                name.Click += new System.EventHandler(Open);
+                allowed.Click += new System.EventHandler(Open);
+
+                // add the PictureBox to the Panel
+                panel.Controls.Add(coverart);
+                panel.Controls.Add(name);
+                panel.Controls.Add(allowed);
+
+                // add Panel to array
+                exeptionPanels.Add(panel);
+            }
+
+            // add the panels to the Form
+            this.TabPage.Controls["flpUserRulesAgeExeptions"].Controls.Clear();
+            foreach (Control control in exeptionPanels)
+            {
+                this.TabPage.Controls["flpUserRulesAgeExeptions"].Controls.Add(control);
+            }
+
+            // Load images in different thread.
+            // This makes the loading of the library way smoother.
+            Task.Run(() =>
+            {
+                Thread.CurrentThread.IsBackground = true;
+
+                for (int i = 0; i < exeptionPanels.Count(); i++)
+                {
+                    try
+                    {
+                        PictureBox coverart = (PictureBox)exeptionPanels[i].Controls[0];
+                        coverart.Load(this.gameExeptions[i].Game.Coverart);
+                    }
+                    catch { }
+                }
+            });
         }
     }
     public class GUIWelcome : GUITab

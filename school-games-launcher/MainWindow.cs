@@ -464,11 +464,6 @@ namespace school_games_launcher
             Program.app.Gui.options.Activate();
         }
 
-        private void pbxUserRulesProfile_Click(object sender, EventArgs e)
-        {
-            Program.app.Gui.options.Activate();
-        }
-
         private void pbxEditUserMinimize_Click(object sender, EventArgs e)
         {
             Program.app.Gui.Minimize();
@@ -632,6 +627,31 @@ namespace school_games_launcher
         private void cbxEditUserAdmin_CheckedChanged(object sender, EventArgs e)
         {
             Program.app.Gui.editUser.Admin = this.cbxEditUserAdmin.Checked;
+        }
+
+        private void btnProfileUserRules_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.profile.UserRules();
+        }
+
+        private void pbxUserRulesProfile_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.profile.Activate();
+        }
+
+        private void pbxUserRulesOptions_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.options.Activate();
+        }
+
+        private void pbxUserRulesAvatar_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.userRules.GoToProfile();
+        }
+
+        private void lblUserRulesUserName_Click(object sender, EventArgs e)
+        {
+            Program.app.Gui.userRules.GoToProfile();
         }
     }
 }

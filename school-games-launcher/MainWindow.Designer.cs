@@ -116,7 +116,7 @@
             this.pbxEditGameAge6 = new System.Windows.Forms.PictureBox();
             this.pbxEditGameAge0 = new System.Windows.Forms.PictureBox();
             this.tabProfile = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnProfileUserRules = new System.Windows.Forms.Button();
             this.btnProfileEdit = new System.Windows.Forms.Button();
             this.lblProfileId = new System.Windows.Forms.Label();
             this.lblProfileTimePlayed = new System.Windows.Forms.Label();
@@ -182,6 +182,8 @@
             this.pbxGameDetailsCoverart = new System.Windows.Forms.PictureBox();
             this.pbxGameDetailsPlayButton = new System.Windows.Forms.PictureBox();
             this.tabEditUser = new System.Windows.Forms.TabPage();
+            this.lblEditUserAdminWarning0 = new System.Windows.Forms.Label();
+            this.cbxEditUserAdmin = new System.Windows.Forms.CheckBox();
             this.pbxEditUserAvatarOld = new System.Windows.Forms.PictureBox();
             this.pbxEditUserAvatar5 = new System.Windows.Forms.PictureBox();
             this.pbxEditUserAvatar4 = new System.Windows.Forms.PictureBox();
@@ -192,7 +194,6 @@
             this.lblEditUserId = new System.Windows.Forms.Label();
             this.llblEditUserDelete = new System.Windows.Forms.LinkLabel();
             this.btnEditUserCancel = new System.Windows.Forms.Button();
-            this.btnEditUserUserRules = new System.Windows.Forms.Button();
             this.btnEditUserChangePassword = new System.Windows.Forms.Button();
             this.pbxEditUserAvatar = new System.Windows.Forms.PictureBox();
             this.tbxEditUserAvatarInput = new System.Windows.Forms.TextBox();
@@ -229,11 +230,9 @@
             this.pbxChangePasswordMinimize = new System.Windows.Forms.PictureBox();
             this.pbxChangePasswordClose = new System.Windows.Forms.PictureBox();
             this.tabEditUserRules = new System.Windows.Forms.TabPage();
-            this.label20 = new System.Windows.Forms.Label();
+            this.lblUserRulesId = new System.Windows.Forms.Label();
             this.btnUserRulesAgeExeptionsAdd = new System.Windows.Forms.Button();
             this.btnUserRulesAllowedPlaytimesAdd = new System.Windows.Forms.Button();
-            this.btnUserRulesCancel = new System.Windows.Forms.Button();
-            this.btnUserRulesSave = new System.Windows.Forms.Button();
             this.lblUserRulesUserName = new System.Windows.Forms.Label();
             this.lblUserRulesTitle = new System.Windows.Forms.Label();
             this.lblUserRulesAgeExeptionsTip = new System.Windows.Forms.Label();
@@ -241,12 +240,10 @@
             this.lblUserRulesAllowedPlaytimesTip = new System.Windows.Forms.Label();
             this.lblUserRulesAllowedPlaytimesTitle = new System.Windows.Forms.Label();
             this.flpUserRulesAlowedPlaytimes = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.flpUserRulesAgeExeptions = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.pbxUserRulesAvatar = new System.Windows.Forms.PictureBox();
+            this.pbxUserRulesOptions = new System.Windows.Forms.PictureBox();
             this.pbxUserRulesProfile = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pbxUserRulesHome = new System.Windows.Forms.PictureBox();
             this.pbxUserRulesMinimize = new System.Windows.Forms.PictureBox();
             this.pbxUserRulesClose = new System.Windows.Forms.PictureBox();
@@ -276,8 +273,6 @@
             this.pbxWelcomeHome = new System.Windows.Forms.PictureBox();
             this.pbxWelcomeMinimize = new System.Windows.Forms.PictureBox();
             this.pbxWelcomeClose = new System.Windows.Forms.PictureBox();
-            this.cbxEditUserAdmin = new System.Windows.Forms.CheckBox();
-            this.lblEditUserAdminWarning0 = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabLibrary.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLibraryOptions)).BeginInit();
@@ -375,11 +370,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxChangePasswordMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxChangePasswordClose)).BeginInit();
             this.tabEditUserRules.SuspendLayout();
-            this.flpUserRulesAlowedPlaytimes.SuspendLayout();
-            this.flpUserRulesAgeExeptions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxUserRulesAvatar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxUserRulesOptions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxUserRulesProfile)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxUserRulesHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxUserRulesMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxUserRulesClose)).BeginInit();
@@ -1407,7 +1400,7 @@
             // tabProfile
             // 
             this.tabProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
-            this.tabProfile.Controls.Add(this.button1);
+            this.tabProfile.Controls.Add(this.btnProfileUserRules);
             this.tabProfile.Controls.Add(this.btnProfileEdit);
             this.tabProfile.Controls.Add(this.lblProfileId);
             this.tabProfile.Controls.Add(this.lblProfileTimePlayed);
@@ -1428,15 +1421,16 @@
             this.tabProfile.TabIndex = 7;
             this.tabProfile.Text = "Profile";
             // 
-            // button1
+            // btnProfileUserRules
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(1015, 60);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(106, 33);
-            this.button1.TabIndex = 27;
-            this.button1.Text = "User Rules";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnProfileUserRules.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProfileUserRules.Location = new System.Drawing.Point(1015, 60);
+            this.btnProfileUserRules.Name = "btnProfileUserRules";
+            this.btnProfileUserRules.Size = new System.Drawing.Size(106, 33);
+            this.btnProfileUserRules.TabIndex = 27;
+            this.btnProfileUserRules.Text = "User Rules";
+            this.btnProfileUserRules.UseVisualStyleBackColor = true;
+            this.btnProfileUserRules.Click += new System.EventHandler(this.btnProfileUserRules_Click);
             // 
             // btnProfileEdit
             // 
@@ -2173,7 +2167,6 @@
             this.tabEditUser.Controls.Add(this.lblEditUserId);
             this.tabEditUser.Controls.Add(this.llblEditUserDelete);
             this.tabEditUser.Controls.Add(this.btnEditUserCancel);
-            this.tabEditUser.Controls.Add(this.btnEditUserUserRules);
             this.tabEditUser.Controls.Add(this.btnEditUserChangePassword);
             this.tabEditUser.Controls.Add(this.pbxEditUserAvatar);
             this.tabEditUser.Controls.Add(this.tbxEditUserAvatarInput);
@@ -2197,6 +2190,28 @@
             this.tabEditUser.Size = new System.Drawing.Size(1144, 723);
             this.tabEditUser.TabIndex = 9;
             this.tabEditUser.Text = "Edit User";
+            // 
+            // lblEditUserAdminWarning0
+            // 
+            this.lblEditUserAdminWarning0.AutoSize = true;
+            this.lblEditUserAdminWarning0.ForeColor = System.Drawing.Color.Yellow;
+            this.lblEditUserAdminWarning0.Location = new System.Drawing.Point(90, 344);
+            this.lblEditUserAdminWarning0.Name = "lblEditUserAdminWarning0";
+            this.lblEditUserAdminWarning0.Size = new System.Drawing.Size(128, 13);
+            this.lblEditUserAdminWarning0.TabIndex = 52;
+            this.lblEditUserAdminWarning0.Text = "User 0 needs to be admin";
+            // 
+            // cbxEditUserAdmin
+            // 
+            this.cbxEditUserAdmin.AutoSize = true;
+            this.cbxEditUserAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbxEditUserAdmin.Location = new System.Drawing.Point(32, 342);
+            this.cbxEditUserAdmin.Name = "cbxEditUserAdmin";
+            this.cbxEditUserAdmin.Size = new System.Drawing.Size(52, 17);
+            this.cbxEditUserAdmin.TabIndex = 2;
+            this.cbxEditUserAdmin.Text = "Admin";
+            this.cbxEditUserAdmin.UseVisualStyleBackColor = true;
+            this.cbxEditUserAdmin.CheckedChanged += new System.EventHandler(this.cbxEditUserAdmin_CheckedChanged);
             // 
             // pbxEditUserAvatarOld
             // 
@@ -2293,7 +2308,7 @@
             this.llblEditUserDelete.Location = new System.Drawing.Point(47, 513);
             this.llblEditUserDelete.Name = "llblEditUserDelete";
             this.llblEditUserDelete.Size = new System.Drawing.Size(63, 13);
-            this.llblEditUserDelete.TabIndex = 8;
+            this.llblEditUserDelete.TabIndex = 7;
             this.llblEditUserDelete.TabStop = true;
             this.llblEditUserDelete.Text = "Delete User";
             this.llblEditUserDelete.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblEditUserDelete_LinkClicked);
@@ -2301,31 +2316,21 @@
             // btnEditUserCancel
             // 
             this.btnEditUserCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditUserCancel.Location = new System.Drawing.Point(247, 426);
+            this.btnEditUserCancel.Location = new System.Drawing.Point(179, 465);
             this.btnEditUserCancel.Name = "btnEditUserCancel";
-            this.btnEditUserCancel.Size = new System.Drawing.Size(103, 33);
-            this.btnEditUserCancel.TabIndex = 5;
+            this.btnEditUserCancel.Size = new System.Drawing.Size(144, 33);
+            this.btnEditUserCancel.TabIndex = 6;
             this.btnEditUserCancel.Text = "Cancel";
             this.btnEditUserCancel.UseVisualStyleBackColor = true;
             this.btnEditUserCancel.Click += new System.EventHandler(this.btnEditUserCancel_Click);
-            // 
-            // btnEditUserUserRules
-            // 
-            this.btnEditUserUserRules.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditUserUserRules.Location = new System.Drawing.Point(190, 465);
-            this.btnEditUserUserRules.Name = "btnEditUserUserRules";
-            this.btnEditUserUserRules.Size = new System.Drawing.Size(160, 33);
-            this.btnEditUserUserRules.TabIndex = 7;
-            this.btnEditUserUserRules.Text = "User Rules";
-            this.btnEditUserUserRules.UseVisualStyleBackColor = true;
             // 
             // btnEditUserChangePassword
             // 
             this.btnEditUserChangePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditUserChangePassword.Location = new System.Drawing.Point(29, 465);
             this.btnEditUserChangePassword.Name = "btnEditUserChangePassword";
-            this.btnEditUserChangePassword.Size = new System.Drawing.Size(155, 33);
-            this.btnEditUserChangePassword.TabIndex = 6;
+            this.btnEditUserChangePassword.Size = new System.Drawing.Size(144, 33);
+            this.btnEditUserChangePassword.TabIndex = 5;
             this.btnEditUserChangePassword.Text = "Change Password";
             this.btnEditUserChangePassword.UseVisualStyleBackColor = true;
             this.btnEditUserChangePassword.Click += new System.EventHandler(this.btnEditUserChangePassword_Click);
@@ -2364,7 +2369,7 @@
             this.btnEditUserSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditUserSave.Location = new System.Drawing.Point(29, 426);
             this.btnEditUserSave.Name = "btnEditUserSave";
-            this.btnEditUserSave.Size = new System.Drawing.Size(212, 33);
+            this.btnEditUserSave.Size = new System.Drawing.Size(294, 33);
             this.btnEditUserSave.TabIndex = 4;
             this.btnEditUserSave.Text = "Save Changes";
             this.btnEditUserSave.UseVisualStyleBackColor = true;
@@ -2700,11 +2705,9 @@
             // tabEditUserRules
             // 
             this.tabEditUserRules.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
-            this.tabEditUserRules.Controls.Add(this.label20);
+            this.tabEditUserRules.Controls.Add(this.lblUserRulesId);
             this.tabEditUserRules.Controls.Add(this.btnUserRulesAgeExeptionsAdd);
             this.tabEditUserRules.Controls.Add(this.btnUserRulesAllowedPlaytimesAdd);
-            this.tabEditUserRules.Controls.Add(this.btnUserRulesCancel);
-            this.tabEditUserRules.Controls.Add(this.btnUserRulesSave);
             this.tabEditUserRules.Controls.Add(this.lblUserRulesUserName);
             this.tabEditUserRules.Controls.Add(this.lblUserRulesTitle);
             this.tabEditUserRules.Controls.Add(this.lblUserRulesAgeExeptionsTip);
@@ -2714,8 +2717,8 @@
             this.tabEditUserRules.Controls.Add(this.flpUserRulesAlowedPlaytimes);
             this.tabEditUserRules.Controls.Add(this.flpUserRulesAgeExeptions);
             this.tabEditUserRules.Controls.Add(this.pbxUserRulesAvatar);
+            this.tabEditUserRules.Controls.Add(this.pbxUserRulesOptions);
             this.tabEditUserRules.Controls.Add(this.pbxUserRulesProfile);
-            this.tabEditUserRules.Controls.Add(this.pictureBox2);
             this.tabEditUserRules.Controls.Add(this.pbxUserRulesHome);
             this.tabEditUserRules.Controls.Add(this.pbxUserRulesMinimize);
             this.tabEditUserRules.Controls.Add(this.pbxUserRulesClose);
@@ -2726,16 +2729,16 @@
             this.tabEditUserRules.TabIndex = 11;
             this.tabEditUserRules.Text = "User Rules";
             // 
-            // label20
+            // lblUserRulesId
             // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.Gray;
-            this.label20.Location = new System.Drawing.Point(29, 694);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(34, 16);
-            this.label20.TabIndex = 44;
-            this.label20.Text = "ID: 0";
+            this.lblUserRulesId.AutoSize = true;
+            this.lblUserRulesId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserRulesId.ForeColor = System.Drawing.Color.Gray;
+            this.lblUserRulesId.Location = new System.Drawing.Point(29, 694);
+            this.lblUserRulesId.Name = "lblUserRulesId";
+            this.lblUserRulesId.Size = new System.Drawing.Size(34, 16);
+            this.lblUserRulesId.TabIndex = 44;
+            this.lblUserRulesId.Text = "ID: 0";
             // 
             // btnUserRulesAgeExeptionsAdd
             // 
@@ -2757,26 +2760,6 @@
             this.btnUserRulesAllowedPlaytimesAdd.Text = "Add";
             this.btnUserRulesAllowedPlaytimesAdd.UseVisualStyleBackColor = true;
             // 
-            // btnUserRulesCancel
-            // 
-            this.btnUserRulesCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUserRulesCancel.Location = new System.Drawing.Point(1023, 120);
-            this.btnUserRulesCancel.Name = "btnUserRulesCancel";
-            this.btnUserRulesCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnUserRulesCancel.TabIndex = 3;
-            this.btnUserRulesCancel.Text = "Cancel";
-            this.btnUserRulesCancel.UseVisualStyleBackColor = true;
-            // 
-            // btnUserRulesSave
-            // 
-            this.btnUserRulesSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUserRulesSave.Location = new System.Drawing.Point(942, 120);
-            this.btnUserRulesSave.Name = "btnUserRulesSave";
-            this.btnUserRulesSave.Size = new System.Drawing.Size(75, 23);
-            this.btnUserRulesSave.TabIndex = 2;
-            this.btnUserRulesSave.Text = "Save";
-            this.btnUserRulesSave.UseVisualStyleBackColor = true;
-            // 
             // lblUserRulesUserName
             // 
             this.lblUserRulesUserName.AutoSize = true;
@@ -2786,6 +2769,7 @@
             this.lblUserRulesUserName.Size = new System.Drawing.Size(49, 24);
             this.lblUserRulesUserName.TabIndex = 24;
             this.lblUserRulesUserName.Text = "User";
+            this.lblUserRulesUserName.Click += new System.EventHandler(this.lblUserRulesUserName_Click);
             // 
             // lblUserRulesTitle
             // 
@@ -2839,33 +2823,19 @@
             // 
             // flpUserRulesAlowedPlaytimes
             // 
-            this.flpUserRulesAlowedPlaytimes.Controls.Add(this.panel1);
+            this.flpUserRulesAlowedPlaytimes.AutoScroll = true;
             this.flpUserRulesAlowedPlaytimes.Location = new System.Drawing.Point(59, 230);
             this.flpUserRulesAlowedPlaytimes.Name = "flpUserRulesAlowedPlaytimes";
             this.flpUserRulesAlowedPlaytimes.Size = new System.Drawing.Size(495, 454);
             this.flpUserRulesAlowedPlaytimes.TabIndex = 2;
             // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(492, 99);
-            this.panel1.TabIndex = 1;
-            // 
             // flpUserRulesAgeExeptions
             // 
-            this.flpUserRulesAgeExeptions.Controls.Add(this.panel2);
+            this.flpUserRulesAgeExeptions.AutoScroll = true;
             this.flpUserRulesAgeExeptions.Location = new System.Drawing.Point(603, 230);
             this.flpUserRulesAgeExeptions.Name = "flpUserRulesAgeExeptions";
             this.flpUserRulesAgeExeptions.Size = new System.Drawing.Size(495, 457);
             this.flpUserRulesAgeExeptions.TabIndex = 3;
-            // 
-            // panel2
-            // 
-            this.panel2.Location = new System.Drawing.Point(3, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(492, 99);
-            this.panel2.TabIndex = 1;
             // 
             // pbxUserRulesAvatar
             // 
@@ -2876,27 +2846,29 @@
             this.pbxUserRulesAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxUserRulesAvatar.TabIndex = 23;
             this.pbxUserRulesAvatar.TabStop = false;
+            this.pbxUserRulesAvatar.Click += new System.EventHandler(this.pbxUserRulesAvatar_Click);
+            // 
+            // pbxUserRulesOptions
+            // 
+            this.pbxUserRulesOptions.Image = global::school_games_launcher.Properties.Resources.options_button;
+            this.pbxUserRulesOptions.Location = new System.Drawing.Point(125, 0);
+            this.pbxUserRulesOptions.Name = "pbxUserRulesOptions";
+            this.pbxUserRulesOptions.Size = new System.Drawing.Size(75, 25);
+            this.pbxUserRulesOptions.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxUserRulesOptions.TabIndex = 22;
+            this.pbxUserRulesOptions.TabStop = false;
+            this.pbxUserRulesOptions.Click += new System.EventHandler(this.pbxUserRulesOptions_Click);
             // 
             // pbxUserRulesProfile
             // 
-            this.pbxUserRulesProfile.Image = global::school_games_launcher.Properties.Resources.options_button;
-            this.pbxUserRulesProfile.Location = new System.Drawing.Point(125, 0);
+            this.pbxUserRulesProfile.Image = global::school_games_launcher.Properties.Resources.profile_button;
+            this.pbxUserRulesProfile.Location = new System.Drawing.Point(50, 0);
             this.pbxUserRulesProfile.Name = "pbxUserRulesProfile";
             this.pbxUserRulesProfile.Size = new System.Drawing.Size(75, 25);
             this.pbxUserRulesProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxUserRulesProfile.TabIndex = 22;
+            this.pbxUserRulesProfile.TabIndex = 21;
             this.pbxUserRulesProfile.TabStop = false;
             this.pbxUserRulesProfile.Click += new System.EventHandler(this.pbxUserRulesProfile_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::school_games_launcher.Properties.Resources.profile_button;
-            this.pictureBox2.Location = new System.Drawing.Point(50, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(75, 25);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 21;
-            this.pictureBox2.TabStop = false;
             // 
             // pbxUserRulesHome
             // 
@@ -3226,28 +3198,6 @@
             this.pbxWelcomeClose.TabStop = false;
             this.pbxWelcomeClose.Click += new System.EventHandler(this.pbxWelcomeClose_Click);
             // 
-            // cbxEditUserAdmin
-            // 
-            this.cbxEditUserAdmin.AutoSize = true;
-            this.cbxEditUserAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbxEditUserAdmin.Location = new System.Drawing.Point(32, 342);
-            this.cbxEditUserAdmin.Name = "cbxEditUserAdmin";
-            this.cbxEditUserAdmin.Size = new System.Drawing.Size(52, 17);
-            this.cbxEditUserAdmin.TabIndex = 2;
-            this.cbxEditUserAdmin.Text = "Admin";
-            this.cbxEditUserAdmin.UseVisualStyleBackColor = true;
-            this.cbxEditUserAdmin.CheckedChanged += new System.EventHandler(this.cbxEditUserAdmin_CheckedChanged);
-            // 
-            // lblEditUserAdminWarning0
-            // 
-            this.lblEditUserAdminWarning0.AutoSize = true;
-            this.lblEditUserAdminWarning0.ForeColor = System.Drawing.Color.Yellow;
-            this.lblEditUserAdminWarning0.Location = new System.Drawing.Point(90, 344);
-            this.lblEditUserAdminWarning0.Name = "lblEditUserAdminWarning0";
-            this.lblEditUserAdminWarning0.Size = new System.Drawing.Size(128, 13);
-            this.lblEditUserAdminWarning0.TabIndex = 52;
-            this.lblEditUserAdminWarning0.Text = "User 0 needs to be admin";
-            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3372,11 +3322,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxChangePasswordClose)).EndInit();
             this.tabEditUserRules.ResumeLayout(false);
             this.tabEditUserRules.PerformLayout();
-            this.flpUserRulesAlowedPlaytimes.ResumeLayout(false);
-            this.flpUserRulesAgeExeptions.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbxUserRulesAvatar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxUserRulesOptions)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxUserRulesProfile)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxUserRulesHome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxUserRulesMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxUserRulesClose)).EndInit();
@@ -3540,8 +3488,8 @@
         private System.Windows.Forms.TabPage tabEditUserRules;
         private System.Windows.Forms.Label lblUserRulesUserName;
         private System.Windows.Forms.PictureBox pbxUserRulesAvatar;
+        private System.Windows.Forms.PictureBox pbxUserRulesOptions;
         private System.Windows.Forms.PictureBox pbxUserRulesProfile;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pbxUserRulesHome;
         private System.Windows.Forms.PictureBox pbxUserRulesMinimize;
         private System.Windows.Forms.PictureBox pbxUserRulesClose;
@@ -3551,9 +3499,7 @@
         private System.Windows.Forms.Label lblUserRulesAllowedPlaytimesTip;
         private System.Windows.Forms.Label lblUserRulesAllowedPlaytimesTitle;
         private System.Windows.Forms.FlowLayoutPanel flpUserRulesAlowedPlaytimes;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.FlowLayoutPanel flpUserRulesAgeExeptions;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pbxEditUserOptions;
         private System.Windows.Forms.PictureBox pbxEditUserProfile;
         private System.Windows.Forms.PictureBox pbxEditUserHome;
@@ -3572,8 +3518,6 @@
         private System.Windows.Forms.PictureBox pbxChangePasswordAvatar;
         private System.Windows.Forms.Button btnUserRulesAgeExeptionsAdd;
         private System.Windows.Forms.Button btnUserRulesAllowedPlaytimesAdd;
-        private System.Windows.Forms.Button btnUserRulesCancel;
-        private System.Windows.Forms.Button btnUserRulesSave;
         private System.Windows.Forms.PictureBox pbxEditUserAvatar;
         private System.Windows.Forms.TextBox tbxEditUserAvatarInput;
         private System.Windows.Forms.Label tbxEditUserAvatar;
@@ -3585,7 +3529,6 @@
         private System.Windows.Forms.Label lblEditUserId;
         private System.Windows.Forms.LinkLabel llblEditUserDelete;
         private System.Windows.Forms.Button btnEditUserCancel;
-        private System.Windows.Forms.Button btnEditUserUserRules;
         private System.Windows.Forms.Button btnEditUserChangePassword;
         private System.Windows.Forms.Button btnChangePasswordCancel;
         private System.Windows.Forms.Button btnChangePasswordSave;
@@ -3596,7 +3539,7 @@
         private System.Windows.Forms.TextBox tbxChangePasswordOld;
         private System.Windows.Forms.Label lblChangePasswordOldPassword;
         private System.Windows.Forms.Label lblChangePasswordId;
-        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label lblUserRulesId;
         private System.Windows.Forms.PictureBox pbxEditUserAvatar5;
         private System.Windows.Forms.PictureBox pbxEditUserAvatar4;
         private System.Windows.Forms.PictureBox pbxEditUserAvatar3;
@@ -3644,7 +3587,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.LinkLabel llblOptionsLogout;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnProfileUserRules;
         private System.Windows.Forms.CheckBox cbxEditUserAdmin;
         private System.Windows.Forms.Label lblEditUserAdminWarning0;
     }
