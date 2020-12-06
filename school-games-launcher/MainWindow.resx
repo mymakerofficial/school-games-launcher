@@ -118,24 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="pbxUserRulesMinimize.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAMgAAABkCAIAAABM5OhcAAABgWlDQ1BzUkdCIElFQzYxOTY2LTIuMQAA
-        KM+VkbtLA0EQhz8TJaKRCFpYWESJVolohKCNRUSjoBZJBF9NcnkJSTzuTkRsBduAgmjjq9C/QFvBWhAU
-        RRArC2tFG5VzLgkkCCncZXa+/e3OsDMLtmhWyen1/ZDLG1o4FHTPzS+4HS84sYt14Y0pujodGY9Sc3ze
-        U2f5W5+Vi/+N5kRSV6CuUXhEUTVDeEJ4as1QLd4RblcysYTwmbBXkwcK31l6vMSvFqdL/G2xFg2PSm2t
-        wu50FcerWMloOWGpHE8uu6qU32NV4kzmZyPiu8U60QkTIoibScYYJcAAw7IG8OGnT3bUiO8vxs+wIrGK
-        rCrraCyTJoOBV9RVyZ4UnxI9KTPLutX/v33VU4P+UnZnEBqeTfO9Bxzb8FMwza8j0/w5BvsTXOYr8SuH
-        MPQheqGieQ7AtQnnVxUtvgsXW9DxqMa0WFGyi9lSKXg7hZZ5aLuBpsVSz8rnnDxAdEO+6hr29qFX7ruW
-        fgF0MWfsvPavDQAAAAlwSFlzAAALEwAACxMBAJqcGAAAAVtJREFUeF7t0jFKBFEQRVGXNYGBNCII7kAw
-        EcUJnP1nY8cde6F+cx5nAVVwHx4vG/w7YZEQFglhkRAWCWGREBYJYZEQFglhkRAWCWGREBYJYZEQFglh
-        kRAWCWGREBYJYZEQFglhkRAWCWGREBYJYZEQFglhkRAWCWGREBYJYZEQFglhkRAWCWGREBYJYZEQFglh
-        kRAWCWGREBYJYZEQFglhkRAWCWGREBYJYZEQFglhkRAWCWGREBYJYZEQFglhkRAWCWGREBYJYZEQFglh
-        kRAWCWGREBYJYZEQFolThfX89Prx/rmo/fjDO0s7VVjX79t92e3HH95ZmrCmTFhzCWsOYU2ZsOYS1hzC
-        mjJhzSWsOU4V1sv29vP1u6j9+MM7SztVWMwhLBLCIiEsEsIiISwSwiIhLBLCIiEsEsIiISwSwiIhLBLC
-        IiEsEsIiISwSwiIhLBLCIiEsApftD0vzqwy42wkjAAAAAElFTkSuQmCC
-</value>
-  </data>
   <data name="pbxLibraryMinimize.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMgAAABkCAIAAABM5OhcAAABgWlDQ1BzUkdCIElFQzYxOTY2LTIuMQAA
@@ -659,14 +641,7 @@
         IiEsEsIiISwSwiIhLBLCIiEsApftD0vzqwy42wkjAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="lblWelcomeUserRulesExeptionsText.Text" xml:space="preserve">
-    <value>These alow you to set age rating exeptions for users.
-If you create create a Age Exeption for a user and game
-the user is alowed / not alowed to play this game regardless
-the age rating of the game
-</value>
-  </data>
-  <data name="pbxWelcomeMinimize.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pbxUserRulesMinimize.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMgAAABkCAIAAABM5OhcAAABgWlDQ1BzUkdCIElFQzYxOTY2LTIuMQAA
         KM+VkbtLA0EQhz8TJaKRCFpYWESJVolohKCNRUSjoBZJBF9NcnkJSTzuTkRsBduAgmjjq9C/QFvBWhAU
@@ -703,6 +678,31 @@ the age rating of the game
 </value>
   </data>
   <data name="pbxGameExeptionMInimize.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAMgAAABkCAIAAABM5OhcAAABgWlDQ1BzUkdCIElFQzYxOTY2LTIuMQAA
+        KM+VkbtLA0EQhz8TJaKRCFpYWESJVolohKCNRUSjoBZJBF9NcnkJSTzuTkRsBduAgmjjq9C/QFvBWhAU
+        RRArC2tFG5VzLgkkCCncZXa+/e3OsDMLtmhWyen1/ZDLG1o4FHTPzS+4HS84sYt14Y0pujodGY9Sc3ze
+        U2f5W5+Vi/+N5kRSV6CuUXhEUTVDeEJ4as1QLd4RblcysYTwmbBXkwcK31l6vMSvFqdL/G2xFg2PSm2t
+        wu50FcerWMloOWGpHE8uu6qU32NV4kzmZyPiu8U60QkTIoibScYYJcAAw7IG8OGnT3bUiO8vxs+wIrGK
+        rCrraCyTJoOBV9RVyZ4UnxI9KTPLutX/v33VU4P+UnZnEBqeTfO9Bxzb8FMwza8j0/w5BvsTXOYr8SuH
+        MPQheqGieQ7AtQnnVxUtvgsXW9DxqMa0WFGyi9lSKXg7hZZ5aLuBpsVSz8rnnDxAdEO+6hr29qFX7ruW
+        fgF0MWfsvPavDQAAAAlwSFlzAAALEwAACxMBAJqcGAAAAVtJREFUeF7t0jFKBFEQRVGXNYGBNCII7kAw
+        EcUJnP1nY8cde6F+cx5nAVVwHx4vG/w7YZEQFglhkRAWCWGREBYJYZEQFglhkRAWCWGREBYJYZEQFglh
+        kRAWCWGREBYJYZEQFglhkRAWCWGREBYJYZEQFglhkRAWCWGREBYJYZEQFglhkRAWCWGREBYJYZEQFglh
+        kRAWCWGREBYJYZEQFglhkRAWCWGREBYJYZEQFglhkRAWCWGREBYJYZEQFglhkRAWCWGREBYJYZEQFglh
+        kRAWCWGREBYJYZEQFolThfX89Prx/rmo/fjDO0s7VVjX79t92e3HH95ZmrCmTFhzCWsOYU2ZsOYS1hzC
+        mjJhzSWsOU4V1sv29vP1u6j9+MM7SztVWMwhLBLCIiEsEsIiISwSwiIhLBLCIiEsEsIiISwSwiIhLBLC
+        IiEsEsIiISwSwiIhLBLCIiEsApftD0vzqwy42wkjAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="lblWelcomeUserRulesExeptionsText.Text" xml:space="preserve">
+    <value>These alow you to set age rating exeptions for users.
+If you create create a Age Exeption for a user and game
+the user is alowed / not alowed to play this game regardless
+the age rating of the game
+</value>
+  </data>
+  <data name="pbxWelcomeMinimize.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMgAAABkCAIAAABM5OhcAAABgWlDQ1BzUkdCIElFQzYxOTY2LTIuMQAA
         KM+VkbtLA0EQhz8TJaKRCFpYWESJVolohKCNRUSjoBZJBF9NcnkJSTzuTkRsBduAgmjjq9C/QFvBWhAU

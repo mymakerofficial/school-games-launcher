@@ -308,6 +308,7 @@
             this.btnGameExeptionSave = new System.Windows.Forms.Button();
             this.llblGameExeptionDelete = new System.Windows.Forms.LinkLabel();
             this.llblPlayPeriodDelete = new System.Windows.Forms.LinkLabel();
+            this.lblVersion = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabLibrary.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLibraryOptions)).BeginInit();
@@ -583,6 +584,7 @@
             // tabOptions
             // 
             this.tabOptions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
+            this.tabOptions.Controls.Add(this.lblVersion);
             this.tabOptions.Controls.Add(this.llblOptionsLogout);
             this.tabOptions.Controls.Add(this.label6);
             this.tabOptions.Controls.Add(this.label5);
@@ -3662,6 +3664,15 @@
             this.llblPlayPeriodDelete.Text = "Delete";
             this.llblPlayPeriodDelete.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblPlayPeriodDelete_LinkClicked);
             // 
+            // lblVersion
+            // 
+            this.lblVersion.AutoSize = true;
+            this.lblVersion.Location = new System.Drawing.Point(1073, 697);
+            this.lblVersion.Name = "lblVersion";
+            this.lblVersion.Size = new System.Drawing.Size(43, 13);
+            this.lblVersion.TabIndex = 26;
+            this.lblVersion.Text = "ver. 1.0";
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4105,6 +4116,7 @@
         private System.Windows.Forms.Button btnGameExeptionSave;
         private System.Windows.Forms.LinkLabel llblGameExeptionDelete;
         private System.Windows.Forms.LinkLabel llblPlayPeriodDelete;
+        private System.Windows.Forms.Label lblVersion;
     }
 }
 

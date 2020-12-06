@@ -117,7 +117,7 @@ namespace school_games_launcher
                 File.Exists(this.configPath + "sessions.csv")) return true;
 
             this.Users.Add(new User(0, "admin", 1, "", true, Convert.ToString(new Random().Next(0, 5))));
-            this.Games.Add(new Game(1, "Counting", "https://counting.cf", 0, "https://counting.cf/favicon/counting_makersbanner.png"));
+            this.Games.Add(new Game(0, "Counting", "https://counting.cf", 0, "https://counting.cf/favicon/counting_makersbanner.png"));
 
             return false;
         }
