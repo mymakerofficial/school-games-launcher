@@ -18,7 +18,7 @@ namespace school_games_launcher
         public GUIEditGame editGame;
         public GUIProfile profile;
         public GUITab login;
-        public GUITab register;
+        public GUIRegister register;
         public GUIPlaying playing;
         public GUIGameDetails gameDetails;
         public GUIEditUser editUser;
@@ -55,13 +55,14 @@ namespace school_games_launcher
             profile.updateOnActive = true;
             login = new GUITab(this.tabControl, (TabPage)this.tabControl.TabPages["tabLogin"]);
             login.resetOnActive = true;
-            register = new GUITab(this.tabControl, (TabPage)this.tabControl.TabPages["tabRegister"]);
-            register.resetOnActive = true;
+            register = new GUIRegister(this.tabControl, (TabPage)this.tabControl.TabPages["tabRegister"]);
+            register.updateOnActive = true;
             playing = new GUIPlaying(this.tabControl, (TabPage)this.tabControl.TabPages["tabPlaying"]);
             gameDetails = new GUIGameDetails(this.tabControl, (TabPage)this.tabControl.TabPages["tapGameDetails"]);
             gameDetails.updateOnActive = true;
             gameDetails.Setup();
             editUser = new GUIEditUser(this.tabControl, (TabPage)this.tabControl.TabPages["tabEditUser"]);
+            editUser.updateOnActive = true;
             changePassword = new GUIChangePassword(this.tabControl, (TabPage)this.tabControl.TabPages["tabChangePassword"]);
             changePassword.resetOnActive = true;
 
@@ -264,6 +265,18 @@ namespace school_games_launcher
         {
             Program.app.Gui.editUser.Activate();
             Program.app.Gui.editUser.EditUser = user;
+        }
+    }
+    public class GUIRegister : GUITab
+    {
+        public GUIRegister(TabControl tabControl, TabPage tabPage) : base(tabControl, tabPage)
+        {
+
+        }
+
+        public override void Update()
+        {
+            ((DateTimePicker)this.TabPage.Controls["dtpRegisterBirthday"]).MaxDate = DateTime.Now;
         }
     }
     public class GUIAddGame : GUITab
@@ -827,7 +840,7 @@ namespace school_games_launcher
         }
         public override void Update()
         {
-
+            ((DateTimePicker)this.TabPage.Controls["dtpEditUserBirthdate"]).MaxDate = DateTime.Now;
         }
         public override void Reset()
         {
@@ -858,7 +871,7 @@ namespace school_games_launcher
         }
         public void Cancel()
         {
-            Program.app.Gui.options.Activate();
+            Program.app.Gui.profile.Activate();
         }
         public void ChangePassword()
         {
