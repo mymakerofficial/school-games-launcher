@@ -14,7 +14,6 @@ namespace school_games_launcher
         private string coverart;
         public int? SteamId { get; set; } = null;
         private GameExecutable executable;
-        private DateTime lastPlayed;
 
         /// <summary>
         /// Id of the game

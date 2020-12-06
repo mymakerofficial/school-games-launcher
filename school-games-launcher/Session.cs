@@ -36,6 +36,7 @@ namespace school_games_launcher
                 return (int)new DateTimeOffset(this.EndTime).ToUnixTimeSeconds();
             }
         }
+        public TimeSpan Duration { get { return this.EndTime - this.StartTime; } }
         public Session(Game game, User user)
         {
             this.game = game;

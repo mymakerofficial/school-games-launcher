@@ -200,12 +200,12 @@ namespace school_games_launcher
                 // create function to go to game page
                 void LaunchGame(object sender, EventArgs e)
                 {
-                    Program.app.Gui.gameDetails.SetGame(game);
                     Program.app.Gui.gameDetails.Activate();
-                    //Program.app.Launch(game);
+                    Program.app.Gui.gameDetails.SetGame(game);
                 }
                 // add function as EventHandler
                 panel.Click += new System.EventHandler(LaunchGame);
+                coverart.Click += new System.EventHandler(LaunchGame);
 
                 // add the PictureBox to the Panel
                 panel.Controls.Add(coverart);
@@ -436,6 +436,8 @@ namespace school_games_launcher
     public class GUIProfile : GUITab
     {
         private User user;
+        private List<Session> sessions;
+        private List<Control> activityPanels = new List<Control>();
         public User User
         {
             get { return user; }
@@ -445,8 +447,13 @@ namespace school_games_launcher
                 ((Label)this.TabPage.Controls["lblProfileName"]).Text = user.Name;
                 ((Label)this.TabPage.Controls["lblProfileBirth"]).Text = String.Format("Age: {0} ({1})", user.Age, user.BirthDate.ToString("d", CultureInfo.CreateSpecificCulture("de-DE")));
                 ((Label)this.TabPage.Controls["lblProfileId"]).Text = String.Format("ID: {0}", user.Id);
+                ((Label)this.TabPage.Controls["lblProfileTimePlayed"]).Text = String.Format("Time played: {0}{1}", Math.Floor(Program.app.GetUserTimePlayed(user).TotalHours) > 0 ? Math.Floor(Program.app.GetUserTimePlayed(user).TotalHours) : Math.Floor(Program.app.GetUserTimePlayed(user).TotalMinutes), Math.Floor(Program.app.GetUserTimePlayed(user).TotalHours) > 0 ? "h" : "m");
+
+                if (Program.app.ActiveUser != null)
+                    ((Button)this.TabPage.Controls["btnProfileEdit"]).Visible = Program.app.ActiveUser.Admin || Program.app.ActiveUser == user;
 
                 Program.app.Gui.SetAvatar(((PictureBox)this.TabPage.Controls["pbxProfileAvatar"]), user.Avatar);
+                this.UpdateActivityList(user);
             }
         }
         public GUIProfile(TabControl tabControl, TabPage tabPage) : base(tabControl, tabPage)
@@ -457,6 +464,93 @@ namespace school_games_launcher
         public override void Update()
         {
             this.User = Program.app.ActiveUser;
+        }
+
+        public void UpdateActivityList(User user)
+        {
+            this.sessions = Program.app.GetUserSessions(user);
+            this.sessions.Reverse();
+
+            // fixes memory leak ishue
+            foreach (Control control in activityPanels)
+            {
+                control.Dispose();
+            }
+            activityPanels.Clear();
+
+
+            for (int i = 0; i < this.sessions.Count && i < 7; i++)
+            {
+                Session session = this.sessions[i];
+
+                // creates a panel
+                Panel panel = new System.Windows.Forms.Panel();
+                panel.Size = new System.Drawing.Size(1000, 137);
+
+                // create PictureBox for coverart
+                PictureBox coverart = new System.Windows.Forms.PictureBox();
+                coverart.Image = global::school_games_launcher.Properties.Resources.game_coverart_placeholder;
+                coverart.Location = new System.Drawing.Point(15, 15);
+                coverart.Size = new System.Drawing.Size(230, 107);
+                coverart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+                coverart.BackColor = System.Drawing.Color.Black;
+
+                Label name = new System.Windows.Forms.Label();
+                name.Text = session.Game.Name;
+                name.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                name.Size = new System.Drawing.Size(500, 30);
+                name.Location = new System.Drawing.Point(270, 25);
+
+                Label info = new System.Windows.Forms.Label();
+                info.Text = String.Format("Date / Time: {0}       Duration: {1:hh}h {1:mm}m", session.StartTime.ToString("g", CultureInfo.CreateSpecificCulture("de-DE")), session.Duration);
+                info.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                info.ForeColor = System.Drawing.Color.LightGray;
+                info.Size = new System.Drawing.Size(500, 30);
+                info.Location = new System.Drawing.Point(270, 60);
+
+
+                // create function to go to game page
+                void LaunchGame(object sender, EventArgs e)
+                {
+                    Program.app.Gui.gameDetails.SetGame(session.Game);
+                    Program.app.Gui.gameDetails.Activate();
+                    //Program.app.Launch(game);
+                }
+                // add function as EventHandler
+                coverart.Click += new System.EventHandler(LaunchGame);
+
+                // add the elements to the Panel
+                panel.Controls.Add(coverart);
+                panel.Controls.Add(name);
+                panel.Controls.Add(info);
+
+                // add Panel to array
+                activityPanels.Add(panel);
+            }
+
+            // add the panels to the Form
+            this.TabPage.Controls["flpProfileLastPlayed"].Controls.Clear();
+            foreach (Control control in activityPanels)
+            {
+                this.TabPage.Controls["flpProfileLastPlayed"].Controls.Add(control);
+            }
+
+            // Load images in different thread.
+            // This makes the loading of the library way smoother.
+            Task.Run(() =>
+            {
+                Thread.CurrentThread.IsBackground = true;
+
+                for (int i = 0; i < activityPanels.Count(); i++)
+                {
+                    try
+                    {
+                        PictureBox coverart = (PictureBox)activityPanels[i].Controls[0];
+                        coverart.Load(this.sessions[i].Game.Coverart);
+                    }
+                    catch { }
+                }
+            });
         }
        
         public void Edit()

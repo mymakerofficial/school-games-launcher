@@ -628,5 +628,6 @@ namespace school_games_launcher
         {
             Program.app.Logout();
         }
+
     }
 }

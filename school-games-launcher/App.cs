@@ -397,6 +397,29 @@ namespace school_games_launcher
             
             return filterList;
         }
+
+        public List<Session> GetUserSessions(User user)
+        {
+            List<Session> list = new List<Session>();
+
+            foreach(Session session in this.Sessions)
+            {
+                if (session.User == user) list.Add(session);
+            }
+
+            return list;
+        }
+        public TimeSpan GetUserTimePlayed(User user)
+        {
+            TimeSpan duration = new TimeSpan();
+
+            foreach(Session session in this.GetUserSessions(user))
+            {
+                duration += session.Duration;
+            }
+
+            return duration;
+        }
         public void Exit()
         {
             System.Windows.Forms.Application.Exit();

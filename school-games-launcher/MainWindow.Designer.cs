@@ -41,6 +41,9 @@
             this.lblLibrarySearchGame = new System.Windows.Forms.Label();
             this.tbxLibrarySearchGame = new System.Windows.Forms.TextBox();
             this.tabOptions = new System.Windows.Forms.TabPage();
+            this.llblOptionsLogout = new System.Windows.Forms.LinkLabel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.flpOptionsGames = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -113,10 +116,10 @@
             this.pbxEditGameAge6 = new System.Windows.Forms.PictureBox();
             this.pbxEditGameAge0 = new System.Windows.Forms.PictureBox();
             this.tabProfile = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnProfileEdit = new System.Windows.Forms.Button();
-            this.btnProfileLogout = new System.Windows.Forms.Button();
             this.lblProfileId = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblProfileTimePlayed = new System.Windows.Forms.Label();
             this.lblProfileName = new System.Windows.Forms.Label();
             this.lblProfileBirth = new System.Windows.Forms.Label();
             this.lblProfileLastPlayed = new System.Windows.Forms.Label();
@@ -273,9 +276,6 @@
             this.pbxWelcomeHome = new System.Windows.Forms.PictureBox();
             this.pbxWelcomeMinimize = new System.Windows.Forms.PictureBox();
             this.pbxWelcomeClose = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.llblOptionsLogout = new System.Windows.Forms.LinkLabel();
             this.tabControl.SuspendLayout();
             this.tabLibrary.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLibraryOptions)).BeginInit();
@@ -557,6 +557,41 @@
             this.tabOptions.Size = new System.Drawing.Size(1144, 723);
             this.tabOptions.TabIndex = 1;
             this.tabOptions.Text = "Options ";
+            // 
+            // llblOptionsLogout
+            // 
+            this.llblOptionsLogout.ActiveLinkColor = System.Drawing.Color.DarkGray;
+            this.llblOptionsLogout.AutoSize = true;
+            this.llblOptionsLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.llblOptionsLogout.LinkColor = System.Drawing.Color.LightGray;
+            this.llblOptionsLogout.Location = new System.Drawing.Point(28, 690);
+            this.llblOptionsLogout.Name = "llblOptionsLogout";
+            this.llblOptionsLogout.Size = new System.Drawing.Size(59, 20);
+            this.llblOptionsLogout.TabIndex = 25;
+            this.llblOptionsLogout.TabStop = true;
+            this.llblOptionsLogout.Text = "Logout";
+            this.llblOptionsLogout.VisitedLinkColor = System.Drawing.Color.LightGray;
+            this.llblOptionsLogout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblOptionsLogout_LinkClicked);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(517, 51);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(76, 29);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "Users";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(27, 51);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(90, 29);
+            this.label5.TabIndex = 23;
+            this.label5.Text = "Games";
             // 
             // flpOptionsGames
             // 
@@ -1370,10 +1405,10 @@
             // tabProfile
             // 
             this.tabProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
+            this.tabProfile.Controls.Add(this.button1);
             this.tabProfile.Controls.Add(this.btnProfileEdit);
-            this.tabProfile.Controls.Add(this.btnProfileLogout);
             this.tabProfile.Controls.Add(this.lblProfileId);
-            this.tabProfile.Controls.Add(this.label1);
+            this.tabProfile.Controls.Add(this.lblProfileTimePlayed);
             this.tabProfile.Controls.Add(this.lblProfileName);
             this.tabProfile.Controls.Add(this.lblProfileBirth);
             this.tabProfile.Controls.Add(this.lblProfileLastPlayed);
@@ -1391,27 +1426,26 @@
             this.tabProfile.TabIndex = 7;
             this.tabProfile.Text = "Profile";
             // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(1015, 60);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(106, 33);
+            this.button1.TabIndex = 27;
+            this.button1.Text = "User Rules";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // btnProfileEdit
             // 
             this.btnProfileEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProfileEdit.Location = new System.Drawing.Point(1015, 95);
+            this.btnProfileEdit.Location = new System.Drawing.Point(1015, 110);
             this.btnProfileEdit.Name = "btnProfileEdit";
             this.btnProfileEdit.Size = new System.Drawing.Size(106, 23);
             this.btnProfileEdit.TabIndex = 26;
             this.btnProfileEdit.Text = "Edit Profile";
             this.btnProfileEdit.UseVisualStyleBackColor = true;
             this.btnProfileEdit.Click += new System.EventHandler(this.btnProfileEdit_Click);
-            // 
-            // btnProfileLogout
-            // 
-            this.btnProfileLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProfileLogout.Location = new System.Drawing.Point(1015, 57);
-            this.btnProfileLogout.Name = "btnProfileLogout";
-            this.btnProfileLogout.Size = new System.Drawing.Size(106, 23);
-            this.btnProfileLogout.TabIndex = 25;
-            this.btnProfileLogout.Text = "Logout";
-            this.btnProfileLogout.UseVisualStyleBackColor = true;
-            this.btnProfileLogout.Click += new System.EventHandler(this.btnProfileLogout_Click);
             // 
             // lblProfileId
             // 
@@ -1424,22 +1458,22 @@
             this.lblProfileId.TabIndex = 24;
             this.lblProfileId.Text = "ID: 0";
             // 
-            // label1
+            // lblProfileTimePlayed
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.LightGray;
-            this.label1.Location = new System.Drawing.Point(25, 240);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 20);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Hours played:";
+            this.lblProfileTimePlayed.AutoSize = true;
+            this.lblProfileTimePlayed.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProfileTimePlayed.ForeColor = System.Drawing.Color.LightGray;
+            this.lblProfileTimePlayed.Location = new System.Drawing.Point(146, 136);
+            this.lblProfileTimePlayed.Name = "lblProfileTimePlayed";
+            this.lblProfileTimePlayed.Size = new System.Drawing.Size(106, 20);
+            this.lblProfileTimePlayed.TabIndex = 20;
+            this.lblProfileTimePlayed.Text = "Hours played:";
             // 
             // lblProfileName
             // 
             this.lblProfileName.AutoSize = true;
             this.lblProfileName.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProfileName.Location = new System.Drawing.Point(22, 164);
+            this.lblProfileName.Location = new System.Drawing.Point(143, 60);
             this.lblProfileName.Name = "lblProfileName";
             this.lblProfileName.Size = new System.Drawing.Size(84, 37);
             this.lblProfileName.TabIndex = 1;
@@ -1450,7 +1484,7 @@
             this.lblProfileBirth.AutoSize = true;
             this.lblProfileBirth.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProfileBirth.ForeColor = System.Drawing.Color.LightGray;
-            this.lblProfileBirth.Location = new System.Drawing.Point(25, 215);
+            this.lblProfileBirth.Location = new System.Drawing.Point(146, 111);
             this.lblProfileBirth.Name = "lblProfileBirth";
             this.lblProfileBirth.Size = new System.Drawing.Size(42, 20);
             this.lblProfileBirth.TabIndex = 2;
@@ -1460,11 +1494,11 @@
             // 
             this.lblProfileLastPlayed.AutoSize = true;
             this.lblProfileLastPlayed.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProfileLastPlayed.Location = new System.Drawing.Point(20, 285);
+            this.lblProfileLastPlayed.Location = new System.Drawing.Point(24, 186);
             this.lblProfileLastPlayed.Name = "lblProfileLastPlayed";
-            this.lblProfileLastPlayed.Size = new System.Drawing.Size(128, 25);
+            this.lblProfileLastPlayed.Size = new System.Drawing.Size(126, 25);
             this.lblProfileLastPlayed.TabIndex = 3;
-            this.lblProfileLastPlayed.Text = "Last Activity";
+            this.lblProfileLastPlayed.Text = "Last activity";
             // 
             // flpProfileLastPlayed
             // 
@@ -1473,9 +1507,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flpProfileLastPlayed.AutoScroll = true;
             this.flpProfileLastPlayed.BackColor = System.Drawing.Color.Transparent;
-            this.flpProfileLastPlayed.Location = new System.Drawing.Point(29, 327);
+            this.flpProfileLastPlayed.Location = new System.Drawing.Point(29, 225);
             this.flpProfileLastPlayed.Name = "flpProfileLastPlayed";
-            this.flpProfileLastPlayed.Size = new System.Drawing.Size(1115, 363);
+            this.flpProfileLastPlayed.Size = new System.Drawing.Size(1112, 450);
             this.flpProfileLastPlayed.TabIndex = 2;
             // 
             // pbxProfileOptions
@@ -1537,7 +1571,7 @@
             // 
             this.pbxProfileAvatar.BackColor = System.Drawing.Color.Transparent;
             this.pbxProfileAvatar.Image = ((System.Drawing.Image)(resources.GetObject("pbxProfileAvatar.Image")));
-            this.pbxProfileAvatar.Location = new System.Drawing.Point(25, 45);
+            this.pbxProfileAvatar.Location = new System.Drawing.Point(25, 60);
             this.pbxProfileAvatar.Name = "pbxProfileAvatar";
             this.pbxProfileAvatar.Size = new System.Drawing.Size(100, 100);
             this.pbxProfileAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -3188,41 +3222,6 @@
             this.pbxWelcomeClose.TabStop = false;
             this.pbxWelcomeClose.Click += new System.EventHandler(this.pbxWelcomeClose_Click);
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(27, 51);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(90, 29);
-            this.label5.TabIndex = 23;
-            this.label5.Text = "Games";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(517, 51);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 29);
-            this.label6.TabIndex = 24;
-            this.label6.Text = "Users";
-            // 
-            // llblOptionsLogout
-            // 
-            this.llblOptionsLogout.ActiveLinkColor = System.Drawing.Color.DarkGray;
-            this.llblOptionsLogout.AutoSize = true;
-            this.llblOptionsLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.llblOptionsLogout.LinkColor = System.Drawing.Color.LightGray;
-            this.llblOptionsLogout.Location = new System.Drawing.Point(28, 690);
-            this.llblOptionsLogout.Name = "llblOptionsLogout";
-            this.llblOptionsLogout.Size = new System.Drawing.Size(59, 20);
-            this.llblOptionsLogout.TabIndex = 25;
-            this.llblOptionsLogout.TabStop = true;
-            this.llblOptionsLogout.Text = "Logout";
-            this.llblOptionsLogout.VisitedLinkColor = System.Drawing.Color.LightGray;
-            this.llblOptionsLogout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblOptionsLogout_LinkClicked);
-            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3497,11 +3496,10 @@
         private System.Windows.Forms.PictureBox pbxGameDetailsOptions;
         private System.Windows.Forms.PictureBox pbxGameDetailProfile;
         private System.Windows.Forms.PictureBox pbxGameDetailsAge;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblProfileTimePlayed;
         private System.Windows.Forms.Label lblGameDetailsId;
         private System.Windows.Forms.Label lblProfileId;
         private System.Windows.Forms.Button btnProfileEdit;
-        private System.Windows.Forms.Button btnProfileLogout;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Button btnEditGameCancel;
         private System.Windows.Forms.Button btnEditGameRemoveSteam;
@@ -3620,6 +3618,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.LinkLabel llblOptionsLogout;
+        private System.Windows.Forms.Button button1;
     }
 }
 
