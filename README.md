@@ -1,3 +1,4 @@
+[![forthebadge](https://forthebadge.com/images/badges/powered-by-black-magic.svg)](https://forthebadge.com)
 # school-games-launcher
  
 A game launcher with a focus on families and age restriction.
